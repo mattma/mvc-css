@@ -1,0 +1,93 @@
+//****************************************************************
+//* Table of Content  [PSEUDO CLASSES]
+//*
+//* Setting: _default_settings || _default_settings_min
+//* @mixin content($content-text: "")
+//* @mixin before( $imgURL: $default, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $default )
+//* @mixin after( $imgURL: $default, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $default )
+//* @mixin before
+//* @mixin after
+//* @mixin hover
+//* @mixin child($eq: last)
+//*
+//****************************************************************
+
+
+// Arguments could be either quoted or non-quoted
+// Usage: +content(">")
+@mixin content($content-text: "")
+	content: quote($content-text)
+
+
+// @param: $imgURL is not present, will act as a placeholder tag
+//		       $imgURL is Image URL, provide image width, height, position value, follow +position helper rules
+//		       $imgURL should be relative or absolute path, follow +image rules
+// Usage 1:  +before   no args, follow with a block of CSS code
+// Usage 2:  +before("main/test.png") applied the background image on the dynamic element
+@mixin before( $imgURL: $default, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $default )
+	&:before
+		@if $imgURL == $default
+			@content
+		@else
+			$cleanImgURL: quote($imgURL)
+			+content
+			+display($block)
+			+image( $cleanImgURL, $image-width, $image-height, no-repeat, $image-x-pos, $image-y-pos )
+			+position(absolute, $position-top, $position-left, $position-switch)
+
+
+// Same like +before, only different is applied to the :after element
+@mixin after( $imgURL: $default, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $default )
+	&:after
+		@if $imgURL == $default
+			@content
+		@else
+			$cleanImgURL: quote($imgURL)
+			+content
+			+display($block)
+			+image( $cleanImgURL, $image-width, $image-height, no-repeat, $image-x-pos, $image-y-pos )
+			+position(absolute, $position-top, $position-left, $position-switch)
+
+
+@mixin hover
+	&:hover
+		@content
+
+
+// @param $eq number, first or f or 1, last or l   default: last
+// Usage: +child(2)
+@mixin child($eq: last)
+	@if $eq == 1 or $eq == first or $eq == f
+		&:first-child
+			@content
+	@if $eq == 2
+		&:nth-child(2)
+			@content
+	@if $eq == 3
+		&:nth-child(3)
+			@content
+	@if $eq == 4
+		&:nth-child(4)
+			@content
+	@if $eq == 5
+		&:nth-child(5)
+			@content
+	@if $eq == 6
+		&:nth-child(6)
+			@content
+	@if $eq == 7
+		&:nth-child(7)
+			@content
+	@if $eq == 8
+		&:nth-child(8)
+			@content
+	@if $eq == 9
+		&:nth-child(9)
+			@content
+	@if $eq == 10
+		&:nth-child(10)
+			@content
+	@if $eq == last or $eq == l
+		&:last-child
+			@content
+

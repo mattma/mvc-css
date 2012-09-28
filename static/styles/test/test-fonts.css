@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/* COLOR SETTING */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-fonts\.sass}line{font-family:\000035}}
+.fonts {
+  font-family: mattma, arial, helvetica, Verdana, sans-serif;
+  font-weight: 500;
+  font-family: arial, helvetica, Verdana, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, arial, Verdana, sans-serif;
+  font-weight: 300;
+  font-family: "Times New Roman", Times, Georgia, Serif;
+  font-family: serif, "Times New Roman", Times, Georgia, Serif;
+  font-weight: 700;
+  font-family: "Monaco", "Courier New", monospace;
+  font-family: monospace, "Monaco", "Courier New", monospace;
+  font-weight: 700;
+  font-family: "mattma", arial, sans-serif;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-fonts\.sass}line{font-family:\0000318}}
+.fsize {
+  font-size: 67%;
+  font-size: 0.66667em;
+  font-size: 1em;
+  font-size: 3em;
+  font-size: 3%;
+  font-size: 3px;
+  line-height: 24em;
+  font-weight: 500;
+  font-style: normal;
+  font-style: oblique;
+  font-style: inherit;
+  font-style: italic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-fonts\.sass}line{font-family:\0000333}}
+.font {
+  font: italic bold 12px/30px Georgia, serif;
+  letter-spacing: 12em;
+  text-indent: -9999px;
+  text-indent: 400em;
+  text-align: center;
+  text-align: left;
+  text-align: right;
+  text-align: center;
+  text-align: justify;
+  text-align: right;
+  text-align: center;
+  vertical-align: top;
+  vertical-align: bottom;
+  vertical-align: middle;
+  vertical-align: baseline;
+  vertical-align: text-top;
+  vertical-align: baseline;
+  text-transform: uppercase;
+  text-transform: lowercase;
+  text-transform: capitalize;
+  text-transform: lowercase;
+  text-transform: none;
+  text-transform: none;
+  height: 40px;
+  width: auto;
+  line-height: 40px;
+}

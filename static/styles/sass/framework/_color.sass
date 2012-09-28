@@ -1,0 +1,123 @@
+//****************************************************************
+//* Table of Content   [COLOR]
+//*
+//* Setting: _default_settings || _default_settings_min
+//* @mixin color( $text-color: 102 102 102 )
+//* @mixin gbar($primaryColor, $secondaryColor)
+//* @mixin ghorizontal($startColor: #555, $endColor: #333)
+//* @mixin gvertical($startColor: #555, $endColor: #333)
+//* @mixin gdiagonal($startColor: #555, $endColor: #333, $deg: 45deg)
+//* @mixin gvertical3colors($startColor: #00b3ee, $midColor: #7a43b6, $colorStop: 50%, $endColor: #c3325f)
+//* @mixin gradial($innerColor: #555, $outerColor: #333)
+//* @mixin gstripe($color, $angle: -45deg)
+//*
+//****************************************************************
+
+@mixin color( $text-color: 102 102 102 )
+	color: color-format-helper($text-color)
+
+
+//**************************************************
+//* GRADIENT BACKGROUNDS STYLE
+//**************************************************
+
+
+// Gradient Vertical Styles with border color around
+@mixin gbar($primaryColor, $secondaryColor)
+	$primaryColor: color-format-helper( $primaryColor )
+	$secondaryColor: color-format-helper( $secondaryColor )
+
+	+gvertical($primaryColor, $secondaryColor)
+	border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%)
+	border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 0.15)
+
+
+// Horizontal Gradients from Left to Right
+@mixin ghorizontal($startColor: #555, $endColor: #333)
+	$startColor: color-format-helper( $startColor )
+	$endColor:  color-format-helper( $endColor )
+
+	background-color: $endColor
+	background-image: -moz-linear-gradient(left, $startColor, $endColor) // FF 3.6+
+	background-image: -ms-linear-gradient(left, $startColor, $endColor) // IE10
+	background-image: -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor)) // Safari 4+, Chrome 2+
+	background-image: -webkit-linear-gradient(left, $startColor, $endColor) // Safari 5.1+, Chrome 10+
+	background-image: -o-linear-gradient(left, $startColor, $endColor) // Opera 11.10
+	background-image: linear-gradient(left, $startColor, $endColor) // Le standard
+	background-repeat: repeat-x
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=1) // IE9 and down
+
+
+// Vertical Gradients from Top to Bottom
+@mixin gvertical($startColor: #555, $endColor: #333)
+	$startColor: color-format-helper( $startColor )
+	$endColor:  color-format-helper( $endColor )
+
+	background-color: mix($startColor, $endColor, 60%)
+	background-image: -moz-linear-gradient(top, $startColor, $endColor) // FF 3.6+
+	background-image: -ms-linear-gradient(top, $startColor, $endColor) // IE10
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor)) // Safari 4+, Chrome 2+
+	background-image: -webkit-linear-gradient(top, $startColor, $endColor) // Safari 5.1+, Chrome 10+
+	background-image: -o-linear-gradient(top, $startColor, $endColor) // Opera 11.10
+	background-image: linear-gradient(top, $startColor, $endColor) // The standard
+	background-repeat: repeat-x
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=0) // IE9 and down
+
+
+// Diagonal Gradients from Top Left to Bottom Right
+@mixin gdiagonal($startColor: #555, $endColor: #333, $deg: 45deg)
+	$startColor: color-format-helper( $startColor )
+	$endColor:  color-format-helper( $endColor )
+
+	background-color: $endColor
+	background-repeat: repeat-x
+	background-image: -moz-linear-gradient($deg, $startColor, $endColor) // FF 3.6+
+	background-image: -ms-linear-gradient($deg, $startColor, $endColor) // IE10
+	background-image: -webkit-linear-gradient($deg, $startColor, $endColor) // Safari 5.1+, Chrome 10+
+	background-image: -o-linear-gradient($deg, $startColor, $endColor) // Opera 11.10
+	background-image: linear-gradient($deg, $startColor, $endColor) // The standard
+
+
+// Vertical Gradients with 3 different colors, set the color stop
+@mixin gvertical3colors($startColor: #00b3ee, $midColor: #7a43b6, $colorStop: 50%, $endColor: #c3325f)
+	$startColor: color-format-helper( $startColor )
+	$midColor:  color-format-helper( $midColor )
+	$endColor:  color-format-helper( $endColor )
+
+	background-color: mix($midColor, $endColor, 80%)
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), color-stop($colorStop, $midColor), to($endColor))
+	background-image: -webkit-linear-gradient($startColor, $midColor $colorStop, $endColor)
+	background-image: -moz-linear-gradient(top, $startColor, $midColor $colorStop, $endColor)
+	background-image: -ms-linear-gradient($startColor, $midColor $colorStop, $endColor)
+	background-image: -o-linear-gradient($startColor, $midColor $colorStop, $endColor)
+	background-image: linear-gradient($startColor, $midColor $colorStop, $endColor)
+	background-repeat: no-repeat
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=0) // IE9 and down, gets no color-stop at all for proper fallback
+
+// Radial Gradient Setup with two colors
+@mixin gradial($innerColor: #555, $outerColor: #333)
+	$innerColor:  color-format-helper( $innerColor )
+	$outerColor:  color-format-helper( $outerColor )
+
+	background-color: $outerColor
+	background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($innerColor), to($outerColor))
+	background-image: -webkit-radial-gradient(circle, $innerColor, $outerColor)
+	background-image: -moz-radial-gradient(circle, $innerColor, $outerColor)
+	background-image: -ms-radial-gradient(circle, $innerColor, $outerColor)
+	background-repeat: no-repeat
+	// Opera cannot do radial gradients yet
+
+
+// Helper functions. Used in the Plugin.sass for +progress-bar mixin
+// Gradient Striped with lighter color, apply diagonal angel to the strip
+@mixin gstripe($color, $angle: -45deg)
+	$color:  color-format-helper( $color )
+
+	background-color: $color
+	background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25,  rgba(255,255,255,0)), color-stop(.5,  rgba(255,255,255,0)), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75,  rgba(255,255,255,0)), to( rgba(255,255,255,0)))
+	background-image: -webkit-linear-gradient($angle, rgba(255,255,255,.15) 25%,  rgba(255,255,255,0) 25%, rgba(255,255,255,0) 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, rgba(255,255,255,0) 75%, rgba(255,255,255,0))
+	background-image: -webkit-linear-gradient($angle, rgba(255,255,255,.15) 25%, rgba(255,255,255,0) 25%, rgba(255,255,255,0) 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, rgba(255,255,255,0) 75%, rgba(255,255,255,0))
+	background-image: -moz-linear-gradient($angle, rgba(255,255,255,.15) 25%, rgba(255,255,255,0) 25%, rgba(255,255,255,0) 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, rgba(255,255,255,0) 75%, rgba(255,255,255,0))
+	background-image: -ms-linear-gradient($angle, rgba(255,255,255,.15) 25%, rgba(255,255,255,0) 25%, rgba(255,255,255,0) 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, rgba(255,255,255,0) 75%, rgba(255,255,255,0))
+	background-image: -o-linear-gradient($angle, rgba(255,255,255,.15) 25%, rgba(255,255,255,0) 25%, rgba(255,255,255,0) 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, rgba(255,255,255,0) 75%, rgba(255,255,255,0))
+	background-image: linear-gradient($angle, rgba(255,255,255,.15) 25%, rgba(255,255,255,0) 25%,  rgba(255,255,255,0) 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%,  rgba(255,255,255,0) 75%,  rgba(255,255,255,0))

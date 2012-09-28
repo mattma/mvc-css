@@ -1,0 +1,138 @@
+//****************************************************************
+//* Table of Content  [FONTS]
+//*
+//* Setting: _default_settings || _default_settings_min
+//* @mixin sans( $prepend: $default, $weight: $DEFAULT-FONT-WEIGHT, $helvetica: false )
+//* @mixin serif( $prepend: $default, $weight: $DEFAULT-FONT-WEIGHT )
+//* @mixin monospace( $prepend: $default, $weight: $DEFAULT-FONT-WEIGHT )
+//* @mixin percentage-font-size( $size, $base-font-size )
+//* @mixin relative-font-size( $size, $context, $unit: em )
+//* @mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: em )
+//* @mixin lheight($line-height, $defaultUnit: px)
+//* @mixin centered($height-value)
+//* @mixin fweight($font-weight: $DEFAULT-FONT-WEIGHT)
+//* @mixin fstyle($font-style: $DEFAULT-FONT-STYLE)
+//* @mixin lspacing($letter-spacing, $defaultUnit: px )
+//* @mixin font($font-settings...)     or  @mixin f
+//* @mixin tindent($text-indent: $DEFAULT-TEXT-INDENT-VALUE, $defaultUnit: px )
+//* @mixin talign($text-align: $center)
+//* @mixin valign($vertical-align)
+//* @mixin ttransform($transform: $capitalize)
+//*
+//****************************************************************
+
+
+// @param $prepend 	 	# false by default or pass in an array of the new value
+// @param $weight 	 	# font weight convinient function
+// @param $helvetica  		# enable the popular font "helvetica neue", fallback to helvetica
+// Usage: +sans(mattma test test2, 700)
+@mixin sans( $prepend: $default, $font-weight: false, $helvetica: false )
+	@if type-of($helvetica) == bool
+		@if $helvetica == true
+			font-family: "Helvetica Neue", Helvetica, arial, Verdana, sans-serif
+		@else
+			@if $prepend == $default
+				font-family: $DEFAULT-SANS-SERIF
+			@else
+				font-family: join($prepend, $DEFAULT-SANS-SERIF, comma)
+	@if $font-weight != false
+		font-weight: $font-weight
+
+
+// Usage: same like +sans
+@mixin serif( $prepend: $default, $font-weight: false )
+	@if $prepend == $default
+		font-family: $DEFAULT-SERIF
+	@else
+		font-family: join($prepend, $DEFAULT-SERIF, comma)
+	@if $font-weight != false
+		font-weight: $font-weight
+
+
+// Usage: same like +sans
+@mixin monospace( $prepend: $default, $font-weight: false )
+	@if $prepend == $default
+		font-family: $DEFAULT-MONOSPACE
+	@else
+		font-family: join($prepend, $DEFAULT-MONOSPACE, comma)
+	@if $font-weight != false
+		font-weight: $font-weight
+
+
+//Usage: +ffamily( arial, "Helvetica", sans-serif)
+@mixin ffamily($font-families...)
+	font-family: $font-families
+
+
+//+percentage-font-size( 10px, 20px )  # 50%
+@mixin percentage-font-size( $size, $base-font-size )
+	font-size: ceil( percentage( $size / $base-font-size))
+
+
+//+relative-font-size( 10px, 20px )  # 0.5em
+@mixin relative-font-size( $size, $context, $unit: em )
+	font-size: #{$size/$context}$unit
+
+
+//@param $font-size: take measurement of em, px, % or plain number.
+//Default Unit: em
+@mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: em )
+	+measurement(font-size, $font-size, $defaultUnit)
+
+
+//@param $line-height: take measurement of em, px, % or plain number
+@mixin lheight($line-height, $defaultUnit: px)
+	+measurement(line-height, $line-height, $defaultUnit)
+
+
+//Easy mixin to apply the TEXT in the center of the Element
+//@param $height-value: take measurement of em, px, % or plain number
+@mixin centered($height-value)
+	+box(auto, $height-value)
+	+lheight($height-value)
+
+
+//@param $font-weight: 100, 200, 300, 400, 500, 600, 700   default: 300
+@mixin fweight($font-weight: $DEFAULT-FONT-WEIGHT)
+	font-weight: $font-weight
+
+
+//@param $font-style: normal, italic, oblique, inherit   default: italic
+@mixin fstyle($font-style: $DEFAULT-FONT-STYLE)
+	+prop(font-style, $font-style, $FONT-STYLE-VALUE-LIST)
+
+
+//@param $letter-spacing: take measurement of em, px, % or plain number
+@mixin lspacing($letter-spacing, $defaultUnit: px )
+	+measurement(letter-spacing, $letter-spacing, $defaultUnit)
+
+
+//@param $font-settings: this is a placeholder content to take arguments
+//Usage:  font(italic bold 12px/30px Georgia, serif)
+@mixin font($font-settings...)
+	font: $font-settings
+
+
+//Alias to @mixin font
+@mixin f($font-settings...)
+	@include font($font-settings)
+
+
+//@param $text-indent: take measurement of em, px, % or plain number
+@mixin tindent($text-indent: $DEFAULT-TEXT-INDENT-VALUE, $defaultUnit: px )
+	+measurement(text-indent, $text-indent, $defaultUnit)
+
+
+//@param $text-align: left, right, center, justify
+@mixin talign($text-align: $center)
+	+prop(text-align, $text-align, $TEXT-ALIGN-VALUE-LIST)
+
+
+//@param $vertical-align: top, middle, bottom, baseline, text-top
+@mixin valign($vertical-align)
+	+prop(vertical-align, $vertical-align, $VERTICAL-ALIGN-VALUE-LIST)
+
+
+//@param $transform: capitalize, uppercase, lowercase, none
+@mixin ttransform($transform: $capitalize)
+	+prop(text-transform, $transform, $TEXT-TRANSFORM-VALUE-LIST)

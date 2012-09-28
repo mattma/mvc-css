@@ -1,0 +1,132 @@
+//****************************************************************
+//* Table of Content  [BACKGROUND & IMAGES]
+//*
+//* Setting: _default_settings || _default_settings_min
+//* @mixin image( $imgURL, $image-width: image-width($imgURL), $image-height: image-height($imgURL), $image-repeat: no-repeat, $image-x-pos: 0, $image-y-pos: 0 )
+//* @mixin background($background-settings...)    OR  @mixin b
+//* @mixin bposition( $bg-pos-x: 0, $bg-pos-y: 0, $defaultUnit: px )
+//* @mixin brepeat( $background-repeat )
+//* @mixin bcolor( $bg-color: 102 102 102 )
+//* @mixin bimage($bg-image-path)
+//* @mixin sprite( $imgURL, $image-width: 24px, $image-height: 24px, $direction: $default )
+//* @mixin inline-icon($imgURL, $spacing: 5px, $pos: $left)
+//* @mixin sharpen-image
+//* @mixin high-quality-image
+//* @mixin low-quality-image
+//*
+//****************************************************************
+
+
+// Using relative-image-path() to return the relative path to this file
+// Using absolute-image-path() to return the absolute path to the project root path
+// @param $height, Default: auto. Take measurement of em, px, % or plain number.
+@mixin image( $imgURL, $image-width: image-width($imgURL), $image-height: image-height($imgURL), $image-repeat: no-repeat, $image-x-pos: 0, $image-y-pos: 0 )
+	background: relative-image-path($imgURL) measurement($image-x-pos, px) measurement($image-y-pos, px) $image-repeat
+	+box($image-width, $image-height)
+
+
+//@param $background-settings: this is a placeholder content to take arguments
+//Usage:  +background(url("main/test.png") no-repeat 0 20px)
+@mixin background($background-settings...)
+	background: $background-settings
+
+
+//Alias to @mixin background
+@mixin b($background-settings...)
+	@include background($background-settings)
+
+
+// @return an background position working with image spirit
+// @param $height, Default: auto. Take measurement of em, px, % or plain number.
+@mixin bposition( $bg-pos-x: 0, $bg-pos-y: 0, $defaultUnit: px )
+	background-position: measurement($bg-pos-x, $defaultUnit) measurement($bg-pos-y, $defaultUnit)
+
+
+// @param $background-repeat: r (repeat), x (repeat-x), y (repeat-y), n (no-repeat)
+@mixin brepeat( $background-repeat )
+	+prop(background-repeat, $background-repeat, $BACKGROUND-REPEAT-VALUE-LIST)
+
+
+// Same functionality like @mixin color.
+// @param $bg-color  color value or "transparent"
+@mixin bcolor( $bg-color: 102 102 102 )
+	background-color: color-format-helper($bg-color)
+
+
+//@param $imgURL: take a path to the image file based on Relative Path setting in the settings.sass
+//Usage:  +bimage("main/test.png")
+@mixin bimage($imgURL)
+	background-image: relative-image-path($imgURL)
+
+
+// TODO: $direction param is not done, not tested yet, need more work
+// Currently, Will use compass built-in spirit feature instead
+//
+// Apply to selector as needed:  [class^="icon-"], [class*=" icon-"]
+// using +image mixin to determine the image path and size
+// use +bposition to switch the image position
+@mixin sprite( $imgURL, $image-width: 24px, $image-height: 24px, $direction: $default )
+	display: inline-block
+	+image( $imgURL, $image-width, $image-height, no-repeat, 0, 0 )
+	+lheight($image-height)
+	+valign(text-top)
+	*margin-left: .3em
+	&:last-child
+		*margin-left: 0
+	@if $direction != $default
+		@if $direction == $vertical
+			&:hover
+				+bposition(0,($image-height * -1))
+			&:active
+				+bposition(0, 0)
+		@else if $direction == $horizontal
+			&:hover
+				+bposition(($image-width * -1), 0)
+			&:active
+				+bposition(0, 0)
+
+
+// TODO: $padding-custom-value calculation is not being computed, cause $width value come back late
+//
+// Add an icon to an inline element. E.g anchor or span
+// Pass through an asset, and optionally a padding value, x-position and y-position.
+@mixin inline-icon($imgURL, $spacing: 5px, $direction: left, $defaultUnit: px )
+	+bimage($imgURL)
+	background-repeat: no-repeat
+	line-height: image-height($imgURL)  // Function from compass to return the height of the image
+
+	$width-value: image-width($imgURL)
+	$spacing-value: measurement($spacing, $defaultUnit)
+
+	@if $direction == nth($right, 1) or $direction == nth($right, 2)
+		background-position: right top
+		text-align: right
+		@if $width-value != false and $spacing-value != false
+			padding-right: #{total-value($width-value, $spacing-value)}
+
+	@else if $direction == nth($left, 1) or $direction == nth($left, 2)
+		background-position: left top
+		text-align: left
+		@if $width-value != false and $spacing-value != false
+			padding-left: total-value($width-value, $spacing-value)
+
+
+//  Sharpen an image if it has become blurry due to upscaling or downscaling
+//  @see https://developer.mozilla.org/en/CSS/image-rendering
+@mixin sharpen-image
+	image-rendering: -moz-crisp-edges
+	-ms-interpolation-mode: nearest-neighbor  // IE 7+
+
+
+//  When photos are upscaled or downscaled, they often get blurry. Don't use
+//  this on flat color images, they will still appear blurry.
+//  @see https://developer.mozilla.org/en/CSS/image-rendering
+@mixin high-quality-image
+	image-rendering: optimizeQuality
+	-ms-interpolation-mode: bicubic // IE 7+
+
+
+//  Optimizes the rendering on images so they
+//  appear faster, but at a lower quality. Useful for <video>
+@mixin low-quality-image
+	image-rendering: optimizeSpeed

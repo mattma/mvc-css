@@ -1,0 +1,102 @@
+//**************************************************
+/* COLOR SETTING
+//**************************************************
+
+$body-color: rgb(248,247,241)
+
+$footer-color: rgb(101,183,209)
+
+$header-color: rgb(51,51,51)
+
+$link-hover-color: rgb(0,0,54)
+
+$dark-blue: rgb(18,121,188)
+
+$light-blue: rgb(88,171,213)
+
+$light-gray: rgb(174,174,174)
+
+
+//**************************************************
+//* LAYOUT SETTING
+//**************************************************
+
+$border-radius: 3px
+
+
+//**************************************************
+//* IMAGE PATH SETTING
+//**************************************************
+
+$DEFAULT-RELATIVE-IMAGE-PATH:	"../images/"
+$DEFAULT-ABSOLUTE-IMAGE-PATH:	"../inc/assets/images/"
+
+
+//**************************************************
+//* Project font
+//**************************************************
+
+// Project Only: Using fontface file in template.css file
+@mixin gibson( $font-family: r )
+	font:
+		family: "Gibson-#{$font-family}", arial, helvetica, Verdana, sans-serif
+
+
+//**************************************************
+//* COMPASS SPRITE OPTIONS
+//**************************************************
+
+// Folder name "main". "main" represents the folder name that contains your sprites.
+//***
+//*** Target for the sprite in general
+//***
+$main-spacing: 10px // The amount of transparent space, in pixels, around each sprite. Defaults: 0px.
+
+//$main-repeat: repeat-x // Wether or not each sprite should repeat along the x axis. Defaults: no-repeat
+
+$main-position: 10px // Spirit x-axis offset for images. px or % of the sprite map's width. 100% would cause the sprite to be on the right-hand side of the sprite map. Defaults to 0px.
+
+//$main-sprite-dimensions: false  // true or false; Whether or not the dimensions of the sprite should be included in each sprite's CSS output
+
+//$main-sprite-base-class: ".ix" // The base class for these sprites. Defaults to .<map>-sprite
+
+//$main-clean-up: true // Whether or not to removed the old sprite file when a new one is created. Default: true
+
+
+// main is the name of the folder, dropdown is the name of the file
+//***
+//**** target to the individule sprite image
+//***
+//$main-dropdown-spacing: 0px //$<map>-<sprite>-spacing. The amount of transparent space, in pixels, around the sprite. Defaults: 0px
+
+//$main-dropdown-repeat: repeat-x //$<map>-<sprite>-repeat. Wether or not the sprite should repeat along the x axis. Defaults: no-repeat
+
+//$main-dropdown-position: 100% //The position of the sprite in the sprite map along the x-axis. px or % of the sprite map's width. 100% would cause the sprite to be on the right-hand side of the sprite map. Defaults to 0px.
+
+
+//***
+//**** Compass sprite layouts
+//***
+
+//$main-layout: horizontal  // by default, using the vertical layout
+
+//$main-layout: diagonal // output the images in the diagonal layout format
+
+//$main-layout: smart // output the images in the smart way, eliminate the empty transparent px
+
+//***
+//*** Compass sprite HOW TO
+//***
+
+//add selectors for your sprites, it's easy todo by adding  _active  _target or  _hover  to the file name
+//ex: glossy.png, glossy_active.png, glossy_target.png, glossy_hover.png
+
+//@import "main/*.png" // import line has to be in the main.sass or main file for correct image path
+
+//@import "themes/orange/*.png"
+//+all-orange-sprite
+//Sprites stored in a nested folder will use the last folder name in the path as the sprite name.
+
+//Get a unit value by using the magical dimension functions <map>-sprite-height and <map>-sprite-width If you are looking to just return the dimensions
+// $height: main-sprite-height(some_icon)
+// $width: main-sprite-width(some_icon)

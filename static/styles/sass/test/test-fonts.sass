@@ -1,0 +1,61 @@
+@charset "UTF-8"
+@import "compass/css3"
+@import "../framework/_init"
+
+.fonts
+	+sans(mattma, 500)
+	+sans(default)
+	+sans(default, 300, true)
+	+serif
+	+serif(serif, 700)
+	+monospace
+	+monospace(monospace, 700)
+	+ffamily("mattma", arial, sans-serif)
+
+$size: 16px
+$base-font-size: 24px
+
+.fsize
+	+percentage-font-size( $size, $base-font-size )
+	+relative-font-size( $size, $base-font-size )
+	+fsize
+	+fsize(3)
+	+fsize(3%)
+	+fsize(3px)
+
+	+lheight(24em)
+	+fweight(500)
+	+fstyle(normal)
+	+fstyle(o)
+	+fstyle(in)
+	+fstyle(italic)
+
+.font
+	+font(italic bold 12px/30px Georgia, serif)
+	+lspacing(12em)
+	+tindent
+	+tindent(400em)
+
+	+talign
+	+talign(l)
+	+talign(right)
+	+talign(c)
+	+talign(j)
+	+talign(r)
+	+talign(center)
+
+	+valign(t)
+	+valign(bottom)
+	+valign(m)
+	+valign(bl)
+	+valign(tt)
+	+valign(baseline)
+
+	+ttransform(u)
+	+ttransform(l)
+	+ttransform(capitalize)
+	+ttransform(lowercase)
+	+ttransform(n)
+	+ttransform(none)
+
+	+centered(40px)

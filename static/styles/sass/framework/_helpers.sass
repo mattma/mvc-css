@@ -1,0 +1,279 @@
+//****************************************************************
+//* Table of Content   [HELPERS]
+//*
+//* Setting: _default_settings || _default_settings_min
+//* @mixin cursor($property: pointer)
+//* @mixin uselect ($select)
+//* @mixin resize($direction: $both)
+//* @mixin h-style( $title-font-size: 1.8em, $title-rgb-color: 51 51 51, $title-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $title-font-weight: $DEFAULT-TITLE-FONT-WEIGHT, $prepend-sans-font: $default )
+//* @mixin p-style( $p-font-size: 1.4em, $p-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $p-font-weight: $DEFAULT-FONT-WEIGHT, $prepend-sans-font: $default )
+//* @mixin textEllipsis
+//* @mixin multiline-ellipsis($height, $lineheight, $ellipsiswidth)
+//* @mixin text3d($color)
+//* @mixin well( $border-color: $general-border-color, $shadow-color: 175 175 175, $background-color: $general-background-color-hover, $size: $default, $insetOrOutset: $inset, $border-radius: $default-border-radius )
+//* @mixin caret($direction, $size: 5px, $color: rgb(102,102,102), $position-top: 13px, $position-left: 11px, $switch: $default, $defaultUnit: px)
+//* @mixin panel-box
+//* @mixin clearfix
+//* @mixin fixed-sized-text
+//* @mixin input-block-level
+//* @mixin media($media)
+//* @mixin keyframes($name)
+//*
+//****************************************************************
+
+
+// @param $property:  default help move pointer progress text wait inherit auto crosshair URL e-resize n-resize ne-resize nw-resize s-resize se-resize sw-resize w-resize
+@mixin cursor($property: pointer)
+	+prop(cursor, $property, $CURSOR-VALUE-LIST)
+
+
+// [user-select](https://developer.mozilla.org/en-US/docs/CSS/user-select) For selecting text on the page
+// @value: none # appear as if they cannot be selected
+// @value: text # The text can be selected by the user.
+// @value: all  # In an HTML editor, if a double-click or context-click occurred in sub-elements, the highest ancestor with this value will be selected.
+// @value: element  # Supported in Firefox and Internet Explorer. Enables selection to start within the element; however, the selection will be contained by the bounds of that element.
+@mixin uselect ($select)
+	+prop(-webkit-user-select, $select, $USER-SELECT-VALUE-LIST)
+	+prop(-moz-user-select, $select, $USER-SELECT-VALUE-LIST)
+	+prop(-o-user-select, $select, $USER-SELECT-VALUE-LIST)
+	+prop(-ms-user-select, $select, $USER-SELECT-VALUE-LIST)
+	+prop(user-select, $select, $USER-SELECT-VALUE-LIST)
+
+
+// Resize anything
+// @param  $direction: horizontal, vertical, both, h, v, b
+@mixin resize($direction: $both)
+	@if $direction == nth($horizontal-value, 1) or $direction == nth($horizontal-value, 2)
+		resize: horizontal
+	@else if $direction == nth($vertical-value, 1) or $direction == nth($vertical-value, 2)
+		resize: vertical
+	@else if $direction == nth($both-value, 1) or $direction == nth($both-value, 2)
+		resize: both
+	+overflow($auto) // Safari fix
+
+
+// @param $title-font-size: Default: em. Take measurement of em, px, % or plain number.
+// @param $title-rgb-color: take an array of 3 number for R, G, B. No comma needed. or Color #hex value, color key
+// @param $title-font-weight: default to 700, take 100, 200, 300, 400, 500, 600, 700
+// @param $prepend-sans-font: $default # either false by default or pass in an array of the new value
+// @param $title-margin-bottom: Default: 20px. Take measurement of em, px, % or plain number.
+@mixin h-style( $title-font-size: 1.8em, $title-rgb-color: 51 51 51, $title-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $title-font-weight: $DEFAULT-TITLE-FONT-WEIGHT, $prepend-sans-font: $default )
+	+color($title-rgb-color)
+	+fsize($title-font-size)
+	+sans($prepend-sans-font, $title-font-weight)
+	+margin(bottom, $title-margin-bottom)
+
+
+// @param $p-font-size: Default: em. Take measurement of em, px, % or plain number.
+// @param $p-font-weight: default to 700, take 100, 200, 300, 400, 500, 600, 700
+// @param $prepend-sans-font: $default # either false by default or pass in an array of the new value
+// @param $p-margin-bottom: Default: 20px. Take measurement of em, px, % or plain number.
+@mixin p-style( $p-font-size: 1.4em, $p-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $p-font-weight: $DEFAULT-FONT-WEIGHT, $prepend-sans-font: $default )
+	+fsize($p-font-size)
+	+sans($prepend-sans-font, $p-font-weight)
+	+margin(bottom, $p-margin-bottom)
+
+
+// Applied to single line, trancate the extra content with ...
+@mixin ellipsis
+	+overflow(hidden)
+	text-overflow: ellipsis
+	white-space: nowrap
+	+width(100%)
+
+
+// TODO: Test it again to make sure it works
+//
+// http://www.mobify.com/dev/multiline-ellipsis-in-pure-css/
+// Applied to Multiline line, trancate the extra content with ...
+// Note: 1) rely on a fade out effect, you will need a solid background under your text.
+// 		  2) get your math right to avoid cutting the last line in half.
+// 		  3) It cannot have any width set on the container, so it ONLY work in fluid grid
+@mixin mellipsis($height, $lineheight: 1.6em, $ellipsiswidth: 3em)
+	overflow: hidden
+	height: $height
+	line-height: $lineheight
+
+	&:before
+		content: ""
+		float: left
+		width: 5px
+		height: $height
+
+	&:after
+		content: "\02026"
+		float: right
+		position: relative
+		top: -25px
+		left: 100%
+		width: $ellipsiswidth
+		margin-left: -$ellipsiswidth
+		padding-right: 5px
+		text-align: right
+		background: white
+		background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(white), color-stop(50%, white))
+		background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white)
+		background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white)
+		background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white)
+		background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white)
+
+	& > *:first-child
+		float: right
+		width: 100%
+		margin-left: -5px
+
+
+// Make the text in 3D effect, normally work for title element
+// @param  $color: Color value, Color keyword, color rgb array without comma
+@mixin text3d($color)
+	$c: color-format-helper( $color )
+	+color($color)
+	+text-shadow(darken($c, 5%) 1px 1px 0px, darken($c, 10%) 2px 2px 0px, darken($c, 15%) 3px 3px 0px, darken($c, 20%) 4px 4px 0px, $black 4px 4px 2px)
+
+
+// Usage: <div> Look, I'm in a well! </div>
+// @param $size: default, large, small, d, l, s
+// @param Color value
+// @param $insetOrOutset  Switch the shadow from inset or outset. value: inset, outset, i, o
+@mixin well( $border-color: $general-border-color, $shadow-color: 175 175 175, $background-color: $general-background-color-hover, $size: $default, $insetOrOutset: $inset, $border-radius: $default-border-radius )
+	min-height: 20px
+	+bcolor( $background-color )
+	+borders( color-format-helper($border-color) )
+	+bdcolor( trans-color-helper($black, 0.05) )
+
+	@if $size == nth($default-value, 1)  or $size == nth($default-value, 2)
+		+paddings(15)
+		+border-radius($border-radius)
+	@else if $size == nth($large, 1)  or $size == nth($large, 2)
+		+paddings(20)
+		+border-radius($border-radius + 2px)
+	@else if $size == nth($small, 1)  or $size == nth($small, 2)
+		+paddings(10)
+		+border-radius($border-radius - 2px)
+
+	@if $insetOrOutset == nth($inset-value, 1)  or $insetOrOutset == nth($inset-value, 2)
+		+box-shadow( trans-color-helper($shadow-color, 0.05) 0 1px 1px 0 inset)
+	@else if $insetOrOutset == nth($outset-value, 1)  or $insetOrOutset == nth($outset-value, 2)
+		+box-shadow( trans-color-helper($shadow-color, 0.3) -1px 1px 5px)
+
+
+// Create an arrow on the fly
+// @param  $direction: up, down, left, right
+// @param  $size: take measurement of em, px, % or plain number
+// @param  $color: Color value, Color keyword, color rgb array without comma
+@mixin caret($direction, $size: 5px, $color: 102 102 102, $position-top: 13px, $position-left: 11px, $switch: $default, $defaultUnit: px)
+	content: ""
+	+display(inline-block)
+	+position(absolute, $position-top, $position-left, $switch)
+	+box(0,0)
+	+valign(top)
+	+tindent
+	@if $direction == nth($up, 1) or $direction == nth($up, 2)
+		border-left: measurement($size, $defaultUnit) solid transparent
+		border-right: measurement($size, $defaultUnit) solid transparent
+		border-bottom: measurement($size, $defaultUnit) solid color-format-helper($color)
+	@if $direction == nth($down, 1) or $direction == nth($down, 2)
+		border-left: measurement($size, $defaultUnit) solid transparent
+		border-right: measurement($size, $defaultUnit) solid transparent
+		border-top: measurement($size, $defaultUnit) solid color-format-helper($color)
+	@if $direction == nth($left, 1) or $direction == nth($left, 2)
+		border-top: measurement($size, $defaultUnit) solid transparent
+		border-bottom: measurement($size, $defaultUnit) solid transparent
+		border-right: measurement($size, $defaultUnit) solid color-format-helper($color)
+	@if $direction == nth($right, 1) or $direction == nth($right, 2)
+		border-top: measurement($size, $defaultUnit) solid transparent
+		border-bottom: measurement($size, $defaultUnit) solid transparent
+		border-left: measurement($size, $defaultUnit) solid color-format-helper($color)
+
+
+@mixin panel-box($round-radius: $border-radius, $defaultUnit: px)
+	+border(rgb(204,204,204))
+	+border-radius(measurement($round-radius, $defaultUnit))
+	+box-shadow(rgba(175,175,175,0.4) -1px 1px 5px)
+	background: $white
+
+
+// Bulletproof Clearfix
+@mixin clearfix
+	zoom: 1
+	&:before, &:after
+		content: '.'
+		+display(block)
+		+overflow(hidden)
+		+visibility(hidden)
+		+fsize(0)
+		+lheight(0)
+		+box(0,0)
+	&:after
+		+clear(both)
+
+
+//  Mobile App: Prevents the resizing of text. Useful for mobile web apps
+@mixin fixed-sized-text
+	-webkit-text-size-adjust: none
+	-ms-text-size-adjust: none
+
+
+// Makes inputs behave like true block-level elements
+@mixin input-block-level
+	+display(block)
+	+width(100%)
+	min-height: 28px // Make inputs at least the height of their button counterpart
+	+box-sizing(border-box)
+
+
+// Media queries: set up a mixin for all your @media breakpoints and reuse
+// http://mikefowler.me/thoughts/passing-content-to-mixins-in-sass/
+// Usage:
+// +media(handhelds)
+//	  width: 100%
+@mixin media($media)
+	@if $media == nth($desktop, 1) or $media == nth($desktop, 2)
+		@media only screen and (min-width : 1025px)
+			@content
+	@if $media == nth($wide-screens, 1) or $media == nth($wide-screens, 2)
+		@media only screen and (min-width : 1824px)
+			@content
+
+	@if $media == nth($mobile-value, 1) or $media == nth($mobile-value, 2)
+		@media only screen and (min-width : 320px) and (max-width : 480px)
+			@content
+	@if $media == nth($retina, 1) or $media == nth($retina, 2)
+		@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5)
+			@content
+	@if $media == nth($mobile-portrait, 1) or $media == nth($mobile-portrait, 2)
+		@media only screen and (max-width : 320px)
+			@content
+	@if $media == nth($mobile-landscape, 1) or $media == nth($mobile-landscape, 2)
+		@media only screen and (max-width : 480px)
+			@content
+
+	@if $media == nth($tablet, 1) or $media == nth($tablet, 2)
+		@media only screen and (min-width : 768px) and (max-width : 1024px)
+			@content
+	@if $media == nth($max-tablet, 1) or $media == nth($max-tablet, 2)
+		@media only screen and (max-width : 1024px)
+			@content
+	@if $media == nth($tablet-portrait, 1) or $media == nth($tablet-portrait, 2)
+		@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait)
+			@content
+	@if $media == nth($tablet-landscape, 1) or $media == nth($tablet-landscape, 2)
+		@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape)
+			@content
+
+
+// Enable Shortcut for the keyframes
+// Syntax:
+// @keyframes <identifier> {
+// 	  [ [ from | to | <percentage> ] [, from | to | <percentage> ]* block ]*
+//  }
+// https://developer.mozilla.org/en-US/docs/CSS/@keyframes
+@mixin keyframes($name)
+	@-webkit-keyframes #{$name}
+		@content
+	@-moz-keyframes #{$name}
+		@content
+	@-ms-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content

@@ -1,0 +1,360 @@
+//****************************************************************
+//*
+//* Setting: _default_settings || _default_settings_min
+//* @mixin blockEqualWidth  		   line: 23   =Equal Width block elements up to 6 in a row
+//* @mixin blockEqualWidthWithMargin   line: 35   =Equal Width block elements up to 6 in a row with margin
+//* @mixin multiRowBlockEqualWidth	   line: 	  =Spread into multiple row, maintain the same width, great for repeatable el
+//* @mixin column     		  		   line: 45   =960.gs based Grid System, swtich between 12, 16, 24 cols, add column(s)
+//* @mixin push     		  		   line: 45   =960.gs based, add margin-left value, push element to the right
+//* @mixin pull     		  		   line: 45   =960.gs based, add margin-right value, push element to the left
+//* @mixin eleven40-row    	           line: 62   =1140.gs 12 col based, generate a row with max-width 1140px
+//* @mixin eleven40-column     	       line: 62   =1140.gs 12 col based, generate columns width, add column(s)
+//* @mixin eleven40-push     	       line: 62   =1140.gs 12 col based, add margin-left value, push element to the right
+//* @mixin boxModel					   line: 122  =Inline Block Box Model with border-box trick. border becomes margin
+//*
+//****************************************************************
+
+
+// ====== Advance Grid system:  Selector could be any block element ======
+// Styling children CSS3. target the first element, then sibling selector. Make equal width.
+@mixin blockEqualWidth($selector: li)
+	#{$selector}
+		float: left
+		margin: 0
+		padding: 0
+	#{$selector}:first-child:nth-last-child(1)
+		width: 100%
+
+	#{$selector}:first-child:nth-last-child(2),
+	#{$selector}:first-child:nth-last-child(2) ~ #{$selector}
+		width: 50%
+
+	#{$selector}:first-child:nth-last-child(3),
+	#{$selector}:first-child:nth-last-child(3) ~ #{$selector}
+		width: 33.3333%
+
+	#{$selector}:first-child:nth-last-child(4),
+	#{$selector}:first-child:nth-last-child(4) ~ #{$selector}
+		width: 25%
+
+	#{$selector}:first-child:nth-last-child(5),
+	#{$selector}:first-child:nth-last-child(5) ~ #{$selector}
+		width: 20%
+
+	#{$selector}:first-child:nth-last-child(6),
+	#{$selector}:first-child:nth-last-child(6) ~ #{$selector}
+		width: 16.6666%
+
+	#{$selector}:first-child:nth-last-child(7),
+	#{$selector}:first-child:nth-last-child(7) ~ #{$selector}
+		width: 14.2857%
+
+
+// ====== Advance Grid system:  Selector could be any block element ======
+// Same as above, but with margin applied; Margin value would be Pixel based with px
+@mixin blockEqualWidthWithMargin($margin: 5, $alpha: 0, $omega: 0, $totalWidth: 960, $height: 160, $selector: li, $dividerWidth: 0, $dividerColor: rgb(255,0,0))
+	#{$selector}
+		float: left
+		position: relative
+		padding: 0
+		height: $height+px
+		&:after
+			content: ""
+			width: $dividerWidth+px
+			height: ( $height * 0.8 ) +px
+			background: $dividerColor
+			position: absolute
+			top: ( ($height * 0.2) / 2 )+px
+			right: (-$margin)+px
+		&:last-child:after
+			display: none
+		@if $alpha > 0
+			&:first-child
+				margin-left: $margin+px
+		@else
+			&:first-child
+				margin-left: 0 !important
+
+		@if $omega > 0
+			&:last-child
+				margin-right: $margin+px
+		@else
+			&:last-child
+				margin-right: 0 !important
+
+	#{$selector}:first-child:nth-last-child(1)
+		margin: 0
+		@if $alpha+$omega == 1
+			width: ($totalWidth - $margin)+px
+			@if $alpha > 0
+				&:first-child
+					margin-left: $margin+px
+			@if $omega > 0
+				&:last-child
+					margin-right: $margin+px
+		@else if $alpha+$omega == 2
+			width: ($totalWidth - ( $margin*2))+px
+			margin-left:  $margin+px
+			margin-right: $margin+px
+		@else if $alpha+$omega == 0
+			width: $totalWidth+px
+
+
+	#{$selector}:first-child:nth-last-child(2),
+	#{$selector}:first-child:nth-last-child(2) ~ #{$selector}
+		@if $alpha+$omega == 1
+			width: ( ($totalWidth - ($margin * 3)) / 2 ) + px
+		@else if $alpha+$omega == 2
+			width: ( ($totalWidth - ($margin * 4)) / 2 ) + px
+		@else if $alpha+$omega == 0
+			width: ( ($totalWidth - ($margin * 2)) / 2 ) + px
+		margin-left:  $margin+px
+		margin-right: $margin+px
+
+	#{$selector}:first-child:nth-last-child(3),
+	#{$selector}:first-child:nth-last-child(3) ~ #{$selector}
+		@if $alpha+$omega == 1
+			width: ( ($totalWidth - ($margin * 5)) / 3 ) + px
+		@else if $alpha+$omega == 2
+			width: ( ($totalWidth - ($margin * 6)) / 3 ) + px
+		@else if $alpha+$omega == 0
+			width: ( ($totalWidth - ($margin * 4)) / 3 ) + px
+		margin-left:  $margin+px
+		margin-right: $margin+px
+
+	#{$selector}:first-child:nth-last-child(4),
+	#{$selector}:first-child:nth-last-child(4) ~ #{$selector}
+		@if $alpha+$omega == 1
+			width: ( ($totalWidth - ($margin * 7)) / 4 ) + px
+		@else if $alpha+$omega == 2
+			width: ( ($totalWidth - ($margin * 8)) / 4 ) + px
+		@else if $alpha+$omega == 0
+			width: ( ($totalWidth - ($margin * 6)) / 4 ) + px
+		margin-left:  $margin+px
+		margin-right: $margin+px
+
+	#{$selector}:first-child:nth-last-child(5),
+	#{$selector}:first-child:nth-last-child(5) ~ #{$selector}
+		@if $alpha+$omega == 1
+			width: ( ($totalWidth - ($margin * 9)) / 5 ) + px
+		@else if $alpha+$omega == 2
+			width: ( ($totalWidth - ($margin * 10)) / 5 ) + px
+		@else if $alpha+$omega == 0
+			width: ( ($totalWidth - ($margin * 8)) / 5 ) + px
+		margin-left:  $margin+px
+		margin-right: $margin+px
+
+	#{$selector}:first-child:nth-last-child(6),
+	#{$selector}:first-child:nth-last-child(6) ~ #{$selector}
+		@if $alpha+$omega == 1
+			width: floor(( ($totalWidth - ($margin * 11)) / 6 )) + px
+		@else if $alpha+$omega == 2
+			width: floor( ( ($totalWidth - ($margin * 12)) / 6 ) ) + px
+		@else if $alpha+$omega == 0
+			width: floor(( ($totalWidth - ($margin * 10)) / 6 )) + px
+		margin-left:  $margin+px
+		margin-right: $margin+px
+
+	#{$selector}:first-child:nth-last-child(7),
+	#{$selector}:first-child:nth-last-child(7) ~ #{$selector}
+		@if $alpha+$omega == 1
+			width: floor(( ($totalWidth - ($margin * 13)) / 7 )) + px
+		@else if $alpha+$omega == 2
+			width: floor(( ($totalWidth - ($margin * 14)) / 7 )) + px
+		@else if $alpha+$omega == 0
+			width: floor(( ($totalWidth - ($margin * 12)) / 7 )) + px
+		margin-left:  $margin+px
+		margin-right: $margin+px
+
+
+
+//--------------------------------------------------------------------------------------
+// Multiple Row Block with equal width grids
+// Support 2, 3, 4, 5, 6 in one Row, suited for repeating blocks of content
+// For IE7/8 compatibility block-grid items need to be the same height.
+// Usage: <div class="block-grid"><ul><li>Three-up element</li> <li>Three-up element</li> <li>Three-up element</li> </ul> </div>
+// Note: .block-grid // Need to apply in the div level, because the $parent is ul element
+//			+multiRowBlockEqualWidth(3,60)
+//--------------------------------------------------------------------------------------
+@mixin multiRowBlockEqualWidth($grid: 2, $height: auto, $gutter: 1, $selector: li, $parent: ul)
+	#{$parent}
+		display: block
+		overflow: hidden
+
+		#{$selector}
+			display: block
+			@if $height == auto
+				height: auto
+			@else
+				height: $height+px
+			float: left
+
+		@if $grid == 2
+			@if $gutter == 0
+				#{$selector}
+					width: 50%
+			@if $gutter == 1
+				margin-left: -4%
+				#{$selector}
+					margin-left: 4%
+					width: 46%
+					//&:nth-child(2n+1)
+						//clear: left
+		@if $grid == 3
+			@if $gutter == 0
+				#{$selector}
+					width: 33.3333%
+			@if $gutter == 1
+				margin-left: -2%
+				#{$selector}
+					margin-left: 2%
+					width: 31.3%
+					//&:nth-child(3n+1)
+						//clear: left
+
+		@if $grid == 4
+			@if $gutter == 0
+				#{$selector}
+					width: 25%
+			@if $gutter == 1
+				margin-left: -2%
+				#{$selector}
+					margin-left: 2%
+					width: 23%
+					//&:nth-child(4n+1)
+						//clear: left
+
+		@if $grid == 5
+			@if $gutter == 0
+				#{$selector}
+					width: 20%
+			@if $gutter == 1
+				margin-left: -1.5%
+				#{$selector}
+					margin-left: 1.5%
+					width: 18.5%
+					//&:nth-child(5n+1)
+						//clear: left
+
+		@if $grid == 6
+			@if $gutter == 0
+				#{$selector}
+					width: 16.6666%
+			@if $gutter == 1
+				margin-left: -1.6666%
+				#{$selector}
+					margin-left: 1.6666%
+					width: 15%
+					//&:nth-child(6n+1)
+						//clear: left
+
+
+
+//--------------------------------------------------------------------------------------
+// Custom Grid System: Fixed Width
+// Full Width: 960px  ( Pixel || Percentage ) Support
+//--------------------------------------------------------------------------------------
+
+// DO NOT MODIFIED THE VALUE BEFORE
+$columns: 0        // Col: 12; Col-Width: 60px; Gutter: 20px;   Offset: 80px/col; Content-Width: 940px;
+$column-width: 0   // Col: 16; Col-Width: 40px; Gutter: 20px;   Offset: 60px/col; Content-Width: 940px;
+$gutter-width: 0   // Col: 24; Col-Width: 30px; Gutter: 10px;   Offset: 40px/col; Content-Width: 950px;
+
+// MODIFY YOUR GRID BELOW. CHANGE GRID WITH PARAMATER: 12, 16, 24
++grid(24)
+
+// Utility function — you should never need to modify this
+@function gridsystem-width($cols: $columns, $col-width: $column-width, $gap: $gutter-width )
+	@return ($col-width * $cols) + ($gap * $cols)
+
+$total-width: gridsystem-width($columns, $column-width, $gutter-width) // Generate a Px based layout
+//$total-width: 100%  // Generate a fluid layout
+
+@mixin column($col, $alpha: 0, $omega: 0, $columns: $columns, $col-width: $column-width, $gap: $gutter-width, $side: left)
+	display: inline
+	float: $side
+	width: $total-width*(((( $gap + $col-width )*$col) - $gap ) / gridsystem-width($columns, $col-width, $gap))
+	margin: 0 $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))
+	@if $alpha > 0 // first columns
+		margin-left: 0
+	@if $omega > 0 // last columns
+		margin-right: 0
+	// *width: $total-width*(((( $gap + $col-width )*$col)- $gap ) / gridsystem-width($columns, $col-width, $gap))-$correction
+	// *margin: 0 $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))-$correction
+
+@mixin push($offset: 1, $marginOrPadding: 0, $columns: $columns, $col-width: $column-width, $gap: $gutter-width)
+	@if $marginOrPadding == 0
+		margin-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))
+	@if $marginOrPadding == 1
+		padding-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))
+
+@mixin pull($offset: 1, $marginOrPadding: 0, $columns: $columns, $col-width: $column-width, $gap: $gutter-width)
+	@if $marginOrPadding == 0
+		margin-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($columns, $col-width, $gap))
+	@if $marginOrPadding == 1
+		padding-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($columns, $col-width, $gap))
+
+@mixin table-col($span: 1, $columns: $columns, $col-width: $column-width, $gap: 0)
+	width: $total-width*((($gap+ $col-width)*$span) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($columns, $col-width, $gap))
+
+
+
+
+//--------------------------------------------------------------------------------------
+// 1140 Grid  #Responsive Width
+// http://cssgrid.net/  12 Column Fluid Grid / Max-Width 1140px
+//--------------------------------------------------------------------------------------
+$eleven40-grid-width: 4.85%  // The width of a column
+$eleven40-grid-margin: 3.8%  // The amount of margin between columns
+
+@mixin eleven40-container
+	padding-left: 20px
+	padding-right: 20px
+
+@mixin eleven40-row
+	margin: 0 auto
+	max-width: 1140px
+	overflow: hidden
+	width: 100%
+
+@mixin eleven40-column($columns, $omega: 0, $parent: 12, $side: left)
+	display: inline
+	float: $side
+	width: _eleven40-col($columns, $parent)
+	margin-right: $eleven40-grid-margin / _eleven40-col($parent) * 100%
+	@if $omega > 0 // last columns
+		margin-right: 0
+
+@mixin eleven40-push($columns, $parent: 12)
+	margin-left: ($eleven40-grid-width * $columns + $eleven40-grid-margin * $columns) / ($eleven40-grid-width * $parent + $eleven40-grid-margin * ($parent - 1)) * 100%
+
+// Function to calculate width in context   Called by @mixin eleven40-column
+@function _eleven40-col($columns, $parent: 12)
+	@return ($eleven40-grid-width * $columns + $eleven40-grid-margin * ($columns - 1)) / ($eleven40-grid-width * $parent + $eleven40-grid-margin * ($parent - 1)) * 100%
+
+
+
+//--------------------------------------------------------------------------------------
+// Inline Block Box Model #Responsive Width
+// Based on https://github.com/vladocar/Box-CSS-Framework
+//
+// @param: $type: border, content, and padding. content is the default W3C model
+//--------------------------------------------------------------------------------------
+@mixin boxModel( $boxTotalWidth, $marginLeft: 10, $paddingLeft: 0, $parentWidth: 960, $percentage: 0, $type: border )
+	box-sizing: #{$type}-box // Opera 8.5+ and CSS3
+	-webkit-box-sizing: #{$type}-box // Safari 3+
+	-moz-box-sizing: #{$type}-box // Firefox 1+
+	-ms-box-sizing: #{$type}-box // IE8
+
+	display: inline-block // similar to float:left but gives some extra powers like vertical-align:top
+	*display: inline // IE7 hack
+	margin-right: -4px // inline-block hack
+
+	vertical-align: top
+	padding-left: $paddingLeft+px
+	border-left: $marginLeft+px solid transparent // the border becomes margin
+
+	@if $percentage > 0
+		width: ( $boxTotalWidth / $parentWidth ) * 100%
+	@else
+		width: $boxTotalWidth+px

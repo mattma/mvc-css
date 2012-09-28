@@ -1,0 +1,29 @@
+@charset "UTF-8"
+@import "compass/css3"
+@import "../framework/_init"
+
+.content
+	+content
+	+content(matt)
+	+content("mattma")
+
+	+before
+		+color(red)
+
+	+after
+		+color(green)
+
+	+hover
+		+color(purple)
+
+	+child(f)
+		+color(maroon)
+
+	+child(1)
+		+color(green)
+
+.test
+	+before( "main/test.png", 200em, 10, 20%, 20em, 100px, 340)
+	+after( "main/test1.gif", 200em, 10, 20%, 20em, 100px, 340, both)
+	+child(3)
+		+color(green)

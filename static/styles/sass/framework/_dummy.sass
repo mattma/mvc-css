@@ -1,0 +1,119 @@
+/*=FUNCTIONS */
+@function test($top)
+	$finaltop: 50+$top 
+	@return $finaltop+px
+	
+// Set a variable to run the if statement against
+$boolean: true !default
+
+@mixin simple-mixin
+	@if $boolean
+		@debug "$boolean is #{$boolean}"
+		display: block
+	@else
+		@debug "$boolean is #{$boolean}"
+		display: none
+
+.some-selector
+	+simple-mixin
+
+// For
+
+$class-slug: for !default
+
+@for $i from 1 through 4
+	.#{$class-slug}-#{$i}
+		width: 60px + $i
+
+// Each
+
+$list: adam john wynn mason kuroir
+
+@mixin author-images
+	@each $author in $list
+		.photo-#{$author}
+			background: image-url("avatars/#{$author}.png") no-repeat
+
+.author-bio
+	+author-images
+
+// While
+
+$types: 4
+$type-width: 20px
+
+@while $types > 0
+	.while-#{$types}
+		width: $type-width + $types
+	$types: $types - 1
+
+
+// ex: +border-radius(2px 2px 0)
+@mixin border-radius($values)
+	-moz-border-radius: $values
+	-webkit-border-radius: $values
+	border-radius: $values
+	
+	
+// ex: +box-shadow(2px, 2px, 4px, #000)
+@mixin box-shadow($x, $y, $offset, $hex, $ie: 0)
+	-moz-box-shadow: $x $y $offset $hex
+	-o-box-shadow: $x $y $offset $hex
+	-webkit-box-shadow: $x $y $offset $hex
+	box-shadow: $x $y $offset $hex
+	@if $ie == 1
+		$iecolor: "#" + red($hex) + green($hex) + blue($hex)
+		filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$iecolor}')
+		-ms-filter: quote(progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$iecolor}'))
+		
+
+// ex: +box-shadow-inset(2px, 2px, 4px, #000)
+@mixin box-shadow-inset($x, $y, $offset, $hex, $inset: inset)
+	-moz-box-shadow: $inset $x $y $offset $hex
+	-o-box-shadow: $inset $x $y $offset $hex
+	-webkit-box-shadow: $inset $x $y $offset $hex
+	box-shadow: $inset $x $y $offset $hex
+		
+
+// ex: +linear-gradient(#333, #555)        
+@mixin linear-gradient($from, $to, $ie: 0)
+	@if $ie != 1 // By default, It will set the background color to a solid color
+		background-color: $to
+	background-image: -moz-linear-gradient($from, $to)
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, $from),color-stop(1, $to))
+	background-image: -webkit-linear-gradient($from, $to)
+	background-image: -o-linear-gradient($from, $to)
+	@if $ie == 1
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}')
+		-ms-filter: quote(progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}'))
+		
+
+// ex: +rgba(#000, .6)
+@mixin rgba($hex, $alpha, $ie: 0)
+	@if $ie == 1
+		$hexopac: "#" + ceil($alpha * 255 / 16 * 10) + $hex
+		background-color: none
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$hexopac}',EndColorStr='#{$hexopac}}')
+		-ms-filter: quote(progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$hexopac}',EndColorStr='#{$hexopac}'))
+	@else
+		background-color: $hex
+		background-color: rgba(red($hex), green($hex), blue($hex), $alpha)
+		
+
+// ex: +rotate(-7)        
+@mixin rotate($deg, $ie: 0)
+	-moz-transform: rotate(#{$deg}deg)
+	-o-transform: rotate(#{$deg}deg)
+	-webkit-transform: rotate(#{$deg}deg)
+	@if $ie == 1
+		filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.99144486137381, M12=--0.130526192220052, M21=0.130526192220052, M22=0.99144486137381)
+		-ms-filter: quote(progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.99144486137381, M12=--0.130526192220052, M21=0.130526192220052, M22=0.99144486137381))
+		zoom: 1
+		
+
+// ex: +transition(all 0.3s ease-out)        
+@mixin transition($value)
+	-moz-transition: $value
+	-o-transition: $value
+	-webkit-transition: $value
+	transition: $value

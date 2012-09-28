@@ -1,0 +1,34 @@
+@charset "UTF-8"
+@import "compass/css3"
+@import "../framework/_init"
+
+.color
+	+color(201 201 10)
+	+color(rgb(201,102,12))
+	+color(red)
+	+color(#342342)
+
+$primaryColor: 255 0 0
+$secondaryColor: 121 131 122
+
+.gbar
+	+gbar($primaryColor, $secondaryColor)
+
+.ghorizontal
+	+ghorizontal($primaryColor, $secondaryColor)
+
+.gvertical
+	+gvertical($primaryColor, $secondaryColor)
+
+.gdiagonal
+	+gdiagonal($primaryColor, $secondaryColor)
+
+.gvertical3colors
+	+gvertical3colors($primaryColor, $secondaryColor)
+
+.gradial
+	+gradial($primaryColor, $secondaryColor)
+
+.gstripe
+	+gstripe($primaryColor)
+
