@@ -67,31 +67,156 @@
 		<!--[if lt IE 7]>
 			<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 		<![endif]-->
+		<nav>
+			<h2>Table of Content</h2>
+			<ul>
+				<li>
+					<h3>1. Grid System</h3>
+					<ul>
+						<li><a href="#grid960snap">960 Grid Column</a></li>
+						<li><a href="#grid960pushSnap">960 Grid Push</a></li>
+						<li><a href="#grid960pullSnap">960 Grid Pull</a></li>
+						<li><a href="#grid1140">1140 Grid Column</a></li>
+						<li><a href="#grid1140pushSnap">1140 Grid Push</a></li>
+						<li><a href="#">@mixin blockEqualWidthWithMargin</a></li>
+					</ul>
+				</li>
+				<li>
+					<h3>Something else</h3>
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</li>
+				<li><a href='#'>Gallery</a></li>
+				<li><a href='#'>Contact</a></li>
+				<li><a href='#'>Gallery</a></li>
+				<li><a href='#'>Contact</a></li>
+			</ul>
+		</nav>
 
-		<header>
-			<h1><a class='indent' href='#'>logo</a></h1>
-			<nav>
-				<ul>
-					<li><a href='#'>Home</a></li>
-					<li><a href='#'>Gallery</a></li>
-					<li><a href='#'>Contact</a></li>
-					<li><a href='#'>Gallery</a></li>
-					<li><a href='#'>Contact</a></li>
-				</ul>
-			</nav>
-		</header>
+		<section>
+			<div class='container'>
+				<article class="grid-system">
+					<h3>1. Grid System - 960 Grids</h3>
+					<div class="doc">
+						<p class="content">
+							1. By default, use 24 column grids, use +grid(12) to change grid with paramater: 12, 16, 24 <br>
+							2. Switching between Px based or Percentage based by one parameter in _grid.sass
+							<code>
+								+grid(24, px)  // Generate a Px based layout
+							</code>
+							<code>
+								+grid(16, percent)  // Generate a Percent fluid layout
+							</code>
+						</p>
+						<p id="grid960snap">
+							<code>
+								@mixin column($col, $alpha: false, $omega: false, $columns: $columns, $col-width: $column-width, $gap: $gutter-width, $side: left)
+							</code>
+						</p>
+					</div>
+					<div id="grid960" class="spacing">
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+					</div>
 
-		<section class='container'>
-			<div class='line'>
-				<div class='unit size1of3'></div>
-				<div class='unit size1of3'></div>
-				<div class='unit size1of3 last'></div>
+					<div class="doc">
+						<p id="grid960pushSnap">
+							<code>
+								@mixin push($offset: 1, $marginOrPadding: margin, $columns: $columns, $col-width: $column-width, $gap: $gutter-width) // padding/margin-left
+							</code>
+						</p>
+					</div>
+					<div id="grid960push" class="spacing">
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+					</div>
+
+					<div class="doc">
+						<p id="grid960pullSnap">
+							<code>
+								@mixin pull($offset: 1, $marginOrPadding: margin, $columns: $columns, $col-width: $column-width, $gap: $gutter-width)  // padding/margin-right
+							</code>
+						</p>
+					</div>
+					<div id="grid960pull" class="spacing">
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+					</div>
+				</article>
+
+				<article class="grid-system">
+					<h3>1. Grid System - 1140 Grids</h3>
+					<div class="doc">
+						<p class="content">
+							The 1140 grid fits perfectly into a 1280 monitor. 12 column fluid grid system.
+						</p>
+						<p id="grid1140snap">
+							<code>
+								@mixin eleven40-column($columns, $omega: 0, $parent: 12, $side: left)
+							</code>
+						</p>
+					</div>
+					<div id="grid1140" class="spacing">
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+					</div>
+
+					<div class="doc">
+						<p id="grid1140pushSnap">
+							<code>
+								@mixin eleven40-push($columns, $parent: 12)  // margin-left
+							</code>
+						</p>
+					</div>
+					<div id="grid1140push" class="spacing">
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+						<p> Hello </p>
+					</div>
+				</article>
 			</div>
 		</section>
-
-		<footer>
-			<p>Copyright 2012 - YourSite.com</p>
-		</footer>
 
 	<!-- Javascript -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>

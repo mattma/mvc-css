@@ -249,7 +249,6 @@
 						//clear: left
 
 
-
 //--------------------------------------------------------------------------------------
 // Custom Grid System: Fixed Width
 // Full Width: 960px  ( Pixel || Percentage ) Support
@@ -260,39 +259,44 @@ $columns: 0        // Col: 12; Col-Width: 60px; Gutter: 20px;   Offset: 80px/col
 $column-width: 0   // Col: 16; Col-Width: 40px; Gutter: 20px;   Offset: 60px/col; Content-Width: 940px;
 $gutter-width: 0   // Col: 24; Col-Width: 30px; Gutter: 10px;   Offset: 40px/col; Content-Width: 950px;
 
-// MODIFY YOUR GRID BELOW. CHANGE GRID WITH PARAMATER: 12, 16, 24
-+grid(24)
+// @mixin grid($grid, $measure: px)
+// @param $grid: 12, 16, 24 => grid column number
+// @param measure: px, percent  => Generate a Px or % based layout
++grid(24, px) 			// Generate a Px based layout
+//+grid(24, percent)  	// Generate a Percent fluid layout
 
 // Utility function — you should never need to modify this
 @function gridsystem-width($cols: $columns, $col-width: $column-width, $gap: $gutter-width )
 	@return ($col-width * $cols) + ($gap * $cols)
 
-$total-width: gridsystem-width($columns, $column-width, $gutter-width) // Generate a Px based layout
-//$total-width: 100%  // Generate a fluid layout
+$total-width: gridsystem-width($columns, $column-width, $gutter-width)
 
-@mixin column($col, $alpha: 0, $omega: 0, $columns: $columns, $col-width: $column-width, $gap: $gutter-width, $side: left)
+@mixin column($col, $alpha: false, $omega: false, $columns: $columns, $col-width: $column-width, $gap: $gutter-width, $side: left)
 	display: inline
 	float: $side
 	width: $total-width*(((( $gap + $col-width )*$col) - $gap ) / gridsystem-width($columns, $col-width, $gap))
 	margin: 0 $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))
-	@if $alpha > 0 // first columns
+	@if $alpha == true // first columns
 		margin-left: 0
-	@if $omega > 0 // last columns
+	@if $omega == true // last columns
 		margin-right: 0
 	// *width: $total-width*(((( $gap + $col-width )*$col)- $gap ) / gridsystem-width($columns, $col-width, $gap))-$correction
 	// *margin: 0 $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))-$correction
 
-@mixin push($offset: 1, $marginOrPadding: 0, $columns: $columns, $col-width: $column-width, $gap: $gutter-width)
-	@if $marginOrPadding == 0
-		margin-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))
-	@if $marginOrPadding == 1
-		padding-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))
 
-@mixin pull($offset: 1, $marginOrPadding: 0, $columns: $columns, $col-width: $column-width, $gap: $gutter-width)
-	@if $marginOrPadding == 0
+@mixin push($offset: 1, $marginOrPadding: margin, $columns: $columns, $col-width: $column-width, $gap: $gutter-width)
+	@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
+		margin-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))
+	@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
+		padding-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap)) - $gap / 2
+
+
+@mixin pull($offset: 1, $marginOrPadding: margin, $columns: $columns, $col-width: $column-width, $gap: $gutter-width)
+	@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
 		margin-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($columns, $col-width, $gap))
-	@if $marginOrPadding == 1
-		padding-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($columns, $col-width, $gap))
+	@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
+		padding-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($columns, $col-width, $gap)) - $gap / 2
+
 
 @mixin table-col($span: 1, $columns: $columns, $col-width: $column-width, $gap: 0)
 	width: $total-width*((($gap+ $col-width)*$span) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($columns, $col-width, $gap))

@@ -173,6 +173,10 @@ $both:		   both
 $single:	   single
 $multiple: 	   multiple
 
+// Used in Grid System
+$margin-value: 	margin m
+$padding-value:    padding p
+
 $center:        center
 $middle:	   middle
 $baseline:	   baseline
@@ -403,19 +407,36 @@ $DEFAULT-MONOSPACE: "Monaco", "Courier New", monospace
 //* Grid Setting
 //**************************************************
 
-@mixin grid($grid)
-	@if $grid == 12
-		$columns: 12
-		$column-width: 60px
-		$gutter-width: 20px
-	@if $grid == 16
-		$columns: 16
-		$column-width: 40px
-		$gutter-width: 20px
-	@if $grid == 24
-		$columns: 24
-		$column-width: 30px
-		$gutter-width: 10px
+// @param measure: px  => Generate a Px based layout
+// @param measure: percent  => Generate a Percent fluid layout
+//
+@mixin grid($grid, $measure: px)
+	@if $measure == px
+		@if $grid == 12
+			$columns: 12
+			$column-width: 60px
+			$gutter-width: 20px
+		@if $grid == 16
+			$columns: 16
+			$column-width: 40px
+			$gutter-width: 20px
+		@if $grid == 24
+			$columns: 24
+			$column-width: 30px
+			$gutter-width: 10px
+	@if $measure == percent
+		@if $grid == 12
+			$columns: 12
+			$column-width: 6.333%
+			$gutter-width: 2%
+		@if $grid == 16
+			$columns: 16
+			$column-width: 4.25%
+			$gutter-width: 2%
+		@if $grid == 24
+			$columns: 24
+			$column-width: 3.1665%
+			$gutter-width: 1%
 
 
 //**************************************************

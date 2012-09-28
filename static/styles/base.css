@@ -6,4 +6,232 @@
 /* Senior Web Developer -- Matt Ma. ( matt@mattmadesign.com ) */
 /* http://www.mattmadesign.com */
 /* COLOR SETTING */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000318}}
+body {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000320}}
+body > nav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  background-color: #f5f5ff;
+  -webkit-box-shadow: rgba(51, 51, 51, 0.2) 1px 1px 1px;
+  -moz-box-shadow: rgba(51, 51, 51, 0.2) 1px 1px 1px;
+  box-shadow: rgba(51, 51, 51, 0.2) 1px 1px 1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000325}}
+body > section {
+  height: 100%;
+  width: 80%;
+  padding-left: 20%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000328}}
+body > section > div {
+  padding-top: 40px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000331}}
+h3 {
+  color: #333333;
+  margin-bottom: 15px;
+  font-size: 2.4em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000336}}
+.spacing {
+  margin: 30px 0px 30px 0px;
+  zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_helpers\.sass}line{font-family:\00003397}}
+.spacing:before, .spacing:after {
+  content: ".";
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0em;
+  line-height: 0px;
+  height: 0px;
+  width: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_helpers\.sass}line{font-family:\00003413}}
+.spacing:after {
+  clear: both;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000341}}
+.doc p {
+  height: auto;
+  width: 50%;
+  font-size: 1.6em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000344}}
+.doc p.content {
+  width: 75%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000346}}
+.doc code {
+  line-height: 1.8em;
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000353}}
+nav h2 {
+  padding-left: 15px;
+  margin-top: 40px;
+  color: #333333;
+  font-size: 3em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000358}}
+nav > ul {
+  margin-top: 25px;
+  padding-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000362}}
+nav > ul > li {
+  margin-bottom: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000364}}
+nav > ul ul {
+  margin-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000366}}
+nav > ul ul li {
+  margin-bottom: 3px;
+  height: auto;
+  width: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000369}}
+nav > ul ul a {
+  font-size: 1.5em;
+  color: #4b4b4b;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000353}}
+nav > ul ul a:hover {
+  color: red;
+}
+
 /* COLOR SETTING */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\000035}}
+#grid960 p {
+  display: inline;
+  float: left;
+  width: 110px;
+  margin: 0 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\000039}}
+#grid960push p {
+  display: inline;
+  float: left;
+  width: 70px;
+  margin: 0 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000391}}
+#grid960push p:last-child {
+  margin-left: 165px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000316}}
+#grid960pull p {
+  display: inline;
+  float: left;
+  width: 70px;
+  margin: 0 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000361}}
+#grid960pull p:first-child {
+  padding-right: 320px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000323}}
+#grid1140 p {
+  display: inline;
+  float: left;
+  width: 4.85%;
+  margin-right: 3.8%;
+  margin-bottom: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000391}}
+#grid1140 p:last-child {
+  display: inline;
+  float: left;
+  width: 4.85%;
+  margin-right: 3.8%;
+  margin-right: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000331}}
+#grid1140push p {
+  display: inline;
+  float: left;
+  width: 4.85%;
+  margin-right: 3.8%;
+  margin-bottom: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000367}}
+#grid1140push p:nth-child(3) {
+  margin-left: 25.95%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000391}}
+#grid1140push p:last-child {
+  display: inline;
+  float: left;
+  width: 4.85%;
+  margin-right: 3.8%;
+  margin-right: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000340}}
+.grid-system {
+  margin-top: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000361}}
+.grid-system:first-child {
+  margin-top: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000345}}
+.grid-system .spacing p {
+  background-color: lightgrey;
+  height: 160px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000361}}
+.grid-system .spacing p:first-child {
+  background: #e9cccc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000364}}
+.grid-system .spacing p:nth-child(2) {
+  background: red;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000367}}
+.grid-system .spacing p:nth-child(3) {
+  background: green;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000370}}
+.grid-system .spacing p:nth-child(4) {
+  background: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000373}}
+.grid-system .spacing p:nth-child(5) {
+  background: yellow;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000376}}
+.grid-system .spacing p:nth-child(6) {
+  background: maroon;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000379}}
+.grid-system .spacing p:nth-child(7) {
+  background: blue;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000382}}
+.grid-system .spacing p:nth-child(8) {
+  background: #c4cccc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000385}}
+.grid-system .spacing p:nth-child(9) {
+  background: red;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000391}}
+.grid-system .spacing p:last-child {
+  background: #149797;
+}
