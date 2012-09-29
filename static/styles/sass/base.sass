@@ -22,6 +22,8 @@ body
 		+position(f, 0,0)
 		+bcolor(#F5F5FF)
 		+box-shadow(rgba(51,51,51,0.2) 1px 1px 1px)
+		// &>ul
+		// 	+overflow(scroll, y)
 	&>section
 		+box($section-width, 100%)
 		+padding(l, 100% - $section-width)
@@ -50,6 +52,9 @@ h3
 
 .comingSoon
 	+color(red)
+
+hr
+	+margins(40, 0)
 
 // Table of Content on the left
 nav
@@ -80,12 +85,10 @@ nav
 //  ==================
 @import 'sections/grids-demo'
 
-
-
 //  ==================
-//  = NAV AREA =
+//  = Image Sprite =
 //  ==================
-
+@import 'sections/image-sprite'
 
 //  ==================
 //  = FOOTER AREA =

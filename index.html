@@ -86,19 +86,11 @@
 					</ul>
 				</li>
 				<li>
-					<h3>Something else</h3>
+					<h3>2. Image Sprite</h3>
 					<ul>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
+						<li><a href="#imageSpriteSnap">Compass Image Sprite</a></li>
 					</ul>
 				</li>
-				<li><a href='#'>Gallery</a></li>
-				<li><a href='#'>Contact</a></li>
-				<li><a href='#'>Gallery</a></li>
-				<li><a href='#'>Contact</a></li>
 			</ul>
 		</nav>
 
@@ -347,13 +339,45 @@
 						<p class="content">
 							1. Feature Coming Soon
 						</p>
-						<p>
-
-						</p>
 					</div>
 				</article>
 
+				<hr>
 
+				<article class="image-sprite">
+					<h3>2. Image Sprite</h3>
+					<div class="doc">
+						<p class="content">
+							1. Special Naming convention will generate a new image sprite <br>
+							2. Custom setting could be set in the _settings.sass <br>
+							3. Naming convention: name.png, name_hover.png, name_active, name_target.png <br>
+							4. Use the folderName + "-sprite", pass the name as the 1st arg to generate the sprite <br>
+							5. Adding _active _target or _hover to the file name to add selectors for your sprites to generate selector like this:  a:hover, a.glossy_hover, a.glossy-hover, a:target, a.glossy_target, a.glossy-target, a:active, a.glossy_active, a.glossy-active
+						</p>
+						<p id="imageSpriteSnap">
+							<code>
+								+main-sprite(facebook)
+							</code>
+							<code>
+								+main-sprite(twitter)
+							</code>
+							<code>
+								+main-sprite(linkedin)
+							</code>
+							<code>
+								+main-sprite(blogger)
+							</code>
+						</p>
+					</div>
+					<div id="imageSprite" class="spacing">
+						<ul>
+							<li>Image Sprite</li>
+							<li>Image Sprite</li>
+							<li>Image Sprite</li>
+							<li>Image Sprite</li>
+						</ul>
+					</div>
+				</article>
 			</div>
 		</section>
 

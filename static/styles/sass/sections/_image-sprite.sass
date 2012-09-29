@@ -1,0 +1,28 @@
+@import "compass/css3"
+@import "../framework/_init"
+@import "main/*.png"
+
+#imageSprite
+	+box(960,121)
+	li
+		+box(128,121)
+		+margin(right,20)
+		+float(left)
+		+tindent
+		+brepeat(n)
+
+		//http://compass-style.org/reference/compass/helpers/sprites/#sprite-map
+		//sprite-map("icons/*.png", $new-position: 100%, $new-spacing: 15px, $new-repeat: no-repeat)
+		//If you don't specify these options they will default to 0% for position, 0px for spacing, and no-repeat for repeat.
+		//background: sprite-url(main/*.png)
+		//$disable-magic-sprite-selectors: true // To disable this feature set true before calling the sprite mixin, remove the target, hover, active background position
+		+child(1)
+			+main-sprite(facebook)
+		+child(2)
+			+main-sprite(twitter)
+		+child(3)
+			+main-sprite(linkedin)
+		+child(l)
+			//+main-sprite(blogger)
+		+hover
+			+cursor(p)

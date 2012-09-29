@@ -20,25 +20,25 @@ body > nav {
   -moz-box-shadow: rgba(51, 51, 51, 0.2) 1px 1px 1px;
   box-shadow: rgba(51, 51, 51, 0.2) 1px 1px 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000327}}
 body > section {
   height: 100%;
   width: 80%;
   padding-left: 20%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000330}}
 body > section > div {
   padding-top: 40px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000333}}
 h3 {
   color: #333333;
   margin-bottom: 15px;
   font-size: 2.4em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000338}}
 .spacing {
   margin: 30px 0px 30px 0px;
   zoom: 1;
@@ -59,54 +59,59 @@ h3 {
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000343}}
 .doc p {
   height: auto;
   width: 50%;
   font-size: 1.6em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000346}}
 .doc p.content {
   width: 75%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000348}}
 .doc code {
   line-height: 1.8em;
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000353}}
 .comingSoon {
   color: red;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000356}}
+hr {
+  margin: 40px 0px 40px 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000361}}
 nav h2 {
   padding-left: 15px;
   margin-top: 40px;
   color: #333333;
   font-size: 3em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000366}}
 nav > ul {
   margin-top: 25px;
   padding-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000370}}
 nav > ul > li {
   margin-bottom: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000372}}
 nav > ul ul {
   margin-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000374}}
 nav > ul ul li {
   margin-bottom: 3px;
   height: auto;
   width: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000377}}
 nav > ul ul a {
   font-size: 1.5em;
   color: #4b4b4b;
@@ -400,4 +405,69 @@ nav > ul ul a:hover {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000391}}
 .grid-system .spacing p:last-child, .grid-system .spacing li:last-child {
   background: #149797;
+}
+
+/* COLOR SETTING */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/main\/\*\.png}line{font-family:\00003114}}
+.main-sprite, #imageSprite li:first-child, #imageSprite li:nth-child(2), #imageSprite li:nth-child(3) {
+  background: url('../images/main-s25855510a0.png') no-repeat;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_image-sprite\.sass}line{font-family:\000035}}
+#imageSprite {
+  height: 121px;
+  width: 960px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_image-sprite\.sass}line{font-family:\000037}}
+#imageSprite li {
+  height: 121px;
+  width: 128px;
+  margin-right: 20px;
+  float: left;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000361}}
+#imageSprite li:first-child {
+  background-position: -10px -262px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
+#imageSprite li:first-child:hover, #imageSprite li:first-child.facebook_hover, #imageSprite li:first-child.facebook-hover {
+  background-position: -10px -1048px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
+#imageSprite li:first-child:target, #imageSprite li:first-child.facebook_target, #imageSprite li:first-child.facebook-target {
+  background-position: -10px -786px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
+#imageSprite li:first-child:active, #imageSprite li:first-child.facebook_active, #imageSprite li:first-child.facebook-active {
+  background-position: -10px -393px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000364}}
+#imageSprite li:nth-child(2) {
+  background-position: -10px -131px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
+#imageSprite li:nth-child(2):hover, #imageSprite li:nth-child(2).twitter_hover, #imageSprite li:nth-child(2).twitter-hover {
+  background-position: -10px -1179px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
+#imageSprite li:nth-child(2):target, #imageSprite li:nth-child(2).twitter_target, #imageSprite li:nth-child(2).twitter-target {
+  background-position: -10px -655px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000367}}
+#imageSprite li:nth-child(3) {
+  background-position: -10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
+#imageSprite li:nth-child(3):hover, #imageSprite li:nth-child(3).linkedin_hover, #imageSprite li:nth-child(3).linkedin-hover {
+  background-position: -10px -917px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
+#imageSprite li:nth-child(3):target, #imageSprite li:nth-child(3).linkedin_target, #imageSprite li:nth-child(3).linkedin-target {
+  background-position: -10px -524px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000353}}
+#imageSprite li:hover {
+  cursor: pointer;
 }
