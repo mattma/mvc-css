@@ -9,3 +9,8 @@ $ = jQuery
 
 ($ document).ready -> # DOM Ready Function
 
+	$.localScroll
+		target: 'body' # could be a selector or a jQuery object too.
+		queue: true
+		duration: 600
+
