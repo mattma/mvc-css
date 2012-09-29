@@ -182,7 +182,127 @@ nav > ul ul a:hover {
   margin-right: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000341}}
+#blockEqualWidth li {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000349}}
+#blockEqualWidth li:first-child:nth-last-child(1) {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000355}}
+#blockEqualWidth li:first-child:nth-last-child(2),
+#blockEqualWidth li:first-child:nth-last-child(2) ~ li {
+  width: 50%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000363}}
+#blockEqualWidth li:first-child:nth-last-child(3),
+#blockEqualWidth li:first-child:nth-last-child(3) ~ li {
+  width: 33.3333%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000371}}
+#blockEqualWidth li:first-child:nth-last-child(4),
+#blockEqualWidth li:first-child:nth-last-child(4) ~ li {
+  width: 25%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000379}}
+#blockEqualWidth li:first-child:nth-last-child(5),
+#blockEqualWidth li:first-child:nth-last-child(5) ~ li {
+  width: 20%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000387}}
+#blockEqualWidth li:first-child:nth-last-child(6),
+#blockEqualWidth li:first-child:nth-last-child(6) ~ li {
+  width: 16.6666%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000395}}
+#blockEqualWidth li:first-child:nth-last-child(7),
+#blockEqualWidth li:first-child:nth-last-child(7) ~ li {
+  width: 14.2857%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003111}}
+#blockEqualWidthWithMargin li {
+  float: left;
+  position: relative;
+  padding: 0;
+  height: 70px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003121}}
+#blockEqualWidthWithMargin li:after {
+  content: "";
+  height: 56px;
+  width: 2px;
+  background-color: blue;
+  position: absolute;
+  top: 7px;
+  right: -10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003131}}
+#blockEqualWidthWithMargin li:last-child:after {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003139}}
+#blockEqualWidthWithMargin li:first-child {
+  margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003153}}
+#blockEqualWidthWithMargin li:last-child {
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003165}}
+#blockEqualWidthWithMargin li:first-child:nth-last-child(1) {
+  margin: 0;
+  width: 940px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003199}}
+#blockEqualWidthWithMargin li:first-child:nth-last-child(2),
+#blockEqualWidthWithMargin li:first-child:nth-last-child(2) ~ li {
+  width: 460px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003221}}
+#blockEqualWidthWithMargin li:first-child:nth-last-child(3),
+#blockEqualWidthWithMargin li:first-child:nth-last-child(3) ~ li {
+  width: 300px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003243}}
+#blockEqualWidthWithMargin li:first-child:nth-last-child(4),
+#blockEqualWidthWithMargin li:first-child:nth-last-child(4) ~ li {
+  width: 220px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003265}}
+#blockEqualWidthWithMargin li:first-child:nth-last-child(5),
+#blockEqualWidthWithMargin li:first-child:nth-last-child(5) ~ li {
+  width: 172px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003287}}
+#blockEqualWidthWithMargin li:first-child:nth-last-child(6),
+#blockEqualWidthWithMargin li:first-child:nth-last-child(6) ~ li {
+  width: 140px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003309}}
+#blockEqualWidthWithMargin li:first-child:nth-last-child(7),
+#blockEqualWidthWithMargin li:first-child:nth-last-child(7) ~ li {
+  width: 117px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000348}}
 .grid-system {
   margin-top: 80px;
 }
@@ -190,48 +310,48 @@ nav > ul ul a:hover {
 .grid-system:first-child {
   margin-top: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000345}}
-.grid-system .spacing p {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000353}}
+.grid-system .spacing p, .grid-system .spacing li {
   background-color: lightgrey;
   height: 160px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000361}}
-.grid-system .spacing p:first-child {
+.grid-system .spacing p:first-child, .grid-system .spacing li:first-child {
   background: #e9cccc;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000364}}
-.grid-system .spacing p:nth-child(2) {
+.grid-system .spacing p:nth-child(2), .grid-system .spacing li:nth-child(2) {
   background: red;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000367}}
-.grid-system .spacing p:nth-child(3) {
+.grid-system .spacing p:nth-child(3), .grid-system .spacing li:nth-child(3) {
   background: green;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000370}}
-.grid-system .spacing p:nth-child(4) {
+.grid-system .spacing p:nth-child(4), .grid-system .spacing li:nth-child(4) {
   background: black;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000373}}
-.grid-system .spacing p:nth-child(5) {
+.grid-system .spacing p:nth-child(5), .grid-system .spacing li:nth-child(5) {
   background: yellow;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000376}}
-.grid-system .spacing p:nth-child(6) {
+.grid-system .spacing p:nth-child(6), .grid-system .spacing li:nth-child(6) {
   background: maroon;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000379}}
-.grid-system .spacing p:nth-child(7) {
+.grid-system .spacing p:nth-child(7), .grid-system .spacing li:nth-child(7) {
   background: blue;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000382}}
-.grid-system .spacing p:nth-child(8) {
+.grid-system .spacing p:nth-child(8), .grid-system .spacing li:nth-child(8) {
   background: #c4cccc;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000385}}
-.grid-system .spacing p:nth-child(9) {
+.grid-system .spacing p:nth-child(9), .grid-system .spacing li:nth-child(9) {
   background: red;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000391}}
-.grid-system .spacing p:last-child {
+.grid-system .spacing p:last-child, .grid-system .spacing li:last-child {
   background: #149797;
 }

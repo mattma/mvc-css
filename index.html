@@ -78,7 +78,8 @@
 						<li><a href="#grid960pullSnap">960 Grid Pull</a></li>
 						<li><a href="#grid1140">1140 Grid Column</a></li>
 						<li><a href="#grid1140pushSnap">1140 Grid Push</a></li>
-						<li><a href="#">@mixin blockEqualWidthWithMargin</a></li>
+						<li><a href="#blockEqualWidthSnap">Custom: Block Equal Width</a></li>
+						<li><a href="#blockEqualWidthWithMarginSnap">Custom: Special Block Equal Width</a></li>
 					</ul>
 				</li>
 				<li>
@@ -100,8 +101,9 @@
 
 		<section>
 			<div class='container'>
+
 				<article class="grid-system">
-					<h3>1. Grid System - 960 Grids</h3>
+					<h3>1.1 Grid System - 960 Grids</h3>
 					<div class="doc">
 						<p class="content">
 							1. By default, use 24 column grids, use +grid(12) to change grid with paramater: 12, 16, 24 <br>
@@ -170,7 +172,7 @@
 				</article>
 
 				<article class="grid-system">
-					<h3>1. Grid System - 1140 Grids</h3>
+					<h3>1.2 Grid System - 1140 Grids</h3>
 					<div class="doc">
 						<p class="content">
 							The 1140 grid fits perfectly into a 1280 monitor. 12 column fluid grid system.
@@ -215,6 +217,65 @@
 						<p> Hello </p>
 					</div>
 				</article>
+
+				<article class="grid-system">
+					<h3>1.3 Grid System - Block Equal Width</h3>
+					<div class="doc">
+						<p class="content">
+							1. Advance Grid system: Selector could be any block element.  <br>
+							2. Styling children CSS3. target the first element, then sibling selector. Make equal width. <br>
+							3. It is up to 7 child elements.  <br>
+							4. Modify the HTML markup without touching the CSS at all.
+						</p>
+						<p id="blockEqualWidthSnap">
+							<code>
+								@mixin blockEqualWidth($selector: li)
+							</code>
+						</p>
+					</div>
+					<div id="blockEqualWidth" class="spacing">
+						<ul>
+							<li>hello</li>
+							<li>hello</li>
+							<li>hello</li>
+					 		<li>hello</li>
+							<li>hello</li>
+						 	<li>hello</li>
+							<li>hello</li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="grid-system">
+					<h3>1.4 Grid System - Block Equal Width With Margin</h3>
+					<div class="doc">
+						<p class="content">
+							1. Advance Grid system: Selector could be any block element.  <br>
+							2. Styling children CSS3. target the first element, then sibling selector. Make equal width. <br>
+							3. It is up to 7 child elements.  <br>
+							4. Same as above, but with margin applied <br>
+							5. Modify the HTML markup without touching the CSS at all.
+						</p>
+						<p id="blockEqualWidthWithMarginSnap">
+							<code>
+								@mixin blockEqualWidth($selector: li)
+							</code>
+						</p>
+					</div>
+					<div id="blockEqualWidthWithMargin" class="spacing">
+						<ul>
+							<li>hello</li>
+							<li>hello</li>
+							<li>hello</li>
+					 		<li>hello</li>
+							<li>hello</li>
+						 	<li>hello</li>
+							<li>hello</li>
+						</ul>
+					</div>
+				</article>
+
+
 			</div>
 		</section>
 

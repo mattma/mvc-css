@@ -52,32 +52,30 @@
 
 // ====== Advance Grid system:  Selector could be any block element ======
 // Same as above, but with margin applied; Margin value would be Pixel based with px
-@mixin blockEqualWidthWithMargin($margin: 5, $alpha: 0, $omega: 0, $totalWidth: 960, $height: 160, $selector: li, $dividerWidth: 0, $dividerColor: rgb(255,0,0))
+@mixin blockEqualWidthWithMargin($margin: 5px, $alpha: 0, $omega: 0, $totalWidth: 960, $height: 160, $selector: li, $dividerWidth: 0, $dividerColor: rgb(255,0,0), $defaultUnit: px)
 	#{$selector}
 		float: left
 		position: relative
 		padding: 0
-		height: $height+px
+		+height($height, $defaultUnit)
 		&:after
 			content: ""
-			width: $dividerWidth+px
-			height: ( $height * 0.8 ) +px
-			background: $dividerColor
-			position: absolute
-			top: ( ($height * 0.2) / 2 )+px
-			right: (-$margin)+px
+			+box($dividerWidth, $height * 0.8)
+			+bcolor($dividerColor)
+			+position(absolute, ($height * 0.2) / 2, -$margin, right)
 		&:last-child:after
 			display: none
+
 		@if $alpha > 0
 			&:first-child
-				margin-left: $margin+px
+				+margin(left, $margin, $defaultUnit)
 		@else
 			&:first-child
 				margin-left: 0 !important
 
 		@if $omega > 0
 			&:last-child
-				margin-right: $margin+px
+				+margin(right, $margin, $defaultUnit)
 		@else
 			&:last-child
 				margin-right: 0 !important
@@ -85,87 +83,85 @@
 	#{$selector}:first-child:nth-last-child(1)
 		margin: 0
 		@if $alpha+$omega == 1
-			width: ($totalWidth - $margin)+px
+			+width( ($totalWidth - $margin) )
 			@if $alpha > 0
 				&:first-child
-					margin-left: $margin+px
+					+margin(left, $margin, $defaultUnit)
 			@if $omega > 0
 				&:last-child
-					margin-right: $margin+px
+					+margin(right, $margin, $defaultUnit)
 		@else if $alpha+$omega == 2
-			width: ($totalWidth - ( $margin*2))+px
-			margin-left:  $margin+px
-			margin-right: $margin+px
+			+width( ($totalWidth - ( $margin*2)) )
+			+margin(left, $margin, $defaultUnit)
+			+margin(right, $margin, $defaultUnit)
 		@else if $alpha+$omega == 0
-			width: $totalWidth+px
-
+			+width( $totalWidth )
 
 	#{$selector}:first-child:nth-last-child(2),
 	#{$selector}:first-child:nth-last-child(2) ~ #{$selector}
 		@if $alpha+$omega == 1
-			width: ( ($totalWidth - ($margin * 3)) / 2 ) + px
+			+width( ( ($totalWidth - ($margin * 3)) / 2 ) )
 		@else if $alpha+$omega == 2
-			width: ( ($totalWidth - ($margin * 4)) / 2 ) + px
+			+width( ( ($totalWidth - ($margin * 4)) / 2 ) )
 		@else if $alpha+$omega == 0
-			width: ( ($totalWidth - ($margin * 2)) / 2 ) + px
-		margin-left:  $margin+px
-		margin-right: $margin+px
+			+width( ( ($totalWidth - ($margin * 2)) / 2 ) )
+		+margin(left, $margin, $defaultUnit)
+		+margin(right, $margin, $defaultUnit)
 
 	#{$selector}:first-child:nth-last-child(3),
 	#{$selector}:first-child:nth-last-child(3) ~ #{$selector}
 		@if $alpha+$omega == 1
-			width: ( ($totalWidth - ($margin * 5)) / 3 ) + px
+			+width(  ( ($totalWidth - ($margin * 5)) / 3 ) )
 		@else if $alpha+$omega == 2
-			width: ( ($totalWidth - ($margin * 6)) / 3 ) + px
+			+width(  ( ($totalWidth - ($margin * 6)) / 3 ) )
 		@else if $alpha+$omega == 0
-			width: ( ($totalWidth - ($margin * 4)) / 3 ) + px
-		margin-left:  $margin+px
-		margin-right: $margin+px
+			+width(  ( ($totalWidth - ($margin * 4)) / 3 ) )
+		+margin(left, $margin, $defaultUnit)
+		+margin(right, $margin, $defaultUnit)
 
 	#{$selector}:first-child:nth-last-child(4),
 	#{$selector}:first-child:nth-last-child(4) ~ #{$selector}
 		@if $alpha+$omega == 1
-			width: ( ($totalWidth - ($margin * 7)) / 4 ) + px
+			+width( ( ($totalWidth - ($margin * 7)) / 4 ) )
 		@else if $alpha+$omega == 2
-			width: ( ($totalWidth - ($margin * 8)) / 4 ) + px
+			+width( ( ($totalWidth - ($margin * 8)) / 4 ) )
 		@else if $alpha+$omega == 0
-			width: ( ($totalWidth - ($margin * 6)) / 4 ) + px
-		margin-left:  $margin+px
-		margin-right: $margin+px
+			+width( ( ($totalWidth - ($margin * 6)) / 4 ) )
+		+margin(left, $margin, $defaultUnit)
+		+margin(right, $margin, $defaultUnit)
 
 	#{$selector}:first-child:nth-last-child(5),
 	#{$selector}:first-child:nth-last-child(5) ~ #{$selector}
 		@if $alpha+$omega == 1
-			width: ( ($totalWidth - ($margin * 9)) / 5 ) + px
+			+width(  ( ($totalWidth - ($margin * 9)) / 5 )   )
 		@else if $alpha+$omega == 2
-			width: ( ($totalWidth - ($margin * 10)) / 5 ) + px
+			+width(  ( ($totalWidth - ($margin * 10)) / 5 ) )
 		@else if $alpha+$omega == 0
-			width: ( ($totalWidth - ($margin * 8)) / 5 ) + px
-		margin-left:  $margin+px
-		margin-right: $margin+px
+			+width(  ( ($totalWidth - ($margin * 8)) / 5 )   )
+		+margin(left, $margin, $defaultUnit)
+		+margin(right, $margin, $defaultUnit)
 
 	#{$selector}:first-child:nth-last-child(6),
 	#{$selector}:first-child:nth-last-child(6) ~ #{$selector}
 		@if $alpha+$omega == 1
-			width: floor(( ($totalWidth - ($margin * 11)) / 6 )) + px
+			+width( floor(( ($totalWidth - ($margin * 11)) / 6 )) )
 		@else if $alpha+$omega == 2
-			width: floor( ( ($totalWidth - ($margin * 12)) / 6 ) ) + px
+			+width( floor(( ($totalWidth - ($margin * 12)) / 6 )) )
 		@else if $alpha+$omega == 0
-			width: floor(( ($totalWidth - ($margin * 10)) / 6 )) + px
-		margin-left:  $margin+px
-		margin-right: $margin+px
+			+width( floor(( ($totalWidth - ($margin * 10)) / 6 )) )
+		+margin(left, $margin, $defaultUnit)
+		+margin(right, $margin, $defaultUnit)
 
 	#{$selector}:first-child:nth-last-child(7),
 	#{$selector}:first-child:nth-last-child(7) ~ #{$selector}
 		@if $alpha+$omega == 1
-			width: floor(( ($totalWidth - ($margin * 13)) / 7 )) + px
+			+width( floor(( ($totalWidth - ($margin * 13)) / 7 )) )
 		@else if $alpha+$omega == 2
-			width: floor(( ($totalWidth - ($margin * 14)) / 7 )) + px
+			+width( floor(( ($totalWidth - ($margin * 14)) / 7 )) )
 		@else if $alpha+$omega == 0
-			width: floor(( ($totalWidth - ($margin * 12)) / 7 )) + px
-		margin-left:  $margin+px
-		margin-right: $margin+px
-
+			+width( floor(( ($totalWidth - ($margin * 12)) / 7 )) )
+		+margin(left, $margin, $defaultUnit)
+		+margin(right, $margin, $defaultUnit)
 
 
 //--------------------------------------------------------------------------------------
@@ -300,8 +296,6 @@ $total-width: gridsystem-width($columns, $column-width, $gutter-width)
 
 @mixin table-col($span: 1, $columns: $columns, $col-width: $column-width, $gap: 0)
 	width: $total-width*((($gap+ $col-width)*$span) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($columns, $col-width, $gap))
-
-
 
 
 //--------------------------------------------------------------------------------------
