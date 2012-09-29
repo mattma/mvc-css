@@ -80,6 +80,9 @@
 						<li><a href="#grid1140pushSnap">1140 Grid Push</a></li>
 						<li><a href="#blockEqualWidthSnap">Custom: Block Equal Width</a></li>
 						<li><a href="#blockEqualWidthWithMarginSnap">Custom: Special Block Equal Width</a></li>
+						<li><a href="#multiRowBlockEqualWidthSnap">Custom: Multiple Row Block</a></li>
+						<li><a href="#boxModelSnap">Custom: CSS3 Box Model</a></li>
+						<li><a href="#responsiveGridBuilderSnap">Responsive Grid Builder <span class="comingSoon">(Soon)</span></a></li>
 					</ul>
 				</li>
 				<li>
@@ -253,12 +256,14 @@
 							1. Advance Grid system: Selector could be any block element.  <br>
 							2. Styling children CSS3. target the first element, then sibling selector. Make equal width. <br>
 							3. It is up to 7 child elements.  <br>
-							4. Same as above, but with margin applied <br>
-							5. Modify the HTML markup without touching the CSS at all.
+							4. Same as above, but with margin applied with custom separator <br>
+							5. Modify the HTML markup without touching the CSS at all. <br>
+							6. Using custom paramters to change the style behavior <br>
+							TODO: current only support PX, need to work for em or %
 						</p>
 						<p id="blockEqualWidthWithMarginSnap">
 							<code>
-								@mixin blockEqualWidth($selector: li)
+								@mixin blockEqualWidthWithMargin($margin: 5px, $alpha: false, $omega: false, $totalWidth: 960, $height: 160, $selector: li, $dividerWidth: 0, $dividerColor: rgb(255,0,0), $defaultUnit: px)
 							</code>
 						</p>
 					</div>
@@ -272,6 +277,79 @@
 						 	<li>hello</li>
 							<li>hello</li>
 						</ul>
+					</div>
+				</article>
+
+				<article class="grid-system">
+					<h3>1.5 Grid System - Multiple Row Block Equal Width</h3>
+					<div class="doc">
+						<p class="content">
+							1. Multiple Row Block with equal width grids <br>
+							2. Support 2, 3, 4, 5, 6 in one Row, suited for repeating blocks of content <br>
+							3. For IE7/8 compatibility block-grid items need to be the same height. <br>
+							4. TODO: Built custom $gutter value. Idea:  +multiRowBlockEqualWidth($grid: 2, $height: auto, $gutter: false, $gutter-value: default, $selector: li, $parent: ul)   when $gutter-value is actually value, use math to dynamically reset the width
+						</p>
+						<p id="multiRowBlockEqualWidthSnap">
+							<code>
+								@mixin multiRowBlockEqualWidth($grid: 2, $height: auto, $gutter: false, $selector: li, $parent: ul)
+							</code>
+						</p>
+					</div>
+					<div id="multiRowBlockEqualWidth" class="spacing">
+						<ul>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="grid-system">
+					<h3>1.6 Grid System - CSS3 Inline Block Box Model</h3>
+					<div class="doc">
+						<p class="content">
+							1. Inline Block Box Model #Responsive Width <br>
+							2. Switch between px or % based grid <br>
+							3. Just provide Markup list item as the 1st paramter <br>
+							4. Using CSS3 Box sizing to control the width of the box model
+						</p>
+						<p id="boxModelSnap">
+							<code>
+								@mixin boxModel( $item-count, $marginLeft: 10px, $paddingLeft: 0, $parentWidth: 960, $percentage: false, $type: border )
+							</code>
+						</p>
+					</div>
+					<div id="boxModel" class="spacing">
+						<ul>
+							<li>Box Model Element</li>
+							<li>Box Model Element</li>
+							<li>Box Model Element</li>
+							<li>Box Model Element</li>
+							<li>Box Model Element</li>
+							<li>Box Model Element</li>
+							<li>Box Model Element</li>
+							<li>Box Model Element</li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="grid-system">
+					<h3>1.7 Grid System - Responsive Grid Builder <span class="comingSoon">(Coming Soon)</span></h3>
+					<div class="doc"  id="responsiveGridBuilderSnap">
+						<p class="content">
+							1. Feature Coming Soon
+						</p>
+						<p>
+
+						</p>
 					</div>
 				</article>
 

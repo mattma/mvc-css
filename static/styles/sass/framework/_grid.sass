@@ -52,7 +52,8 @@
 
 // ====== Advance Grid system:  Selector could be any block element ======
 // Same as above, but with margin applied; Margin value would be Pixel based with px
-@mixin blockEqualWidthWithMargin($margin: 5px, $alpha: 0, $omega: 0, $totalWidth: 960, $height: 160, $selector: li, $dividerWidth: 0, $dividerColor: rgb(255,0,0), $defaultUnit: px)
+// TODO: current only support PX, need to work for em or %
+@mixin blockEqualWidthWithMargin($margin: 5px, $alpha: false, $omega: false, $totalWidth: 960, $height: 160, $selector: li, $dividerWidth: 0, $dividerColor: rgb(255,0,0), $defaultUnit: px)
 	#{$selector}
 		float: left
 		position: relative
@@ -66,14 +67,14 @@
 		&:last-child:after
 			display: none
 
-		@if $alpha > 0
+		@if $alpha == false
 			&:first-child
 				+margin(left, $margin, $defaultUnit)
 		@else
 			&:first-child
 				margin-left: 0 !important
 
-		@if $omega > 0
+		@if $omega == false
 			&:last-child
 				+margin(right, $margin, $defaultUnit)
 		@else
@@ -82,83 +83,83 @@
 
 	#{$selector}:first-child:nth-last-child(1)
 		margin: 0
-		@if $alpha+$omega == 1
-			+width( ($totalWidth - $margin) )
-			@if $alpha > 0
+		@if $alpha != $omega
+			+width( $totalWidth - $margin )
+			@if $alpha == true
 				&:first-child
 					+margin(left, $margin, $defaultUnit)
-			@if $omega > 0
+			@if $omega == true
 				&:last-child
 					+margin(right, $margin, $defaultUnit)
-		@else if $alpha+$omega == 2
-			+width( ($totalWidth - ( $margin*2)) )
+		@else if $alpha == false and $omega == false
+			+width( $totalWidth - ( $margin*2) )
 			+margin(left, $margin, $defaultUnit)
 			+margin(right, $margin, $defaultUnit)
-		@else if $alpha+$omega == 0
+		@else if $alpha == true and $omega == true
 			+width( $totalWidth )
 
 	#{$selector}:first-child:nth-last-child(2),
 	#{$selector}:first-child:nth-last-child(2) ~ #{$selector}
-		@if $alpha+$omega == 1
+		@if $alpha != $omega
 			+width( ( ($totalWidth - ($margin * 3)) / 2 ) )
-		@else if $alpha+$omega == 2
+		@else if $alpha == false and $omega == false
 			+width( ( ($totalWidth - ($margin * 4)) / 2 ) )
-		@else if $alpha+$omega == 0
+		@else if $alpha == true and $omega == true
 			+width( ( ($totalWidth - ($margin * 2)) / 2 ) )
 		+margin(left, $margin, $defaultUnit)
 		+margin(right, $margin, $defaultUnit)
 
 	#{$selector}:first-child:nth-last-child(3),
 	#{$selector}:first-child:nth-last-child(3) ~ #{$selector}
-		@if $alpha+$omega == 1
+		@if $alpha != $omega
 			+width(  ( ($totalWidth - ($margin * 5)) / 3 ) )
-		@else if $alpha+$omega == 2
+		@else if $alpha == false and $omega == false
 			+width(  ( ($totalWidth - ($margin * 6)) / 3 ) )
-		@else if $alpha+$omega == 0
+		@else if $alpha == true and $omega == true
 			+width(  ( ($totalWidth - ($margin * 4)) / 3 ) )
 		+margin(left, $margin, $defaultUnit)
 		+margin(right, $margin, $defaultUnit)
 
 	#{$selector}:first-child:nth-last-child(4),
 	#{$selector}:first-child:nth-last-child(4) ~ #{$selector}
-		@if $alpha+$omega == 1
+		@if $alpha != $omega
 			+width( ( ($totalWidth - ($margin * 7)) / 4 ) )
-		@else if $alpha+$omega == 2
+		@else if $alpha == false and $omega == false
 			+width( ( ($totalWidth - ($margin * 8)) / 4 ) )
-		@else if $alpha+$omega == 0
+		@else if $alpha == true and $omega == true
 			+width( ( ($totalWidth - ($margin * 6)) / 4 ) )
 		+margin(left, $margin, $defaultUnit)
 		+margin(right, $margin, $defaultUnit)
 
 	#{$selector}:first-child:nth-last-child(5),
 	#{$selector}:first-child:nth-last-child(5) ~ #{$selector}
-		@if $alpha+$omega == 1
+		@if $alpha != $omega
 			+width(  ( ($totalWidth - ($margin * 9)) / 5 )   )
-		@else if $alpha+$omega == 2
+		@else if $alpha == false and $omega == false
 			+width(  ( ($totalWidth - ($margin * 10)) / 5 ) )
-		@else if $alpha+$omega == 0
+		@else if $alpha == true and $omega == true
 			+width(  ( ($totalWidth - ($margin * 8)) / 5 )   )
 		+margin(left, $margin, $defaultUnit)
 		+margin(right, $margin, $defaultUnit)
 
 	#{$selector}:first-child:nth-last-child(6),
 	#{$selector}:first-child:nth-last-child(6) ~ #{$selector}
-		@if $alpha+$omega == 1
+		@if $alpha != $omega
 			+width( floor(( ($totalWidth - ($margin * 11)) / 6 )) )
-		@else if $alpha+$omega == 2
+		@else if $alpha == false and $omega == false
 			+width( floor(( ($totalWidth - ($margin * 12)) / 6 )) )
-		@else if $alpha+$omega == 0
+		@else if $alpha == true and $omega == true
 			+width( floor(( ($totalWidth - ($margin * 10)) / 6 )) )
 		+margin(left, $margin, $defaultUnit)
 		+margin(right, $margin, $defaultUnit)
 
 	#{$selector}:first-child:nth-last-child(7),
 	#{$selector}:first-child:nth-last-child(7) ~ #{$selector}
-		@if $alpha+$omega == 1
+		@if $alpha != $omega
 			+width( floor(( ($totalWidth - ($margin * 13)) / 7 )) )
-		@else if $alpha+$omega == 2
+		@else if $alpha == false and $omega == false
 			+width( floor(( ($totalWidth - ($margin * 14)) / 7 )) )
-		@else if $alpha+$omega == 0
+		@else if $alpha == true and $omega == true
 			+width( floor(( ($totalWidth - ($margin * 12)) / 7 )) )
 		+margin(left, $margin, $defaultUnit)
 		+margin(right, $margin, $defaultUnit)
@@ -171,25 +172,23 @@
 // Usage: <div class="block-grid"><ul><li>Three-up element</li> <li>Three-up element</li> <li>Three-up element</li> </ul> </div>
 // Note: .block-grid // Need to apply in the div level, because the $parent is ul element
 //			+multiRowBlockEqualWidth(3,60)
+// TODO: Built custom $gutter value. Idea:  +multiRowBlockEqualWidth($grid: 2, $height: auto, $gutter: false, $gutter-value: default, $selector: li, $parent: ul)   when $gutter-value is actually value, use math to dynamically reset the width
 //--------------------------------------------------------------------------------------
-@mixin multiRowBlockEqualWidth($grid: 2, $height: auto, $gutter: 1, $selector: li, $parent: ul)
+@mixin multiRowBlockEqualWidth($grid: 2, $height: auto, $gutter: false, $selector: li, $parent: ul)
 	#{$parent}
 		display: block
 		overflow: hidden
 
 		#{$selector}
 			display: block
-			@if $height == auto
-				height: auto
-			@else
-				height: $height+px
+			+height($height)
 			float: left
 
 		@if $grid == 2
-			@if $gutter == 0
+			@if $gutter == true
 				#{$selector}
 					width: 50%
-			@if $gutter == 1
+			@if $gutter == false
 				margin-left: -4%
 				#{$selector}
 					margin-left: 4%
@@ -197,10 +196,10 @@
 					//&:nth-child(2n+1)
 						//clear: left
 		@if $grid == 3
-			@if $gutter == 0
+			@if $gutter == true
 				#{$selector}
 					width: 33.3333%
-			@if $gutter == 1
+			@if $gutter == false
 				margin-left: -2%
 				#{$selector}
 					margin-left: 2%
@@ -209,10 +208,10 @@
 						//clear: left
 
 		@if $grid == 4
-			@if $gutter == 0
+			@if $gutter == true
 				#{$selector}
 					width: 25%
-			@if $gutter == 1
+			@if $gutter == false
 				margin-left: -2%
 				#{$selector}
 					margin-left: 2%
@@ -221,10 +220,10 @@
 						//clear: left
 
 		@if $grid == 5
-			@if $gutter == 0
+			@if $gutter == true
 				#{$selector}
 					width: 20%
-			@if $gutter == 1
+			@if $gutter == false
 				margin-left: -1.5%
 				#{$selector}
 					margin-left: 1.5%
@@ -233,10 +232,10 @@
 						//clear: left
 
 		@if $grid == 6
-			@if $gutter == 0
+			@if $gutter == true
 				#{$selector}
 					width: 16.6666%
-			@if $gutter == 1
+			@if $gutter == false
 				margin-left: -1.6666%
 				#{$selector}
 					margin-left: 1.6666%
@@ -336,23 +335,31 @@ $eleven40-grid-margin: 3.8%  // The amount of margin between columns
 // Inline Block Box Model #Responsive Width
 // Based on https://github.com/vladocar/Box-CSS-Framework
 //
+// @param: $item-count: Number.  The list item count from the HTML markup
 // @param: $type: border, content, and padding. content is the default W3C model
 //--------------------------------------------------------------------------------------
-@mixin boxModel( $boxTotalWidth, $marginLeft: 10, $paddingLeft: 0, $parentWidth: 960, $percentage: 0, $type: border )
-	box-sizing: #{$type}-box // Opera 8.5+ and CSS3
+@mixin boxModel( $item-count, $marginLeft: 10px, $paddingLeft: 0, $parentWidth: 960, $percentage: false, $type: border )
 	-webkit-box-sizing: #{$type}-box // Safari 3+
 	-moz-box-sizing: #{$type}-box // Firefox 1+
 	-ms-box-sizing: #{$type}-box // IE8
+	box-sizing: #{$type}-box // Opera 8.5+ and CSS3
 
 	display: inline-block // similar to float:left but gives some extra powers like vertical-align:top
 	*display: inline // IE7 hack
 	margin-right: -4px // inline-block hack
 
 	vertical-align: top
-	padding-left: $paddingLeft+px
-	border-left: $marginLeft+px solid transparent // the border becomes margin
+	+padding(left, $paddingLeft)
+	+border(left, transparent, $marginLeft, solid)  // the border becomes margin
 
-	@if $percentage > 0
-		width: ( $boxTotalWidth / $parentWidth ) * 100%
-	@else
-		width: $boxTotalWidth+px
+	@if $percentage == true
+		width: ( ( ( $parentWidth / $item-count ) ) / $parentWidth ) * 100%
+	@else if $percentage == false
+		+width($parentWidth / $item-count)
+
+
+//--------------------------------------------------------------------------------------
+// Responsive Grid Builder
+//
+//
+//--------------------------------------------------------------------------------------
