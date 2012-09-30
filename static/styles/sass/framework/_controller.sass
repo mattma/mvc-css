@@ -1,7 +1,6 @@
 //****************************************************************
 //* Table of Content  [CONTROLLER]
 //*
-//* Setting: _default_settings || _default_settings_min
 //* @mixin measurement($property, $value, $unit)
 //* @function measurement($value, $unit)
 //* @mixin prop($property, $value, $value-support-list)
@@ -10,6 +9,7 @@
 //* @function color-format-helper( $list )
 //* @function trans-color-helper( $list, $amount )
 //* @function param-helper( $list, $unit: px )
+//* @mixin animate($name: fadeIn, $duration: 1s, $delay: .2s, $function: ease, $mode: both)
 //* @function sum-list($list)
 //* @function column-count($columns)
 //* @function gutter-context($gutter, $context)
@@ -122,6 +122,12 @@
 		@return measurement( nth($list, 1), $unit ) measurement( nth($list, 2), $unit )  measurement( nth($list, 3), $unit )  measurement( nth($list, 2), $unit )
 	@else if length($list) == 4
 		@return measurement( nth($list, 1), $unit ) measurement( nth($list, 2), $unit )  measurement( nth($list, 3), $unit )  measurement( nth($list, 4), $unit )
+
+
+// Special @mixin for the CSS3 Animation, work with _animate.sass file
+// work with special easing function
+@mixin animate($name: fadeIn, $duration: 1s, $delay: .2s, $function: ease, $mode: both)
+	+experimental(animation, $name $duration $delay $function $mode)
 
 
 // New Functions Goes here
