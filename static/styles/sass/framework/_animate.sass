@@ -2,17 +2,49 @@
 //* Table of Content  [BACKGROUND & IMAGES]
 //*
 //* Setting: _default_settings || _default_settings_min
-//* @mixin image( $imgURL, $image-width: image-width($imgURL), $image-height: image-height($imgURL), $image-repeat: no-repeat, $image-x-pos: 0, $image-y-pos: 0 )
-//* @mixin background($background-settings...)    OR  @mixin b
-//* @mixin bposition( $bg-pos-x: 0, $bg-pos-y: 0, $defaultUnit: px )
-//* @mixin brepeat( $background-repeat )
-//* @mixin bcolor( $bg-color: 102 102 102 )
-//* @mixin bimage($bg-image-path)
-//* @mixin sprite( $imgURL, $image-width: 24px, $image-height: 24px, $direction: $default )
-//* @mixin inline-icon($imgURL, $spacing: 5px, $pos: $left)
-//* @mixin sharpen-image
-//* @mixin high-quality-image
-//* @mixin low-quality-image
+//* Animation Name:  fadeIn
+//* Animation Name:  fadeOut
+//* Animation Name:  fadeInUp
+//* Animation Name:  fadeOutUp
+//* Animation Name:  fadeInDown
+//* Animation Name:  fadeOutDown
+//* Animation Name:  fadeInRight
+//* Animation Name:  fadeOutLeft
+//* Animation Name:  fadeInLeft
+//* Animation Name:  fadeOutRight
+//* Animation Name:  fadeInUpBig
+//* Animation Name:  fadeOutUpBig
+//* Animation Name:  fadeInDownBig
+//* Animation Name:  fadeOutDownBig
+//* Animation Name:  fadeInRightBig
+//* Animation Name:  fadeOutLeftBig
+//* Animation Name:  fadeOutDownBig
+//* Animation Name:  fadeInLeftBig
+//* Animation Name:  fadeOutRightBig
+//* Animation Name:  bounceIn
+//* Animation Name:  bounceInDown
+//* Animation Name:  bounceInUp
+//* Animation Name:  bounceInRight
+//* Animation Name:  bounceInLeft
+//* Animation Name:  bounceOut
+//* Animation Name:  bounceOutUp
+//* Animation Name:  bounceOutDown
+//* Animation Name:  bounceOutLeft
+//* Animation Name:  bounceOutRight
+//* Animation Name:  flash
+//* Animation Name:  bounce
+//* Animation Name:  shake
+//* Animation Name:  rotateInDownLeft
+//* Animation Name:  rotateInUpLeft
+//* Animation Name:  rotateInUpRight
+//* Animation Name:  rotateInDownRight
+//* Animation Name:  rotateOutDownLeft
+//* Animation Name:  rotateOutUpLeft
+//* Animation Name:  rotateOutDownRight
+//* Animation Name:  rotateOutUpRight
+//* Animation Name:  rotateIn
+//* Animation Name:  rotateOut
+//* Animation Name:  tada
 //*
 //****************************************************************
 
@@ -23,6 +55,469 @@
 
 +keyframes(fadeIn)
 	0%
-		opacity: 0
+		+opacity(0)
 	100%
-		opacity: 1
+		+opacity(1)
+
+
++keyframes(fadeOut)
+	0%
+		+opacity(1)
+	100%
+		+opacity(0)
+
+
++keyframes(fadeInUp)
+	0%
+		+opacity(0)
+		+translateY(20px)
+	100%
+		+opacity(1)
+		+translateY(0)
+
+
++keyframes(fadeOutUp)
+	0%
+		+opacity(1)
+		+translateY(0)
+	100%
+		+opacity(0)
+		+translateY(-20px)
+
+
++keyframes(fadeInDown)
+	0%
+		+opacity(0)
+		+translateY(-20px)
+	100%
+		+opacity(1)
+		+translateY(0)
+
+
++keyframes(fadeOutDown)
+	0%
+		+opacity(1)
+		+translateY(0)
+	100%
+		+opacity(0)
+		+translateY(20px)
+
+
++keyframes(fadeInRight)
+	0%
+		+opacity(0)
+		+translateX(20px)
+	100%
+		+opacity(1)
+		+translateX(0)
+
+
++keyframes(fadeOutLeft)
+	0%
+		+opacity(1)
+		+translateX(0)
+	100%
+		+opacity(0)
+		+translateX(-20px)
+
+
++keyframes(fadeInLeft)
+	0%
+		+opacity(0)
+		+translateX(-20px)
+	100%
+		+opacity(1)
+		+translateX(0)
+
+
++keyframes(fadeOutRight)
+	0%
+		+opacity(1)
+		+translateX(0)
+	100%
+		+opacity(0)
+		+translateX(20px)
+
+
++keyframes(fadeInUpBig)
+	0%
+		+opacity(0)
+		+translateY(2000px)
+	100%
+		+opacity(1)
+		+translateY(0)
+
+
++keyframes(fadeOutUpBig)
+	0%
+		+opacity(1)
+		+translateY(0)
+	100%
+		+opacity(0)
+		+translateY(-2000px)
+
+
++keyframes(fadeInDownBig)
+	0%
+		+opacity(0)
+		+translateY(-2000px)
+	100%
+		+opacity(1)
+		+translateY(0)
+
+
++keyframes(fadeOutDownBig)
+	0%
+		+opacity(1)
+		+translateY(0)
+	100%
+		+opacity(0)
+		+translateY(2000px)
+
+
++keyframes(fadeInRightBig)
+	0%
+		+opacity(0)
+		+translateX(2000px)
+	100%
+		+opacity(1)
+		+translateX(0)
+
+
++keyframes(fadeOutLeftBig)
+	0%
+		+opacity(1)
+		+translateX(0)
+	100%
+		+opacity(0)
+		+translateX(-2000px)
+
+
++keyframes(fadeInLeftBig)
+	0%
+		+opacity(0)
+		+translateX(-2000px)
+	100%
+		+opacity(1)
+		+translateX(0)
+
+
++keyframes(fadeOutRightBig)
+	0%
+		+opacity(1)
+		+translateX(0)
+	100%
+		+opacity(0)
+		+translateX(2000px)
+
+
++keyframes(bounceIn)
+	0%
+		+opacity(0)
+		+scale(0.3)
+	50%
+		+opacity(1)
+		+scale(1.05)
+	70%
+		+scale(0.9)
+	100%
+		+scale(1)
+
+
++keyframes(bounceInDown)
+	0%
+		+opacity(0)
+		+translateY(-2000px)
+	60%
+		+opacity(1)
+		+translateY(30px)
+	80%
+		+translateY(-10px)
+	100%
+		+translateY(0)
+
+
++keyframes(bounceInUp)
+	0%
+		+opacity(0)
+		+translateY(2000px)
+	60%
+		+opacity(1)
+		+translateY(-30px)
+	80%
+		+translateY(10px)
+	100%
+		+translateY(0)
+
+
++keyframes(bounceInRight)
+	0%
+		+opacity(0)
+		+translateX(2000px)
+	60%
+		+opacity(1)
+		+translateX(-30px)
+	80%
+		+translateX(10px)
+	100%
+		+translateX(0)
+
+
++keyframes(bounceInLeft)
+	0%
+		+opacity(0)
+		+translateX(-2000px)
+	60%
+		+opacity(1)
+		+translateX(30px)
+	80%
+		+translateX(-10px)
+	100%
+		+translateX(0)
+
+
++keyframes(bounceOut)
+	0%
+		+scale(1)
+	25%
+		+scale(0.95)
+	50%
+		+opacity(1)
+		+scale(1.1)
+	100%
+		+opacity(0)
+		+scale(0.3)
+
+
++keyframes(bounceOutUp)
+	0%
+		+translateY(0)
+	20%
+		+opacity(1)
+		+translateY(20px)
+	100%
+		+opacity(0)
+		+translateY(-2000px)
+
+
++keyframes(bounceOutDown)
+	0%
+		+translateY(0)
+	20%
+		+opacity(1)
+		+translateY(-20px)
+	100%
+		+opacity(0)
+		+translateY(2000px)
+
+
++keyframes(bounceOutLeft)
+	0%
+		+translateX(0)
+	20%
+		+opacity(1)
+		+translateX(20px)
+	100%
+		+opacity(0)
+		+translateX(-2000px)
+
+
++keyframes(bounceOutRight)
+	0%
+		+translateX(0)
+	20%
+		+opacity(1)
+		+translateX(-20px)
+	100%
+		+opacity(0)
+		+translateX(2000px)
+
+
++keyframes(flash)
+	0%
+		+opacity(1)
+	25%
+		+opacity(0)
+	50%
+		+opacity(1)
+	75%
+		+opacity(0)
+	100%
+		+opacity(1)
+
+
++keyframes(bounce)
+	0%
+		+translateY(0)
+	20%
+		+translateY(0)
+	40%
+		+translateY(-30px)
+	50%
+		+translateY(0)
+	60%
+		+translateY(-15px)
+	80%
+		+translateY(0)
+	100%
+		+translateY(0)
+
+
++keyframes(shake)
+	0%
+		+translateX(0)
+	10%
+		+translateX(-10px)
+	20%
+		+translateX(10px)
+	30%
+		+translateX(-10px)
+	40%
+		+translateX(10px)
+	50%
+		+translateX(-10px)
+	60%
+		+translateX(10px)
+	70%
+		+translateX(-10px)
+	80%
+		+translateX(10px)
+	90%
+		+translateX(-10px)
+	100%
+		+translateX(0)
+
+
++keyframes(rotateInDownLeft)
+	0%
+		+transform-origin(left, bottom)
+		+rotate(-90deg)
+		+opacity(0)
+	100%
+		+transform-origin(left, bottom)
+		+rotate(0)
+		+opacity(1)
+
+
++keyframes(rotateInUpLeft)
+	0%
+		+transform-origin(left, bottom)
+		+rotate(90deg)
+		+opacity(0)
+	100%
+		+transform-origin(left, bottom)
+		+rotate(0)
+		+opacity(1)
+
+
++keyframes(rotateInUpRight)
+	0%
+		+transform-origin(right, bottom)
+		+rotate(-90deg)
+		+opacity(0)
+	100%
+		+transform-origin(right, bottom)
+		+rotate(0)
+		+opacity(1)
+
+
++keyframes(rotateInDownRight)
+	0%
+		+transform-origin(right, bottom)
+		+rotate(90deg)
+		+opacity(0)
+	100%
+		+transform-origin(right, bottom)
+		+rotate(0)
+		+opacity(1)
+
+
++keyframes(rotateOutDownLeft)
+	0%
+		+transform-origin(left, bottom)
+		+rotate(0)
+		+opacity(1)
+	100%
+		+transform-origin(left, bottom)
+		+rotate(90deg)
+		+opacity(0)
+
+
++keyframes(rotateOutUpLeft)
+	0%
+		+transform-origin(left, bottom)
+		+rotate(0)
+		+opacity(1)
+	100%
+		+transform-origin(left, bottom)
+		+rotate(-90deg)
+		+opacity(0)
+
+
++keyframes(rotateOutDownRight)
+	0%
+		+transform-origin(right, bottom)
+		+rotate(0)
+		+opacity(1)
+	100%
+		+transform-origin(right, bottom)
+		+rotate(-90deg)
+		+opacity(0)
+
+
++keyframes(rotateOutUpRight)
+	0%
+		+transform-origin(right, bottom)
+		+rotate(0)
+		+opacity(1)
+	100%
+		+transform-origin(right, bottom)
+		+rotate(90deg)
+		+opacity(0)
+
+
++keyframes(rotateIn)
+	0%
+		+transform-origin(center, center)
+		+rotate(-200deg)
+		+opacity(0)
+	100%
+		+transform-origin(center, center)
+		+rotate(0)
+		+opacity(1)
+
+
++keyframes(rotateOut)
+	0%
+		+transform-origin(center, center)
+		+rotate(0)
+		+opacity(1)
+	100%
+		+transform-origin(center, center)
+		+rotate(200deg)
+		+opacity(0)
+
+
++keyframes(tada)
+	0%
+		+scale(1)
+	10%
+		+transform(scale(0.9) rotate(-3deg))
+	20%
+		+transform(scale(0.9) rotate(-3deg))
+	30%
+		+transform(scale(1.1) rotate(3deg))
+	40%
+		+transform(scale(1.1) rotate(-3deg))
+	50%
+		+transform(scale(1.1) rotate(3deg))
+	60%
+		+transform(scale(1.1) rotate(-3deg))
+	70%
+		+transform(scale(1.1) rotate(3deg))
+	80%
+		+transform(scale(1.1) rotate(-3deg))
+	90%
+		+transform(scale(1.1) rotate(3deg))
+	100%
+		+transform(scale(1) rotate(0))
