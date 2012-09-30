@@ -208,6 +208,13 @@ a:focus {
 	And now we start to style each step separately.
 */
 
+h2 {
+}
+
+#about-me {
+
+}
+
 #title {
 	padding: 0;
 }

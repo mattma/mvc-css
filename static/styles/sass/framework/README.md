@@ -39,4 +39,8 @@ in r g b order
 	You won't need to remember all the CSS3 Media Queries Syntax, and just need to call the mixin, pass the keyword what media you are trying to target. then apply a lock of CSS rules. Then it enabled the developer apply the regular css rule and different media queries in one area, easy to maintain in the long run.
 
 
+5. Image Sprite Generation with no effort needed
 
+6. Easy to add your own shortcut to the framework based on your personal perference. Edit the file: _default_settings.sass
+
+7. Fully support CSS3 easy to use @media query, CSS3 animations, transitions, gracefully fall back in Non-Modern browsers
