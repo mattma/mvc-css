@@ -123,11 +123,17 @@
 				<li>
 					<h3>6. Buttons Style</h3>
 					<ul>
-						<!-- <li><a href="#">Buttons</a></li> -->
+						<li><a href="#buttonBasicSnap">Basic Buttons</a></li>
+						<li><a href="#buttonPressableSnap">Pressable Buttons</a></li>
+						<li><a href="#buttonSexySnap">Sexy Buttons</a></li>
+						<li><a href="#buttonGroup1Snap">Button Group 1</a></li>
+						<li><a href="#buttonGroup2Snap">Button Group 2</a></li>
+						<li><a href="#buttonGroup3Snap">Button Group 3</a></li>
+						<li><a href="#buttonToggleSnap">Button Toggle Group</a></li>
 					</ul>
 				</li>
 				<li>
-					<h3>7. CSS3 Animation</h3>
+					<h3>7. CSS3 Animation <span class="comingSoon">(Soon)</span></h3>
 					<ul>
 
 					</ul>
@@ -724,6 +730,164 @@
 							<li class="divider"></li>
 							<li><a href="#">Help</a></li>
 				            </ul>
+					</div>
+				</article>
+
+				<hr>
+
+				<article class="buttons">
+					<h3>6.1 Buttons -  Basic Button</h3>
+					<div class="doc">
+						<p id="buttonBasicSnap">
+							<code>
+								+status-btn( $status: $default, $width: auto, $height: 30px, $padding-list: 0 8px )
+							</code>
+						</p>
+					</div>
+					<div id="button-basic" class="spacing">
+						<button>button</button>
+					</div>
+				</article>
+
+				<article class="buttons">
+					<h3>6.2 Buttons -  Pressable Button</h3>
+					<div class="doc">
+						<p id="buttonPressableSnap">
+							<code>
+								+press-btn( $background: #207cca, $color: $white, $padding-list: 11px 30px 14px 30px )
+							</code>
+						</p>
+					</div>
+					<div id="button-pressable" class="spacing">
+						<a>Press Me</a>
+					</div>
+				</article>
+
+				<article class="buttons">
+					<h3>6.3 Buttons -  Sexy Button</h3>
+					<div class="doc">
+						<p id="buttonSexySnap">
+							<code>
+								// +btn(gradient-style, first-color, second-color, text-color, text-style, border-radius, auto-states, ie-support)<br><br>
+								// +btn-style(styles, base-color) # @param: push, inset<br><br>
+								// @param  $style: simple, matte, shiny, glass, flat<br><br>
+								// button text styles: inset, raised, false<br><br>
+								+btn(matte)<br><br>
+								//+btn-style(push, blue)<br><br>
+								//+btn(simple, #ffd71a, #ffaa1a)
+							</code>
+						</p>
+					</div>
+					<div id="button-sexy" class="spacing">
+						<a>Submit</a>
+					</div>
+				</article>
+
+				<article class="buttons">
+					<h3>6.4 Buttons - Button Group 1</h3>
+					<div class="doc">
+						<p id="buttonGroup1Snap">
+							<code>
+								//@param: default, primary, warning, error, success, info, inverse<br><br>
+								//@param: ( $divider: $none, $status: $default, $padding-list: 8px 18px, $direction: $down, $size: 5px, $color: rgb(102,102,102)  )<br><br>
+								+group-btn
+							</code>
+						</p>
+					</div>
+					<div id="button-group-1" class="spacing">
+						<p>
+							<button>
+								Action<span>Caret</span>
+							</button>
+						</p>
+					</div>
+				</article>
+
+				<article class="buttons">
+					<h3>6.5 Buttons - Button Group 2</h3>
+					<div class="doc">
+						<p id="buttonGroup2Snap">
+							<code>
+								//@param: default, primary, warning, error, success, info, inverse <br><br>
+								//+group-btn( $divider, $status, $paddingTopBottom, $paddingLeftRight, $direction, $size, $color  )<br><br>
+								+group-btn(single)
+							</code>
+						</p>
+					</div>
+					<div id="button-group-2" class="spacing">
+						<!-- <p> <button>Action<span>Caret</span></button> </p> -->
+						<p>
+							<button>Action</button>
+							<button><span/>Caret</span></button>
+						</p>
+					</div>
+				</article>
+
+				<article class="buttons">
+					<h3>6.5 Buttons - Button Group 3</h3>
+					<div class="doc">
+						<p id="buttonGroup3Snap">
+							<code>
+								//@param: default, primary, warning, error, success, info, inverse <br><br>
+								//+group-btn( $divider, $status, $paddingTopBottom, $paddingLeftRight, $direction, $size, $color  )<br><br>
+								+group-btn(multiple)
+							</code>
+						</p>
+					</div>
+					<div id="button-group-3" class="spacing">
+						<!-- <p> <button>Action<span>Caret</span></button> </p> -->
+						<p>
+							<button>Left</button>
+							<!-- <button>Middle-left</button> -->
+							<button>Middle</button>
+							<!-- <button>Middle-right</button> -->
+							<button>Right</button>
+						</p>
+					</div>
+				</article>
+
+				<article class="buttons">
+					<h3>6.6 Buttons - Toggle</h3>
+					<div class="doc">
+						<p id="buttonToggleSnap">
+							<code>
+								+toggle($type: $default, $container-width: 200px, $slider-bg-color: #70c66b, $padding-list: 5px 0)
+								<br><br>
+								+toggle-group( $toggle-number: 2, $container-width: 200px, $slider-bg-color: #70c66b, $padding-list: 5px 0 5px )
+							</code>
+						</p>
+					</div>
+					<div id="button-toggle" class="spacing">
+						<label data-on="On" data-off="Off">
+							 <input type="checkbox" checked/>
+							 <span></span>
+						</label>
+
+						<div class="spacing"></div>
+
+						<p>
+							<input id="wireless" type="checkbox" />
+							<label for="wireless"></label>
+							<span></span>
+						</p>
+
+						<div class="spacing"></div>
+
+						<fieldset>
+							<input id="week4" name="view4" type="radio" >
+							<label for="week4">Week</label>
+
+							<input id="month4" name="view4" type="radio" checked>
+							<label for="month4">Month</label>
+
+							<input id="year4" name="view4" type="radio" >
+							<label for="year4">Year</label>
+
+							<!-- <input id="matt4" name="view4" type="radio" >
+							<label for="matt4">matt</label> -->
+
+							<span></span>
+						</fieldset>
 					</div>
 				</article>
 

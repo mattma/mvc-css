@@ -1,0 +1,72 @@
+@import "compass/css3"
+@import "../framework/_init"
+
+#button-basic
+	button
+		+fsize(1.6)
+		+fweight(700)
+		+ttransform
+
+		//@param: default, primary, warning, error, success, info, inverse
+		+status-btn(error, 80px)
+		//+basic-btn
+		behavior: url(/inc/assets/scripts/explorer/PIE.htc)
+
+
+#button-pressable
+	+height(40)
+	a
+		+press-btn
+		//+press-btn(red)
+		//+basic-btn
+
+
+#button-sexy
+	+height(60)
+	a
+		+lheight(35)
+		+fsize(1.6)
+		+width(100)
+
+		// +btn(gradient-style, first-color, second-color, text-color, text-style, border-radius, auto-states, ie-support)
+		// +btn-style(styles, base-color) # @param: push, inset
+		// @param  $style: simple, matte, shiny, glass, flat
+		// button text styles: inset, raised, false
+
+		+btn(matte)
+		//+btn-style(push, blue)
+		//+btn(simple, #ffd71a, #ffaa1a)
+
+
+#button-group-1
+	p
+		//@param: default, primary, warning, error, success, info, inverse
+		//+group-btn( 0, success, 8, 18, $down, 8, rgb(255,0,255))
+		//@param: ( $divider: $none, $status: $default, $padding-list: 8px 18px, $direction: $down, $size: 5px, $color: rgb(102,102,102)  )
+		+group-btn
+		//+group-btn(none, success)
+
+#button-group-2
+	//@param: default, primary, warning, error, success, info, inverse
+	p
+		+group-btn(single)
+		//+group-btn(single, warning)
+
+#button-group-3
+	p
+		//@param: default, primary, warning, error, success, info, inverse
+		//+group-btn( $divider, $status, $paddingTopBottom, $paddingLeftRight, $direction, $size, $color  )
+		+group-btn(multiple)
+		//+group-btn(multiple,info )
+
+#button-toggle
+	&>label
+		+toggle
+		+display(block)
+	p
+		+box(90,36)
+		+toggle(fancy)
+	fieldset
+		//( $toggle-number: 2, $container-width: 200px, $slider-bg-color: #70c66b, $padding-list: 5px 0 5px )
+		+toggle-group(3)
+		//+toggle-group(4, 280px, 255 255 0)
