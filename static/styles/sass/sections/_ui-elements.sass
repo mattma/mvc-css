@@ -1,0 +1,92 @@
+@import "compass/css3"
+@import "../framework/_init"
+
+#ui-alert
+	//@Param: alert, success, error, info
+	+alert(error, 20 40)
+	+lheight(1.6em)
+
+#ui-pagination
+	+pagination
+	li a
+		+fsize(1.4)
+
+// Divider, Background
+#ui-breadcrumb
+	+breadcrumb('/',true)
+
+//@param: background color & background hover color & $none or border-color
+#ui-pager
+	+pager
+
+//@param: default, important, warning, success, info, invert
+#ui-label
+	+status-label(info)
+	p
+		+margin(b, 0)
+		+color($white)
+
+//@param: default, warning, success, info, invert, error
+#ui-counter
+	p
+		+counter(error, 1px 12px 2px)
+		+margin(b, 0)
+
+#ui-tooltip
+	$background-test: rgb(204,204,204)
+	p
+		+box(460, 150)
+		+position($relative)
+		span
+			+display($none)
+		&:hover
+			// Container width: 200px  height: 60px
+			span
+				+box(210, 80)
+				+padding(top,10)
+				+padding(left,15)
+				+position(absolute, -150, 470)
+				+border-radius(5px)
+				+color($black)
+				+bcolor($background-test)
+				+display($block)
+				+arrow( 26, left, 28px, false, $background-test)
+
+#ui-close
+	+close-btn(30px, l)
+	+color($black)
+	+margins(0)
+
+#ui-thumbnail
+	a
+		+width(260)
+		+image-frame
+		//+image-frame(10, rgb(255,0,0), rgb(0,255,0), 1)
+
+#ui-well
+	div
+		// @param: $size: default, large, small
+		// +well( $background-color, $border-color, $size)
+		//
+		+well
+		+fsize(1.4)
+		//+well( yellow, red, large)
+
+#ui-progress
+	div
+		//+progress-bar($status, $stripe, $active)
+		//@param: $status: error, success, info, warning
+		//
+		//+progress-bar
+		+progress-bar(success, true, true)
+
+
+//ui-elements general styles
+.ui-elements
+	+margin(t, 80)
+	+child(1)
+		+margin(t, 0)
+
+	.spacing
+		+fsize(1.4)
+

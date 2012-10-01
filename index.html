@@ -91,6 +91,28 @@
 						<li><a href="#imageSpriteSnap">Compass Image Sprite</a></li>
 					</ul>
 				</li>
+				<li>
+					<h3>3. UI Elements</h3>
+					<ul>
+						<li><a href="#uiAlertSnap">Alert</a></li>
+						<li><a href="#uiPaginationSnap">Pagination</a></li>
+						<li><a href="#uiBreadcrumbSnap">Breadcrumb</a></li>
+						<li><a href="#uiPagerSnap">Pager</a></li>
+						<li><a href="#uiLabelSnap">Label || Messager</a></li>
+						<li><a href="#uiCounterSnap">Counter</a></li>
+						<li><a href="#uiTooltipSnap">Tooltip</a></li>
+						<li><a href="#uiCloseSnap">Close X</a></li>
+						<li><a href="#uiImageThumbnailSnap">Image Frame</a></li>
+						<li><a href="#uiWellSnap">Well</a></li>
+						<li><a href="#uiProgressSnap">Progress</a></li>
+					</ul>
+				</li>
+				<li>
+					<h3>4. Table Style</h3>
+					<ul>
+						<li><a href="#uiTableSnap">Table Style</a></li>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 
@@ -376,6 +398,261 @@
 							<li>Image Sprite</li>
 							<li>Image Sprite</li>
 						</ul>
+					</div>
+				</article>
+
+				<hr>
+
+				<article class="ui-elements">
+					<h3>3.1 UI Elements - Alert</h3>
+					<div class="doc">
+						<p id="uiAlertSnap">
+							<code>
+								//@Param: alert, success, error, info <br>
+								+alert( $status: $alert, $padding-list: 8px 35px 8px 15px )
+							</code>
+
+						</p>
+					</div>
+					<div id="ui-alert" class="spacing">
+						<a data-action="dismiss" href="#">×</a>
+						Message: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. e: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+					</div>
+				</article>
+
+				<article class="ui-elements">
+					<h3>3.2 UI Elements - Pagination</h3>
+					<div class="doc">
+						<p id="uiPaginationSnap">
+							<code>
+								+pagination( $height: 36px, $defaultUnit: px )
+							</code>
+						</p>
+					</div>
+					<div id="ui-pagination" class="spacing">
+						<ul>
+							<li class="disabled"><a href="#">«</a></li>
+							<li><a href="#">1</a> </li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li class="active"><a href="#">5</a></li>
+							<li><a href="#">»</a></li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="ui-elements">
+					<h3>3.3 UI Elements - Breadcrumb</h3>
+					<div class="doc">
+						<p id="uiBreadcrumbSnap">
+							<code>
+								+breadcrumb( $delimeter: "\25B8", $show-background: false, $padding-list: 7px 15px)
+							</code>
+						</p>
+					</div>
+					<div id="ui-breadcrumb" class="spacing">
+				  		<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Library</a></li>
+							<li class="active">Data</li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="ui-elements">
+					<h3>3.4 UI Elements - Pager</h3>
+					<div class="doc">
+						<p id="uiPagerSnap">
+							<code>
+								+pager($bg-color: $white, $hover-color: $general-background-color-hover, $border-color: $general-border-color, $padding-list: 5px 14px )
+							</code>
+						</p>
+					</div>
+					<div id="ui-pager" class="spacing">
+						<ul>
+						    <li> <a href="#">&larr; Older</a> </li>
+						    <li> <a href="#">Newer &rarr;</a> </li>
+					      </ul>
+					</div>
+				</article>
+
+				<article class="ui-elements">
+					<h3>3.5 UI Elements - Label or Messager</h3>
+					<div class="doc">
+						<p id="uiLabelSnap">
+							<code>
+								//@param: default, important, warning, success, info, invert
+								+status-label( $label: $default, $padding-list: 1px 4px 2px )
+							</code>
+						</p>
+					</div>
+					<div id="ui-label" class="spacing">
+						<p>Label Information</p>
+					</div>
+				</article>
+
+				<article class="ui-elements">
+					<h3>3.6 UI Elements - Counter</h3>
+					<div class="doc">
+						<p id="uiCounterSnap">
+							<code>
+								//@param: default, warning, success, info, invert, error
+								+counter( $indicator: $default, $padding-list: 1px 9px 2px)
+							</code>
+						</p>
+					</div>
+					<div id="ui-counter" class="spacing">
+						<p>15</p>
+					</div>
+				</article>
+
+				<article class="ui-elements">
+					<h3>3.7 UI Elements - Tooltip</h3>
+					<div class="doc">
+						<p id="uiTooltipSnap">
+							<code>
+								+arrow( $arrow-width: 20px, $direction: $bottom, $offset: 20, $invert: false, $bg-color: 204 204 204, $border-color: transparent, $border-width: 0)
+							</code>
+						</p>
+					</div>
+					<div id="ui-tooltip" class="spacing">
+					    	<p>
+						    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						    	consequat. Duis aute irure dolor in reprehenderit.
+						    	<span>This is an awesome tooltip info</span>
+					    	</p>
+					</div>
+				</article>
+
+				<article class="ui-elements">
+					<h3>3.8 UI Elements - Close X</h3>
+					<div class="doc">
+						<p id="uiCloseSnap">
+							<code>
+								+close-btn($font-size: 1.4em, $float: right)
+							</code>
+						</p>
+					</div>
+					<div id="ui-close" class="spacing">
+						<a>&times;</a>
+					</div>
+				</article>
+
+				<article class="ui-elements">
+					<h3>3.9 UI Elements - Image Frame</h3>
+					<div class="doc">
+						<p id="uiImageThumbnailSnap">
+							<code>
+								+image-frame( $padding-list: 4px 6px, $border-color: $general-border-color, $border-hover-color: $general-border-color-hover, $isLink: false)
+							</code>
+						</p>
+					</div>
+					<div id="ui-thumbnail" class="spacing">
+						<a><img src="http://placehold.it/260x180" alt=""></a>
+					</div>
+				</article>
+
+				<article class="ui-elements">
+					<h3>3.10 UI Elements - Well</h3>
+					<div class="doc">
+						<p id="uiWellSnap">
+							<code>
+								//@param: $size: default, large, small
+								+well( $background-color, $border-color, $size)
+							</code>
+						</p>
+					</div>
+					<div id="ui-well" class="spacing">
+						<div>
+						    Look, I'm in a well!
+						</div>
+					</div>
+				</article>
+
+				<article class="ui-elements">
+					<h3>3.11 UI Elements - Progress</h3>
+					<div class="doc">
+						<p id="uiProgressSnap">
+							<code>
+								//@param: $status: error, success, info, warning
+								+progress-bar($status, $stripe, $active)
+							</code>
+						</p>
+					</div>
+					<div id="ui-progress" class="spacing">
+						<div>
+							<p style="width: 60%;"></p>
+						</div>
+					</div>
+				</article>
+
+				<hr>
+
+				<article class="ui-elements">
+					<h3>4. Table Style</h3>
+					<div class="doc">
+						<p id="uiTableSnap">
+							<code>
+								+table-style( $padding-list: 8px, $show-border: $false, $show-stripe: $false, $hover-enable: $false)
+							</code>
+						</p>
+					</div>
+					<div id="table" class="spacing">
+						<table>
+							<colgroup class="group4">
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+							</colgroup>
+
+							<thead>
+							  <tr>
+							    <th>#</th>
+							    <th>First Name</th>
+							    <th>Last Name</th>
+							    <th>Username</th>
+							    <th>First Name</th>
+							    <th>Last Name</th>
+							    <th>Username</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+							    <td>1</td>
+							    <td>Matt</td>
+							    <td>Ma</td>
+							    <td>@mattma</td>
+							    <td>Matt</td>
+							    <td>Ma</td>
+							    <td>@mattma</td>
+							  </tr>
+							  <tr>
+							    <td>2</td>
+							    <td>Johnathan</td>
+							    <td>Pratchios</td>
+							    <td>@jp</td>
+							    <td>Matt</td>
+							    <td>Ma</td>
+							    <td>@mattma</td>
+							  </tr>
+							  <tr>
+							    <td>3</td>
+							    <td>Justin</td>
+							    <td>Haldane</td>
+							    <td>@jhaldane</td>
+							    <td>Matt</td>
+							    <td>Ma</td>
+							    <td>@mattma</td>
+							  </tr>
+							</tbody>
+						</table>
 					</div>
 				</article>
 			</div>

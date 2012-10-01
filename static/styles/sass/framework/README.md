@@ -44,3 +44,5 @@ in r g b order
 6. Easy to add your own shortcut to the framework based on your personal perference. Edit the file: _default_settings.sass
 
 7. Fully support CSS3 easy to use @media query, CSS3 animations, transitions, gracefully fall back in Non-Modern browsers
+
+8. More than 40 different KeyFrame name could be used in the CSS3 animation

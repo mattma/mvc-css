@@ -22,8 +22,9 @@ body
 		+position(f, 0,0)
 		+bcolor(#F5F5FF)
 		+box-shadow(rgba(51,51,51,0.2) 1px 1px 1px)
-		// &>ul
-		// 	+overflow(scroll, y)
+		&>ul
+			+overflow(scroll, y)
+			+height(880)
 	&>section
 		+box($section-width, 100%)
 		+padding(l, 100% - $section-width)
@@ -91,14 +92,14 @@ nav
 @import 'sections/image-sprite'
 
 //  ==================
-//  = FOOTER AREA =
+//  = UI Elements =
 //  ==================
-
+@import 'sections/ui-elements'
 
 //  ===================
-//  = UNIVERSAL CLASS =
+//  = Table Styles =
 //  ===================
-
+@import 'sections/table'
 
 //  ======================
 //  = WEBKIT STYLES ONLY =
