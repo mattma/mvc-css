@@ -49,8 +49,8 @@
 
 //Animate Mixin Plugin
 
-=animate($name: fadeIn, $duration: 1s, $delay: .2s, $function: ease, $mode: both)
-	+experimental(animation, $name $duration $delay $function $mode)
+// =animate($name: fadeIn, $duration: 1s, $delay: .2s, $function: ease, $mode: both)
+// 	+experimental(animation, $name $duration $delay $function $mode)
 
 +keyframes(fadeIn)
 	0%
@@ -420,6 +420,7 @@
 		+opacity(1)
 
 
+//TODO. start from here again
 +keyframes(rotateInDownRight)
 	0%
 		+transform-origin(right, bottom)

@@ -1,5 +1,8 @@
 @import "compass/css3"
 @import "../framework/_init"
+@import "../framework/animation/fade_in"
 
 .animate
-	//+animate(fadeInUp, 3s, 2s)
+	+animate(fadeIn, 3s, 2s)
+
+	+animate(fadeIn, 6s, 3s, ease-in-quad())
