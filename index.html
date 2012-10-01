@@ -113,6 +113,25 @@
 						<li><a href="#uiTableSnap">Table Style</a></li>
 					</ul>
 				</li>
+				<li>
+					<h3>5. Tabs Style</h3>
+					<ul>
+						<li><a href="#tabsBasicSnap">Basic Tab</a></li>
+						<li><a href="#tabsGroupSnap">Tab Group</a></li>
+					</ul>
+				</li>
+				<li>
+					<h3>6. Buttons Style</h3>
+					<ul>
+						<!-- <li><a href="#">Buttons</a></li> -->
+					</ul>
+				</li>
+				<li>
+					<h3>7. CSS3 Animation</h3>
+					<ul>
+
+					</ul>
+				</li>
 			</ul>
 		</nav>
 
@@ -655,6 +674,59 @@
 						</table>
 					</div>
 				</article>
+
+				<hr>
+
+				<article class="ui-elements">
+					<h3>5.1 Tabs - Basic Tabs</h3>
+					<div class="doc">
+						<p id="tabsBasicSnap">
+							<code>
+								// @param $style: horizontal, vertical, vertical-sexy, nav-list, top, bottom, left, right  <br>
+								+tabs( $style: horizontal, $border-color: $general-border-color, $border-color-hover: $general-border-color-hover, $active-background-color: #08c, $active-text-color: $white, $padding-list: 8px 12px )
+							</code>
+						</p>
+					</div>
+					<div id="tabs-basic" class="spacing">
+						<ul>
+							<li class="active"><a href="#">Home</a></li>
+							<li><a href="#">Profile</a></li>
+							<li><a href="#">Messages</a></li>
+						</ul>
+						<ul>
+							<li class="active"><a href="#">Home</a></li>
+							<li><a href="#">Profile</a></li>
+							<li><a href="#">Messages</a></li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="ui-elements">
+					<h3>5.2 Tabs - Tabs Groups</h3>
+					<div class="doc">
+						<p id="tabsGroupSnap">
+							<code>
+								// @param $style: horizontal, vertical, vertical-sexy, nav-list, top, bottom, left, right  <br>
+								+tabs( $style: horizontal, $border-color: $general-border-color, $border-color-hover: $general-border-color-hover, $active-background-color: #08c, $active-text-color: $white, $padding-list: 8px 12px )
+							</code>
+						</p>
+					</div>
+					<div id="tabs-groups" class="spacing">
+						<ul>
+							<li class="tabTitle">List header</li>
+							<li class="active"><a href="#">Home</a></li>
+							<li><a href="#">Library</a></li>
+							<li><a href="#">Applications</a></li>
+							<li class="divider"></li>
+							<li class="tabTitle">Another list header</li>
+							<li><a href="#">Profile</a></li>
+							<li><a href="#">Settings</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Help</a></li>
+				            </ul>
+					</div>
+				</article>
+
 			</div>
 		</section>
 

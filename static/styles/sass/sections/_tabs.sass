@@ -1,0 +1,34 @@
+@import "compass/css3"
+@import "../framework/_init"
+
+#tabs-basic
+	//+width(120)
+	+height
+	h3
+		+margin($bottom,30)
+	ul
+		//+width(250)
+		// @param $style: horizontal, vertical, vertical-sexy, nav-list, top, bottom, left, right
+		//
+		+child(1)
+			+tabs(vertical)
+			+margin(b, 30)
+		+child(l)
+			+tabs(horizontal)
+
+#tabs-groups
+	+well
+	+paddings(0)
+	ul
+		+box
+		+overflow($hidden)
+
+		+tabs(nav-list)
+		li
+			&.tabTitle
+				+fsize(1.2)
+				+padding(t, 15)
+				+color($black)
+				+margin(b, 10)
+			a
+				+padding(l, 30)
