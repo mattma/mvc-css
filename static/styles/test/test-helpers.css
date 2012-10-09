@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\000035}}
 .keyframes {
   @-webkit-keyframes move {
     color: red;
@@ -21,19 +20,16 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\000038}}
   .media {
     color: red;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\000038}}
   .media {
     color: red;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000314}}
 .input-block-level {
   display: block;
   width: 100%;
@@ -43,11 +39,9 @@
   box-sizing: border-box;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000317}}
 .clearfix {
   zoom: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_helpers\.sass}line{font-family:\00003395}}
 .clearfix:before, .clearfix:after {
   content: ".";
   display: block;
@@ -58,12 +52,10 @@
   height: 0px;
   width: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_helpers\.sass}line{font-family:\00003411}}
 .clearfix:after {
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000320}}
 .panel-box {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -76,7 +68,6 @@
   background: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000323}}
 .caret {
   content: "";
   display: inline-block;
@@ -104,13 +95,11 @@
   border-top: 20px solid #333333;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000327}}
 .text3d {
   color: black;
   text-shadow: black 1px 1px 0px, black 2px 2px 0px, black 3px 3px 0px, black 4px 4px 0px, black 4px 4px 2px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000330}}
 .well {
   min-height: 20px;
   background-color: #cccccc;
@@ -144,7 +133,6 @@
   box-shadow: rgba(175, 175, 175, 0.05) 0 1px 1px 0 inset;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000334}}
 .ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -152,7 +140,6 @@
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000337}}
 .hstyle {
   color: #333333;
   font-size: 1.8em;
@@ -161,7 +148,6 @@
   margin-bottom: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000340}}
 .pstyle {
   font-size: 1.4em;
   font-family: arial, helvetica, Verdana, sans-serif;
@@ -169,14 +155,12 @@
   margin-bottom: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000343}}
 .cursor {
   cursor: crosshair;
   cursor: pointer;
   cursor: progress;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000348}}
 .resize {
   resize: both;
   overflow: auto;
@@ -188,7 +172,6 @@
   overflow: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-helpers\.sass}line{font-family:\0000354}}
 .uselect {
   -webkit-user-select: all;
   -moz-user-select: all;

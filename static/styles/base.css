@@ -6,11 +6,9 @@
 /* Senior Web Developer -- Matt Ma. ( matt@mattmadesign.com ) */
 /* http://www.mattmadesign.com */
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000318}}
 body {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000320}}
 body > nav {
   height: 100%;
   width: 20%;
@@ -20,35 +18,29 @@ body > nav {
   -moz-box-shadow: rgba(51, 51, 51, 0.2) 1px 1px 1px;
   box-shadow: rgba(51, 51, 51, 0.2) 1px 1px 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000325}}
 body > nav > ul {
   overflow-y: scroll;
   height: 880px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000328}}
 body > section {
   height: 100%;
   width: 80%;
   padding-left: 20%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000331}}
 body > section > div {
   padding-top: 40px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000334}}
 h3 {
   color: #333333;
   margin-bottom: 15px;
   font-size: 2.4em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000339}}
 .spacing {
   margin: 30px 0px 30px 0px;
   zoom: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_helpers\.sass}line{font-family:\00003395}}
 .spacing:before, .spacing:after {
   content: ".";
   display: block;
@@ -59,75 +51,61 @@ h3 {
   height: 0px;
   width: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_helpers\.sass}line{font-family:\00003411}}
 .spacing:after {
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000344}}
 .doc p {
   height: auto;
   width: 50%;
   font-size: 1.6em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000347}}
 .doc p.content {
   width: 75%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000349}}
 .doc code {
   line-height: 1.8em;
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000354}}
 .comingSoon {
   color: red;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000357}}
 hr {
   margin: 40px 0px 40px 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000362}}
 nav h2 {
   padding-left: 15px;
   margin-top: 40px;
   color: #333333;
   font-size: 3em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000367}}
 nav > ul {
   margin-top: 25px;
   padding-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000371}}
 nav > ul > li {
   margin-bottom: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000373}}
 nav > ul ul {
   margin-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000375}}
 nav > ul ul li {
   margin-bottom: 3px;
   height: auto;
   width: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/base\.sass}line{font-family:\0000378}}
 nav > ul ul a {
   font-size: 1.5em;
   color: #4b4b4b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000352}}
 nav > ul ul a:hover {
   color: red;
 }
 
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\000035}}
 #grid960 p {
   display: inline;
   float: left;
@@ -135,31 +113,26 @@ nav > ul ul a:hover {
   margin: 0 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\000039}}
 #grid960push p {
   display: inline;
   float: left;
   width: 70px;
   margin: 0 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000390}}
 #grid960push p:last-child {
   margin-left: 165px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000316}}
 #grid960pull p {
   display: inline;
   float: left;
   width: 70px;
   margin: 0 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000360}}
 #grid960pull p:first-child {
   padding-right: 320px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000323}}
 #grid1140 p {
   display: inline;
   float: left;
@@ -167,7 +140,6 @@ nav > ul ul a:hover {
   margin-right: 3.8%;
   margin-bottom: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000390}}
 #grid1140 p:last-child {
   display: inline;
   float: left;
@@ -176,7 +148,6 @@ nav > ul ul a:hover {
   margin-right: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000331}}
 #grid1140push p {
   display: inline;
   float: left;
@@ -184,11 +155,9 @@ nav > ul ul a:hover {
   margin-right: 3.8%;
   margin-bottom: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000366}}
 #grid1140push p:nth-child(3) {
   margin-left: 25.95%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000390}}
 #grid1140push p:last-child {
   display: inline;
   float: left;
@@ -197,59 +166,48 @@ nav > ul ul a:hover {
   margin-right: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000339}}
 #blockEqualWidth li {
   float: left;
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000347}}
 #blockEqualWidth li:first-child:nth-last-child(1) {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000353}}
 #blockEqualWidth li:first-child:nth-last-child(2),
 #blockEqualWidth li:first-child:nth-last-child(2) ~ li {
   width: 50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000361}}
 #blockEqualWidth li:first-child:nth-last-child(3),
 #blockEqualWidth li:first-child:nth-last-child(3) ~ li {
   width: 33.3333%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000369}}
 #blockEqualWidth li:first-child:nth-last-child(4),
 #blockEqualWidth li:first-child:nth-last-child(4) ~ li {
   width: 25%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000377}}
 #blockEqualWidth li:first-child:nth-last-child(5),
 #blockEqualWidth li:first-child:nth-last-child(5) ~ li {
   width: 20%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000385}}
 #blockEqualWidth li:first-child:nth-last-child(6),
 #blockEqualWidth li:first-child:nth-last-child(6) ~ li {
   width: 16.6666%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\0000393}}
 #blockEqualWidth li:first-child:nth-last-child(7),
 #blockEqualWidth li:first-child:nth-last-child(7) ~ li {
   width: 14.2857%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000343}}
 #blockEqualWidthWithMargin {
   background-color: #e7e7e7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003111}}
 #blockEqualWidthWithMargin li {
   float: left;
   position: relative;
   padding: 0;
   height: 70px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003121}}
 #blockEqualWidthWithMargin li:after {
   content: "";
   height: 56px;
@@ -259,61 +217,51 @@ nav > ul ul a:hover {
   top: 7px;
   right: -7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003131}}
 #blockEqualWidthWithMargin li:last-child:after {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003139}}
 #blockEqualWidthWithMargin li:first-child {
   margin-left: 7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003153}}
 #blockEqualWidthWithMargin li:last-child {
   margin-right: 7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003165}}
 #blockEqualWidthWithMargin li:first-child:nth-last-child(1) {
   margin: 0;
   width: 946px;
   margin-left: 7px;
   margin-right: 7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003199}}
 #blockEqualWidthWithMargin li:first-child:nth-last-child(2),
 #blockEqualWidthWithMargin li:first-child:nth-last-child(2) ~ li {
   width: 466px;
   margin-left: 7px;
   margin-right: 7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003221}}
 #blockEqualWidthWithMargin li:first-child:nth-last-child(3),
 #blockEqualWidthWithMargin li:first-child:nth-last-child(3) ~ li {
   width: 306px;
   margin-left: 7px;
   margin-right: 7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003243}}
 #blockEqualWidthWithMargin li:first-child:nth-last-child(4),
 #blockEqualWidthWithMargin li:first-child:nth-last-child(4) ~ li {
   width: 226px;
   margin-left: 7px;
   margin-right: 7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003265}}
 #blockEqualWidthWithMargin li:first-child:nth-last-child(5),
 #blockEqualWidthWithMargin li:first-child:nth-last-child(5) ~ li {
   width: 178px;
   margin-left: 7px;
   margin-right: 7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003287}}
 #blockEqualWidthWithMargin li:first-child:nth-last-child(6),
 #blockEqualWidthWithMargin li:first-child:nth-last-child(6) ~ li {
   width: 146px;
   margin-left: 7px;
   margin-right: 7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003309}}
 #blockEqualWidthWithMargin li:first-child:nth-last-child(7),
 #blockEqualWidthWithMargin li:first-child:nth-last-child(7) ~ li {
   width: 123px;
@@ -321,29 +269,24 @@ nav > ul ul a:hover {
   margin-right: 7px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003353}}
 #multiRowBlockEqualWidth ul {
   display: block;
   overflow: hidden;
   margin-left: -2%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003361}}
 #multiRowBlockEqualWidth ul li {
   display: block;
   height: 60px;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_grid\.sass}line{font-family:\00003429}}
 #multiRowBlockEqualWidth ul li {
   margin-left: 2%;
   width: 23%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000351}}
 #multiRowBlockEqualWidth li {
   margin-bottom: 1.6666%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000355}}
 #boxModel ul li {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -358,72 +301,56 @@ nav > ul ul a:hover {
   width: 240px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000359}}
 .grid-system {
   margin-top: 80px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000360}}
 .grid-system:first-child {
   margin-top: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_grids-demo\.sass}line{font-family:\0000364}}
 .grid-system .spacing p, .grid-system .spacing li {
   background-color: lightgrey;
   height: 160px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000360}}
 .grid-system .spacing p:first-child, .grid-system .spacing li:first-child {
   background: #e9cccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000363}}
 .grid-system .spacing p:nth-child(2), .grid-system .spacing li:nth-child(2) {
   background: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000366}}
 .grid-system .spacing p:nth-child(3), .grid-system .spacing li:nth-child(3) {
   background: green;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000369}}
 .grid-system .spacing p:nth-child(4), .grid-system .spacing li:nth-child(4) {
   background: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000372}}
 .grid-system .spacing p:nth-child(5), .grid-system .spacing li:nth-child(5) {
   background: yellow;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000375}}
 .grid-system .spacing p:nth-child(6), .grid-system .spacing li:nth-child(6) {
   background: maroon;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000378}}
 .grid-system .spacing p:nth-child(7), .grid-system .spacing li:nth-child(7) {
   background: blue;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000381}}
 .grid-system .spacing p:nth-child(8), .grid-system .spacing li:nth-child(8) {
   background: #c4cccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000384}}
 .grid-system .spacing p:nth-child(9), .grid-system .spacing li:nth-child(9) {
   background: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000390}}
 .grid-system .spacing p:last-child, .grid-system .spacing li:last-child {
   background: #149797;
 }
 
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/main\/\*\.png}line{font-family:\00003114}}
 .main-sprite, #imageSprite li:first-child, #imageSprite li:nth-child(2), #imageSprite li:nth-child(3) {
   background: url('../images/main-s25855510a0.png') no-repeat;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_image-sprite\.sass}line{font-family:\000035}}
 #imageSprite {
   height: 121px;
   width: 960px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_image-sprite\.sass}line{font-family:\000037}}
 #imageSprite li {
   height: 121px;
   width: 128px;
@@ -432,53 +359,41 @@ nav > ul ul a:hover {
   text-indent: -9999px;
   background-repeat: no-repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000360}}
 #imageSprite li:first-child {
   background-position: -10px -262px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
 #imageSprite li:first-child:hover, #imageSprite li:first-child.facebook_hover, #imageSprite li:first-child.facebook-hover {
   background-position: -10px -1048px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
 #imageSprite li:first-child:target, #imageSprite li:first-child.facebook_target, #imageSprite li:first-child.facebook-target {
   background-position: -10px -786px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
 #imageSprite li:first-child:active, #imageSprite li:first-child.facebook_active, #imageSprite li:first-child.facebook-active {
   background-position: -10px -393px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000363}}
 #imageSprite li:nth-child(2) {
   background-position: -10px -131px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
 #imageSprite li:nth-child(2):hover, #imageSprite li:nth-child(2).twitter_hover, #imageSprite li:nth-child(2).twitter-hover {
   background-position: -10px -1179px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
 #imageSprite li:nth-child(2):target, #imageSprite li:nth-child(2).twitter_target, #imageSprite li:nth-child(2).twitter-target {
   background-position: -10px -655px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000366}}
 #imageSprite li:nth-child(3) {
   background-position: -10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
 #imageSprite li:nth-child(3):hover, #imageSprite li:nth-child(3).linkedin_hover, #imageSprite li:nth-child(3).linkedin-hover {
   background-position: -10px -917px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000343}}
 #imageSprite li:nth-child(3):target, #imageSprite li:nth-child(3).linkedin_target, #imageSprite li:nth-child(3).linkedin-target {
   background-position: -10px -524px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000352}}
 #imageSprite li:hover {
   cursor: pointer;
 }
 
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\000034}}
 #ui-alert {
   padding: 20px 40px;
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
@@ -492,7 +407,6 @@ nav > ul ul a:hover {
   color: #b94a48;
   line-height: 1.6em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003165}}
 #ui-alert [data-action="dismiss"] {
   position: relative;
   top: -5px;
@@ -506,18 +420,15 @@ nav > ul ul a:hover {
   opacity: 0.2;
   text-shadow: white 0 1px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003176}}
 #ui-alert [data-action="dismiss"]:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   opacity: 0.4;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\000039}}
 #ui-pagination {
   height: 36px;
   margin: 20px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003220}}
 #ui-pagination ul {
   display: inline-block;
   *display: inline;
@@ -533,12 +444,10 @@ nav > ul ul a:hover {
   margin-left: 0;
   margin-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003228}}
 #ui-pagination li {
   display: inline;
   height: 36px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003231}}
 #ui-pagination li:first-child a {
   border-left-width: 1px;
   -webkit-border-radius: 5px 0 0 5px;
@@ -547,7 +456,6 @@ nav > ul ul a:hover {
   -o-border-radius: 5px 0 0 5px;
   border-radius: 5px 0 0 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003234}}
 #ui-pagination li:last-child a {
   -webkit-border-radius: 0 5px 5px 0;
   -moz-border-radius: 0 5px 5px 0;
@@ -555,19 +463,16 @@ nav > ul ul a:hover {
   -o-border-radius: 0 5px 5px 0;
   border-radius: 0 5px 5px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003236}}
 #ui-pagination li.active a {
   color: #999999;
   cursor: default;
   background-color: whitesmoke;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003241}}
 #ui-pagination li.disabled span, #ui-pagination li.disabled a, #ui-pagination li.disabled a:hover {
   color: #999999;
   background-color: transparent;
   cursor: default;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003245}}
 #ui-pagination a {
   float: left;
   padding: 0 14px;
@@ -577,16 +482,13 @@ nav > ul ul a:hover {
   display: inline;
   width: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003253}}
 #ui-pagination a:hover {
   background-color: whitesmoke;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000311}}
 #ui-pagination li a {
   font-size: 1.4em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000315}}
 #ui-breadcrumb {
   list-style: none;
   padding: 7px 15px;
@@ -606,33 +508,27 @@ nav > ul ul a:hover {
   -moz-box-shadow: white 0 1px 0 0 inset;
   box-shadow: white 0 1px 0 0 inset;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003193}}
 #ui-breadcrumb li {
   display: inline-block;
   *display: inline;
   *zoom: 1;
   text-shadow: white 0 1px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003198}}
 #ui-breadcrumb li:after {
   content: "/";
   display: inline-block;
   padding: 0 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003202}}
 #ui-breadcrumb li:last-child:after {
   content: "";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003204}}
 #ui-breadcrumb li:last-child, #ui-breadcrumb li:last-child a {
   color: #2c4460;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003206}}
 #ui-breadcrumb li a {
   display: inline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000319}}
 #ui-pager {
   margin-left: 0;
   margin-bottom: 20px;
@@ -640,34 +536,27 @@ nav > ul ul a:hover {
   text-align: center;
   *zoom: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003268}}
 #ui-pager:before, #ui-pager:after {
   display: table;
   content: "";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003271}}
 #ui-pager:after {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003273}}
 #ui-pager li {
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003275}}
 #ui-pager li:first-child a {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003277}}
 #ui-pager li:last-child a {
   float: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003280}}
 #ui-pager li.disabled a, #ui-pager li.disabled a:hover {
   color: #999999;
   background-color: white;
   cursor: default;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003284}}
 #ui-pager a {
   display: inline-block;
   padding: 5px 14px;
@@ -679,13 +568,11 @@ nav > ul ul a:hover {
   -o-border-radius: 15px;
   border-radius: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003293}}
 #ui-pager a:hover {
   cursor: pointer;
   background-color: whitesmoke;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000323}}
 #ui-label {
   padding: 1px 4px 2px 4px;
   vertical-align: middle;
@@ -700,21 +587,17 @@ nav > ul ul a:hover {
   border-radius: 5px;
   background-color: #3a87ad;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003311}}
 #ui-label:hover {
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003331}}
 #ui-label:hover {
   background-color: #2d6987;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000325}}
 #ui-label p {
   margin-bottom: 0px;
   color: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000331}}
 #ui-counter p {
   padding: 1px 12px 2px 12px;
   white-space: nowrap;
@@ -728,25 +611,20 @@ nav > ul ul a:hover {
   background-color: #b94a48;
   margin-bottom: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003349}}
 #ui-counter p:hover {
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003357}}
 #ui-counter p:hover {
   background-color: #953b39;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000337}}
 #ui-tooltip p {
   height: 150px;
   width: 460px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000340}}
 #ui-tooltip p span {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000344}}
 #ui-tooltip p:hover span {
   height: 80px;
   width: 210px;
@@ -766,7 +644,6 @@ nav > ul ul a:hover {
   position: relative;
   border: 1px solid #cccccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\0000398}}
 #ui-tooltip p:hover span:after {
   content: "\00a0";
   display: block;
@@ -781,7 +658,6 @@ nav > ul ul a:hover {
   top: 28px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000355}}
 #ui-close {
   float: left;
   font-size: 30px;
@@ -791,14 +667,12 @@ nav > ul ul a:hover {
   color: black;
   margin: 0px 0px 0px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003917}}
 #ui-close:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   opacity: 0.4;
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000361}}
 #ui-thumbnail a {
   width: 260px;
   display: block;
@@ -813,14 +687,12 @@ nav > ul ul a:hover {
   box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px;
   padding: 4px 6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003607}}
 #ui-thumbnail a:hover {
   border-color: #0088cc;
   -webkit-box-shadow: rgba(0, 105, 214, 0.25) 0 1px 4px;
   -moz-box-shadow: rgba(0, 105, 214, 0.25) 0 1px 4px;
   box-shadow: rgba(0, 105, 214, 0.25) 0 1px 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003614}}
 #ui-thumbnail a > img {
   display: block;
   max-width: 100%;
@@ -828,7 +700,6 @@ nav > ul ul a:hover {
   margin-right: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000367}}
 #ui-well div {
   min-height: 20px;
   background-color: whitesmoke;
@@ -848,7 +719,6 @@ nav > ul ul a:hover {
   font-size: 1.4em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000376}}
 #ui-progress div {
   overflow: hidden;
   height: 18px;
@@ -867,55 +737,46 @@ nav > ul ul a:hover {
   -o-border-radius: 5px;
   border-radius: 5px;
   @-webkit-keyframes progress-bar-stripes {
-    /* line 538, /Users/bigmabig/Desktop/FrameworkDemo/static/styles/sass/framework/_plugins.sass */
     from {
       background-position: 0 0;
     }
 
-    /* line 540, /Users/bigmabig/Desktop/FrameworkDemo/static/styles/sass/framework/_plugins.sass */
     to {
       background-position: 40px 0;
     }
 }
 
   @-moz-keyframes progress-bar-stripes {
-    /* line 543, /Users/bigmabig/Desktop/FrameworkDemo/static/styles/sass/framework/_plugins.sass */
     from {
       background-position: 0 0;
     }
 
-    /* line 545, /Users/bigmabig/Desktop/FrameworkDemo/static/styles/sass/framework/_plugins.sass */
     to {
       background-position: 40px 0;
     }
 }
 
   @-ms-keyframes progress-bar-stripes {
-    /* line 548, /Users/bigmabig/Desktop/FrameworkDemo/static/styles/sass/framework/_plugins.sass */
     from {
       background-position: 0 0;
     }
 
-    /* line 550, /Users/bigmabig/Desktop/FrameworkDemo/static/styles/sass/framework/_plugins.sass */
     to {
       background-position: 40px 0;
     }
 }
 
   @keyframes progress-bar-stripes {
-    /* line 553, /Users/bigmabig/Desktop/FrameworkDemo/static/styles/sass/framework/_plugins.sass */
     from {
       background-position: 0 0;
     }
 
-    /* line 555, /Users/bigmabig/Desktop/FrameworkDemo/static/styles/sass/framework/_plugins.sass */
     to {
       background-position: 40px 0;
     }
 }
 
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_plugins\.sass}line{font-family:\00003495}}
 #ui-progress div > * {
   width: 0%;
   height: 18px;
@@ -967,21 +828,17 @@ nav > ul ul a:hover {
   background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000385}}
 .ui-elements {
   margin-top: 80px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000360}}
 .ui-elements:first-child {
   margin-top: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_ui-elements\.sass}line{font-family:\0000390}}
 .ui-elements .spacing {
   font-size: 1.4em;
 }
 
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_table\.sass}line{font-family:\000034}}
 table {
   max-width: 100%;
   border-collapse: collapse;
@@ -989,39 +846,32 @@ table {
   background-color: transparent;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003811}}
 table th, table td {
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #dddddd;
   padding: 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003817}}
 table th {
   font-weight: 700;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003821}}
 table thead th {
   vertical-align: bottom;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003825}}
 table colgroup + thead tr:first-child th,
 table colgroup + thead tr:first-child td,
 table thead:first-child tr:first-child th,
 table thead:first-child tr:first-child td {
   border-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003832}}
 table tbody + tbody {
   border-top: 2px solid #dddddd;
 }
 
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_tabs\.sass}line{font-family:\000034}}
 #tabs-basic {
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000360}}
 #tabs-basic ul:first-child {
   *zoom: 1;
   list-style: none outside none;
@@ -1029,35 +879,28 @@ table tbody + tbody {
   border-bottom: 0;
   margin-bottom: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003623}}
 #tabs-basic ul:first-child:before, #tabs-basic ul:first-child:after {
   display: table;
   content: "";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003626}}
 #tabs-basic ul:first-child:after {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003633}}
 #tabs-basic ul:first-child > li > a {
   padding: 8px 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003635}}
 #tabs-basic ul:first-child > li > a:hover {
   background: #0088cc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003638}}
 #tabs-basic ul:first-child > li.active > a, #tabs-basic ul:first-child > li.active > a:hover {
   background: white;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003657}}
 #tabs-basic ul:first-child > li {
   float: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003659}}
 #tabs-basic ul:first-child > li > a {
   margin: 0px 0px 0px 0px;
   -webkit-border-radius: 0;
@@ -1068,11 +911,9 @@ table tbody + tbody {
   border: 1px solid #dddddd;
   border-bottom: 0 none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003664}}
 #tabs-basic ul:first-child > li > a:hover {
   z-index: 2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003667}}
 #tabs-basic ul:first-child > li:first-child > a {
   -webkit-border-radius: 5px 5px 0 0;
   -moz-border-radius: 5px 5px 0 0;
@@ -1080,7 +921,6 @@ table tbody + tbody {
   -o-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003669}}
 #tabs-basic ul:first-child > li:last-child > a {
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
@@ -1090,41 +930,33 @@ table tbody + tbody {
   border-bottom: 1px solid #dddddd;
   margin-bottom: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000390}}
 #tabs-basic ul:last-child {
   *zoom: 1;
   list-style: none outside none;
   margin-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003623}}
 #tabs-basic ul:last-child:before, #tabs-basic ul:last-child:after {
   display: table;
   content: "";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003626}}
 #tabs-basic ul:last-child:after {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003633}}
 #tabs-basic ul:last-child > li > a {
   padding: 8px 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003635}}
 #tabs-basic ul:last-child > li > a:hover {
   background: #0088cc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003638}}
 #tabs-basic ul:last-child > li.active > a, #tabs-basic ul:last-child > li.active > a:hover {
   background: white;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003645}}
 #tabs-basic ul:last-child > li {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003647}}
 #tabs-basic ul:last-child > li > a {
   margin: 2px 2px 2px 0px;
   -webkit-border-radius: 5px;
@@ -1133,13 +965,11 @@ table tbody + tbody {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003651}}
 #tabs-basic ul:last-child > li.active > a, #tabs-basic ul:last-child > li.active > a:hover {
   color: white;
   background-color: #0088cc;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_tabs\.sass}line{font-family:\0000319}}
 #tabs-groups {
   min-height: 20px;
   background-color: whitesmoke;
@@ -1158,7 +988,6 @@ table tbody + tbody {
   box-shadow: rgba(175, 175, 175, 0.05) 0 1px 1px 0 inset;
   padding: 0px 0px 0px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_tabs\.sass}line{font-family:\0000322}}
 #tabs-groups ul {
   height: auto;
   width: auto;
@@ -1170,44 +999,36 @@ table tbody + tbody {
   padding-right: 15px;
   margin-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003623}}
 #tabs-groups ul:before, #tabs-groups ul:after {
   display: table;
   content: "";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003626}}
 #tabs-groups ul:after {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003633}}
 #tabs-groups ul > li > a {
   padding: 8px 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003635}}
 #tabs-groups ul > li > a:hover {
   background: #0088cc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003638}}
 #tabs-groups ul > li.active > a, #tabs-groups ul > li.active > a:hover {
   background: white;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003698}}
 #tabs-groups ul > li > a {
   width: auto;
   margin-left: -16px;
   margin-right: -16px;
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003704}}
 #tabs-groups ul > li.active > a, #tabs-groups ul > li.active > a:hover {
   color: white;
   text-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0;
   background-color: #0088cc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003709}}
 #tabs-groups ul > li.divider {
   height: 1px;
   overflow: hidden;
@@ -1216,20 +1037,17 @@ table tbody + tbody {
   *width: 100%;
   *margin: -5px 0 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_tabs\.sass}line{font-family:\0000328}}
 #tabs-groups ul li.tabTitle {
   font-size: 1.2em;
   padding-top: 15px;
   color: black;
   margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_tabs\.sass}line{font-family:\0000333}}
 #tabs-groups ul li a {
   padding-left: 30px;
 }
 
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_buttons\.sass}line{font-family:\000035}}
 #button-basic button {
   font-size: 1.6em;
   font-weight: 700;
@@ -1267,11 +1085,9 @@ table tbody + tbody {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   behavior: url(/inc/assets/scripts/explorer/PIE.htc);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003934}}
 #button-basic button:first-child {
   *margin-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003946}}
 #button-basic button:hover {
   background-color: #e6e6e6;
   background-position: 0 -15px;
@@ -1280,13 +1096,11 @@ table tbody + tbody {
   -o-transition: background-position 0.3s linear;
   transition: background-position 0.3s linear;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003951}}
 #button-basic button:focus {
   outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003956}}
 #button-basic button.active, #button-basic button:active {
   background-image: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 2px 4px 0 inset, rgba(0, 0, 0, 0.05) 0 1px 2px;
@@ -1296,7 +1110,6 @@ table tbody + tbody {
   background-color: #d9d9d9 \9;
   outline: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003963}}
 #button-basic button.disabled, #button-basic button[disabled] {
   cursor: default;
   background-image: none;
@@ -1307,20 +1120,16 @@ table tbody + tbody {
   -moz-box-shadow: transparent 0 0 0 0;
   box-shadow: transparent 0 0 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031015}}
 #button-basic button:hover, #button-basic button:active, #button-basic button.active, #button-basic button.disabled, #button-basic button[disabled] {
   background-color: #bd362f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031017}}
 #button-basic button:active, #button-basic button.active {
   background-color: #942a25 \9;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_buttons\.sass}line{font-family:\0000316}}
 #button-pressable {
   height: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_buttons\.sass}line{font-family:\0000318}}
 #button-pressable a {
   background: #207cca url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHUo2LGfZuukSWyUYirJAdYbF3MfqEKmjM+I2EfhA94iG3L7uKrR+GdWD73ydlIB+6hgref1QTlmgmbM3/LeX5GI1Ux1RWpgxpLuZ2+I+IjzZ8wqE4nilvQdkUdfhzI5QDWy+kw5Wgg2pGpeEVeCCA7b85BO3F9DzxB3cdqvBzWcmzbyMiqhzuYqtHRVG2y4x+KOlnyqla8AoWWpuBoYRxzXrfKuILl6SfiWCbjxoZJUaCBj1CjH7GIaDbc9kqBY3W/Rgjda1iqQcOJu2WW+76pZC9QG7M00dffe9hNnseupFL53r8F7YHSwJWUKP2q+k7RdsxyOB11n0xtOvnW4irMMFNV4H0uqwS5ExsmP9AxbDTc9JwgneAT5vTiUSm1E7BSflSt3bfa1tv8Di3R8n3Af7MNWzs49hmauE2wP+ttrq+AsWpFG2awvsuOqbipWHgtuvuaAE+A1Z/7gC9hesnr+7wqCwG8c5yAg3AL1fm8T9AZtp/bbJGwl1pNrE7RuOX7PeMRUERVaPpEs+yqeoSmuOlokqw49pgomjLeh7icHNlG19yjs6XXOMedYm5xH2YxpV2tc0Ro2jJfxC50ApuxGob7lMsxfTbeUv07TyYxpeLucEH1gNd4IKH2LAg5TdVhlCafZvpskfncCfx8pOhJzd76bJWeYFnFciwcYfubRc12Ip/ppIhA1/mSZ/RxjFDrJC5xifFjJpY2Xl5zXdguFqYyTR1zSp1Y9p+tktDYYSNflcxI0iyO4TPBdlRcpeqjK/piF5bklq77VSEaA+z8qmJTFzIWiitbnzR794USKBUaT0NTEsVjZqLaFVqJoPN9ODG70IPbfBHKK+/q/AWR0tJzYHRULOa4MP+W/HfGadZUbfw177G7j/OGbIs8TahLyynl4X4RinF793Oz+BU0saXtUHrVBFT/DnA3ctNPoGbs4hRIjTok8i+algT1lTHi4SxFvONKNrgQFAq2/gFnWMXgwffgYMJpiKYkmW3tTg3ZQ9Jq+f8XN+A5eeUKHWvJWJ2sgJ1Sop+wwhqFVijqWaJhwtD8MNlSBeWNNWTa5Z5kPZw5+LbVT99wqTdx29lMUH4OIG/D86ruKEauBjvH5xy6um/Sfj7ei6UUVk4AIl3MyD4MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz//6qy8JxjZsmxxy5+4w9CDNJY09T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg==) 0 0 repeat;
   color: white;
@@ -1338,14 +1147,12 @@ table tbody + tbody {
   -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 -5px 0 0 inset, rgba(0, 0, 0, 0.15) 0 -30px 30px -10px inset, rgba(0, 0, 0, 0.25) 0 10px 50px 50px inset, rgba(0, 0, 0, 0.25) 0 1px 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0 -5px 0 0 inset, rgba(0, 0, 0, 0.15) 0 -30px 30px -10px inset, rgba(0, 0, 0, 0.25) 0 10px 50px 50px inset, rgba(0, 0, 0, 0.25) 0 1px 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031154}}
 #button-pressable a:hover, #button-pressable a:focus {
   color: #f0f0f0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 -5px 0 0 inset, rgba(0, 0, 0, 0.15) 0 -30px 40px -10px inset, rgba(0, 0, 0, 0.25) 0 5px 30px 10px inset, rgba(0, 0, 0, 0.25) 0 1px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 -5px 0 0 inset, rgba(0, 0, 0, 0.15) 0 -30px 40px -10px inset, rgba(0, 0, 0, 0.25) 0 5px 30px 10px inset, rgba(0, 0, 0, 0.25) 0 1px 5px;
   box-shadow: rgba(0, 0, 0, 0.2) 0 -5px 0 0 inset, rgba(0, 0, 0, 0.15) 0 -30px 40px -10px inset, rgba(0, 0, 0, 0.25) 0 5px 30px 10px inset, rgba(0, 0, 0, 0.25) 0 1px 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031157}}
 #button-pressable a:active {
   padding-bottom: 12px;
   top: 2px;
@@ -1354,11 +1161,9 @@ table tbody + tbody {
   box-shadow: rgba(0, 0, 0, 0.25) 0 -3px 0 0 inset, rgba(0, 0, 0, 0.1) 0 -60px 30px -10px inset, rgba(0, 0, 0, 0.25) 0 10px 50px 50px inset, rgba(0, 0, 0, 0.25) 0 1px 3px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_buttons\.sass}line{font-family:\0000324}}
 #button-sexy {
   height: 60px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_buttons\.sass}line{font-family:\0000326}}
 #button-sexy a {
   line-height: 35px;
   font-size: 1.6em;
@@ -1371,7 +1176,7 @@ table tbody + tbody {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  background: url('../images/ie/sassy-button-overlay.png') repeat-x bottom left #0b99c2;
+  background: url('../images/../images/ie/sassy-button-overlay.png') repeat-x bottom left #0b99c2;
   background: linear-gradient(#27c5f3, #0b99c2 70%);
   -webkit-box-shadow: #6fd8f7 0 1px 0 inset;
   -moz-box-shadow: #6fd8f7 0 1px 0 inset;
@@ -1380,19 +1185,16 @@ table tbody + tbody {
   color: white;
   text-shadow: #086d8a 0 -1px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031317}}
 #button-sexy a:hover {
   background-color: #0a86aa;
   background: linear-gradient(#0fbff1 3%, #0a86aa 75%);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031320}}
 #button-sexy a:active {
   -webkit-box-shadow: #097b9b 0 1px 2px inset;
   -moz-box-shadow: #097b9b 0 1px 2px inset;
   box-shadow: #097b9b 0 1px 2px inset;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_buttons\.sass}line{font-family:\0000342}}
 #button-group-1 p {
   position: relative;
   width: auto;
@@ -1400,20 +1202,16 @@ table tbody + tbody {
   *zoom: 1;
   *margin-left: 0.3em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031078}}
 #button-group-1 p:before, #button-group-1 p:after {
   display: table;
   content: "";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031081}}
 #button-group-1 p:after {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031084}}
 #button-group-1 p:first-child {
   *margin-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031087}}
 #button-group-1 p > * {
   position: relative;
   float: left;
@@ -1452,11 +1250,9 @@ table tbody + tbody {
   width: auto;
   padding: 8px 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003934}}
 #button-group-1 p > *:first-child {
   *margin-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003946}}
 #button-group-1 p > *:hover {
   background-color: #e6e6e6;
   background-position: 0 -15px;
@@ -1465,13 +1261,11 @@ table tbody + tbody {
   -o-transition: background-position 0.3s linear;
   transition: background-position 0.3s linear;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003951}}
 #button-group-1 p > *:focus {
   outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003956}}
 #button-group-1 p > *.active, #button-group-1 p > *:active {
   background-image: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 2px 4px 0 inset, rgba(0, 0, 0, 0.05) 0 1px 2px;
@@ -1481,7 +1275,6 @@ table tbody + tbody {
   background-color: #d9d9d9 \9;
   outline: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003963}}
 #button-group-1 p > *.disabled, #button-group-1 p > *[disabled] {
   cursor: default;
   background-image: none;
@@ -1492,15 +1285,12 @@ table tbody + tbody {
   -moz-box-shadow: transparent 0 0 0 0;
   box-shadow: transparent 0 0 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003978}}
 #button-group-1 p > *:hover, #button-group-1 p > *:active, #button-group-1 p > *.active, #button-group-1 p > *.disabled, #button-group-1 p > *[disabled] {
   background-color: #e6e6e6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003980}}
 #button-group-1 p > *:active, #button-group-1 p > *.active {
   background-color: #cccccc \9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031095}}
 #button-group-1 p > * > span {
   content: "";
   display: inline-block;
@@ -1518,12 +1308,10 @@ table tbody + tbody {
   margin-top: 4px;
   margin-left: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031101}}
 #button-group-1 p > *:hover, #button-group-1 p > *:focus, #button-group-1 p > *:active, #button-group-1 p > *.active {
   z-index: 2;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_buttons\.sass}line{font-family:\0000351}}
 #button-group-2 p {
   position: relative;
   width: auto;
@@ -1535,20 +1323,16 @@ table tbody + tbody {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031078}}
 #button-group-2 p:before, #button-group-2 p:after {
   display: table;
   content: "";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031081}}
 #button-group-2 p:after {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031084}}
 #button-group-2 p:first-child {
   *margin-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031087}}
 #button-group-2 p > * {
   position: relative;
   float: left;
@@ -1587,11 +1371,9 @@ table tbody + tbody {
   width: auto;
   padding: 8px 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003934}}
 #button-group-2 p > *:first-child {
   *margin-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003946}}
 #button-group-2 p > *:hover {
   background-color: #e6e6e6;
   background-position: 0 -15px;
@@ -1600,13 +1382,11 @@ table tbody + tbody {
   -o-transition: background-position 0.3s linear;
   transition: background-position 0.3s linear;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003951}}
 #button-group-2 p > *:focus {
   outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003956}}
 #button-group-2 p > *.active, #button-group-2 p > *:active {
   background-image: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 2px 4px 0 inset, rgba(0, 0, 0, 0.05) 0 1px 2px;
@@ -1616,7 +1396,6 @@ table tbody + tbody {
   background-color: #d9d9d9 \9;
   outline: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003963}}
 #button-group-2 p > *.disabled, #button-group-2 p > *[disabled] {
   cursor: default;
   background-image: none;
@@ -1627,15 +1406,12 @@ table tbody + tbody {
   -moz-box-shadow: transparent 0 0 0 0;
   box-shadow: transparent 0 0 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003978}}
 #button-group-2 p > *:hover, #button-group-2 p > *:active, #button-group-2 p > *.active, #button-group-2 p > *.disabled, #button-group-2 p > *[disabled] {
   background-color: #e6e6e6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003980}}
 #button-group-2 p > *:active, #button-group-2 p > *.active {
   background-color: #cccccc \9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031095}}
 #button-group-2 p > * > span {
   content: "";
   display: inline-block;
@@ -1653,15 +1429,12 @@ table tbody + tbody {
   margin-top: 4px;
   margin-left: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031101}}
 #button-group-2 p > *:hover, #button-group-2 p > *:focus, #button-group-2 p > *:active, #button-group-2 p > *.active {
   z-index: 2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031109}}
 #button-group-2 p > * {
   float: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031111}}
 #button-group-2 p > *:first-child {
   -webkit-border-radius: 5px 0 0 5px;
   -moz-border-radius: 5px 0 0 5px;
@@ -1672,7 +1445,6 @@ table tbody + tbody {
   -moz-box-shadow: rgba(255, 255, 255, 0.125) 1px 0 0 0 inset, rgba(255, 255, 255, 0.2) 0 1px 0 0 inset, rgba(0, 0, 0, 0.05) 0 1px 2px 0 inset;
   box-shadow: rgba(255, 255, 255, 0.125) 1px 0 0 0 inset, rgba(255, 255, 255, 0.2) 0 1px 0 0 inset, rgba(0, 0, 0, 0.05) 0 1px 2px 0 inset;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031114}}
 #button-group-2 p > *:last-child {
   -webkit-border-radius: 0 5px 5px 0;
   -moz-border-radius: 0 5px 5px 0;
@@ -1684,13 +1456,11 @@ table tbody + tbody {
   opacity: 1;
   margin-left: -4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031119}}
 #button-group-2 p > *:last-child:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
   opacity: 0.75;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_buttons\.sass}line{font-family:\0000356}}
 #button-group-3 p {
   position: relative;
   width: auto;
@@ -1702,20 +1472,16 @@ table tbody + tbody {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031078}}
 #button-group-3 p:before, #button-group-3 p:after {
   display: table;
   content: "";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031081}}
 #button-group-3 p:after {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031084}}
 #button-group-3 p:first-child {
   *margin-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031087}}
 #button-group-3 p > * {
   position: relative;
   float: left;
@@ -1754,11 +1520,9 @@ table tbody + tbody {
   width: auto;
   padding: 8px 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003934}}
 #button-group-3 p > *:first-child {
   *margin-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003946}}
 #button-group-3 p > *:hover {
   background-color: #e6e6e6;
   background-position: 0 -15px;
@@ -1767,13 +1531,11 @@ table tbody + tbody {
   -o-transition: background-position 0.3s linear;
   transition: background-position 0.3s linear;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003951}}
 #button-group-3 p > *:focus {
   outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003956}}
 #button-group-3 p > *.active, #button-group-3 p > *:active {
   background-image: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 2px 4px 0 inset, rgba(0, 0, 0, 0.05) 0 1px 2px;
@@ -1783,7 +1545,6 @@ table tbody + tbody {
   background-color: #d9d9d9 \9;
   outline: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003963}}
 #button-group-3 p > *.disabled, #button-group-3 p > *[disabled] {
   cursor: default;
   background-image: none;
@@ -1794,15 +1555,12 @@ table tbody + tbody {
   -moz-box-shadow: transparent 0 0 0 0;
   box-shadow: transparent 0 0 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003978}}
 #button-group-3 p > *:hover, #button-group-3 p > *:active, #button-group-3 p > *.active, #button-group-3 p > *.disabled, #button-group-3 p > *[disabled] {
   background-color: #e6e6e6;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003980}}
 #button-group-3 p > *:active, #button-group-3 p > *.active {
   background-color: #cccccc \9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031095}}
 #button-group-3 p > * > span {
   content: "";
   display: inline-block;
@@ -1820,11 +1578,9 @@ table tbody + tbody {
   margin-top: 4px;
   margin-left: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031101}}
 #button-group-3 p > *:hover, #button-group-3 p > *:focus, #button-group-3 p > *:active, #button-group-3 p > *.active {
   z-index: 2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031127}}
 #button-group-3 p > * {
   float: none;
   margin-left: -5px;
@@ -1834,7 +1590,6 @@ table tbody + tbody {
   -o-border-radius: 0;
   border-radius: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031131}}
 #button-group-3 p > *:first-child {
   margin-left: 0;
   -webkit-border-radius: 5px 0 0 5px;
@@ -1846,7 +1601,6 @@ table tbody + tbody {
   -moz-box-shadow: rgba(255, 255, 255, 0.125) 1px 0 0 0 inset, rgba(255, 255, 255, 0.2) 0 1px 0 0 inset, rgba(0, 0, 0, 0.05) 0 1px 2px 0 inset;
   box-shadow: rgba(255, 255, 255, 0.125) 1px 0 0 0 inset, rgba(255, 255, 255, 0.2) 0 1px 0 0 inset, rgba(0, 0, 0, 0.05) 0 1px 2px 0 inset;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\000031135}}
 #button-group-3 p > *:last-child {
   -webkit-border-radius: 0 5px 5px 0;
   -moz-border-radius: 0 5px 5px 0;
@@ -1856,7 +1610,6 @@ table tbody + tbody {
   padding: 8px 18px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_buttons\.sass}line{font-family:\0000363}}
 #button-toggle > label {
   position: relative;
   display: block;
@@ -1867,18 +1620,15 @@ table tbody + tbody {
   min-height: 30px;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003386}}
 #button-toggle > label input {
   position: absolute;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   *display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003391}}
 #button-toggle > label input:focus + span {
   outline: 1px dotted white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003399}}
 #button-toggle > label:before {
   content: "";
   position: absolute;
@@ -1898,7 +1648,6 @@ table tbody + tbody {
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 6px 0 inset, rgba(255, 255, 255, 0.2) 0 1px 0px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 2px 6px 0 inset, rgba(255, 255, 255, 0.2) 0 1px 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003411}}
 #button-toggle > label:after {
   position: relative;
   z-index: 2;
@@ -1914,11 +1663,9 @@ table tbody + tbody {
   -o-column-count: 2;
   column-count: 2;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003426}}
 #button-toggle > label input:checked + span {
   left: 75%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003428}}
 #button-toggle > label span {
   display: block;
   position: absolute;
@@ -1947,7 +1694,6 @@ table tbody + tbody {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_buttons\.sass}line{font-family:\0000366}}
 #button-toggle p {
   height: 36px;
   width: 90px;
@@ -1959,18 +1705,15 @@ table tbody + tbody {
   margin: 0;
   border: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003386}}
 #button-toggle p input {
   position: absolute;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   *display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003391}}
 #button-toggle p input:focus + span {
   outline: 1px dotted white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003448}}
 #button-toggle p label {
   position: relative;
   z-index: 3;
@@ -1978,7 +1721,6 @@ table tbody + tbody {
   width: 100%;
   padding: 3px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003454}}
 #button-toggle p label:after {
   content: "";
   position: absolute;
@@ -2017,21 +1759,17 @@ table tbody + tbody {
   -o-column-gap: 0;
   column-gap: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003478}}
 #button-toggle p input {
   z-index: 5;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003481}}
 #button-toggle p input:checked ~ span {
   right: 50px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003484}}
 #button-toggle p input:checked + label:after {
   background-color: #a0c66b;
   border-color: #87aa5b;
   color: #60783f;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003489}}
 #button-toggle p span {
   display: block;
   position: absolute;
@@ -2060,7 +1798,6 @@ table tbody + tbody {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/sections\/_buttons\.sass}line{font-family:\0000369}}
 #button-toggle fieldset {
   position: relative;
   border: 0;
@@ -2068,7 +1805,6 @@ table tbody + tbody {
   margin: 0 0 20px;
   width: 200px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003519}}
 #button-toggle fieldset:after {
   content: "";
   position: absolute;
@@ -2088,23 +1824,19 @@ table tbody + tbody {
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 6px 0 inset, rgba(255, 255, 255, 0.2) 0 1px 0;
   box-shadow: rgba(0, 0, 0, 0.3) 0 2px 6px 0 inset, rgba(255, 255, 255, 0.2) 0 1px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003531}}
 #button-toggle fieldset input {
   position: absolute;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   *display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003535}}
 #button-toggle fieldset input:checked + label {
   color: #2d592a;
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003538}}
 #button-toggle fieldset input:focus + label {
   outline: 1px dotted white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003540}}
 #button-toggle fieldset label {
   position: relative;
   z-index: 2;
@@ -2115,7 +1847,6 @@ table tbody + tbody {
   color: #64676b;
   text-shadow: black 0 1px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003549}}
 #button-toggle fieldset span {
   clear: both;
   position: absolute;
@@ -2143,19 +1874,15 @@ table tbody + tbody {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003573}}
 #button-toggle fieldset label {
   width: 33.33%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003575}}
 #button-toggle fieldset span {
   width: 33.33%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003578}}
 #button-toggle fieldset input:checked:nth-of-type(2) ~ span {
   left: 33.33%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_utilities\.sass}line{font-family:\00003580}}
 #button-toggle fieldset input:checked:last-of-type ~ span {
   left: 66.66%;
 }

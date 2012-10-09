@@ -1,21 +1,17 @@
 @charset "UTF-8";
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\0000317}}
 .floated {
   float: right;
   margin-left: 10em;
   margin-right: 10em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_layout\.sass}line{font-family:\00003333}}
 .floated:first-child {
   margin-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_layout\.sass}line{font-family:\00003335}}
 .floated:last-child {
   margin-right: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\0000327}}
 .offset {
   top: 20px;
   left: 30%;
@@ -25,24 +21,20 @@
   left: 30%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\0000337}}
 .top {
   top: 20px;
   top: 30em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\0000345}}
 .left {
   left: 10%;
   left: 30em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\0000355}}
 .zindex {
   z-index: 10;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\0000361}}
 .position {
   position: relative;
   top: 30px;
@@ -75,7 +67,6 @@
   position: static;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\0000393}}
 .overflow {
   overflow: hidden;
   overflow: auto;
@@ -85,7 +76,6 @@
   overflow: scroll;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003109}}
 .float {
   float: left;
   float: left;
@@ -94,7 +84,6 @@
   float: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003123}}
 .clear {
   clear: left;
   clear: left;
@@ -105,7 +94,6 @@
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003141}}
 .display {
   display: block;
   display: block;
@@ -116,7 +104,6 @@
   display: inline-block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003159}}
 .visibility {
   visibility: visible;
   visibility: visible;
@@ -126,7 +113,6 @@
   visibility: collapse;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003175}}
 .border {
   border-top: 3px solid #332a20;
   border-top: 3% dotted #332a20;
@@ -149,7 +135,6 @@
   border-left: 30px solid transparent;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003221}}
 .border-individule {
   border-top-style: solid;
   border-top-style: dotted;
@@ -163,14 +148,12 @@
   border-width: 40%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003261}}
 .width {
   margin: 0 auto;
   width: 30%;
   max-width: 300px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003269}}
 .height {
   height: 30em;
   min-height: 200%;
@@ -179,7 +162,6 @@
   width: 300%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003281}}
 .margin {
   margin-top: 10em;
   margin-top: 10%;
@@ -191,7 +173,6 @@
   margin-right: 10%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003307}}
 .margins {
   margin: 0px auto 0px;
   margin: 30px 20em 10% 40px;
@@ -199,7 +180,6 @@
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003319}}
 .padding {
   padding-top: auto;
   padding-top: 10%;
@@ -211,7 +191,6 @@
   padding-right: 10%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-layout\.sass}line{font-family:\00003345}}
 .paddings {
   padding: 0px auto 0px;
   padding: 30px 20em 10% 40px;

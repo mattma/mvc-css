@@ -1,0 +1,15 @@
+/* COLOR SETTING */
+.position {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 13px;
+  left: 11px;
+  height: 0px;
+  width: 0px;
+  vertical-align: top;
+  text-indent: -9999px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #666666;
+}

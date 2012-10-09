@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-fonts\.sass}line{font-family:\000035}}
 .fonts {
   font-family: mattma, arial, helvetica, Verdana, sans-serif;
   font-weight: 500;
@@ -16,7 +15,6 @@
   font-family: "mattma", arial, sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-fonts\.sass}line{font-family:\0000318}}
 .fsize {
   font-size: 67%;
   font-size: 0.66667em;
@@ -32,7 +30,6 @@
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-fonts\.sass}line{font-family:\0000333}}
 .font {
   font: italic bold 12px/30px Georgia, serif;
   letter-spacing: 12em;
