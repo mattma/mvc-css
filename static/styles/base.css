@@ -20,7 +20,7 @@ body > nav {
 }
 body > nav > ul {
   overflow-y: scroll;
-  height: 880px;
+  height: 1140px;
 }
 body > section {
   height: 100%;
