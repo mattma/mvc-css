@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-color\.sass}line{font-family:\000035}}
 .color {
   color: #c9c90a;
   color: #c9660c;
@@ -8,7 +7,6 @@
   color: #342342;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-color\.sass}line{font-family:\0000314}}
 .gbar {
   background-color: #c93430;
   background-image: -moz-linear-gradient(top, red, #79837a);
@@ -23,7 +21,6 @@
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-color\.sass}line{font-family:\0000317}}
 .ghorizontal {
   background-color: #79837a;
   background-image: -moz-linear-gradient(left, red, #79837a);
@@ -36,7 +33,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='red', endColorstr='#79837a', GradientType=1);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-color\.sass}line{font-family:\0000320}}
 .gvertical {
   background-color: #c93430;
   background-image: -moz-linear-gradient(top, red, #79837a);
@@ -49,7 +45,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='red', endColorstr='#79837a', GradientType=0);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-color\.sass}line{font-family:\0000323}}
 .gdiagonal {
   background-color: #79837a;
   background-repeat: repeat-x;
@@ -60,7 +55,6 @@
   background-image: linear-gradient(45deg, #ff0000, #79837a);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-color\.sass}line{font-family:\0000326}}
 .gvertical3colors {
   background-color: #877274;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(red), color-stop(50%, #79837a), to(#c3325f));
@@ -73,7 +67,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='red', endColorstr='#c3325f', GradientType=0);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-color\.sass}line{font-family:\0000329}}
 .gradial {
   background-color: #79837a;
   background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(red), to(#79837a));
@@ -83,7 +76,6 @@
   background-repeat: no-repeat;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-color\.sass}line{font-family:\0000332}}
 .gstripe {
   background-color: red;
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));

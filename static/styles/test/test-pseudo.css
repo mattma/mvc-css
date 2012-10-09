@@ -1,33 +1,26 @@
 @charset "UTF-8";
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-pseudo\.sass}line{font-family:\000035}}
 .content {
   content: "";
   content: "matt";
   content: "mattma";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000327}}
 .content:before {
   color: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000340}}
 .content:after {
   color: green;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000352}}
 .content:hover {
   color: purple;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000360}}
 .content:first-child {
   color: maroon;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000360}}
 .content:first-child {
   color: green;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000327}}
 .test:before {
   content: "";
   display: block;
@@ -38,7 +31,6 @@
   top: 100px;
   left: 340px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000340}}
 .test:after {
   content: "";
   display: block;
@@ -49,7 +41,6 @@
   bottom: 100px;
   right: 340px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/framework\/_pseudo\.sass}line{font-family:\0000366}}
 .test:nth-child(3) {
   color: green;
 }

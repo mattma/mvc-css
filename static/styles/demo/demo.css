@@ -1,0 +1,53 @@
+/* COLOR SETTING */
+.syntax {
+  overflow: hidden;
+  overflow: hidden;
+  text-align: center;
+  text-align: center;
+}
+
+.color {
+  color: red;
+  color: red;
+  color: red;
+  color: red;
+}
+
+.box {
+  height: auto;
+  width: 300px;
+  height: 20em;
+  margin: 0 auto;
+  width: 300%;
+}
+
+.position {
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  position: absolute;
+  bottom: 34em;
+  left: 20%;
+}
+
+.pesudo {
+  color: red;
+}
+.pesudo:nth-child(2) {
+  color: green;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .pesudo {
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .pesudo {
+    width: 600px;
+  }
+}
+@media only screen and (min-width: 1824px) {
+  .pesudo {
+    width: 600px;
+  }
+}

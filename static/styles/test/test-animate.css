@@ -1,12 +1,10 @@
 /* COLOR SETTING */
 @-webkit-keyframes fadeIn {
-  /* line 2, ../sass/framework/animation/_fade_in.sass */
   0% {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
-  /* line 4, ../sass/framework/animation/_fade_in.sass */
   100% {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
@@ -14,13 +12,11 @@
 }
 
 @-moz-keyframes fadeIn {
-  /* line 2, ../sass/framework/animation/_fade_in.sass */
   0% {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
-  /* line 4, ../sass/framework/animation/_fade_in.sass */
   100% {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
@@ -28,13 +24,11 @@
 }
 
 @-ms-keyframes fadeIn {
-  /* line 2, ../sass/framework/animation/_fade_in.sass */
   0% {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
-  /* line 4, ../sass/framework/animation/_fade_in.sass */
   100% {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
@@ -42,20 +36,17 @@
 }
 
 @keyframes fadeIn {
-  /* line 2, ../sass/framework/animation/_fade_in.sass */
   0% {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 
-  /* line 4, ../sass/framework/animation/_fade_in.sass */
   100% {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/test\/test-animate\.sass}line{font-family:\000035}}
 .animate {
   -webkit-animation: fadeIn 3s 2s ease both;
   -moz-animation: fadeIn 3s 2s ease both;

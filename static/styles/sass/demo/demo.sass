@@ -1,0 +1,38 @@
+@import "compass/css3"
+@import "../framework/_init"
+
+.syntax
+	+overflow(hidden)
+	+overflow(h)
+	+talign(c)
+	+talign(center)
+
+.color
+	+color(255 0 0)
+	+color(red)
+	+color(#ff0000)
+	+color(rgb(255,0,0))
+
+.box
+	+box(300)
+	+box(300%, 20em, true)
+
+.position
+	+position(absolute, 6)
+	+position(a, 34em, 20%, b)
+
+.pesudo
+	+color(red)
+
+	+child(2)
+		+color(green)
+
+	//desktop, wide-screens, retina, mobile, mobile-portrait, mobile-landscape, tablet, max-tablet, tablet-portrait, tablet-landscape
+	+media(mobile)
+		+width(300)
+
+	+media(tablet)
+		+width(600)
+
+	+media(wide-screens)
+		+width(600)

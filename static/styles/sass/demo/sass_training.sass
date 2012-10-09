@@ -1,0 +1,47 @@
+@import "compass/css3"
+@import "../framework/_init"
+
+// Extension of CSS3
+.css3
+	+border-radius(5px)
+	+box-shadow(rgb(204,204,204) 1px 1px 3px inset)
+
+
+// Variable Example
+// $blue: #3bbfce
+// $margin: 16px
+
+// .border
+// 	padding: $margin / 2
+// 	margin: $margin + 2
+// 	border-color: $blue
+
+
+// Nesting Example
+// a
+// 	font:
+// 		family: serif
+// 		weight: bold
+// 		size: 1.2em
+// 	color: black
+// 	&:hover
+// 		color: rgb(255,0,0)
+
+
+// Mixins
+// @mixin boxes($width, $height: auto)
+// 	width: $width
+// 	height: $height
+
+// .test
+// 	+boxes(40px, 100%)
+
+
+// Selector Inheritance
+%inherit
+	background: red
+	font-style: italic
+	border-width: 5px
+
+.newStyle
+	//@extend %inherit

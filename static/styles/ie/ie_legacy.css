@@ -6,63 +6,49 @@
 /* Senior Web Developer -- Matt Ma. ( matt@mattmadesign.com ) */
 /* http://www.mattmadesign.com */
 /* COLOR SETTING */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000317}}
 .lt-ie9 .clear {
   zoom: 1;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000322}}
 .lt-ie9 sup {
   vertical-align: text-top;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000324}}
 .lt-ie9 sub {
   vertical-align: text-bottom;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000328}}
 .lt-ie9 .clearfix {
   display: inline-block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000330}}
 .lt-ie9 * html .clearfix {
   height: 1%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000333}}
 .lt-ie9 legend {
   margin-left: -7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000336}}
 .lt-ie9 input[type="checkbox"], .lt-ie9 input[type="checkbox"] {
   vertical-align: baseline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000340}}
 .lt-ie9 img {
   -ms-interpolation-mode: bicubic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000372}}
 .lt-ie8 .gainlayout {
   min-height: 0;
   height: 1px;
   zoom: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000377}}
 .lt-ie8 a:hover {
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000381}}
 .lt-ie8 hr {
   margin: -8px auto 11px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000385}}
 .lt-ie8 > body p code {
   *white-space: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000389}}
 .lt-ie8 textarea {
   overflow: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bigmabig\/Desktop\/FrameworkDemo\/static\/styles\/sass\/ie\/ie_legacy\.sass}line{font-family:\0000393}}
 .lt-ie8 label {
   vertical-align: middle;
   position: relative;
