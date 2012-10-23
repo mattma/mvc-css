@@ -6,6 +6,11 @@
 /* Senior Web Developer -- Matt Ma. ( matt@mattmadesign.com ) */
 /* http://www.mattmadesign.com */
 /* COLOR SETTING */
+.body {
+  width: 55.55556%;
+  height: 55.55556%;
+}
+
 body {
   position: relative;
 }
@@ -1176,7 +1181,7 @@ table tbody + tbody {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  background: url('../images/../images/ie/sassy-button-overlay.png') repeat-x bottom left #0b99c2;
+  background: url('../images/ie/sassy-button-overlay.png') repeat-x bottom left #0b99c2;
   background: linear-gradient(#27c5f3, #0b99c2 70%);
   -webkit-box-shadow: #6fd8f7 0 1px 0 inset;
   -moz-box-shadow: #6fd8f7 0 1px 0 inset;

@@ -15,6 +15,8 @@
 //* @function gutter-context($gutter, $context)
 //* @function repeat($count, $repeat)
 //* @function reverse($list)
+//* @mixin t($target, $context)
+//* @function t($target, $context)
 //*
 //****************************************************************
 
@@ -174,3 +176,17 @@
 // Return the total value of the Two value
 @function total-value($first-value, $second-value)
 	@return $first-value + $second-value
+
+
+// Return the responsive percentage value with width. As long as it is the same measurement, it works.
+@mixin t($target, $context)
+	@if unit($target) == unit($context)
+		$result: ($target / $context) * 100%
+		+width($result)
+
+
+// Return the responsive percentage value as a function. As long as it is the same measurement, it works.
+@function t($target, $context)
+	@if unit($target) == unit($context)
+		$result: ($target / $context) * 100%
+		@return $result
