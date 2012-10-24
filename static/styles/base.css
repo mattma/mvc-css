@@ -111,6 +111,102 @@ nav > ul ul a:hover {
 }
 
 /* COLOR SETTING */
+#blockEqualTest li {
+  float: left;
+  position: relative;
+  padding: 0;
+  height: 160px;
+}
+#blockEqualTest li:first-child {
+  margin-left: 1%;
+}
+#blockEqualTest li:last-child {
+  margin-right: 1%;
+}
+#blockEqualTest li:first-child:nth-last-child(1) {
+  margin: 0;
+  width: 98%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+#blockEqualTest li:first-child:nth-last-child(2),
+#blockEqualTest li:first-child:nth-last-child(2) ~ li {
+  width: 48%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+#blockEqualTest li:first-child:nth-last-child(3),
+#blockEqualTest li:first-child:nth-last-child(3) ~ li {
+  width: 31.33333%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+#blockEqualTest li:first-child:nth-last-child(4),
+#blockEqualTest li:first-child:nth-last-child(4) ~ li {
+  width: 23%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+#blockEqualTest li:first-child:nth-last-child(5),
+#blockEqualTest li:first-child:nth-last-child(5) ~ li {
+  width: 18%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+#blockEqualTest li:first-child:nth-last-child(6),
+#blockEqualTest li:first-child:nth-last-child(6) ~ li {
+  width: 14.66667%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+#blockEqualTest li:first-child:nth-last-child(7),
+#blockEqualTest li:first-child:nth-last-child(7) ~ li {
+  width: 12.28571%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+#blockEqualTest li:first-child:nth-last-child(8),
+#blockEqualTest li:first-child:nth-last-child(8) ~ li {
+  width: 10.5%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+#blockEqualTest li:first-child:nth-last-child(9),
+#blockEqualTest li:first-child:nth-last-child(9) ~ li {
+  width: 9.11111%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+#blockEqualTest li:first-child:nth-last-child(10),
+#blockEqualTest li:first-child:nth-last-child(10) ~ li {
+  width: 8%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+#blockEqualTest ul {
+  height: 160px;
+  width: 960px;
+  background-color: #cccccc;
+}
+
+#multiRowBlockPercent ul {
+  display: block;
+  overflow: hidden;
+}
+#multiRowBlockPercent ul li {
+  display: block;
+  height: 40px;
+  float: left;
+}
+#multiRowBlockPercent ul li {
+  width: 9.1%;
+  margin-right: 1%;
+  margin-bottom: 20px;
+}
+#multiRowBlockPercent ul li:nth-child(10n) {
+  margin-right: 0;
+}
+
 #grid960 p {
   display: inline;
   float: left;
@@ -1181,7 +1277,7 @@ table tbody + tbody {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  background: url('../images/ie/sassy-button-overlay.png') repeat-x bottom left #0b99c2;
+  background: url('../images/../images/ie/sassy-button-overlay.png') repeat-x bottom left #0b99c2;
   background: linear-gradient(#27c5f3, #0b99c2 70%);
   -webkit-box-shadow: #6fd8f7 0 1px 0 inset;
   -moz-box-shadow: #6fd8f7 0 1px 0 inset;

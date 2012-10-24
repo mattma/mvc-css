@@ -78,9 +78,11 @@
 						<li><a href="#grid960pullSnap">960 Grid Pull</a></li>
 						<li><a href="#grid1140">1140 Grid Column</a></li>
 						<li><a href="#grid1140pushSnap">1140 Grid Push</a></li>
-						<li><a href="#blockEqualWidthSnap">Custom: Block Equal Width</a></li>
-						<li><a href="#blockEqualWidthWithMarginSnap">Custom: Special Block Equal Width</a></li>
-						<li><a href="#multiRowBlockEqualWidthSnap">Custom: Multiple Row Block</a></li>
+						<li><a href="#blockEqualWidthSnap">Custom: Block Equal Width(%)</a></li>
+						<li><a href="#blockEqualWidthWithMarginSnap">Custom: Block Equal Width (px)</a></li>
+						<li><a href="#blockEqualWidthPercentSnap">Custom: Block Equal Width (%)</a></li>
+						<li><a href="#multiRowBlockEqualWidthSnap">Custom: Multiple Row Block(Deprecated)</a></li>
+						<li><a href="#multiRowBlockPercentWithSnap">Custom: Flexible Percent Block(%)</a></li>
 						<li><a href="#boxModelSnap">Custom: CSS3 Box Model</a></li>
 						<li><a href="#responsiveGridBuilderSnap">Responsive Grid Builder <span class="comingSoon">(Soon)</span></a></li>
 					</ul>
@@ -298,7 +300,6 @@
 							4. Same as above, but with margin applied with custom separator <br>
 							5. Modify the HTML markup without touching the CSS at all. <br>
 							6. Using custom paramters to change the style behavior <br>
-							TODO: current only support PX, need to work for em or %
 						</p>
 						<p id="blockEqualWidthWithMarginSnap">
 							<code>
@@ -320,7 +321,39 @@
 				</article>
 
 				<article class="grid-system">
-					<h3>1.5 Grid System - Multiple Row Block Equal Width</h3>
+					<h3>1.5 Grid System - Block Equal Width (%) With Margin</h3>
+
+					<div class="doc">
+						<p class="content">
+							1. Advance Grid system: Selector could be any block element.  <br>
+							2. Styling children CSS3. target the first element, then sibling selector. Make equal width. <br>
+							3. It is up to 9 child elements. (easy edit for more)  <br>
+							4. Modify the HTML markup without touching the CSS at all. <br>
+							5. Using custom paramters to change the style behavior <br>
+						</p>
+						<p id="blockEqualWidthPercentSnap">
+							<code>
+								@mixin blockEqualPercent($margin: 1%, $alpha: false, $omega: false, $totalWidth: 100%, $height: 160, $selector: li, $defaultUnit: "%")
+							</code>
+						</p>
+					</div>
+
+					<div id="blockEqualTest" class="spacing">
+						<ul>
+							<li>hello</li>
+							<li>hello</li>
+							<li>hello</li>
+							<li>hello</li>
+							<li>hello</li>
+							<li>hello</li>
+							<li>hello</li>
+							<li>hello</li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="grid-system">
+					<h3>1.6 Grid System - Multiple Row Block Equal Width</h3>
 					<div class="doc">
 						<p class="content">
 							1. Multiple Row Block with equal width grids <br>
@@ -352,7 +385,38 @@
 				</article>
 
 				<article class="grid-system">
-					<h3>1.6 Grid System - CSS3 Inline Block Box Model</h3>
+					<h3>1.7 Grid System - Multiple Row Flexible Percent Width</h3>
+					<div class="doc">
+						<p class="content">
+							1. Multiple Row Block with equal width percentage grids <br>
+							2. Support 1 to 10 in one Row, suited for repeating blocks of content, easy updating <br>
+							3. For IE7/8 compatibility block-grid items need to be the same height. <br>
+						</p>
+						<p id="multiRowBlockPercentWithSnap">
+							<code>
+								@mixin multiRowPercent($grid: 2, $margin: 1%, $margin-bottom: $margin, $totalWidth: 100%, $height: 40, $selector: li, $parent: ul, $defaultUnit: "%")
+							</code>
+						</p>
+					</div>
+					<div id="multiRowBlockPercent" class="spacing">
+						<ul>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+							<li>Three-up element</li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="grid-system">
+					<h3>1.8 Grid System - CSS3 Inline Block Box Model</h3>
 					<div class="doc">
 						<p class="content">
 							1. Inline Block Box Model #Responsive Width <br>
@@ -381,7 +445,7 @@
 				</article>
 
 				<article class="grid-system">
-					<h3>1.7 Grid System - Responsive Grid Builder <span class="comingSoon">(Coming Soon)</span></h3>
+					<h3>1.9 Grid System - Responsive Grid Builder <span class="comingSoon">(Coming Soon)</span></h3>
 					<div class="doc"  id="responsiveGridBuilderSnap">
 						<p class="content">
 							1. Feature Coming Soon

@@ -1,6 +1,16 @@
 @import "compass/css3"
 @import "../framework/_init"
 
+#blockEqualTest
+	+blockEqualPercent(1%)
+	ul
+		+box(960, 160)
+		+bcolor(204 204 204)
+
+#multiRowBlockPercent
+	+multiRowPercent(10, 1%, 20px)
+
+
 #grid960
 	p
 		+column(3)

@@ -51,7 +51,7 @@
 
 // ====== Advance Grid system:  Selector could be any block element ======
 // Same as above, but with margin applied; Margin value would be Pixel based with px
-// TODO: current only support PX, need to work for em or %
+// Only support PX
 @mixin blockEqualWidthWithMargin($margin: 5px, $alpha: false, $omega: false, $totalWidth: 960, $height: 160, $selector: li, $dividerWidth: 0, $dividerColor: rgb(255,0,0), $defaultUnit: px)
 	#{$selector}
 		float: left
@@ -164,6 +164,95 @@
 		+margin(right, $margin, $defaultUnit)
 
 
+// ====== Advance Grid system:  Selector could be any block element ======
+// Same as above, but with margin applied; Margin value would be Pixel based with px
+// Only Support %
+@mixin blockEqualPercent($margin: 1%, $alpha: false, $omega: false, $totalWidth: 100%, $height: 160, $selector: li, $defaultUnit: "%")
+	$grid-unit: 2 3 4 5 6 7 8 9 10
+
+	#{$selector}
+		float: left
+		position: relative
+		padding: 0
+		+height($height, px)
+
+		@if $alpha == false
+			&:first-child
+				+margin(left, $margin, $defaultUnit)
+		@else
+			&:first-child
+				margin-left: 0 !important
+
+		@if $omega == false
+			&:last-child
+				+margin(right, $margin, $defaultUnit)
+		@else
+			&:last-child
+				margin-right: 0 !important
+
+	#{$selector}:first-child:nth-last-child(1)
+		margin: 0
+		@if $alpha != $omega
+			+width( $totalWidth - $margin )
+			@if $alpha == true
+				&:first-child
+					+margin(left, $margin, $defaultUnit)
+			@if $omega == true
+				&:last-child
+					+margin(right, $margin, $defaultUnit)
+		@else if $alpha == false and $omega == false
+			+width( $totalWidth - ( $margin*2) )
+			+margin(left, $margin, $defaultUnit)
+			+margin(right, $margin, $defaultUnit)
+		@else if $alpha == true and $omega == true
+			+width( $totalWidth )
+
+	@each $n in $grid-unit
+		#{$selector}:first-child:nth-last-child(#{$n}),
+		#{$selector}:first-child:nth-last-child(#{$n}) ~ #{$selector}
+			@if $alpha != $omega
+				+width(  ( ($totalWidth - ($margin * ($n * 2 - 1 ) )) / $n ) )
+			@else if $alpha == false and $omega == false
+				+width(  ( ($totalWidth - ($margin * ($n * 2 ) )) / $n ) )
+			@else if $alpha == true and $omega == true
+				+width(  ( ($totalWidth - ($margin * ($n * 2 - 2 ) )) / $n ) )
+			+margin(left, $margin, $defaultUnit)
+			+margin(right, $margin, $defaultUnit)
+
+
+//--------------------------------------------------------------------------------------
+// Multiple Row Block with equal Percent width grids
+// Support $grid-unit number in one Row, suited for repeating blocks of content
+// Usage: <div class="block-grid"><ul><li>Three-up element</li> <li>Three-up element</li> <li>Three-up element</li> </ul> </div>
+// Note: .block-grid // Need to apply in the div level, because the $parent is ul element
+//			+multiRowPercent($grid: Number)
+//--------------------------------------------------------------------------------------
+@mixin multiRowPercent($grid: 2, $margin: 1%, $margin-bottom: $margin, $totalWidth: 100%, $height: 40, $selector: li, $parent: ul, $defaultUnit: "%")
+	$grid-unit: 1 2 3 4 5 6 7 8 9 10
+
+	#{$parent}
+		display: block
+		overflow: hidden
+
+		#{$selector}
+			display: block
+			+height($height)
+			float: left
+
+		@each $n in $grid-unit
+			@if $grid == $n
+				#{$selector}
+					@if $margin == 0
+						width: $totalWidth / $n
+					@else
+						$width: ( $totalWidth - ( $margin * ( $n - 1 ) ) ) / $n
+						width: $width
+						+margin(right, $margin, $defaultUnit)
+						+margin(bottom, $margin-bottom, $defaultUnit)
+						&:nth-child(#{$n}n)
+							margin-right: 0
+
+
 //--------------------------------------------------------------------------------------
 // Multiple Row Block with equal width grids
 // Support 2, 3, 4, 5, 6 in one Row, suited for repeating blocks of content
@@ -171,7 +260,6 @@
 // Usage: <div class="block-grid"><ul><li>Three-up element</li> <li>Three-up element</li> <li>Three-up element</li> </ul> </div>
 // Note: .block-grid // Need to apply in the div level, because the $parent is ul element
 //			+multiRowBlockEqualWidth(3,60)
-// TODO: Built custom $gutter value. Idea:  +multiRowBlockEqualWidth($grid: 2, $height: auto, $gutter: false, $gutter-value: default, $selector: li, $parent: ul)   when $gutter-value is actually value, use math to dynamically reset the width
 //--------------------------------------------------------------------------------------
 @mixin multiRowBlockEqualWidth($grid: 2, $height: auto, $gutter: false, $selector: li, $parent: ul)
 	#{$parent}
