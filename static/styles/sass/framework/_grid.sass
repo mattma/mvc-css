@@ -344,8 +344,8 @@ $gutter-width: 0   // Col: 24; Col-Width: 30px; Gutter: 10px;   Offset: 40px/col
 // @mixin grid($grid, $measure: px)
 // @param $grid: 12, 16, 24 => grid column number
 // @param measure: px, percent  => Generate a Px or % based layout
-+grid(24, px) 			// Generate a Px based layout
-//+grid(24, percent)  	// Generate a Percent fluid layout
+//+grid(24, px) 			// Generate a Px based layout
++grid(24, percent)  	// Generate a Percent fluid layout
 
 // Utility function — you should never need to modify this
 @function gridsystem-width($cols: $columns, $col-width: $column-width, $gap: $gutter-width )
