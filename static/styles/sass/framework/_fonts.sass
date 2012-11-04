@@ -8,7 +8,7 @@
 //* @mixin relative-font-size( $size, $context, $unit: em )
 //* @mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: em )
 //* @mixin lheight($line-height, $defaultUnit: px)
-//* @mixin centered($height-value)
+//* @mixin centered($height-value, $width-value: auto)
 //* @mixin fweight($font-weight: $DEFAULT-FONT-WEIGHT)
 //* @mixin fstyle($font-style: $DEFAULT-FONT-STYLE)
 //* @mixin lspacing($letter-spacing, $defaultUnit: px )
@@ -86,8 +86,8 @@
 
 //Easy mixin to apply the TEXT in the center of the Element
 //@param $height-value: take measurement of em, px, % or plain number
-@mixin centered($height-value)
-	+box(auto, $height-value)
+@mixin centered($height-value, $width-value: auto)
+	+box($width-value, $height-value)
 	+lheight($height-value)
 
 
