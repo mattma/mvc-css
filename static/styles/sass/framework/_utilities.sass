@@ -440,6 +440,50 @@
 			+border-radius($default-border-radius)
 			+transition(all 0.3s ease-out)
 
+	// Special styles without padding & margin, single gray color slidebar
+	// work with width: 100%, then tweak with custom percentage value on span & input
+	@if $type == adchemy
+		$current-width: measurement( $container-width, px )
+		width: $current-width
+		margin-left:  -$current-width / 2
+		min-height:  20px
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 50%
+			z-index: 0
+			width: $current-width / 2
+			height: 100%
+			background-color: $white
+			border: 1px solid rgb(222,222,222)
+		&:after
+			position: relative
+			z-index: 2
+			float: right
+			width: $current-width / 2
+			//attr() notation to get the value of the custom data- attributes
+			//\a  ushing the “off” label to next line, and since it’s a single line, the next column.
+			content: attr(data-on) "\a" attr(data-off)
+			white-space: pre
+			text-align: center
+			+column-count(2)
+
+		input
+			&:checked + span
+				left: 75%
+		span
+			display: block
+			position: absolute
+			left: 50%
+			top: 0
+			z-index: 1
+			width: 25%
+			height: 100%
+			margin: 1px
+			+bcolor( $slider-bg-color )
+			+transition(all 0.3s ease-out)
+
 	@if $type == $fancy
 		padding: 0
 		margin: 0
