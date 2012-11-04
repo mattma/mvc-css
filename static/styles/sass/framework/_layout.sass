@@ -12,6 +12,7 @@
 //* @mixin paddings($top, $right: $top, $bottom: $top, $left: $right, $defaultUnit: px)
 //* @mixin border( $position, $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
 //* @mixin borders( $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
+//* @mixin outline( $outline-color: $general-border-color, $outline-width: $DEFAULT-BORDER-WIDTH, $outline-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
 //* @mixin bstyle($position, $border-style: null)
 //* @mixin bdcolor($position, $border-color: null)
 //* @mixin bwidth($position, $border-width: null, $defaultUnit: px)
@@ -193,7 +194,7 @@
 
 // Single Border setup
 // Default: px value. Take measurement of em, px, % or plain number.
-// @param: $border-color could be color value or "none"
+// @param: $border-color could be color value or "none", do not support shortcut n
 // Usage: +border(top, none)
 @mixin border( $direction, $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
 
@@ -219,7 +220,7 @@
 
 // Multiple border setup
 // Default: px value. Take measurement of em, px, % or plain number.
-// @param: $border-color could be color value or "none"
+// @param: $border-color could be color value or "none", do not support shortcut n
 // Usage: +borders(none)
 @mixin borders( $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
 	@if $border-color != $none
@@ -229,6 +230,17 @@
 		+bwidth($border-width)
 	@else
 		border: 0 none
+
+
+// Outline Setup
+// Default: px value. Take measurement of em, px, % or plain number.
+// @param: $border-color could be color value or "none"
+// Usage: +outline(none)
+@mixin outline( $outline-color: $general-border-color, $outline-width: $DEFAULT-BORDER-WIDTH, $outline-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
+	@if $outline-color != $none
+		outline: measurement($outline-width, $defaultUnit) $outline-style color-format-helper($outline-color)
+	@else
+		outline: none
 
 
 // @param $direction:  top, bottom, right, left,  or  Ignore the value

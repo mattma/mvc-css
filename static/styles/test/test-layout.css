@@ -1,5 +1,11 @@
 @charset "UTF-8";
 /* COLOR SETTING */
+.outline {
+  outline: 2px dotted red;
+  outline: 1px solid #dedede;
+  outline: none;
+}
+
 .floated {
   float: right;
   margin-left: 10em;
