@@ -17,6 +17,7 @@
 //* @mixin input-block-level
 //* @mixin media($media)
 //* @mixin keyframes($name)
+//* @mixin animation($animation-name)
 //*
 //****************************************************************
 
@@ -276,3 +277,12 @@
 		@content
 	@keyframes #{$name}
 		@content
+
+
+// Output the animation name with CSS3 Standard
+@mixin animation($animation-name)
+	-webkit-animation: $animation-name
+	-moz-animation: $animation-name
+	-ms-animation: $animation-name
+	-o-animation: $animation-name
+	animation: $animation-name
