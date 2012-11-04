@@ -22,6 +22,8 @@
 //* @function trim-list($list, $start, $dir: 'asc')
 //*
 //* @mixin progress-bar($status: $success, $stripe: false, $active: false)
+//* @mixin custom-progress-bar( $progress-bar-color, $animation: false )
+//* @mixin custom-progress-bar-spacing( $progress-bar-color, $animation: false )
 //*
 //****************************************************************
 
@@ -554,3 +556,83 @@ $class-slug: ms !default
 			background-position: 0 0
 		to
 			background-position: 40px 0
+
+
+// Note: To use this mixin, need to include the settings/keyframe.sass module
+//@param: $stripe: 45 angle;  $active: enable animation
+// Usage: <div> <p style="width: 60%;"></p> </div> // Animation the percentage if neccessary
+@mixin custom-progress-bar( $progress-bar-color, $animation: false )
+	$progress-color: color-format-helper($progress-bar-color)
+
+	overflow: hidden
+	height: 28px
+	background-color: rgb(244,240,228)
+	+box-shadow( rgba(0,0,0,.1) 0 1px 2px 0 inset )
+
+	&>*
+		// Bar of progress
+		width: 0%
+		height: 28px
+		color: $white
+		text-align: center
+		margin-bottom: 0
+		+text-shadow( rgba(0,0,0,.25) 0 -1px 0 )
+		+background-image(linear-gradient(top, $progress-background-start-color, $progress-background-end-color ))
+		+box-shadow(rgba(0,0,0,.15) 0 -1px 0 0 inset)
+		+box-sizing(border-box)
+		+transition(width .6s ease)
+
+		+gstripe($progress-background-start-color, 45deg)
+		+background-size(40px 40px)
+
+		@if $animation == true
+			-webkit-animation: progress-bar-stripes 2s linear infinite
+			-moz-animation: progress-bar-stripes 2s linear infinite
+			-ms-animation: progress-bar-stripes 2s linear infinite
+			-o-animation: progress-bar-stripes 2s linear infinite
+			animation: progress-bar-stripes 2s linear infinite
+
+		+background-image(linear-gradient(top, $progress-color, $white))
+		+gstripe($progress-color, 45deg)
+
+
+// Note: To use this mixin, need to include the settings/keyframe.sass module
+//@param: $stripe: 45 angle;  $active: enable animation
+// Usage: <div> <p style="width: 60%;"></p> </div> // Animation the percentage if neccessary
+@mixin custom-progress-bar-spacing( $progress-bar-color, $animation: false  )
+	$progress-color: color-format-helper($progress-bar-color)
+
+	overflow: hidden
+	height: 20px
+	background-color: rgb(37,37,37)
+	+box-shadow( rgba(0,0,0,.1) 0 1px 2px 0 inset )
+	+border-radius(15px)
+	padding: 0
+
+	&>*
+		// Bar of progress
+		width: 0%
+		height: 12px
+		color: $white
+		text-align: center
+		margin: 4px 5px 0 5px
+		+text-shadow( rgba(0,0,0,.25) 0 -1px 0 )
+		+background-image(linear-gradient(top, $progress-background-start-color, $progress-background-end-color ))
+		+box-shadow(rgba(0,0,0,.15) 0 -1px 0 0 inset)
+		+box-sizing(border-box)
+		+transition(width .6s ease)
+		+border-radius(15px)
+
+		+gstripe($progress-background-start-color, 45deg)
+		+background-size(40px 40px)
+
+
+		@if $animation == true
+			-webkit-animation: progress-bar-stripes 2s linear infinite
+			-moz-animation: progress-bar-stripes 2s linear infinite
+			-ms-animation: progress-bar-stripes 2s linear infinite
+			-o-animation: progress-bar-stripes 2s linear infinite
+			animation: progress-bar-stripes 2s linear infinite
+
+		+background-image(linear-gradient(top, $progress-color, $white))
+		+gstripe($progress-color, 45deg)
