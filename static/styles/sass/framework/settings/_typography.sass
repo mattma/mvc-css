@@ -1,0 +1,37 @@
+// Project Only: Using fontface file in template.css file
+@mixin museo( $font-family: l )
+	@if $font-family == l
+		font-family: "museo_sans_light", "Helvetica Neue", helvetica, arial, Verdana, sans-serif
+	@else if $font-family == m
+		font-family: "museo_sans_medium", "Helvetica Neue", helvetica, arial, Verdana, sans-serif
+	@else if $font-family == b
+		font-family: "museo_sans_bold", "Helvetica Neue", helvetica, arial, Verdana, sans-serif
+	@else if $font-family == r
+		font-family: "museo_sans_rounded", "Helvetica Neue", helvetica, arial, Verdana, sans-serif
+	@else
+		font-family: "museo_sans_#{$font-family}", "Helvetica Neue", helvetica, arial, Verdana, sans-serif
+
+
+@mixin neue( $font-family: m )
+	@if $font-family == l
+		+sans( default, 100, true )
+	@else if $font-family == light
+		+sans( default, 100, true )
+
+	@else if $font-family == r
+		+sans( default, 300, true )
+	@else if $font-family == regular
+		+sans( default, 300, true )
+
+	@else if $font-family == m
+		+sans( default, 500, true )
+	@else if $font-family == medium
+		+sans( default, 500, true )
+
+	@else if $font-family == b
+		+sans( default, 700, true )
+	@else if $font-family == bold
+		+sans( default, 700, true )
+
+	@else
+		+sans( default, 300, true )

@@ -445,7 +445,7 @@ nav > ul ul a:hover {
 
 /* COLOR SETTING */
 .main-sprite, #imageSprite li:first-child, #imageSprite li:nth-child(2), #imageSprite li:nth-child(3) {
-  background: url('../images/main-s25855510a0.png') no-repeat;
+  background: url('../images/main-s0a5651cd22.png') no-repeat;
 }
 
 #imageSprite {
@@ -461,34 +461,34 @@ nav > ul ul a:hover {
   background-repeat: no-repeat;
 }
 #imageSprite li:first-child {
-  background-position: -10px -262px;
+  background-position: 0 -242px;
 }
 #imageSprite li:first-child:hover, #imageSprite li:first-child.facebook_hover, #imageSprite li:first-child.facebook-hover {
-  background-position: -10px -1048px;
+  background-position: 0 -968px;
 }
 #imageSprite li:first-child:target, #imageSprite li:first-child.facebook_target, #imageSprite li:first-child.facebook-target {
-  background-position: -10px -786px;
+  background-position: 0 -726px;
 }
 #imageSprite li:first-child:active, #imageSprite li:first-child.facebook_active, #imageSprite li:first-child.facebook-active {
-  background-position: -10px -393px;
+  background-position: 0 -363px;
 }
 #imageSprite li:nth-child(2) {
-  background-position: -10px -131px;
+  background-position: 0 -121px;
 }
 #imageSprite li:nth-child(2):hover, #imageSprite li:nth-child(2).twitter_hover, #imageSprite li:nth-child(2).twitter-hover {
-  background-position: -10px -1179px;
+  background-position: 0 -1089px;
 }
 #imageSprite li:nth-child(2):target, #imageSprite li:nth-child(2).twitter_target, #imageSprite li:nth-child(2).twitter-target {
-  background-position: -10px -655px;
+  background-position: 0 -605px;
 }
 #imageSprite li:nth-child(3) {
-  background-position: -10px 0;
+  background-position: 0 0;
 }
 #imageSprite li:nth-child(3):hover, #imageSprite li:nth-child(3).linkedin_hover, #imageSprite li:nth-child(3).linkedin-hover {
-  background-position: -10px -917px;
+  background-position: 0 -847px;
 }
 #imageSprite li:nth-child(3):target, #imageSprite li:nth-child(3).linkedin_target, #imageSprite li:nth-child(3).linkedin-target {
-  background-position: -10px -524px;
+  background-position: 0 -484px;
 }
 #imageSprite li:hover {
   cursor: pointer;
