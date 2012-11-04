@@ -8,6 +8,7 @@
 //* @mixin relative-font-size( $size, $context, $unit: em )
 //* @mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: em )
 //* @mixin lheight($line-height, $defaultUnit: px)
+//* @mixin flayout($font-size, $line-height)
 //* @mixin centered($height-value, $width-value: auto)
 //* @mixin fweight($font-weight: $DEFAULT-FONT-WEIGHT)
 //* @mixin fstyle($font-style: $DEFAULT-FONT-STYLE)
@@ -83,6 +84,11 @@
 @mixin lheight($line-height, $defaultUnit: px)
 	+measurement(line-height, $line-height, $defaultUnit)
 
+
+//Special shortcut for quickly generate font-size & line-height
+@mixin flayout($font-size, $line-height)
+	+fsize($font-size)
+	+lheight($line-height)
 
 //Easy mixin to apply the TEXT in the center of the Element
 //@param $height-value: take measurement of em, px, % or plain number
