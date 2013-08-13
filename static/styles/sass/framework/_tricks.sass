@@ -1,0 +1,33 @@
+//****************************************************************
+//* Table of Content  [TRICKS]
+//*
+//* @mixin center( $method )
+//*
+//****************************************************************
+
+
+//http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/
+// User still need to define a width and height, E.G +box(50%,50%)
+// min-width/max-width and min-height/max-height styles behave as expected for responsive boxes.
+// offset need to override by top, left, bottom, right values
+//
+// @params  $method: optional,   modal or free
+@mixin center( $method )
+	// only requires a declared (variable) height and these styles
+	margin: auto
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	overflow: auto
+
+	//Within Viewport
+	// E.G: modal popup, always center the content in the middle, ignore the scrollbar
+	@if $method == modal
+		position: fixed
+
+	// Variable Height
+	// One way around the declared height is adding display: table, centering the content block regardless of content length.
+	@if $method == free
+		display: table
