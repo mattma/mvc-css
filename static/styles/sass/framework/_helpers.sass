@@ -3,6 +3,7 @@
 //*
 //* @mixin cursor($property: pointer)
 //* @mixin uselect ($select)
+//* @mixin placeholder
 //* @mixin resize($direction: $both)
 //* @mixin h-style( $title-font-size: 1.8em, $title-rgb-color: 51 51 51, $title-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $title-font-weight: $DEFAULT-TITLE-FONT-WEIGHT, $prepend-sans-font: $default )
 //* @mixin p-style( $p-font-size: 1.4em, $p-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $p-font-weight: $DEFAULT-FONT-WEIGHT, $prepend-sans-font: $default )
@@ -39,6 +40,14 @@
 	+prop(-ms-user-select, $select, $USER-SELECT-VALUE-LIST)
 	+prop(user-select, $select, $USER-SELECT-VALUE-LIST)
 
+// Output the support for the placeholder styles
+@mixin placeholder
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
 
 // Resize anything
 // @param  $direction: horizontal, vertical, both, h, v, b
