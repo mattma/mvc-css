@@ -11,7 +11,7 @@
 //* @function param-helper( $list, $unit: px )
 //* @mixin animate($name: fadeIn, $duration: 1s, $delay: .2s, $function: ease, $mode: both)
 //* @function sum-list($list)
-//* @function column-count($columns)
+//* @function column-count($grid_columns)
 //* @function gutter-context($gutter, $context)
 //* @function repeat($count, $repeat)
 //* @function reverse($list)
@@ -145,11 +145,11 @@
 
 
 // Find column count
-@function column-count($columns)
-	@if type-of($columns) == number
-		@return $columns
-	@if type-of($columns) == list
-		@return length($columns)
+@function column-count($grid_columns)
+	@if type-of($grid_columns) == number
+		@return $grid_columns
+	@if type-of($grid_columns) == list
+		@return length($grid_columns)
 
 
 // Context of gutters

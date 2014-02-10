@@ -2,10 +2,10 @@
 // DEMO: http://style.caring.com/layouts/two-col
 
 @import "compass/utilities/general/clearfix";
-$gutter-width: 10px; // All grids systems have the same gutter width
+$gutter_column_width: 10px; // All grids systems have the same gutter width
 $float-direction: left;
-$left-gutter-width: ceil($gutter-width / 2) !default;
-$right-gutter-width: $gutter-width - $left-gutter-width !default;
+$left-gutter-width: ceil($gutter_column_width / 2) !default;
+$right-gutter-width: $gutter_column_width - $left-gutter-width !default;
 
 $base-line-height: 21px;
 $show-grid-background: false;
@@ -32,8 +32,8 @@ $show-grid-background: false;
 
 // *********** General layout utilities ***********
 // The width of a column given the units and unit width of the grid.
-@function column-width($n, $col-width, $gutter-width: $gutter-width) {
-	@return $col-width * $n + $gutter-width * ($n - 1);
+@function column-width($n, $col-width, $gutter_column_width: $gutter_column_width) {
+	@return $col-width * $n + $gutter_column_width * ($n - 1);
 }
 
 // The basic structure for a column aligned to a grid.
@@ -51,12 +51,12 @@ $show-grid-background: false;
 
 // add $n grid units worth of space to the left of a column
 @mixin prepend($n, $col-width) {
-	padding-left: column-width($n, $col-width) + $gutter-width;
+	padding-left: column-width($n, $col-width) + $gutter_column_width;
 }
 
 // add $n grid units worth of space to the left of a column
 @mixin append($n, $col-width) {
-	padding-right: column-width($n, $col-width) + $gutter-width;
+	padding-right: column-width($n, $col-width) + $gutter_column_width;
 }
 
 // @mixin column can be used in two different ways.
