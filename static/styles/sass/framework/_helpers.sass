@@ -5,13 +5,13 @@
 //* @mixin uselect ($select)
 //* @mixin placeholder
 //* @mixin resize($direction: $both)
-//* @mixin h-style( $title-font-size: 1.8em, $title-rgb-color: 51 51 51, $title-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $title-font-weight: $DEFAULT-TITLE-FONT-WEIGHT, $prepend-sans-font: $default )
-//* @mixin p-style( $p-font-size: 1.4em, $p-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $p-font-weight: $DEFAULT-FONT-WEIGHT, $prepend-sans-font: $default )
+//* @mixin h-style( $title-font-size: 1.8em, $title-rgb-color: 51 51 51, $title-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $title-font-weight: $DEFAULT-TITLE-FONT-WEIGHT, $prepend-sans-font: $defaultValue )
+//* @mixin p-style( $p-font-size: 1.4em, $p-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $p-font-weight: $DEFAULT-FONT-WEIGHT, $prepend-sans-font: $defaultValue )
 //* @mixin ellipsis
 //* @mixin multiline-ellipsis($height, $lineheight, $ellipsiswidth)
 //* @mixin text3d($color)
-//* @mixin well( $border-color: $general-border-color, $shadow-color: 175 175 175, $background-color: $general-background-color-hover, $size: $default, $insetOrOutset: $inset, $border-radius: $default-border-radius )
-//* @mixin caret($direction, $size: 5px, $color: rgb(102,102,102), $position-top: 13px, $position-left: 11px, $switch: $default, $defaultUnit: px)
+//* @mixin well( $border-color: $general-border-color, $shadow-color: 175 175 175, $background-color: $general-background-color-hover, $size: $defaultValue, $insetOrOutset: $inset, $border-radius: $default-border-radius )
+//* @mixin caret($direction, $size: 5px, $color: rgb(102,102,102), $position-top: 13px, $position-left: 11px, $switch: $defaultValue, $defaultUnit: px)
 //* @mixin panel-box
 //* @mixin clearfix
 //* @mixin fixed-sized-text
@@ -64,9 +64,9 @@
 // @param $title-font-size: Default: em. Take measurement of em, px, % or plain number.
 // @param $title-rgb-color: take an array of 3 number for R, G, B. No comma needed. or Color #hex value, color key
 // @param $title-font-weight: default to 700, take 100, 200, 300, 400, 500, 600, 700
-// @param $prepend-sans-font: $default # either false by default or pass in an array of the new value
+// @param $prepend-sans-font: $defaultValue # either false by default or pass in an array of the new value
 // @param $title-margin-bottom: Default: 20px. Take measurement of em, px, % or plain number.
-@mixin h-style( $title-font-size: 1.8em, $title-rgb-color: 51 51 51, $title-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $title-font-weight: $DEFAULT-TITLE-FONT-WEIGHT, $prepend-sans-font: $default )
+@mixin h-style( $title-font-size: 1.8em, $title-rgb-color: 51 51 51, $title-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $title-font-weight: $DEFAULT-TITLE-FONT-WEIGHT, $prepend-sans-font: $defaultValue )
 	+color($title-rgb-color)
 	+fsize($title-font-size)
 	+sans($prepend-sans-font, $title-font-weight)
@@ -75,9 +75,9 @@
 
 // @param $p-font-size: Default: em. Take measurement of em, px, % or plain number.
 // @param $p-font-weight: default to 700, take 100, 200, 300, 400, 500, 600, 700
-// @param $prepend-sans-font: $default # either false by default or pass in an array of the new value
+// @param $prepend-sans-font: $defaultValue # either false by default or pass in an array of the new value
 // @param $p-margin-bottom: Default: 20px. Take measurement of em, px, % or plain number.
-@mixin p-style( $p-font-size: 1.4em, $p-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $p-font-weight: $DEFAULT-FONT-WEIGHT, $prepend-sans-font: $default )
+@mixin p-style( $p-font-size: 1.4em, $p-margin-bottom: $DEFAULT-BOX-MARGIN-BOTTOM, $p-font-weight: $DEFAULT-FONT-WEIGHT, $prepend-sans-font: $defaultValue )
 	+fsize($p-font-size)
 	+sans($prepend-sans-font, $p-font-weight)
 	+margin(bottom, $p-margin-bottom)
@@ -144,7 +144,7 @@
 // @param $size: default, large, small, d, l, s
 // @param Color value
 // @param $insetOrOutset  Switch the shadow from inset or outset. value: inset, outset, i, o
-@mixin well( $border-color: $general-border-color, $shadow-color: 175 175 175, $background-color: $general-background-color-hover, $size: $default, $insetOrOutset: $inset, $border-radius: $default-border-radius )
+@mixin well( $border-color: $general-border-color, $shadow-color: 175 175 175, $background-color: $general-background-color-hover, $size: $defaultValue, $insetOrOutset: $inset, $border-radius: $default-border-radius )
 	min-height: 20px
 	+bcolor( $background-color )
 	+borders( color-format-helper($border-color) )
@@ -170,7 +170,7 @@
 // @param  $direction: up, down, left, right
 // @param  $size: take measurement of em, px, % or plain number
 // @param  $color: Color value, Color keyword, color rgb array without comma
-@mixin caret($direction, $size: 5px, $color: 102 102 102, $position-top: 13px, $position-left: 11px, $switch: $default, $defaultUnit: px)
+@mixin caret($direction, $size: 5px, $color: 102 102 102, $position-top: 13px, $position-left: 11px, $switch: $defaultValue, $defaultUnit: px)
 	content: ""
 	+display(inline-block)
 	+position(absolute, $position-top, $position-left, $switch)

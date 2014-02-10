@@ -2,8 +2,8 @@
 //* Table of Content  [PSEUDO CLASSES]
 //*
 //* @mixin content($content-text: "")
-//* @mixin before( $imgURL: $default, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $default )
-//* @mixin after( $imgURL: $default, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $default )
+//* @mixin before( $imgURL: $defaultValue, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $defaultValue )
+//* @mixin after( $imgURL: $defaultValue, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $defaultValue )
 //* @mixin before
 //* @mixin after
 //* @mixin hover
@@ -23,9 +23,9 @@
 //		       $imgURL should be relative or absolute path, follow +image rules
 // Usage 1:  +before   no args, follow with a block of CSS code
 // Usage 2:  +before("main/test.png") applied the background image on the dynamic element
-@mixin before( $imgURL: $default, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $default )
+@mixin before( $imgURL: $defaultValue, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $defaultValue )
 	&:before
-		@if $imgURL == $default
+		@if $imgURL == $defaultValue
 			@content
 		@else
 			$cleanImgURL: quote($imgURL)
@@ -36,9 +36,9 @@
 
 
 // Same like +before, only different is applied to the :after element
-@mixin after( $imgURL: $default, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $default )
+@mixin after( $imgURL: $defaultValue, $image-width: 0, $image-height: 0, $image_x_pos: 0, $image_y_pos: 0, $position-top: 0, $position-left: 0, $position-switch: $defaultValue )
 	&:after
-		@if $imgURL == $default
+		@if $imgURL == $defaultValue
 			@content
 		@else
 			$cleanImgURL: quote($imgURL)

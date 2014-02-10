@@ -7,7 +7,7 @@
 //* @mixin brepeat( $background-repeat )
 //* @mixin bcolor( $bg-color: 102 102 102 )
 //* @mixin bimage($bg-image-path)
-//* @mixin sprite( $imgURL, $image-width: 24px, $image-height: 24px, $direction: $default )
+//* @mixin sprite( $imgURL, $image-width: 24px, $image-height: 24px, $direction: $defaultValue )
 //* @mixin inline-icon($imgURL, $spacing: 5px, $pos: $left)
 //* @mixin sharpen-image
 //* @mixin high-quality-image
@@ -64,7 +64,7 @@
 // Apply to selector as needed:  [class^="icon-"], [class*=" icon-"]
 // using +image mixin to determine the image path and size
 // use +bposition to switch the image position
-@mixin sprite( $imgURL, $image-width: 24px, $image-height: 24px, $direction: $default )
+@mixin sprite( $imgURL, $image-width: 24px, $image-height: 24px, $direction: $defaultValue )
 	display: inline-block
 	+image( $imgURL, $image-width, $image-height, no-repeat, 0, 0 )
 	+lheight($image-height)
@@ -72,7 +72,7 @@
 	*margin-left: .3em
 	&:last-child
 		*margin-left: 0
-	@if $direction != $default
+	@if $direction != $defaultValue
 		@if $direction == $vertical
 			&:hover
 				+bposition(0,($image-height * -1))

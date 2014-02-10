@@ -6,9 +6,9 @@
 //* @mixin breadcrumb( $delimeter: "\25B8", $show-background: false, $padding-list: 7px 15px)
 //* @mixin pagination( $height: 36px, $defaultUnit: px )
 //* @mixin pager($bg-color: $white, $hover-color: $general-background-color-hover, $border-color: $general-border-color, $padding-list: 5px 14px )
-//* @mixin status-label( $label: $default, $padding-list: 1px 4px 2px )
-//* @mixin counter( $indicator: $default, $padding-list: 1px 9px 2px)
-//* @mixin toggle($type: $default, $container-width: 200px, $slider-bg-color: #70c66b, $padding-list: 5px 0)
+//* @mixin status-label( $label: $defaultValue, $padding-list: 1px 4px 2px )
+//* @mixin counter( $indicator: $defaultValue, $padding-list: 1px 9px 2px)
+//* @mixin toggle($type: $defaultValue, $container-width: 200px, $slider-bg-color: #70c66b, $padding-list: 5px 0)
 //* @mixin toggle-group( $toggle-number: 2, $container-width: 200px, $slider-bg-color: #70c66b, $padding-list: 5px 0 5px )
 //* @mixin image-frame( $padding-list: 4px 6px, $border-color: $general-border-color, $border-hover-color: $general-border-color-hover, $isLink: false)
 //* @mixin tabs( $style: horizontal, $border-color: $general-border-color, $border-color-hover: $general-border-color-hover, $active-background-color: #08c, $active-text-color: $white, $padding-list: 8px 12px )
@@ -18,8 +18,8 @@
 //*
 //* @mixin basic-btn( $width: auto, $height: 30px, $padding-list: 0 8px)
 //* @mixin close-btn($font-size: 1.4em, $float: $right)
-//* @mixin status-btn( $status: $default, $width: auto, $height: 30px, $padding-list: 0 8px )
-//* @mixin group-btn( $divider: $none, $status: $default, $padding-list: 8px 18px, $direction: $down, $size: 5px, $color: rgb(102,102,102)  )
+//* @mixin status-btn( $status: $defaultValue, $width: auto, $height: 30px, $padding-list: 0 8px )
+//* @mixin group-btn( $divider: $none, $status: $defaultValue, $padding-list: 8px 18px, $direction: $down, $size: 5px, $color: rgb(102,102,102)  )
 //* @mixin press-btn( $background: #207cca, $color: $white, $padding-list: 11px 30px 14px 30px )
 //* @mixin btn($gradient-style: $simple, $first-color: $sb-base-color, $second-color: $sb-second-color, $text-color: $sb-text-color, $text-style: $inset, $border-radius: $default-border-radius, $auto-states: $sb-pseudo-states, $ie: true)
 //* @mixin btn-style($style, $base-color: $sb-base-color)
@@ -300,7 +300,7 @@
 // Label Text Implementation: Label and annotate text
 // Usage: <anyTag> String </anyTag>
 // @param  $label: default important warning success info invert
-@mixin status-label( $label: $default, $padding-list: 1px 4px 2px )
+@mixin status-label( $label: $defaultValue, $padding-list: 1px 4px 2px )
 	padding: param-helper( $padding-list )
 	vertical-align: middle
 	text-align: center
@@ -310,7 +310,7 @@
 	+border-radius($default-border-radius)
 	&:hover
 		color: $white
-	@if $label == $default // Label: Default
+	@if $label == $defaultValue // Label: Default
 		+bcolor($default-color)
 		&:hover
 			+bcolor($default-color-hover)
@@ -340,7 +340,7 @@
 // Counter number Implementation
 // Usage: <anyTag> Number </anyTag>
 // @param  $indicator: default error warning success info invert
-@mixin counter( $indicator: $default, $padding-list: 1px 9px 2px)
+@mixin counter( $indicator: $defaultValue, $padding-list: 1px 9px 2px)
 	padding: param-helper( $padding-list )
 	white-space: nowrap
 	+color($white)
@@ -348,7 +348,7 @@
 	+border-radius(10px)
 	&:hover
 		+color($white)
-	@if $indicator == $default // Counter Status: Default
+	@if $indicator == $defaultValue // Counter Status: Default
 		+bcolor($default-color)
 		&:hover
 			+bcolor($default-color-hover)
@@ -377,7 +377,7 @@
 // Usage:
 // $type:   default  <label data-on="On" data-off="Off"> <input type="checkbox" /> <span></span> </label>
 // 			fancy    <p> <input id="wireless" type="checkbox" /> <label for="wireless"></label> <span></span> </p>
-@mixin toggle($type: $default, $container-width: 200px, $slider-bg-color: #70c66b, $padding-list: 5px 0)
+@mixin toggle($type: $defaultValue, $container-width: 200px, $slider-bg-color: #70c66b, $padding-list: 5px 0)
 	position: relative
 	display: block
 	padding: param-helper( $padding-list )
@@ -391,7 +391,7 @@
 		&:focus + span
 			outline: 1px dotted #fff
 
-	@if $type == $default
+	@if $type == $defaultValue
 		$current-width: measurement( $container-width, px )
 		width: $current-width
 		margin-left:  -$current-width / 2
@@ -965,7 +965,7 @@
 // Buttons based on Twitter BootStrap 2 on March 20, 2012
 // Buttons Implementation   @param: default, primary, warning, error, success, info, inverse
 // Usage: <button>button</button> 	optional: class="disabled"
-@mixin status-btn( $status: $default, $width: auto, $height: 30px, $padding-list: 0 8px )
+@mixin status-btn( $status: $defaultValue, $width: auto, $height: 30px, $padding-list: 0 8px )
 	display: inline-block
 	*display: inline
 	*zoom: 1
@@ -1011,7 +1011,7 @@
 		+opacity(0.65)
 		+box-shadow( transparent 0 0 0 0 )
 
-	@if $status == $default
+	@if $status == $defaultValue
 		background-color: $button-default-background-color
 		+background-image(linear-gradient(top, $white, $button-default-border-color))
 		background-repeat: repeat-x
