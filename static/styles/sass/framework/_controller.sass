@@ -1,9 +1,9 @@
 //****************************************************************
 //* Table of Content  [CONTROLLER]
 //*
-//* @mixin measurement($property, $value, $unit)
+//* @mixin measurement($propertyName, $value, $unit)
 //* @function measurement($value, $unit)
-//* @mixin prop($property, $value, $value-support-list)
+//* @mixin prop($propertyName, $value, $value-support-list)
 //* @function relative-image-path($path)
 //* @function absolute-image-path($path)
 //* @function color-format-helper( $list )
@@ -28,19 +28,19 @@
 
 // Dealing with Measure Evaluation: px, percent, em
 // When user provide the measurement, it will being evaluate and output its value
-// $property: String.  #the name of the property and no quotation needed.  ex: font-size
+// $propertyName: String.  #the name of the property and no quotation needed.  ex: font-size
 // $value: String.     #value of the property value pair. It should be an variable which entered by user
 // $unit: px, em, %.   #If user do not provide the measure, use the third option to add measurement for the user
-@mixin measurement($property, $value, $unit)
+@mixin measurement($propertyName, $value, $unit)
 	@if unitless($value) == false
 		@if unit($value) == "em"
-			#{$property}: $value
+			#{$propertyName}: $value
 		@else if unit($value) == "px"
-			#{$property}: $value
+			#{$propertyName}: $value
 		@else if unit($value) == "%"
-			#{$property}: $value
+			#{$propertyName}: $value
 	@else
-		#{$property}: $value + $unit
+		#{$propertyName}: $value + $unit
 
 // Dealing with Measure Evaluation: px, percent, em
 // Instead of returning a property/value pair, just return the value
@@ -57,7 +57,7 @@
 
 
 // Dealing with assigning the variable
-// $property: String.  #the name of the property and no quotation needed.  ex: font-size
+// $propertyName: String.  #the name of the property and no quotation needed.  ex: font-size
 // $value: String.     #value of the property value pair. It should be an variable which entered by user
 // $value-support-list: Array. #Array with no comma in between. Supporting value by specific property
 //*****
@@ -66,14 +66,14 @@
 //** This is the shorthand way, show the full property value using the index of even number
 //** When shorthand model construct property list, it has to follow this way
 //*****
-@mixin prop($property, $value, $value-support-list)
+@mixin prop($propertyName, $value, $value-support-list)
 	@each $support-value in $value-support-list
 		@if $value == $support-value
 			$num: index($value-support-list, $value)
 			@if $num % 2 == 1
-				#{$property}: nth( $value-support-list, $num+1 )
+				#{$propertyName}: nth( $value-support-list, $num+1 )
 			@else
-				#{$property}: nth( $value-support-list, $num )
+				#{$propertyName}: nth( $value-support-list, $num )
 
 
 // Return an image path relative to the CSS folder structure

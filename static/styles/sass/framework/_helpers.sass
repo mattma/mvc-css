@@ -1,7 +1,7 @@
 //****************************************************************
 //* Table of Content   [HELPERS]
 //*
-//* @mixin cursor($property: pointer)
+//* @mixin cursor($propertyName: pointer)
 //* @mixin uselect ($select)
 //* @mixin placeholder
 //* @mixin resize($direction: $both)
@@ -23,9 +23,9 @@
 //****************************************************************
 
 
-// @param $property:  default help move pointer progress text wait inherit auto crosshair URL e-resize n-resize ne-resize nw-resize s-resize se-resize sw-resize w-resize
-@mixin cursor($property: pointer)
-	+prop(cursor, $property, $CURSOR-VALUE-LIST)
+// @param $propertyName:  default help move pointer progress text wait inherit auto crosshair URL e-resize n-resize ne-resize nw-resize s-resize se-resize sw-resize w-resize
+@mixin cursor($propertyName: pointer)
+	+prop(cursor, $propertyName, $CURSOR-VALUE-LIST)
 
 
 // [user-select](https://developer.mozilla.org/en-US/docs/CSS/user-select) For selecting text on the page

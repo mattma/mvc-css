@@ -16,12 +16,12 @@
 //* @mixin bstyle($position, $border-style: null)
 //* @mixin bdcolor($position, $border-color: null)
 //* @mixin bwidth($position, $border-width: null, $defaultUnit: px)
-//* @mixin overflow($property, $overflow-side: null)
-//* @mixin float($property)
+//* @mixin overflow($propertyName, $overflow-side: null)
+//* @mixin float($propertyName)
 //* @mixin floated($direction: left, $gap: 5px, $switch: both, $alphaOrOmega: both, $defaultUnit: px)
-//* @mixin clear($property)
-//* @mixin display($property)
-//* @mixin visibility($property)
+//* @mixin clear($propertyName)
+//* @mixin display($propertyName)
+//* @mixin visibility($propertyName)
 //* @mixin position($position, $_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $defaultValue, $defaultUnit: px)
 //* @mixin zindex($z-index)
 //* @mixin top($position-top-value, $defaultUnit: px)
@@ -295,22 +295,22 @@
 
 
 // Overflow Property
-// @param $property: visible hidden scroll auto
+// @param $propertyName: visible hidden scroll auto
 // @param $overflow-side: null, x, y  for generating e.g. overflow-x
-@mixin overflow($property, $overflow-side: $defaultValue)
+@mixin overflow($propertyName, $overflow-side: $defaultValue)
 	@if $overflow-side == $defaultValue
-		+prop(overflow, $property, $OVERFLOW-VALUE-LIST)
+		+prop(overflow, $propertyName, $OVERFLOW-VALUE-LIST)
 	@else
 		@if $overflow-side == x
-			+prop(overflow-x, $property, $OVERFLOW-VALUE-LIST)
+			+prop(overflow-x, $propertyName, $OVERFLOW-VALUE-LIST)
 		@else if $overflow-side == y
-			+prop(overflow-y, $property, $OVERFLOW-VALUE-LIST)
+			+prop(overflow-y, $propertyName, $OVERFLOW-VALUE-LIST)
 
 
 // Float Property
-// @param $property: left right none
-@mixin float($property)
-	+prop(float, $property, $FLOAT-VALUE-LIST)
+// @param $propertyName: left right none
+@mixin float($propertyName)
+	+prop(float, $propertyName, $FLOAT-VALUE-LIST)
 
 
 // @param $direction: left or l,  right or r
@@ -348,21 +348,21 @@
 				margin-right: 0
 
 // Clear Property
-// @param $property: left right both none
-@mixin clear($property)
-	+prop(clear, $property, $CLEAR-VALUE-LIST)
+// @param $propertyName: left right both none
+@mixin clear($propertyName)
+	+prop(clear, $propertyName, $CLEAR-VALUE-LIST)
 
 
 // Display Property
-// @param $property: block none inline inline-block
-@mixin display($property)
-	+prop(display, $property, $DISPLAY-VALUE-LIST)
+// @param $propertyName: block none inline inline-block
+@mixin display($propertyName)
+	+prop(display, $propertyName, $DISPLAY-VALUE-LIST)
 
 
 // Visibility Property
-// @param $property: visible hidden collapse(only for table elements)
-@mixin visibility($property)
-	+prop(visibility, $property, $VISIBILITY-VALUE-LIST)
+// @param $propertyName: visible hidden collapse(only for table elements)
+@mixin visibility($propertyName)
+	+prop(visibility, $propertyName, $VISIBILITY-VALUE-LIST)
 
 
 // Position
