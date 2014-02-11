@@ -1,95 +1,205 @@
-/*
-Syntax error: Undefined variable: "$default".
-        on line 329 of /Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/test/../framework/_layout.sass, in `floated'
-        from line 16 of /Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/test/test-layout.sass
+@charset "UTF-8";
+/* COLOR SETTING */
+.outline {
+  outline: 2px dotted red;
+  outline: 1px solid #dedede;
+  outline: none;
+}
 
-Backtrace:
-/Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/test/../framework/_layout.sass:329:in `floated'
-/Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/test/test-layout.sass:16
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/script/variable.rb:49:in `_perform'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/script/node.rb:40:in `perform'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/script/operation.rb:83:in `_perform'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/script/node.rb:40:in `perform'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:204:in `visit_if'
-org/jruby/RubyKernel.java:2109:in `send'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:268:in `visit_mixin'
-org/jruby/RubyArray.java:2339:in `collect'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:268:in `visit_mixin'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:268:in `visit_mixin'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:70:in `perform_arguments'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:263:in `visit_mixin'
-org/jruby/RubyKernel.java:2109:in `send'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-org/jruby/RubyArray.java:2339:in `collect'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-org/jruby/RubyKernel.java:2109:in `send'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-org/jruby/RubyArray.java:2339:in `collect'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-org/jruby/RubyKernel.java:2109:in `send'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-org/jruby/RubyKernel.java:2109:in `send'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/root_node.rb:20:in `render'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/engine.rb:315:in `_render'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/engine.rb:262:in `render'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/compass_patch.rb:60:in `compile'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/compass_patch.rb:59:in `compile'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/compass_patch.rb:58:in `compile'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:103:in `run'
-org/jruby/RubyArray.java:1620:in `each'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:101:in `run'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/backport_from_0.13/lib/compass/watcher/compiler.rb:25:in `compile'
-org/jruby/RubyKernel.java:2105:in `send'
-(__FORWARDABLE__):3:in `compile'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/backport_from_0.13/lib/compass/watcher/project_watcher.rb:92:in `sass_modified'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/backport_from_0.13/lib/compass/watcher/project_watcher.rb:85:in `sass_callback'
-org/jruby/RubyMethod.java:133:in `call'
-org/jruby/RubyProc.java:270:in `call'
-org/jruby/RubyProc.java:220:in `call'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/backport_from_0.13/lib/compass/watcher/watch.rb:17:in `run_callback'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/app_watcher.rb:32:in `listen_callback'
-org/jruby/RubyArray.java:1620:in `each'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/app_watcher.rb:27:in `listen_callback'
-org/jruby/RubyArray.java:1620:in `each'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/app_watcher.rb:26:in `listen_callback'
-org/jruby/RubyMethod.java:133:in `call'
-org/jruby/RubyProc.java:270:in `call'
-org/jruby/RubyProc.java:220:in `call'
-/Applications/compass.app/Contents/Resources/lib/ruby/jruby/listen-0.7.3/lib/listen/listener.rb:212:in `on_change'
-/Applications/compass.app/Contents/Resources/lib/ruby/jruby/listen-0.7.3/lib/listen/listener.rb:221:in `initialize_adapter'
-org/jruby/RubyProc.java:270:in `call'
-org/jruby/RubyProc.java:220:in `call'
-/Applications/compass.app/Contents/Resources/lib/ruby/jruby/listen-0.7.3/lib/listen/adapter.rb:198:in `report_changes'
-/Applications/compass.app/Contents/Resources/lib/ruby/jruby/listen-0.7.3/lib/listen/adapter.rb:210:in `poll_changed_dirs'
-/Applications/compass.app/Contents/Resources/lib/ruby/jruby/listen-0.7.3/lib/listen/adapters/darwin.rb:38:in `start'
-org/jruby/RubyProc.java:270:in `call'
-org/jruby/RubyProc.java:224:in `call'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$default\".\A         on line 329 of /Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/test/../framework/_layout.sass, in `floated'\A         from line 16 of /Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/test/test-layout.sass"; }
+.floated {
+  float: right;
+  margin-left: 10em;
+  margin-right: 10em;
+}
+.floated:first-child {
+  margin-left: 0;
+}
+.floated:last-child {
+  margin-right: 0;
+}
+
+.offset {
+  top: 20px;
+  left: 30%;
+  bottom: 20em;
+  right: 30px;
+  bottom: 20px;
+  left: 30%;
+}
+
+.top {
+  top: 20px;
+  top: 30em;
+}
+
+.left {
+  left: 10%;
+  left: 30em;
+}
+
+.zindex {
+  z-index: 10;
+}
+
+.position {
+  position: relative;
+  top: 30px;
+  right: 40em;
+  position: absolute;
+  bottom: 34em;
+  left: 20%;
+  position: absolute;
+  bottom: 34em;
+  right: 20%;
+  position: fixed;
+  top: 30em;
+  right: 40px;
+  position: fixed;
+  bottom: 34%;
+  left: 20px;
+  position: fixed;
+  bottom: 34em;
+  right: 20%;
+  position: relative;
+  top: 30px;
+  right: 40em;
+  position: relative;
+  bottom: 34em;
+  left: 20%;
+  position: relative;
+  bottom: 34em;
+  right: 20%;
+  position: static;
+  position: static;
+}
+
+.overflow {
+  overflow: hidden;
+  overflow: auto;
+  overflow: visible;
+  overflow: visible;
+  overflow: scroll;
+  overflow: scroll;
+}
+
+.float {
+  float: left;
+  float: left;
+  float: right;
+  float: right;
+  float: none;
+}
+
+.clear {
+  clear: left;
+  clear: left;
+  clear: right;
+  clear: right;
+  clear: none;
+  clear: both;
+  clear: both;
+}
+
+.display {
+  display: block;
+  display: block;
+  display: none;
+  display: inline-block;
+  display: inline;
+  display: inline;
+  display: inline-block;
+}
+
+.visibility {
+  visibility: visible;
+  visibility: visible;
+  visibility: hidden;
+  visibility: hidden;
+  visibility: collapse;
+  visibility: collapse;
+}
+
+.border {
+  border-top: 3px solid #332a20;
+  border-top: 3% dotted #332a20;
+  border-right: 3px solid #332a20;
+  border-right: 3% dotted #332a20;
+  border-bottom: 3px solid #332a20;
+  border-bottom: 3% dotted #332a20;
+  border-left: 3px solid #332a20;
+  border-left: 3% dotted #332a20;
+  border-style: dotted;
+  border-color: #332a84;
+  border-width: 3em;
+  border-style: solid;
+  border-color: #332a84;
+  border-width: 3em;
+  border-style: dashed;
+  border-color: #332a84;
+  border-width: 3%;
+  border-left: 0.5% solid #e5e5ee;
+  border-left: 30px solid transparent;
+}
+
+.border-individule {
+  border-top-style: solid;
+  border-top-style: dotted;
+  border-top-style: dotted;
+  border-style: dotted;
+  border-bottom-color: #151715;
+  border-bottom-color: #321232;
+  border-color: red;
+  border-left-width: 1px;
+  border-left-width: 3em;
+  border-width: 40%;
+}
+
+.width {
+  margin: 0 auto;
+  width: 30%;
+  max-width: 300px;
+}
+
+.height {
+  height: 30em;
+  min-height: 200%;
+  height: 20em;
+  margin: 0 auto;
+  width: 300%;
+}
+
+.margin {
+  margin-top: 10em;
+  margin-top: 10%;
+  margin-bottom: 10em;
+  margin-bottom: 10%;
+  margin-left: 10em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-right: 10%;
+}
+
+.margins {
+  margin: 0px auto 0px;
+  margin: 30px 20em 10% 40px;
+  margin: 30em auto 10%;
+  margin: 0;
+}
+
+.padding {
+  padding-top: auto;
+  padding-top: 10%;
+  padding-bottom: auto;
+  padding-bottom: 10px;
+  padding-left: 10em;
+  padding-left: 30em;
+  padding-right: auto;
+  padding-right: 10%;
+}
+
+.paddings {
+  padding: 0px auto 0px;
+  padding: 30px 20em 10% 40px;
+  padding: 30em auto 10%;
+  padding: 0;
+}

@@ -11,7 +11,8 @@
 *.swo
 *.swp
 *.vi
-*~
+*.css
+!static/styles/reset.css
 
 # OS or Editor folders
 .DS_Store

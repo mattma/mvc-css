@@ -1,109 +1,191 @@
-/*
-Syntax error: Undefined variable: "$default".
-        on line 300 of /Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/framework/_helpers.sass, in `overflow'
-        from line 211 of /Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/framework/_helpers.sass, in `clearfix'
-        from line 18 of /Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/test/test-helpers.sass
+@charset "UTF-8";
+/* COLOR SETTING */
+.keyframes {
+  @-webkit-keyframes move {
+    color: red;
+}
 
-Backtrace:
-/Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/framework/_helpers.sass:300:in `overflow'
-/Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/framework/_helpers.sass:211:in `clearfix'
-/Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/test/test-helpers.sass:18
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/script/variable.rb:49:in `_perform'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/script/node.rb:40:in `perform'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:58:in `perform_arguments'
-org/jruby/RubyArray.java:2613:in `zip'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:52:in `perform_arguments'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:263:in `visit_mixin'
-org/jruby/RubyKernel.java:2109:in `send'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-org/jruby/RubyArray.java:2339:in `collect'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-org/jruby/RubyKernel.java:2109:in `send'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:268:in `visit_mixin'
-org/jruby/RubyArray.java:2339:in `collect'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:268:in `visit_mixin'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:268:in `visit_mixin'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:70:in `perform_arguments'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:263:in `visit_mixin'
-org/jruby/RubyKernel.java:2109:in `send'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-org/jruby/RubyArray.java:2339:in `collect'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-org/jruby/RubyKernel.java:2109:in `send'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-org/jruby/RubyArray.java:2339:in `collect'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-org/jruby/RubyKernel.java:2109:in `send'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
-org/jruby/RubyKernel.java:2109:in `send'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/tree/root_node.rb:20:in `render'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/engine.rb:315:in `_render'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_common/sass-3.2.10/lib/sass/engine.rb:262:in `render'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/compass_patch.rb:60:in `compile'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/compass_patch.rb:59:in `compile'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/compass_patch.rb:58:in `compile'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:103:in `run'
-org/jruby/RubyArray.java:1620:in `each'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:101:in `run'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/backport_from_0.13/lib/compass/watcher/compiler.rb:25:in `compile'
-org/jruby/RubyKernel.java:2105:in `send'
-(__FORWARDABLE__):3:in `compile'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/backport_from_0.13/lib/compass/watcher/project_watcher.rb:92:in `sass_modified'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/backport_from_0.13/lib/compass/watcher/project_watcher.rb:85:in `sass_callback'
-org/jruby/RubyMethod.java:133:in `call'
-org/jruby/RubyProc.java:270:in `call'
-org/jruby/RubyProc.java:220:in `call'
-/Applications/compass.app/Contents/Resources/lib/ruby/compass_0.12/backport_from_0.13/lib/compass/watcher/watch.rb:17:in `run_callback'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/app_watcher.rb:32:in `listen_callback'
-org/jruby/RubyArray.java:1620:in `each'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/app_watcher.rb:27:in `listen_callback'
-org/jruby/RubyArray.java:1620:in `each'
-file:/Applications/compass.app/Contents/Resources/Java/compass-app.jar!/app_watcher.rb:26:in `listen_callback'
-org/jruby/RubyMethod.java:133:in `call'
-org/jruby/RubyProc.java:270:in `call'
-org/jruby/RubyProc.java:220:in `call'
-/Applications/compass.app/Contents/Resources/lib/ruby/jruby/listen-0.7.3/lib/listen/listener.rb:212:in `on_change'
-/Applications/compass.app/Contents/Resources/lib/ruby/jruby/listen-0.7.3/lib/listen/listener.rb:221:in `initialize_adapter'
-org/jruby/RubyProc.java:270:in `call'
-org/jruby/RubyProc.java:220:in `call'
-/Applications/compass.app/Contents/Resources/lib/ruby/jruby/listen-0.7.3/lib/listen/adapter.rb:198:in `report_changes'
-/Applications/compass.app/Contents/Resources/lib/ruby/jruby/listen-0.7.3/lib/listen/adapter.rb:210:in `poll_changed_dirs'
-/Applications/compass.app/Contents/Resources/lib/ruby/jruby/listen-0.7.3/lib/listen/adapters/darwin.rb:38:in `start'
-org/jruby/RubyProc.java:270:in `call'
-org/jruby/RubyProc.java:224:in `call'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$default\".\A         on line 300 of /Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/framework/_helpers.sass, in `overflow'\A         from line 211 of /Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/framework/_helpers.sass, in `clearfix'\A         from line 18 of /Users/mma/Desktop/repo/bitbucket/mvccss/static/styles/sass/test/test-helpers.sass"; }
+  @-moz-keyframes move {
+    color: red;
+}
+
+  @-ms-keyframes move {
+    color: red;
+}
+
+  @keyframes move {
+    color: red;
+}
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .media {
+    color: red;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .media {
+    color: red;
+  }
+}
+
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: ".";
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0em;
+  line-height: 0px;
+  height: 0px;
+  width: 0px;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.panel-box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(175, 175, 175, 0.4) -1px 1px 5px;
+  -moz-box-shadow: rgba(175, 175, 175, 0.4) -1px 1px 5px;
+  box-shadow: rgba(175, 175, 175, 0.4) -1px 1px 5px;
+  background: white;
+}
+
+.caret {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 13px;
+  left: 11px;
+  height: 0px;
+  width: 0px;
+  vertical-align: top;
+  text-indent: -9999px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #666666;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  height: 0px;
+  width: 0px;
+  vertical-align: top;
+  text-indent: -9999px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #333333;
+}
+
+.text3d {
+  color: black;
+  text-shadow: black 1px 1px 0px, black 2px 2px 0px, black 3px 3px 0px, black 4px 4px 0px, black 4px 4px 2px;
+}
+
+.well {
+  min-height: 20px;
+  background-color: #cccccc;
+  border-style: solid;
+  border-color: #333333;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.05);
+  padding: 10px 10px 10px 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(175, 175, 175, 0.3) -1px 1px 5px;
+  -moz-box-shadow: rgba(175, 175, 175, 0.3) -1px 1px 5px;
+  box-shadow: rgba(175, 175, 175, 0.3) -1px 1px 5px;
+  min-height: 20px;
+  background-color: #cccccc;
+  border-style: solid;
+  border-color: #333333;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.05);
+  padding: 15px 15px 15px 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(175, 175, 175, 0.05) 0 1px 1px 0 inset;
+  -moz-box-shadow: rgba(175, 175, 175, 0.05) 0 1px 1px 0 inset;
+  box-shadow: rgba(175, 175, 175, 0.05) 0 1px 1px 0 inset;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.hstyle {
+  color: #333333;
+  font-size: 1.8em;
+  font-family: arial, helvetica, Verdana, sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.pstyle {
+  font-size: 1.4em;
+  font-family: arial, helvetica, Verdana, sans-serif;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.cursor {
+  cursor: crosshair;
+  cursor: pointer;
+  cursor: progress;
+}
+
+.resize {
+  resize: both;
+  overflow: auto;
+  resize: both;
+  overflow: auto;
+  resize: vertical;
+  overflow: auto;
+  resize: horizontal;
+  overflow: auto;
+}
+
+.uselect {
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -o-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+  -webkit-user-select: element;
+  -moz-user-select: element;
+  -o-user-select: element;
+  -ms-user-select: element;
+  user-select: element;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
