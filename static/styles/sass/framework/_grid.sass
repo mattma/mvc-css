@@ -2,8 +2,6 @@
 //*
 //* @mixin blockEqualWidth  		   line: 23   =Equal Width block elements up to 6 in a row
 //* @mixin blockEqualWidthWithMargin   line: 35   =Equal Width block elements up to 6 in a row with margin
-//* @mixin blockEqualPercent($margin: 1%, $alpha: false, $omega: false, $totalWidth: 100%, $height: 160, $selector: li, $defaultUnit: "%")
-//* @mixin multiRowPercent($grid: 2, $margin: 1%, $margin-bottom: $margin, $totalWidth: 100%, $height: 40, $selector: li, $parent: ul, $defaultUnit: "%")
 //* @mixin multiRowBlockEqualWidth	   line: 	  =Spread into multiple row, maintain the same width, great for repeatable el
 //* @mixin column     		  		   line: 45   =960.gs based Grid System, swtich between 12, 16, 24 cols, add column(s)
 //* @mixin push     		  		   line: 45   =960.gs based, add margin-left value, push element to the right
@@ -339,51 +337,51 @@
 //--------------------------------------------------------------------------------------
 
 // DO NOT MODIFIED THE VALUE BEFORE
-$columns: 0        // Col: 12; Col-Width: 60px; Gutter: 20px;   Offset: 80px/col; Content-Width: 940px;
-$column-width: 0   // Col: 16; Col-Width: 40px; Gutter: 20px;   Offset: 60px/col; Content-Width: 940px;
-$gutter-width: 0   // Col: 24; Col-Width: 30px; Gutter: 10px;   Offset: 40px/col; Content-Width: 950px;
+$grid_columns: 0        // Col: 12; Col-Width: 60px; Gutter: 20px;   Offset: 80px/col; Content-Width: 940px;
+$grid_column_width: 0   // Col: 16; Col-Width: 40px; Gutter: 20px;   Offset: 60px/col; Content-Width: 940px;
+$gutter_column_width: 0   // Col: 24; Col-Width: 30px; Gutter: 10px;   Offset: 40px/col; Content-Width: 950px;
 
 // @mixin grid($grid, $measure: px)
 // @param $grid: 12, 16, 24 => grid column number
 // @param measure: px, percent  => Generate a Px or % based layout
-//+grid(24, px) 			// Generate a Px based layout
-+grid(24, percent)  	// Generate a Percent fluid layout
++grid(24, px) 			// Generate a Px based layout
+//+grid(24, percent)  	// Generate a Percent fluid layout
 
 // Utility function — you should never need to modify this
-@function gridsystem-width($cols: $columns, $col-width: $column-width, $gap: $gutter-width )
+@function gridsystem-width($cols: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width )
 	@return ($col-width * $cols) + ($gap * $cols)
 
-$total-width: gridsystem-width($columns, $column-width, $gutter-width)
+$total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column_width)
 
-@mixin column($col, $alpha: false, $omega: false, $columns: $columns, $col-width: $column-width, $gap: $gutter-width, $side: left)
+@mixin column($col, $alpha: false, $omega: false, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width, $side: left)
 	display: inline
 	float: $side
-	width: $total-width*(((( $gap + $col-width )*$col) - $gap ) / gridsystem-width($columns, $col-width, $gap))
-	margin: 0 $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))
+	width: $total-width*(((( $gap + $col-width )*$col) - $gap ) / gridsystem-width($grid_columns, $col-width, $gap))
+	margin: 0 $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap))
 	@if $alpha == true // first columns
 		margin-left: 0
 	@if $omega == true // last columns
 		margin-right: 0
-	// *width: $total-width*(((( $gap + $col-width )*$col)- $gap ) / gridsystem-width($columns, $col-width, $gap))-$correction
-	// *margin: 0 $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))-$correction
+	// *width: $total-width*(((( $gap + $col-width )*$col)- $gap ) / gridsystem-width($grid_columns, $col-width, $gap))-$correction
+	// *margin: 0 $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap))-$correction
 
 
-@mixin push($offset: 1, $marginOrPadding: margin, $columns: $columns, $col-width: $column-width, $gap: $gutter-width)
+@mixin push($offset: 1, $marginOrPadding: margin, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width)
 	@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
-		margin-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap))
+		margin-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap))
 	@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
-		padding-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($columns, $col-width, $gap)) - $gap / 2
+		padding-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap)) - $gap / 2
 
 
-@mixin pull($offset: 1, $marginOrPadding: margin, $columns: $columns, $col-width: $column-width, $gap: $gutter-width)
+@mixin pull($offset: 1, $marginOrPadding: margin, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width)
 	@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
-		margin-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($columns, $col-width, $gap))
+		margin-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap))
 	@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
-		padding-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($columns, $col-width, $gap)) - $gap / 2
+		padding-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap)) - $gap / 2
 
 
-@mixin table-col($span: 1, $columns: $columns, $col-width: $column-width, $gap: 0)
-	width: $total-width*((($gap+ $col-width)*$span) / gridsystem-width($columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($columns, $col-width, $gap))
+@mixin table-col($span: 1, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: 0)
+	width: $total-width*((($gap+ $col-width)*$span) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap))
 
 
 //--------------------------------------------------------------------------------------
@@ -403,20 +401,20 @@ $eleven40-grid-margin: 3.8%  // The amount of margin between columns
 	overflow: hidden
 	width: 100%
 
-@mixin eleven40-column($columns, $omega: 0, $parent: 12, $side: left)
+@mixin eleven40-column($grid_columns, $omega: 0, $parent: 12, $side: left)
 	display: inline
 	float: $side
-	width: _eleven40-col($columns, $parent)
+	width: _eleven40-col($grid_columns, $parent)
 	margin-right: $eleven40-grid-margin / _eleven40-col($parent) * 100%
 	@if $omega > 0 // last columns
 		margin-right: 0
 
-@mixin eleven40-push($columns, $parent: 12)
-	margin-left: ($eleven40-grid-width * $columns + $eleven40-grid-margin * $columns) / ($eleven40-grid-width * $parent + $eleven40-grid-margin * ($parent - 1)) * 100%
+@mixin eleven40-push($grid_columns, $parent: 12)
+	margin-left: ($eleven40-grid-width * $grid_columns + $eleven40-grid-margin * $grid_columns) / ($eleven40-grid-width * $parent + $eleven40-grid-margin * ($parent - 1)) * 100%
 
 // Function to calculate width in context   Called by @mixin eleven40-column
-@function _eleven40-col($columns, $parent: 12)
-	@return ($eleven40-grid-width * $columns + $eleven40-grid-margin * ($columns - 1)) / ($eleven40-grid-width * $parent + $eleven40-grid-margin * ($parent - 1)) * 100%
+@function _eleven40-col($grid_columns, $parent: 12)
+	@return ($eleven40-grid-width * $grid_columns + $eleven40-grid-margin * ($grid_columns - 1)) / ($eleven40-grid-width * $parent + $eleven40-grid-margin * ($parent - 1)) * 100%
 
 
 

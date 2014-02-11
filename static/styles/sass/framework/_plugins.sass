@@ -13,8 +13,8 @@
 //* @function ms-multibase($multiple, $base-size, $ratio)
 //* @function ms-multiratio($multiple, $base-size, $ratio)
 //* @function trim-sort($multiple, $scale-values, $base-size)
-//* @mixin modular-scale($property, $multiple, $base-size, $ratio)
-//* @mixin modular-scale-classes($multiple, $property, $class-slug, $base-size, $ratio)
+//* @mixin modular-scale($propertyName, $multiple, $base-size, $ratio)
+//* @mixin modular-scale-classes($multiple, $propertyName, $class-slug, $base-size, $ratio)
 //* @mixin ttransform($transform: $capitalize)
 //*
 //* @function exponent($base, $exponent)
@@ -171,7 +171,7 @@ $minor-second: (16 / 15)
 // Defaults
 $ratio: $golden !default
 $base-size: 14px !default
-$property: font-size !default
+$propertyName: font-size !default
 $class-slug: ms !default
 
 // Modular Scale function
@@ -380,20 +380,20 @@ $class-slug: ms !default
 
 // Mixin
 // Deprecated. Use the modular-scale() function instead
-@mixin modular-scale($property, $multiple, $base-size, $ratio)
-	// Print the $property and return the value from the Modular Scale function
+@mixin modular-scale($propertyName, $multiple, $base-size, $ratio)
+	// Print the $propertyName and return the value from the Modular Scale function
 	@warn "The modular-scale mixin is deprecated. Instead use the function: width: modular-scale(3)"
-	#{$property}: modular-scale($multiple, $base-size, $ratio)
+	#{$propertyName}: modular-scale($multiple, $base-size, $ratio)
 
 
 // Classes Mixin
 // Usage: +modular-scale-classes(6, line-height)
-@mixin modular-scale-classes($multiple, $property, $class-slug, $base-size, $ratio)
+@mixin modular-scale-classes($multiple, $propertyName, $class-slug, $base-size, $ratio)
 	// Loop from 0 through the value of $multiple and generate a range of classes
 	@for $i from 0 through $multiple
 		.#{$class-slug}-#{$i}
-			// Print the $property and return the value from the Modular Scale function
-			#{$property}: modular-scale($i, $base-size, $ratio)
+			// Print the $propertyName and return the value from the Modular Scale function
+			#{$propertyName}: modular-scale($i, $base-size, $ratio)
 
 
 // Utilities functions below

@@ -1,9 +1,9 @@
 //****************************************************************
 //* Table of Content  [FONTS]
 //*
-//* @mixin sans( $prepend: $default, $weight: $DEFAULT-FONT-WEIGHT, $helvetica: false )
-//* @mixin serif( $prepend: $default, $weight: $DEFAULT-FONT-WEIGHT )
-//* @mixin monospace( $prepend: $default, $weight: $DEFAULT-FONT-WEIGHT )
+//* @mixin sans( $prepend: $defaultValue, $weight: $DEFAULT-FONT-WEIGHT, $helvetica: false )
+//* @mixin serif( $prepend: $defaultValue, $weight: $DEFAULT-FONT-WEIGHT )
+//* @mixin monospace( $prepend: $defaultValue, $weight: $DEFAULT-FONT-WEIGHT )
 //* @mixin percentage-font-size( $size, $base-font-size )
 //* @mixin relative-font-size( $size, $context, $unit: em )
 //* @mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: em )
@@ -26,12 +26,12 @@
 // @param $weight 	 	# font weight convinient function
 // @param $helvetica  		# enable the popular font "helvetica neue", fallback to helvetica
 // Usage: +sans(mattma test test2, 700)
-@mixin sans( $prepend: $default, $font-weight: false, $helvetica: false )
+@mixin sans( $prepend: $defaultValue, $font-weight: false, $helvetica: false )
 	@if type-of($helvetica) == bool
 		@if $helvetica == true
 			font-family: "Helvetica Neue", Helvetica, arial, Verdana, sans-serif
 		@else
-			@if $prepend == $default
+			@if $prepend == $defaultValue
 				font-family: $DEFAULT-SANS-SERIF
 			@else
 				font-family: join($prepend, $DEFAULT-SANS-SERIF, comma)
@@ -40,8 +40,8 @@
 
 
 // Usage: same like +sans
-@mixin serif( $prepend: $default, $font-weight: false )
-	@if $prepend == $default
+@mixin serif( $prepend: $defaultValue, $font-weight: false )
+	@if $prepend == $defaultValue
 		font-family: $DEFAULT-SERIF
 	@else
 		font-family: join($prepend, $DEFAULT-SERIF, comma)
@@ -50,8 +50,8 @@
 
 
 // Usage: same like +sans
-@mixin monospace( $prepend: $default, $font-weight: false )
-	@if $prepend == $default
+@mixin monospace( $prepend: $defaultValue, $font-weight: false )
+	@if $prepend == $defaultValue
 		font-family: $DEFAULT-MONOSPACE
 	@else
 		font-family: join($prepend, $DEFAULT-MONOSPACE, comma)

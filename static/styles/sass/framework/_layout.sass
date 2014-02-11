@@ -16,19 +16,19 @@
 //* @mixin bstyle($position, $border-style: null)
 //* @mixin bdcolor($position, $border-color: null)
 //* @mixin bwidth($position, $border-width: null, $defaultUnit: px)
-//* @mixin overflow($property, $overflow-side: null)
-//* @mixin float($property)
+//* @mixin overflow($propertyName, $overflow-side: null)
+//* @mixin float($propertyName)
 //* @mixin floated($direction: left, $gap: 5px, $switch: both, $alphaOrOmega: both, $defaultUnit: px)
-//* @mixin clear($property)
-//* @mixin display($property)
-//* @mixin visibility($property)
-//* @mixin position($position, $_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $default, $defaultUnit: px)
+//* @mixin clear($propertyName)
+//* @mixin display($propertyName)
+//* @mixin visibility($propertyName)
+//* @mixin position($position, $_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $defaultValue, $defaultUnit: px)
 //* @mixin zindex($z-index)
 //* @mixin top($position-top-value, $defaultUnit: px)
 //* @mixin right($position-right-value, $defaultUnit: px)
 //* @mixin bottom($position-bottom-value, $defaultUnit: px)
 //* @mixin left($position-left-value, $defaultUnit: px)
-//* @mixin offset($_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $default, $defaultUnit: px)
+//* @mixin offset($_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $defaultValue, $defaultUnit: px)
 //*
 //****************************************************************
 
@@ -116,8 +116,8 @@
 // Box Margins. Work just like regular margin value to set 4 side of the box
 // Default: px value or auto. Take measurement of em, px, % or plain number.
 // +margins  without any arguments, will output margin: 0
-@mixin margins($top: $default, $right: $top, $bottom: $top, $left: $right, $defaultUnit: px)
-	@if $top != $default
+@mixin margins($top: $defaultValue, $right: $top, $bottom: $top, $left: $right, $defaultUnit: px)
+	@if $top != $defaultValue
 		@if $left != false
 			@if $right != false
 				@if type-of($top) != number
@@ -167,8 +167,8 @@
 // Box Paddings. Work just like regular padding value to set 4 side of the box
 // Default: px value or auto. Take measurement of em, px, % or plain number.
 // +paddings  without any arguments, will output padding: 0
-@mixin paddings($top: $default, $right: $top, $bottom: $top, $left: $right, $defaultUnit: px)
-	@if $top != $default
+@mixin paddings($top: $defaultValue, $right: $top, $bottom: $top, $left: $right, $defaultUnit: px)
+	@if $top != $defaultValue
 		@if $left != false
 			@if $right != false
 				@if type-of($top) != number
@@ -295,22 +295,22 @@
 
 
 // Overflow Property
-// @param $property: visible hidden scroll auto
+// @param $propertyName: visible hidden scroll auto
 // @param $overflow-side: null, x, y  for generating e.g. overflow-x
-@mixin overflow($property, $overflow-side: $default)
-	@if $overflow-side == $default
-		+prop(overflow, $property, $OVERFLOW-VALUE-LIST)
+@mixin overflow($propertyName, $overflow-side: $defaultValue)
+	@if $overflow-side == $defaultValue
+		+prop(overflow, $propertyName, $OVERFLOW-VALUE-LIST)
 	@else
 		@if $overflow-side == x
-			+prop(overflow-x, $property, $OVERFLOW-VALUE-LIST)
+			+prop(overflow-x, $propertyName, $OVERFLOW-VALUE-LIST)
 		@else if $overflow-side == y
-			+prop(overflow-y, $property, $OVERFLOW-VALUE-LIST)
+			+prop(overflow-y, $propertyName, $OVERFLOW-VALUE-LIST)
 
 
 // Float Property
-// @param $property: left right none
-@mixin float($property)
-	+prop(float, $property, $FLOAT-VALUE-LIST)
+// @param $propertyName: left right none
+@mixin float($propertyName)
+	+prop(float, $propertyName, $FLOAT-VALUE-LIST)
 
 
 // @param $direction: left or l,  right or r
@@ -324,9 +324,9 @@
 //					left or l: First-Child(alpha), s  set margin-left value to 0
 //					both or anything else,  set both first-child margin-left and last-child margin-right value to 0
 // Usage: +floated(r,10) or +floated(r,10em, default, both)
-@mixin floated($direction: left, $gap: 5px, $switch: $default, $alphaOrOmega: $default, $defaultUnit: px)
+@mixin floated($direction: left, $gap: 5px, $switch: $defaultValue, $alphaOrOmega: $defaultValue, $defaultUnit: px)
 	@include float($direction)
-	@if $switch == $default
+	@if $switch == $defaultValue
 		margin-left: measurement($gap, $defaultUnit)
 		margin-right: measurement($gap, $defaultUnit)
 	@else if $switch == nth($left, 1) or $switch == nth($left, 2)
@@ -334,7 +334,7 @@
 	@else if $switch == nth($right, 1) or $switch == nth($right, 2)
 		margin-right: measurement($gap, $defaultUnit)
 
-	@if $alphaOrOmega != $default
+	@if $alphaOrOmega != $defaultValue
 		@if $alphaOrOmega == nth($left, 1) or $alphaOrOmega == nth($left, 2)
 			&:first-child
 				margin-left: 0
@@ -348,21 +348,21 @@
 				margin-right: 0
 
 // Clear Property
-// @param $property: left right both none
-@mixin clear($property)
-	+prop(clear, $property, $CLEAR-VALUE-LIST)
+// @param $propertyName: left right both none
+@mixin clear($propertyName)
+	+prop(clear, $propertyName, $CLEAR-VALUE-LIST)
 
 
 // Display Property
-// @param $property: block none inline inline-block
-@mixin display($property)
-	+prop(display, $property, $DISPLAY-VALUE-LIST)
+// @param $propertyName: block none inline inline-block
+@mixin display($propertyName)
+	+prop(display, $propertyName, $DISPLAY-VALUE-LIST)
 
 
 // Visibility Property
-// @param $property: visible hidden collapse(only for table elements)
-@mixin visibility($property)
-	+prop(visibility, $property, $VISIBILITY-VALUE-LIST)
+// @param $propertyName: visible hidden collapse(only for table elements)
+@mixin visibility($propertyName)
+	+prop(visibility, $propertyName, $VISIBILITY-VALUE-LIST)
 
 
 // Position
@@ -371,10 +371,10 @@
 //					right or r,   set top & right value
 //					bottom or b,  set bottom & left value
 //					both or anything other than r or b,  set bottom & right value
-@mixin position($position, $_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $default, $defaultUnit: px)
+@mixin position($position, $_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $defaultValue, $defaultUnit: px)
 	@if $position == nth($absolute, 1) or $position == nth($absolute, 2)
 		position: absolute
-		@if $switch == $default
+		@if $switch == $defaultValue
 			top: measurement($_top, $defaultUnit)
 			left: measurement($_left, $defaultUnit)
 		@else
@@ -455,8 +455,8 @@
 //					right or r,   set top & right value
 //					bottom or b,  set bottom & left value
 //					both or anything other than r or b,  set bottom & right value
-@mixin offset($_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $default, $defaultUnit: px)
-	@if $switch == $default
+@mixin offset($_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $defaultValue, $defaultUnit: px)
+	@if $switch == $defaultValue
 		top: measurement($_top, $defaultUnit)
 		left: measurement($_left, $defaultUnit)
 	@else

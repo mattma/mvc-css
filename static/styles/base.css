@@ -210,28 +210,28 @@ nav > ul ul a:hover {
 #grid960 p {
   display: inline;
   float: left;
-  width: 11.4995%;
-  margin: 0 0.5%;
+  width: 110px;
+  margin: 0 5px;
 }
 
 #grid960push p {
   display: inline;
   float: left;
-  width: 7.333%;
-  margin: 0 0.5%;
+  width: 70px;
+  margin: 0 5px;
 }
 #grid960push p:last-child {
-  margin-left: 17.166%;
+  margin-left: 165px;
 }
 
 #grid960pull p {
   display: inline;
   float: left;
-  width: 7.333%;
-  margin: 0 0.5%;
+  width: 70px;
+  margin: 0 5px;
 }
 #grid960pull p:first-child {
-  padding-right: 33.332%;
+  padding-right: 320px;
 }
 
 #grid1140 p {
