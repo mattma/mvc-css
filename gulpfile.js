@@ -32,48 +32,6 @@ gulp.task('lint', function() {
         .pipe(plugins.jshint.reporter('default'));
 });
 
-// task: package
-gulp.task('package', function() {
-    var stream = gulp.src(path.join(__dirname, appName, 'packager.json'))
-        .pipe(plugins.replace(/"applicationId"(?:\s+)?:(?:\s+)?"\s*(.*?)\s*"/, '"applicationId": "' + APP_CONFIG.applicationId + '"'))
-        .on('end', function() {
-            gutil.log('\n[-log]', 'applicationId: ', gutil.colors.cyan(APP_CONFIG.applicationId));
-        })
-
-    .pipe(plugins.replace(/"bundleSeedId"(?:\s+)?:(?:\s+)?"\s*(.*?)\s*"/, '"bundleSeedId": "' + APP_CONFIG.bundleSeedId + '"'))
-        .on('end', function() {
-            gutil.log('\n[-log]', 'bundleSeedId: ', gutil.colors.cyan(APP_CONFIG.bundleSeedId));
-        })
-
-    .pipe(plugins.replace(/"inputPath"(?:\s+)?:(?:\s+)?"\s*(.*?)\s*"/, '"inputPath": "' + APP_CONFIG.inputPath + '"'))
-        .on('end', function() {
-            gutil.log('\n[-log]', 'inputPath: ', gutil.colors.cyan(APP_CONFIG.inputPath));
-        })
-
-    .pipe(plugins.replace(/"outputPath"(?:\s+)?:(?:\s+)?"\s*(.*?)\s*"/, '"outputPath": "' + APP_CONFIG.outputPath + '"'))
-        .on('end', function() {
-            gutil.log('\n[-log]', 'outputPath: ', gutil.colors.cyan(APP_CONFIG.outputPath));
-        })
-
-    .pipe(plugins.replace(/"platform"(?:\s+)?:(?:\s+)?"\s*(.*?)\s*"/, '"platform": "' + APP_CONFIG.platform + '"'))
-        .on('end', function() {
-            gutil.log('\n[-log]', 'platform: ', gutil.colors.cyan(APP_CONFIG.platform));
-        })
-
-    .pipe(plugins.replace(/"provisionProfile"(?:\s+)?:(?:\s+)?"\s*(.*?)\s*"/, '"provisionProfile": "' + APP_CONFIG.provisionProfile + '"'))
-        .on('end', function() {
-            gutil.log('\n[-log]', 'provisionProfile: ', gutil.colors.cyan(APP_CONFIG.provisionProfile));
-            gutil.log(' ');
-        })
-
-    .pipe(gulp.dest(path.join(__dirname, appName)));
-
-    gutil.log('\n[-log]', gutil.colors.cyan(appName + '/packager.json'), 'has been updated with those values: ');
-    gutil.log('----------------------------------------------------------');
-
-    return stream;
-});
-
 // task: stripLRScript
 // @describe    Strip out the LiveReload Script tag in HTML
 gulp.task('stripLRScript', function() {
@@ -92,48 +50,10 @@ gulp.task('injectLRScript', function() {
         .pipe(gulp.dest(path.join(__dirname, appName)));
 });
 
-// task: gen
-// @describe    generate an model,view,store,controller from base template
-// @usage       $-  gulp gen --type model --path matt/test
-// @flag        --type model
-// @flag        --path path/to/folder[.js]
-gulp.task('gen', function() {
-    var taskGen = require('./server/tasks/task-gen'),
-        type = taskGen.type,
-        filepathPlain = taskGen.filepathPlain,
-
-        filepath = filepathPlain + '.js',
-        destPath = path.join(__dirname, appName, 'app', type),
-        namespace = appName + '.' + type + '.' + filepathPlain.replace(/\//g, '.');
-
-    return gulp.src(path.join(__dirname, 'server/skeletons', type + '.js'))
-        .pipe(plugins.replace(/\*NAMESPACE\*/, namespace))
-        .on('end', function() {
-            gutil.log('\n[-log]', 'Generate a new file at ', gutil.colors.green(appName + '/app/' + type + '/' + filepath));
-        })
-        .pipe(plugins.rename(filepath))
-        .on('end', function() {
-            gutil.log('\n[-log]', gutil.colors.green(type), ' class name is ', gutil.colors.green(namespace));
-            gutil.log(' ');
-        })
-        .pipe(gulp.dest(destPath));
-});
-
-// task: setup
-// @describe First Task to run. Setup app config. Would be triggered in 3 different condition logic
-// Condition 1: user pass an appName flag
-// Condition 2: user does not have an application folder
-// Condition 3: user already ahve an application folder
-// @usage       $-  gulp setup --name Awesome
-// @flag        --name App_Name
-gulp.task('setup', function (cb) {
-    require('./server/tasks/task-setup')(cb);
-});
-
 // Smart compile: if filename start with _, when save it will compile the whole project.
 // if filename is all text without _, when save it will only compile changed file
 gulp.task('sass', function() {
-    var allSrc = appName + '/resources/sass/{,**/}*.{scss,sass}',
+    var allSrc = './static/styles/sass/{,**/}*.{scss,sass}',
         compileFiles = ( compileAllSrc ) ? allSrc : ( sassFilePath ) ? sassFilePath : allSrc,
         nestedFolder = void 0;
 
@@ -155,7 +75,7 @@ gulp.task('sass', function() {
             }
         }
     }
-    var destPath = appName +'/resources/css' + ( ( nestedFolder ) ? nestedFolder : '' );
+    var destPath = './static/styles/' + ( ( nestedFolder ) ? nestedFolder : '' );
 
     return gulp.src( compileFiles )
         .pipe(plugins.rubySass({
@@ -170,24 +90,13 @@ gulp.task('sass', function() {
 // https://github.com/sindresorhus/gulp-imagemin
 // ~0.1.5 does not support stream yet. cannot resave to the same folder
 gulp.task('imagemin', function() {
-    var imgSrc = appName + '/resources/images-original/{,**/}*.{png,jpeg,jpg,gif}',
-        imgDst =appName + '/resources/images/';
+    var imgSrc = './static/images/{,**/}*.{png,jpeg,jpg,gif}',
+        imgDst = './static/images/';
 
     return gulp.src(imgSrc)
         .pipe(plugins.changed(imgDst))
         .pipe(plugins.imagemin())
         .pipe(gulp.dest(imgDst));
-});
-
-// task: express
-gulp.task('express', function() {
-    require('./server/app')(options);
-});
-
-gulp.task('open', function () {
-    var url = 'http://' + options.hostname + ':' + options.port;
-    return gulp.src( appName + '/index.html')
-                .pipe(plugins.open('', { url: url }) );
 });
 
 // Notifies livereload of changes detected by `gulp.watch()`
@@ -203,9 +112,8 @@ function notifyLivereload(event) {
     });
 }
 
-gulp.task('default', ['sass', 'express', 'injectLRScript'], function() {
-    gulp.start('open');
-    gulp.watch(appName + '/resources/sass/{,**/}*.{scss,sass}', function(event) {
+gulp.task('default', ['sass'], function() {
+    gulp.watch('./static/styles/sass/{,**/}*.{scss,sass}', function(event) {
         sassFilePath = event.path; // Only pass changed file to the sass task
         var basename = path.basename(sassFilePath);
         compileAllSrc = ( basename.indexOf('_') > -1 ) ? true : false;
@@ -215,9 +123,7 @@ gulp.task('default', ['sass', 'express', 'injectLRScript'], function() {
     server.listen(35729, function(err) {
         if (err) { return gutil.log('\n[-log]', gutil.colors.red(err)); }
 
-        gulp.watch(appName + '/index.html', notifyLivereload);
-        gulp.watch(appName + '/app.js', notifyLivereload);
-        gulp.watch(appName + '/app/{,**/}*.js', notifyLivereload);
+        gulp.watch(appName + '/examples/refactor.html', notifyLivereload);
         gulp.watch(appName + '/resources/css/{,**/}*.css', notifyLivereload);
     });
 });
