@@ -1,0 +1,31 @@
+{
+	"name": "MVC CSS Framework",
+	"description": "mvc css framework for sass extension",
+	"author": {
+		"name": "Matt Ma",
+		"email": "matt@mattmadesign.com"
+	},
+	"version": "0.1.0",
+	"private": true,
+	"repository": "git@bitbucket.org:mattma/mvccss.git",
+	"main": "gulpfile.js",
+	"devDependencies": {
+		"gulp-replace": "~0.2.0",
+		"gulp-ruby-sass": "~0.4.0",
+		"gulp-util": "~2.2.14",
+		"gulp-load-plugins": "~0.4.0",
+		"gulp": "~3.5.5",
+		"gulp-jshint": "~1.4.2",
+		"gulp-rename": "~1.1.0",
+		"tiny-lr": "0.0.5",
+		"gulp-open": "~0.2.8",
+		"gulp-notify": "~1.0.0-beta",
+		"gulp-autoprefixer": "0.0.6",
+		"gulp-changed": "~0.2.1",
+		"gulp-imagemin": "~0.1.5"
+	},
+	"engines": {
+		"node": ">= 0.10.0"
+	},
+	"license": ""
+}
