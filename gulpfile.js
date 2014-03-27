@@ -74,7 +74,9 @@ gulp.task('sass', function() {
     return gulp.src( compileFiles )
         .pipe(plugins.rubySass({
             compass: true,
-            sourcemap: true
+            sourcemap: true,
+            debugInfo: false,
+            lineNumbers: false
         }))
         .pipe(plugins.autoprefixer.apply( this, AutoPrefixerConfig ))
         .pipe(gulp.dest( destPath ))
