@@ -11,176 +11,20 @@
 //  ==================
 //  = Main Structure =
 //  ==================
+.pseudo
+	+content
+	+content(matt)
+	+content("mattma")
 
-.outline
-	+outline(red, 2px, dotted)
-	+outline(222 222 222)
-	+outline(none)
+	+hover
+		+color(purple)
 
-.offset
-	+offset(20, 30%)
-	+offset(20em, 30, both)
-	+offset(20, 30%, bottom)
+	+child(f)
+		+color(maroon)
 
-.top
-	+top(20)
-	+top(30em)
+	+child(1)
+		+color(green)
 
-.left
-	+left(10%)
-	+left(30em)
-
-
-.zindex
-	+zindex(10)
-
-.position
-	+position(r, 30, 40em, right)
-	+position(a, 34em, 20%, b)
-	+position(a, 34em, 20%, both)
-
-	+position(fixed, 30em, 40, right)
-	+position(f, 34%, 20px, b)
-	+position(f, 34em, 20%, both)
-
-	+position(relative, 30, 40em, right)
-	+position(r, 34em, 20%, b)
-	+position(r, 34em, 20%, both)
-
-	+position(s)
-	+position(static)
-
-.overflow
-	+overflow(hidden)
-	+overflow(a)
-	+overflow(visible)
-	+overflow(v)
-	+overflow(scroll)
-	+overflow(s)
-
-.float
-	+float(l)
-	+float(left)
-	+float(right)
-	+float(r)
-	+float(n)
-
-.clear
-	+clear(l)
-	+clear(left)
-	+clear(right)
-	+clear(r)
-	+clear(n)
-	+clear(both)
-	+clear(b)
-
-.display
-	+display(b)
-	+display(block)
-	+display(n)
-	+display(ib)
-	+display(inline)
-	+display(i)
-	+display(inline-block)
-
-.visibility
-	+visibility(visible)
-	+visibility(v)
-	+visibility(hidden)
-	+visibility(h)
-	+visibility(collapse)
-	+visibility(c)
-
-.border
-	+border(t, 51 42 32, 3, solid)
-	+border(top, 51 42 32, 3%, dotted)
-
-	+border(r, 51 42 32, 3, solid)
-	+border(right, 51 42 32, 3%, dotted)
-
-	+border(b, 51 42 32, 3, solid)
-	+border(bottom, 51 42 32, 3%, dotted)
-
-	+border(l, 51 42 32, 3, solid)
-	+border(left, 51 42 32, 3%, dotted)
-
-	+borders(51 42 132, 3em, dotted)
-
-	+borders(51 42 132, 3em, s)
-
-	+borders(51 42 132, 3%, dh)
-
-	+border(l, #E5E5EE, 0.5%)
-
-	+border(left, transparent, 30, solid)
-
-.border-individule
-	+bstyle(t, solid)
-	+bstyle(top, dash)
-
-	+bstyle(t, dt)
-	+bstyle(t, dotted)
-
-	+bstyle(dotted)
-
-	+bdcolor(b, 21 23 21)
-	+bdcolor(bottom, #321232)
-
-	+bdcolor(red)
-
-	+bwidth(l, 1)
-	+bwidth(left, 3em)
-
-	+bwidth(40%)
-
-
-.width
-	+width(30%, true)
-	+mw(300)
-
-.height
-	+height(30em)
-	+mh(200%, min)
-	+box(300%, 20em, true)
-
-
-.margin
-	+margin(t, 10em)
-	+margin(top, 10%)
-
-	+margin(b, 10em)
-	+margin(bottom, 10%)
-
-	+margin(l, 10em)
-	+margin(left, auto)
-
-	+margin(r, auto)
-	+margin(right, 10%)
-
-.margins
-	+margins(0, auto)
-	+margins(30,20em,10%, 40)
-	+margins(30em,auto,10%)
-	+margins
-
-.padding
-	+padding(t, auto)
-	+padding(top, 10%)
-
-	+padding(b, auto)
-	+padding(bottom, 10)
-
-	+padding(l, 10em)
-	+padding(left, 30em)
-
-	+padding(r, auto)
-	+padding(right, 10%)
-
-.paddings
-	+paddings(0, auto)
-	+paddings(30,20em,10%, 40)
-	+paddings(30em,auto,10%)
-	+paddings
 
 // $section-width: 80%
 // .body

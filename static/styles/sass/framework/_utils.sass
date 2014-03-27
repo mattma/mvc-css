@@ -1,0 +1,23 @@
+//* @mixin ellipsis
+//* @mixin clearfix
+
+// Applied to single line, trancate the extra content with ...
+@mixin ellipsis
+	+overflow(hidden)
+	text-overflow: ellipsis
+	white-space: nowrap
+	+width(100%)
+
+// Bulletproof Clearfix
+@mixin clearfix
+	zoom: 1
+	&:before, &:after
+		content: '.'
+		+display(block)
+		+overflow(hidden)
+		+visibility(hidden)
+		+fsize(0)
+		+lheight(0)
+		+box(0,0)
+	&:after
+		+clear(both)

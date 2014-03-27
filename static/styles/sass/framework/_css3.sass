@@ -1,0 +1,41 @@
+//* @mixin media($media)
+
+// Media queries: set up a mixin for all your @media breakpoints and reuse
+// http://mikefowler.me/thoughts/passing-content-to-mixins-in-sass/
+// Usage:
+// +media(handhelds)
+//	  width: 100%
+@mixin media($media)
+	@if $media == nth($desktop, 1) or $media == nth($desktop, 2)
+		@media only screen and (min-width : 1025px)
+			@content
+	@if $media == nth($wide-screens, 1) or $media == nth($wide-screens, 2)
+		@media only screen and (min-width : 1824px)
+			@content
+
+	@if $media == nth($mobile-value, 1) or $media == nth($mobile-value, 2)
+		@media only screen and (min-width : 320px) and (max-width : 480px)
+			@content
+	@if $media == nth($retina, 1) or $media == nth($retina, 2)
+		@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5)
+			@content
+	@if $media == nth($mobile-portrait, 1) or $media == nth($mobile-portrait, 2)
+		@media only screen and (max-width : 320px)
+			@content
+	@if $media == nth($mobile-landscape, 1) or $media == nth($mobile-landscape, 2)
+		@media only screen and (max-width : 480px)
+			@content
+
+	@if $media == nth($tablet, 1) or $media == nth($tablet, 2)
+		@media only screen and (min-width : 768px) and (max-width : 1024px)
+			@content
+	@if $media == nth($max-tablet, 1) or $media == nth($max-tablet, 2)
+		@media only screen and (max-width : 1024px)
+			@content
+	@if $media == nth($tablet-portrait, 1) or $media == nth($tablet-portrait, 2)
+		@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait)
+			@content
+	@if $media == nth($tablet-landscape, 1) or $media == nth($tablet-landscape, 2)
+		@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape)
+			@content
+
