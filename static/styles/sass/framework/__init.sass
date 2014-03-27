@@ -1,11 +1,376 @@
-@import "settings"
+//**************************************************
+//* IMAGE PATH SETTING
+//**************************************************
 
+$DEFAULT-RELATIVE-IMAGE-PATH:	"../images/"
+$DEFAULT-ABSOLUTE-IMAGE-PATH:	"../inc/assets/images/"
+
+//**************************************************
+//* TYPOGRAPHY
+//**************************************************
+@mixin neue( $font-family: m )
+	@if $font-family == l
+		+sans( default, 100, true )
+	@else if $font-family == light
+		+sans( default, 100, true )
+
+	@else if $font-family == r
+		+sans( default, 300, true )
+	@else if $font-family == regular
+		+sans( default, 300, true )
+
+	@else if $font-family == m
+		+sans( default, 500, true )
+	@else if $font-family == medium
+		+sans( default, 500, true )
+
+	@else if $font-family == b
+		+sans( default, 700, true )
+	@else if $font-family == bold
+		+sans( default, 700, true )
+
+	@else
+		+sans( default, 300, true )
+
+//**************************************************
+//* COMPASS SPRITE OPTIONS
+//**************************************************
+//
+// Folder name "main". "main" represents the folder name that contains your sprites.
+//***
+//*** Target for the sprite in general
+//***
+$global-spacing: 10px // The amount of transparent space, in pixels, around each sprite. Defaults: 0px.
+
+//$main-repeat: repeat-x // Wether or not each sprite should repeat along the x axis. Defaults: no-repeat
+
+$global-position: 10px // Spirit x-axis offset for images. px or % of the sprite map's width. 100% would cause the sprite to be on the right-hand side of the sprite map. Defaults to 0px.
+//***
+//**** Compass sprite layouts
+//***
+
+//$main-layout: horizontal  // by default, using the vertical layout
+
+//$main-layout: diagonal // output the images in the diagonal layout format
+
+//$main-layout: smart // output the images in the smart way, eliminate the empty transparent px
+
+//***
+//*** Compass sprite HOW TO
+//***
+
+//add selectors for your sprites, it's easy todo by adding  _active  _target or  _hover  to the file name
+//ex: glossy.png, glossy_active.png, glossy_target.png, glossy_hover.png
+
+//@import "main/*.png" // import line has to be in the main.sass or main file for correct image path
+
+//@import "themes/orange/*.png"
+//+all-orange-sprite
+//Sprites stored in a nested folder will use the last folder name in the path as the sprite name.
+
+//Get a unit value by using the magical dimension functions <map>-sprite-height and <map>-sprite-width If you are looking to just return the dimensions
+// $height: main-sprite-height(some_icon)
+// $width: main-sprite-width(some_icon)
+
+// Global Values
+//
+$defaultValue:   		default
+
+//** Used in the property-value pair value assignment
+$top-value:   	 		t top
+$bottom-value: 		b bottom
+$left-value:   			l left
+$right-value:  			r right
+$up-value:	   			u up
+$down-value:   		d down
+
+$both-value:   			b both
+
+$none-value:	     		n none
+$block-value: 	     		b block
+$inline-block-value: 	ib inline-block
+$inline-value: 	     		i inline
+
+$visible-value:	      	v visible
+$hidden-value:	      	h hidden
+$scroll-value:	     		s scroll
+$auto-value:		 	a auto
+$collapse-value:     	c collapse
+
+$center-value:       		c center
+$middle-value:	     		m middle
+
+// Other Font Related
+$justify-value: 		      j justify
+
+$baseline-value: 		bl baseline
+$text-top-value: 		tt text-top
+
+$capitalize-value: 		c capitalize
+$uppercase-value:  	u uppercase
+$lowercase-value: 		l lowercase
+
+// Background Repeat
+$repeat:				r repeat
+$repeat-x:				x repeat-x
+$repeat-y:				y repeat-y
+$repeat-none:			n no-repeat
+
+// Border Styles
+$border-dotted: 		dt dotted
+$border-solid: 			s solid
+$border-double: 		db double
+$border-dashed: 		dh dashed
+
+// Cursor Styles
+$cursor-default: 		d default
+$cursor-help: 			h help
+$cursor-move: 		m move
+$cursor-pointer: 		p pointer
+$cursor-progress: 		pg progress
+$cursor-text: 			t text
+$cursor-wait: 			w wait
+$cursor-inherit: 		i inherit
+$cursor-auto: 			a auto
+$cursor-crosshair: 	c crosshair
+$cursor-URL: 			u URL
+
+// User-Select Styles
+$select-all:				a all
+$select-element:		e element
+$select-text:			t text
+
+// css2 settings
+
+// Font Settings
+
+$DEFAULT-FONT-SIZE: 			1rem
+$DEFAULT-FONT-WEIGHT: 		300
+$DEFAULT-TITLE-FONT-WEIGHT:	700
+$DEFAULT-TEXT-INDENT-VALUE:  -9999px
+$DEFAULT-FONT-STYLE:               italic
+
+$font-style-normal:     n normal
+$font-style-italic:         i italic
+$font-style-oblique:    o oblique
+$font-style-inherit:      in inherit
+
+$FONT-STYLE-VALUE-LIST:   		nth($font-style-normal, 1) nth($font-style-normal, 2) nth($font-style-italic, 1) nth($font-style-italic, 2) nth($font-style-oblique, 1) nth($font-style-oblique, 2) nth($font-style-inherit, 1) nth($font-style-inherit, 2)
+
+$TEXT-ALIGN-VALUE-LIST: 		nth($left-value, 1) nth($left-value, 2) nth($right-value, 1) nth($right-value, 2) nth($center-value, 1) nth($center-value, 2) nth($justify-value, 1) nth($justify-value, 2)
+
+$VERTICAL-ALIGN-VALUE-LIST: 	nth($top-value, 1) nth($top-value, 2) nth($middle-value, 1) nth($middle-value, 2) nth($bottom-value, 1) nth($bottom-value, 2) nth($baseline-value, 1) nth($baseline-value, 2) nth($text-top-value, 1) nth($text-top-value, 2)
+
+$TEXT-TRANSFORM-VALUE-LIST: 	nth($capitalize-value, 1) nth($capitalize-value, 2) nth($uppercase-value, 1) nth($uppercase-value, 2) nth($lowercase-value, 1) nth($lowercase-value, 2) nth($none-value, 1) nth($none-value, 2)
+
+
+//**************************************************
+//* GENERAL APP COLOR SETTING
+//**************************************************
+
+$general-background-color-hover:   		#f5f5f5
+$general-disable-text-color:         		#999999
+$general-border-color:         	     			#dddddd
+$general-border-color-hover:         		#0088cc
+
+$white: 							 		rgb(255,255,255)
+$black: 							 		rgb(0,0,0)
+$default-text-color: 				 		rgb(102,102,102)
+$default-border-color: 					rgb(221,221,221)
+
+
+// Table Basic Color
+
+$table-background:                   			transparent
+$table-background-strip:             			#f9f9f9
+$table-background-hover:             		#f5f5f5
+$table-border:                       				#dddddd
+
+
+//** Status Background Color Value  **
+$default-color:								#999999
+$default-color-hover:   					#333333
+
+//**************************************************
+//* Keyword Setting: Layout
+//**************************************************
+
+$true:		   								true
+$false:		   								false
+
+$top:             								top, t
+$bottom:       								bottom, b
+$left:             								left, l
+$right:           								right, r
+
+$horizontal-value:   						horizontal h
+$vertical-value:	   						vertical v
+$both-value:		   						both b
+
+$large:		   								large l
+$small:		   								small s
+
+$outset-value:	   							outset o
+$inset-value:	   							inset i
+
+$default-value: 							default d
+
+$absolute:	   								absolute a
+$relative:	   								relative r
+$static:	         								static s
+$fixed:		   								fixed f
+
+$up:		   								up u
+$down: 	   								down d
+
+$both:		   both
+
+$single:	   single
+$multiple: 	   multiple
+
+// Used in Grid System
+$margin-value: 	margin m
+$padding-value:    padding p
+
+$center:        center
+$middle:	   middle
+$baseline:	   baseline
+$justify:         justify
+
+$none:	        none
+$block: 	   block
+$inline-block: inline-block
+$inline: 	   inline
+
+$capitalize:   capitalize
+$uppercase:	   uppercase
+$lowercase:    lowercase
+
+
+$visible:	   visible
+$hidden:	   hidden
+$scroll:	   	  scroll
+$auto:		   auto
+$collapse:     collapse
+
+//**************************************************
+//* Keyword Setting: Media Query
+//**************************************************
+$desktop:					desktop d
+$mobile-value:				mobile m
+$wide-screens: 			wide-screens w
+$retina:					retina r
+$mobile-portrait:			mobile-portrait mp
+$mobile-landscape:		mobile-landscape ml
+$tablet:						tablet t
+$max-tablet:				max-tablet mt
+$tablet-portrait:			tablet-portrait tp
+$tablet-landscape:			tablet-landscape tl
+
+
+//**************************************************
+//* FRAMEWORK PROPERTY SUPPORT LIST
+//**************************************************
+
+
+// LAYOUT PROPERTY VALUES:
+$DEFAULT-BOX-MARGIN-BOTTOM: 	20px
+$DEFAULT-MARGIN-VALUE: 			0
+$DEFAULT-PADDING-VALUE:			0
+$DEFAULT-BORDER-WIDTH: 			1px
+$DEFAULT-BORDER-STYLE: 			solid
+$DEFAULT-POSITION-TOP-VALUE:    	0
+$DEFAULT-POSITION-LEFT-VALUE:   	0
+
+
+
+
+$OVERFLOW-VALUE-LIST: 		 	nth($visible-value, 1) nth($visible-value, 2) nth($hidden-value, 1) nth($hidden-value, 2) nth($scroll-value, 1) nth($scroll-value, 2) nth($auto-value, 1) nth($auto-value, 2)
+
+$FLOAT-VALUE-LIST: 				nth($left-value, 1) nth($left-value, 2) nth($right-value, 1) nth($right-value, 2) nth($none-value, 1) nth($none-value, 2)
+
+$CLEAR-VALUE-LIST: 				nth($left-value, 1) nth($left-value, 2) nth($right-value, 1) nth($right-value, 2) nth($both-value, 1) nth($both-value, 2) nth($none-value, 1) nth($none-value, 2)
+
+$DISPLAY-VALUE-LIST: 			nth($block-value, 1) nth($block-value, 2) nth($none-value, 1) nth($none-value, 2) nth($inline-value, 1) nth($inline-value, 2) nth($inline-block-value, 1) nth($inline-block-value, 2)
+
+$VISIBILITY-VALUE-LIST:         		nth($visible-value, 1) nth($visible-value, 2) nth($hidden-value, 1) nth($hidden-value, 2) nth($collapse-value, 1) nth($collapse-value, 2)
+
+
+$BACKGROUND-REPEAT-VALUE-LIST:  nth($repeat, 1) nth($repeat, 2) nth($repeat-x, 1) nth($repeat-x, 2) nth($repeat-y, 1) nth($repeat-y, 2) nth($repeat-none, 1) nth($repeat-none, 2)
+
+$BORDER-STYLE-VALUE-LIST:  	nth($border-dotted, 1) nth($border-dotted, 2) nth($border-solid, 1) nth($border-solid, 2) nth($border-double, 1) nth($border-double, 2) nth($border-dashed, 1) nth($border-dashed, 2)
+
+$CURSOR-VALUE-LIST:				nth($cursor-default, 1) nth($cursor-default, 2) nth($cursor-help, 1) nth($cursor-help, 2) nth($cursor-move, 1) nth($cursor-move, 2) nth($cursor-pointer, 1) nth($cursor-pointer, 2) nth($cursor-progress, 1) nth($cursor-progress, 2) nth($cursor-text, 1) nth($cursor-text, 2) nth($cursor-wait, 1) nth($cursor-wait, 2) nth($cursor-inherit, 1) nth($cursor-inherit, 2) nth($cursor-auto, 1) nth($cursor-auto, 2) nth($cursor-crosshair, 1) nth($cursor-crosshair, 2) nth($cursor-URL, 1) nth($cursor-URL, 2)
+
+$USER-SELECT-VALUE-LIST:  	nth($select-all, 1) nth($select-all, 2) nth($select-element, 1) nth($select-element, 2) nth($select-text, 1) nth($select-text, 2) nth($none-value, 1) nth($none-value, 2)
+
+
+//**************************************************
+//* Applicaton Settings
+//**************************************************
+
+// Variable to enable/disable the shorthand controller
+// $shorthand-min-enable: false
+
+// Border radius
+$default-border-radius: 5px
+
+// Default spirit image path
+$spirit-image-path:     "../img/icons.png"
+
+
+//**************************************************
+//* Fonts Settings
+//**************************************************
+
+
+// Default sans-serif fonts ( _fonts.sass )
+$DEFAULT-SANS-SERIF: arial, helvetica, Verdana, sans-serif
+
+// Default serif fonts ( _fonts.sass )
+$DEFAULT-SERIF: "Times New Roman", Times, Georgia, Serif
+
+// Default monospace fonts ( _fonts.sass )
+$DEFAULT-MONOSPACE: "Monaco", "Courier New", monospace
+
+
+//**************************************************
+//* Grid Setting
+//**************************************************
+
+// @param measure: px  => Generate a Px based layout
+// @param measure: percent  => Generate a Percent fluid layout
+//
+@mixin grid($grid, $measure: px)
+	@if $measure == px
+		@if $grid == 12
+			$grid_columns: 12
+			$grid_column_width: 60px
+			$gutter_column_width: 20px
+		@if $grid == 16
+			$grid_columns: 16
+			$grid_column_width: 40px
+			$gutter_column_width: 20px
+		@if $grid == 24
+			$grid_columns: 24
+			$grid_column_width: 30px
+			$gutter_column_width: 10px
+	@if $measure == percent
+		@if $grid == 12
+			$grid_columns: 12
+			$grid_column_width: 6.333%
+			$gutter_column_width: 2%
+		@if $grid == 16
+			$grid_columns: 16
+			$grid_column_width: 4.25%
+			$gutter_column_width: 2%
+		@if $grid == 24
+			$grid_columns: 24
+			$grid_column_width: 3.1665%
+			$gutter_column_width: 1%
+
+// Include modules into the framework
 @import "controller"
-
 @import "css2"
-
 @import "css3"
-
 @import "utils"
-
-@import "grid"
