@@ -76,93 +76,7 @@ $global-position: 10px // Spirit x-axis offset for images. px or % of the sprite
 //
 $defaultValue:   		default
 
-//** Used in the property-value pair value assignment
-$top-value:   	 		t top
-$bottom-value: 		b bottom
-$left-value:   			l left
-$right-value:  			r right
-$up-value:	   			u up
-$down-value:   		d down
-
-$both-value:   			b both
-
-$none-value:	     		n none
-$block-value: 	     		b block
-$inline-block-value: 	ib inline-block
-$inline-value: 	     		i inline
-
-$visible-value:	      	v visible
-$hidden-value:	      	h hidden
-$scroll-value:	     		s scroll
-$auto-value:		 	a auto
-$collapse-value:     	c collapse
-
-$center-value:       		c center
-$middle-value:	     		m middle
-
-// Other Font Related
-$justify-value: 		      j justify
-
-$baseline-value: 		bl baseline
-$text-top-value: 		tt text-top
-
-$capitalize-value: 		c capitalize
-$uppercase-value:  	u uppercase
-$lowercase-value: 		l lowercase
-
-// Background Repeat
-$repeat:				r repeat
-$repeat-x:				x repeat-x
-$repeat-y:				y repeat-y
-$repeat-none:			n no-repeat
-
-// Border Styles
-$border-dotted: 		dt dotted
-$border-solid: 			s solid
-$border-double: 		db double
-$border-dashed: 		dh dashed
-
-// Cursor Styles
-$cursor-default: 		d default
-$cursor-help: 			h help
-$cursor-move: 		m move
-$cursor-pointer: 		p pointer
-$cursor-progress: 		pg progress
-$cursor-text: 			t text
-$cursor-wait: 			w wait
-$cursor-inherit: 		i inherit
-$cursor-auto: 			a auto
-$cursor-crosshair: 	c crosshair
-$cursor-URL: 			u URL
-
-// User-Select Styles
-$select-all:				a all
-$select-element:		e element
-$select-text:			t text
-
 // css2 settings
-
-// Font Settings
-
-$DEFAULT-FONT-SIZE: 			1rem
-$DEFAULT-FONT-WEIGHT: 		300
-$DEFAULT-TITLE-FONT-WEIGHT:	700
-$DEFAULT-TEXT-INDENT-VALUE:  -9999px
-$DEFAULT-FONT-STYLE:               italic
-
-$font-style-normal:     n normal
-$font-style-italic:         i italic
-$font-style-oblique:    o oblique
-$font-style-inherit:      in inherit
-
-$FONT-STYLE-VALUE-LIST:   		nth($font-style-normal, 1) nth($font-style-normal, 2) nth($font-style-italic, 1) nth($font-style-italic, 2) nth($font-style-oblique, 1) nth($font-style-oblique, 2) nth($font-style-inherit, 1) nth($font-style-inherit, 2)
-
-$TEXT-ALIGN-VALUE-LIST: 		nth($left-value, 1) nth($left-value, 2) nth($right-value, 1) nth($right-value, 2) nth($center-value, 1) nth($center-value, 2) nth($justify-value, 1) nth($justify-value, 2)
-
-$VERTICAL-ALIGN-VALUE-LIST: 	nth($top-value, 1) nth($top-value, 2) nth($middle-value, 1) nth($middle-value, 2) nth($bottom-value, 1) nth($bottom-value, 2) nth($baseline-value, 1) nth($baseline-value, 2) nth($text-top-value, 1) nth($text-top-value, 2)
-
-$TEXT-TRANSFORM-VALUE-LIST: 	nth($capitalize-value, 1) nth($capitalize-value, 2) nth($uppercase-value, 1) nth($uppercase-value, 2) nth($lowercase-value, 1) nth($lowercase-value, 2) nth($none-value, 1) nth($none-value, 2)
-
 
 //**************************************************
 //* GENERAL APP COLOR SETTING
@@ -192,6 +106,7 @@ $table-border:                       				#dddddd
 //**************************************************
 
 $alert:     		alert
+$defaultValue:   		default
 $error:     		error
 $important: 	important
 $info:     	 	info
@@ -201,9 +116,105 @@ $primary:		primary
 $warning:   	warning
 
 
+//** Alert Box Special Color Value  **
+$alert-alert-color: 							#fcf8e3
+$alert-alert-text-color: 					#c09853
+$alert-alert-border-color:  				#fbeed5
+
+$alert-info-color: 							#d9edf7
+$alert-info-text-color: 					#3a87ad
+$alert-info-border-color: 					#bce8f1
+
+$alert-success-color: 						#dff0d8
+$alert-success-text-color: 				#468847
+$alert-success-border-color:				#d6e9c6
+
+$alert-error-color: 						#f2dede
+$alert-error-text-color: 					#b94a48
+$alert-error-border-color:  				#eed3d7
+
+
 //** Status Background Color Value  **
 $default-color:								#999999
 $default-color-hover:   					#333333
+
+$error-color:								#b94a48
+$error-color-hover:						#953b39
+
+$important-color:							#b94a48
+$important-color-hover: 					#953b39
+
+$info-color: 								#3a87ad
+$info-color-hover: 						#2d6987
+
+$invert-color: 								#333333
+$invert-color-hover: 						#1a1a1a
+
+$success-color: 							#468847
+$success-color-hover: 					#356635
+
+$warning-color: 							#f89406
+$warning-color-hover: 					#c67605
+
+
+//** Button Special Color Value  **
+$button-default-background-color:		#f5f5f5
+$button-default-border-color:   			#e6e6e6
+$button-default-border-highlight-color: 	#bfbfbf
+$button-default-ie-background-color: 	#cccccc
+
+$button-primary-background-color:		#0074cc
+$button-primary-bg-start-color:			#0088cc
+$button-primary-border-color:   			#0055cc
+$button-primary-border-highlight-color: #003580
+$button-primary-ie-background-color: 	#004099
+
+$button-warning-background-color:		#faa732
+$button-warning-bg-start-color:			#fbb450
+$button-warning-border-color:   			#f89406
+$button-warning-border-highlight-color: #ad6704
+$button-warning-ie-background-color: 	#c67605
+
+$button-error-background-color:			#da4f49
+$button-error-bg-start-color:				#ee5f5b
+$button-error-border-color:   			#bd362f
+$button-error-border-highlight-color: 	#802420
+$button-error-ie-background-color: 		#942a25
+
+$button-success-background-color:		#5bb75b
+$button-success-bg-start-color:			#62c462
+$button-success-border-color:   			#51a351
+$button-success-border-highlight-color: #387038
+$button-success-ie-background-color: 	#408140
+
+$button-info-background-color:			#49afcd
+$button-info-bg-start-color:				#5bc0de
+$button-info-border-color:   				#2f96b4
+$button-info-border-highlight-color: 	#1f6377
+$button-info-ie-background-color: 		#24748c
+
+$button-invert-background-color:		#414141
+$button-invert-bg-start-color:			#555555
+$button-invert-border-color:   			#222222
+$button-invert-border-highlight-color: 	$black
+$button-invert-ie-background-color: 		#080808
+
+
+//** Progress Bar Color Setting  **
+
+$progress-background-start-color: 		#149bdf
+$progress-background-end-color:   		#0480be
+
+$error-progress-start-color:   			#ee5f5b
+$error-progress-end-color:     			#c43c35
+
+$success-progress-start-color: 			#62c462
+$success-progress-end-color:   			#57a957
+
+$info-progress-start-color:    				#5bc0de
+$info-progress-end-color:      			#339bb9
+
+$warning-progress-start-color: 			#f89406
 
 //**************************************************
 //* Keyword Setting: Layout
@@ -267,6 +278,38 @@ $scroll:	   	  scroll
 $auto:		   auto
 $collapse:     collapse
 
+// Currently used in the utilities.sass +tabs
+$horizontal:   horizontal
+$vertical:	   vertical
+$vertical-sexy: vertical-sexy
+$nav-list:	   nav-list
+
+$fancy:		   fancy // used in +toggle
+
+// Currently used in the utilities.sass +btn
+// Button Gradient Styles: flat, glass, matte, shiny, or simple
+$simple:	  				simple
+$matte:		  		 	matte
+$shiny:		   				shiny
+$glass:		   				glass
+$flat:		   				flat
+
+// button styles: inset, raised, false
+$inset:        				inset
+$raised:	   				raised
+$push:		   				push
+
+
+//**************************************************
+//* SASSY BUTTON DEFAULTS
+//**************************************************
+
+$sb-base-color: 			rgb(11, 153, 194)	// Base color of button.
+$sb-second-color: 		false				// Optional secondary color for gradient.
+$sb-text-color: 			rgb(255,255,255)	// Button font color.
+$sb-pseudo-states: 		true 				// Automatically generate pseudo state styles
+
+
 //**************************************************
 //* Keyword Setting: Media Query
 //**************************************************
@@ -287,6 +330,14 @@ $tablet-landscape:			tablet-landscape tl
 //**************************************************
 
 
+// FONT PROPERTY VALUES:
+$DEFAULT-FONT-SIZE: 			1em
+$DEFAULT-FONT-WEIGHT: 		300
+$DEFAULT-TITLE-FONT-WEIGHT:	700
+$DEFAULT-TEXT-INDENT-VALUE:  -9999px
+$DEFAULT-FONT-STYLE:               italic
+
+
 // LAYOUT PROPERTY VALUES:
 $DEFAULT-BOX-MARGIN-BOTTOM: 	20px
 $DEFAULT-MARGIN-VALUE: 			0
@@ -297,6 +348,83 @@ $DEFAULT-POSITION-TOP-VALUE:    	0
 $DEFAULT-POSITION-LEFT-VALUE:   	0
 
 
+//** Used in the property-value pair value assignment
+$top-value:   	 		t top
+$bottom-value: 		b bottom
+$left-value:   			l left
+$right-value:  			r right
+$up-value:	   			u up
+$down-value:   		d down
+
+$both-value:   			b both
+
+$none-value:	     		n none
+$block-value: 	     		b block
+$inline-block-value: 	ib inline-block
+$inline-value: 	     		i inline
+
+$visible-value:	      	v visible
+$hidden-value:	      	h hidden
+$scroll-value:	     		s scroll
+$auto-value:		 	a auto
+$collapse-value:     	c collapse
+
+$center-value:       		c center
+$middle-value:	     		m middle
+
+// Font Style
+$font-style-normal:     n normal
+$font-style-italic:         i italic
+$font-style-oblique:    o oblique
+$font-style-inherit:      in inherit
+
+// Other Font Related
+$justify-value: 		      j justify
+
+$baseline-value: 		bl baseline
+$text-top-value: 		tt text-top
+
+$capitalize-value: 		c capitalize
+$uppercase-value:  	u uppercase
+$lowercase-value: 		l lowercase
+
+// Background Repeat
+$repeat:				r repeat
+$repeat-x:				x repeat-x
+$repeat-y:				y repeat-y
+$repeat-none:			n no-repeat
+
+// Border Styles
+$border-dotted: 		dt dotted
+$border-solid: 			s solid
+$border-double: 		db double
+$border-dashed: 		dh dashed
+
+// Cursor Styles
+$cursor-default: 		d default
+$cursor-help: 			h help
+$cursor-move: 		m move
+$cursor-pointer: 		p pointer
+$cursor-progress: 		pg progress
+$cursor-text: 			t text
+$cursor-wait: 			w wait
+$cursor-inherit: 		i inherit
+$cursor-auto: 			a auto
+$cursor-crosshair: 	c crosshair
+$cursor-URL: 			u URL
+$cursor-e-resize: 		er e-resize
+$cursor-n-resize: 		nr n-resize
+$cursor-ne-resize: 	ner ne-resize
+$cursor-nw-resize: 	nwr nw-resize
+$cursor-s-resize: 		sr s-resize
+$cursor-se-resize: 	ser se-resize
+$cursor-sw-resize: 	swr sw-resize
+$cursor-w-resize: 		wr w-resize
+
+// User-Select Styles
+$select-all:				a all
+$select-element:		e element
+$select-text:			t text
 
 
 $OVERFLOW-VALUE-LIST: 		 	nth($visible-value, 1) nth($visible-value, 2) nth($hidden-value, 1) nth($hidden-value, 2) nth($scroll-value, 1) nth($scroll-value, 2) nth($auto-value, 1) nth($auto-value, 2)
@@ -309,12 +437,19 @@ $DISPLAY-VALUE-LIST: 			nth($block-value, 1) nth($block-value, 2) nth($none-valu
 
 $VISIBILITY-VALUE-LIST:         		nth($visible-value, 1) nth($visible-value, 2) nth($hidden-value, 1) nth($hidden-value, 2) nth($collapse-value, 1) nth($collapse-value, 2)
 
+$FONT-STYLE-VALUE-LIST:   		nth($font-style-normal, 1) nth($font-style-normal, 2) nth($font-style-italic, 1) nth($font-style-italic, 2) nth($font-style-oblique, 1) nth($font-style-oblique, 2) nth($font-style-inherit, 1) nth($font-style-inherit, 2)
+
+$TEXT-ALIGN-VALUE-LIST: 		nth($left-value, 1) nth($left-value, 2) nth($right-value, 1) nth($right-value, 2) nth($center-value, 1) nth($center-value, 2) nth($justify-value, 1) nth($justify-value, 2)
+
+$VERTICAL-ALIGN-VALUE-LIST: 	nth($top-value, 1) nth($top-value, 2) nth($middle-value, 1) nth($middle-value, 2) nth($bottom-value, 1) nth($bottom-value, 2) nth($baseline-value, 1) nth($baseline-value, 2) nth($text-top-value, 1) nth($text-top-value, 2)
+
+$TEXT-TRANSFORM-VALUE-LIST: 	nth($capitalize-value, 1) nth($capitalize-value, 2) nth($uppercase-value, 1) nth($uppercase-value, 2) nth($lowercase-value, 1) nth($lowercase-value, 2) nth($none-value, 1) nth($none-value, 2)
 
 $BACKGROUND-REPEAT-VALUE-LIST:  nth($repeat, 1) nth($repeat, 2) nth($repeat-x, 1) nth($repeat-x, 2) nth($repeat-y, 1) nth($repeat-y, 2) nth($repeat-none, 1) nth($repeat-none, 2)
 
 $BORDER-STYLE-VALUE-LIST:  	nth($border-dotted, 1) nth($border-dotted, 2) nth($border-solid, 1) nth($border-solid, 2) nth($border-double, 1) nth($border-double, 2) nth($border-dashed, 1) nth($border-dashed, 2)
 
-$CURSOR-VALUE-LIST:				nth($cursor-default, 1) nth($cursor-default, 2) nth($cursor-help, 1) nth($cursor-help, 2) nth($cursor-move, 1) nth($cursor-move, 2) nth($cursor-pointer, 1) nth($cursor-pointer, 2) nth($cursor-progress, 1) nth($cursor-progress, 2) nth($cursor-text, 1) nth($cursor-text, 2) nth($cursor-wait, 1) nth($cursor-wait, 2) nth($cursor-inherit, 1) nth($cursor-inherit, 2) nth($cursor-auto, 1) nth($cursor-auto, 2) nth($cursor-crosshair, 1) nth($cursor-crosshair, 2) nth($cursor-URL, 1) nth($cursor-URL, 2)
+$CURSOR-VALUE-LIST:				nth($cursor-default, 1) nth($cursor-default, 2) nth($cursor-help, 1) nth($cursor-help, 2) nth($cursor-move, 1) nth($cursor-move, 2) nth($cursor-pointer, 1) nth($cursor-pointer, 2) nth($cursor-progress, 1) nth($cursor-progress, 2) nth($cursor-text, 1) nth($cursor-text, 2) nth($cursor-wait, 1) nth($cursor-wait, 2) nth($cursor-inherit, 1) nth($cursor-inherit, 2) nth($cursor-auto, 1) nth($cursor-auto, 2) nth($cursor-crosshair, 1) nth($cursor-crosshair, 2) nth($cursor-URL, 1) nth($cursor-URL, 2) nth($cursor-e-resize, 1) nth($cursor-e-resize, 2) nth($cursor-n-resize, 1) nth($cursor-n-resize, 2) nth($cursor-ne-resize, 1) nth($cursor-ne-resize, 2) nth($cursor-nw-resize, 1) nth($cursor-nw-resize, 2) nth($cursor-s-resize, 1) nth($cursor-s-resize, 2) nth($cursor-se-resize, 1) nth($cursor-se-resize, 2) nth($cursor-sw-resize, 1) nth($cursor-sw-resize, 2) nth($cursor-w-resize, 1) nth($cursor-w-resize, 2)
 
 $USER-SELECT-VALUE-LIST:  	nth($select-all, 1) nth($select-all, 2) nth($select-element, 1) nth($select-element, 2) nth($select-text, 1) nth($select-text, 2) nth($none-value, 1) nth($none-value, 2)
 

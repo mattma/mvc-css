@@ -1,0 +1,62 @@
+// Font Mixin
+//* @mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: em )
+//* @mixin fweight($font-weight: $DEFAULT-FONT-WEIGHT)
+//* @mixin ffamily($font-families...)
+//* @mixin fstyle($font-style: $DEFAULT-FONT-STYLE)
+//* @mixin font($font-settings...)     or  @mixin f
+//* @mixin lheight($line-height, $defaultUnit: px)
+//* @mixin lspacing($letter-spacing, $defaultUnit: px )
+//* @mixin tindent($text-indent: $DEFAULT-TEXT-INDENT-VALUE, $defaultUnit: px )
+//* @mixin talign($text-align: $center)
+//* @mixin valign($vertical-align)
+//* @mixin ttransform($transform: $capitalize)
+
+//@param $font-size: take measurement of em, px, % or plain number.
+//Default Unit: em
+@mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: em )
+	+measurement(font-size, $font-size, $defaultUnit)
+
+//@param $font-weight: 100, 200, 300, 400, 500, 600, 700   default: 300
+@mixin fweight($font-weight: $DEFAULT-FONT-WEIGHT)
+	font-weight: $font-weight
+
+//Usage: +ffamily( arial, "Helvetica", sans-serif)
+@mixin ffamily($font-families...)
+	font-family: $font-families
+
+//@param $font-style: normal, italic, oblique, inherit   default: italic
+@mixin fstyle($font-style: $DEFAULT-FONT-STYLE)
+	+prop(font-style, $font-style, $FONT-STYLE-VALUE-LIST)
+
+//@param $font-settings: this is a placeholder content to take arguments
+//Usage:  font(italic bold 12px/30px Georgia, serif)
+@mixin font($font-settings...)
+	font: $font-settings
+
+//Alias to @mixin font
+@mixin f($font-settings...)
+	@include font($font-settings)
+
+//@param $line-height: take measurement of em, px, % or plain number
+@mixin lheight($line-height, $defaultUnit: px)
+	+measurement(line-height, $line-height, $defaultUnit)
+
+//@param $letter-spacing: take measurement of em, px, % or plain number
+@mixin lspacing($letter-spacing, $defaultUnit: px )
+	+measurement(letter-spacing, $letter-spacing, $defaultUnit)
+
+//@param $text-indent: take measurement of em, px, % or plain number
+@mixin tindent($text-indent: $DEFAULT-TEXT-INDENT-VALUE, $defaultUnit: px )
+	+measurement(text-indent, $text-indent, $defaultUnit)
+
+//@param $text-align: left, right, center, justify
+@mixin talign($text-align: $center)
+	+prop(text-align, $text-align, $TEXT-ALIGN-VALUE-LIST)
+
+//@param $vertical-align: top, middle, bottom, baseline, text-top
+@mixin valign($vertical-align)
+	+prop(vertical-align, $vertical-align, $VERTICAL-ALIGN-VALUE-LIST)
+
+//@param $transform: capitalize, uppercase, lowercase, none
+@mixin ttransform($transform: $capitalize)
+	+prop(text-transform, $transform, $TEXT-TRANSFORM-VALUE-LIST)

@@ -6,83 +6,84 @@
 /* Senior Web Developer -- Matt Ma. ( matt@mattmadesign.com ) */
 /* http://www.mattmadesign.com */
 
-@import "compass/css3"
 @import 'framework/_init'
 
 //  ==================
 //  = Main Structure =
 //  ==================
 
-$section-width: 80%
-.body
-	+t(500px, 900px)
-	height: t(500, 900)
 
-body
-	+position(r)
-	&>nav
-		+box(100% - $section-width, 100%)
-		+position(f, 0,0)
-		+bcolor(#F5F5FF)
-		+box-shadow(rgba(51,51,51,0.2) 1px 1px 1px)
-		&>ul
-			+overflow(scroll, y)
-			+height(1140)
-	&>section
-		+box($section-width, 100%)
-		+padding(l, 100% - $section-width)
-		&>div
-			+padding(t, 40)
 
-h3
-	+color(51 51 51)
-	+margin(b, 15)
-	+fsize(2.4)
+// $section-width: 80%
+// .body
+// 	+t(500px, 900px)
+// 	height: t(500, 900)
 
-.spacing
-	+margins(30, 0)
-	+clearfix
+// body
+// 	+position(r)
+// 	&>nav
+// 		+box(100% - $section-width, 100%)
+// 		+position(f, 0,0)
+// 		+bcolor(#F5F5FF)
+// 		+box-shadow(rgba(51,51,51,0.2) 1px 1px 1px)
+// 		&>ul
+// 			+overflow(scroll, y)
+// 			+height(1140)
+// 	&>section
+// 		+box($section-width, 100%)
+// 		+padding(l, 100% - $section-width)
+// 		&>div
+// 			+padding(t, 40)
 
-.doc
-	p
-		+box(50%)
-		+fsize(1.6)
-		&.content
-			+width(75%)
-	code
-		+padding(20, 15)
-		+lheight(1.8em)
-		+display(b)
+// h3
+// 	+color(51 51 51)
+// 	+margin(b, 15)
+// 	+fsize(2.4)
 
-.comingSoon
-	+color(red)
+// .spacing
+// 	+margins(30, 0)
+// 	+clearfix
 
-hr
-	+margins(40, 0)
+// .doc
+// 	p
+// 		+box(50%)
+// 		+fsize(1.6)
+// 		&.content
+// 			+width(75%)
+// 	code
+// 		+padding(20, 15)
+// 		+lheight(1.8em)
+// 		+display(b)
 
-// Table of Content on the left
-nav
-	h2
-		+padding(l, 15)
-		+margin(t, 40)
-		+color(51 51 51)
-		+fsize(3)
-	&>ul
-		+margin(t, 25)
-		+padding(l, 15)
+// .comingSoon
+// 	+color(red)
 
-		&>li
-			+margin(b, 25)
-		ul
-			+margin(l, 15)
-			li
-				+margin(b, 3)
-				+box
-			a
-				+fsize(1.5)
-				+color(75 75 75)
-				+hover
-					+color(255 0 0)
+// hr
+// 	+margins(40, 0)
+
+// // Table of Content on the left
+// nav
+// 	h2
+// 		+padding(l, 15)
+// 		+margin(t, 40)
+// 		+color(51 51 51)
+// 		+fsize(3)
+// 	&>ul
+// 		+margin(t, 25)
+// 		+padding(l, 15)
+
+// 		&>li
+// 			+margin(b, 25)
+// 		ul
+// 			+margin(l, 15)
+// 			li
+// 				+margin(b, 3)
+// 				+box
+// 			a
+// 				+fsize(1.5)
+// 				+color(75 75 75)
+// 				+hover
+// 					+color(255 0 0)
 
 //  ======================
 //  = OPERA STYLES ONLY  =
