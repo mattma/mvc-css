@@ -1,5 +1,5 @@
 // 1. Font Mixin
-//* @mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: em )
+//* @mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: rem )
 //* @mixin fweight($font-weight: $DEFAULT-FONT-WEIGHT)
 //* @mixin ffamily($font-families...)
 //* @mixin fstyle($font-style: $DEFAULT-FONT-STYLE)
@@ -62,7 +62,7 @@
 //
 //@param $font-size: take measurement of em, px, % or plain number.
 //Default Unit: em
-@mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: em )
+@mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: rem )
 	+measurement(font-size, $font-size, $defaultUnit)
 
 //@param $font-weight: 100, 200, 300, 400, 500, 600, 700   default: 300

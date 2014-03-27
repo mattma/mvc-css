@@ -2,7 +2,7 @@
 /*  --------------------------------------------
 * @package Matt Ma Design
 * @author Matt Ma. ( matt@mattmadesign.com )
-* @copyright Copyright©2012 Matt Ma Design
+* @copyright Copyright©2014 Matt Ma Design
 * @site http://www.mattmadesign.com
     --------------------------------------------  */
 
@@ -63,12 +63,12 @@ body:before { content:""; float:left; height:100%; margin-top:-32767px; width:0;
 /* =================== */
 
 /* Best Ratio: Heading font size / Body copy font size = 1.96 */
-h1     { font-size:2.6em;}
-h2     { font-size:2.4em;}
-h3     { font-size:2.1em;}
-h4     { font-size:1.9em;}
-h5     { font-size:1.7em;}
-h6     { font-size:1.5em;}
+h1     { font-size:2.6rem;}
+h2     { font-size:2.4rem;}
+h3     { font-size:2.1rem;}
+h4     { font-size:1.9rem;}
+h5     { font-size:1.7rem;}
+h6     { font-size:1.5rem;}
 h1, h2 { font-weight:700; line-height:1; color:rgb(35, 35, 35); text-rendering: optimizelegibility;}
 h3, h4, h5, h6 { font-weight:300; line-height:1; color:rgb(102,102,102); text-rendering: optimizelegibility; }
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
@@ -121,15 +121,15 @@ p
 ,fieldset
 ,th, td
 ,li, li a
-,dt, dd   { line-height:1.7em; font-size:1.4em; color:rgb(102,102,102); font-weight:300; } /* ==CHANGE FOR PROJECT NEED== */
+,dt, dd   { line-height:1.7rem; font-size:1.4rem; color:rgb(102,102,102); font-weight:300; } /* ==CHANGE FOR PROJECT NEED== */
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
 p a, p span, p label, p input,
-ul li, ol li, li a, li p {font-size: 1em;}
+ul li, ol li, li a, li p {font-size: 1rem;}
 
 pre       { display: block; white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 15px; }
 code      { color: rgb(11,140,143); padding: 2px 4px; background-color: #f7f7f9; border: 1px solid #e1e1e8; }
-pre, code, tt, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; line-height:1.5em; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+pre, code, tt, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1rem; line-height:1.5rem; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
 address   { font-style:italic; display: block; }
 blockquote{ margin: 0 0 20px; padding: 0 0 0 15px; border-left: 5px solid #eeeeee; color:rgb(102,102,102); font-style:italic;}
 q:before, q:after { content: '';  content: none; }
@@ -149,7 +149,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 ::-webkit-input-placeholder { color: #999999; }
 form      { margin: 0; }
 fieldset  { border: 0; margin: 0; padding: 0; }
-legend    { display: block; font-weight:700; font-size:1.4em; border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+legend    { display: block; font-weight:700; font-size:1.4rem; border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
 
 select
 ,input
