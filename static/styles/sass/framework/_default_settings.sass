@@ -1,4 +1,78 @@
 //**************************************************
+//* IMAGE PATH SETTING
+//**************************************************
+
+$DEFAULT-RELATIVE-IMAGE-PATH:	"../images/"
+$DEFAULT-ABSOLUTE-IMAGE-PATH:	"../inc/assets/images/"
+
+//**************************************************
+//* TYPOGRAPHY
+//**************************************************
+@mixin neue( $font-family: m )
+	@if $font-family == l
+		+sans( default, 100, true )
+	@else if $font-family == light
+		+sans( default, 100, true )
+
+	@else if $font-family == r
+		+sans( default, 300, true )
+	@else if $font-family == regular
+		+sans( default, 300, true )
+
+	@else if $font-family == m
+		+sans( default, 500, true )
+	@else if $font-family == medium
+		+sans( default, 500, true )
+
+	@else if $font-family == b
+		+sans( default, 700, true )
+	@else if $font-family == bold
+		+sans( default, 700, true )
+
+	@else
+		+sans( default, 300, true )
+
+//**************************************************
+//* COMPASS SPRITE OPTIONS
+//**************************************************
+//
+// Folder name "main". "main" represents the folder name that contains your sprites.
+//***
+//*** Target for the sprite in general
+//***
+$global-spacing: 10px // The amount of transparent space, in pixels, around each sprite. Defaults: 0px.
+
+//$main-repeat: repeat-x // Wether or not each sprite should repeat along the x axis. Defaults: no-repeat
+
+$global-position: 10px // Spirit x-axis offset for images. px or % of the sprite map's width. 100% would cause the sprite to be on the right-hand side of the sprite map. Defaults to 0px.
+//***
+//**** Compass sprite layouts
+//***
+
+//$main-layout: horizontal  // by default, using the vertical layout
+
+//$main-layout: diagonal // output the images in the diagonal layout format
+
+//$main-layout: smart // output the images in the smart way, eliminate the empty transparent px
+
+//***
+//*** Compass sprite HOW TO
+//***
+
+//add selectors for your sprites, it's easy todo by adding  _active  _target or  _hover  to the file name
+//ex: glossy.png, glossy_active.png, glossy_target.png, glossy_hover.png
+
+//@import "main/*.png" // import line has to be in the main.sass or main file for correct image path
+
+//@import "themes/orange/*.png"
+//+all-orange-sprite
+//Sprites stored in a nested folder will use the last folder name in the path as the sprite name.
+
+//Get a unit value by using the magical dimension functions <map>-sprite-height and <map>-sprite-width If you are looking to just return the dimensions
+// $height: main-sprite-height(some_icon)
+// $width: main-sprite-width(some_icon)
+
+//**************************************************
 //* GENERAL APP COLOR SETTING
 //**************************************************
 
