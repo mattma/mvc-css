@@ -12,6 +12,7 @@
 *.swp
 *.vi
 *.css
+*.css.map
 !static/styles/reset.css
 
 # OS or Editor folders

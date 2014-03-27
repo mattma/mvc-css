@@ -11,19 +11,10 @@ var gulp = require('gulp'),
 // autoprefixer("last 1 version", "BlackBerry 10", "Android 4")
 var AutoPrefixerConfig = ['last 2 version', '> 5%', 'ie >= 9', 'ios 6', 'android 4'];
 
-var APP_CONFIG = require('./config.json'),
-    path = require('path'),
+var path = require('path'),
     server = require('tiny-lr')(),
     compileAllSrc, // Compile all src if filename start with _, or single without leading _
     sassFilePath; // Used to dynamicially set sass path, default to all sass
-
-// Local Variable
-var appName = APP_CONFIG.applicationName,
-    options = {
-        hostname: 'localhost',
-        port: 3001,
-        senchaAppName: appName
-    };
 
 // task: lint
 gulp.task('lint', function() {
@@ -35,7 +26,7 @@ gulp.task('lint', function() {
 // task: stripLRScript
 // @describe    Strip out the LiveReload Script tag in HTML
 gulp.task('stripLRScript', function() {
-    return gulp.src(path.join(__dirname, appName, 'index.html'))
+    return gulp.src(path.join(__dirname, 'index.html'))
         .pipe(plugins.replace(/<script *src="http:\/\/localhost:\d+\/livereload\.js\?snipver=\d+"><\/script>(\s+)?/g, ''))
         .pipe(gulp.dest(path.join(__dirname, appName)));
 });
@@ -43,7 +34,7 @@ gulp.task('stripLRScript', function() {
 // task: injectLRScript
 // @describe    inject livereload script into index.html
 gulp.task('injectLRScript', function() {
-    return gulp.src(path.join(__dirname, appName, 'index.html'))
+    return gulp.src(path.join(__dirname, 'index.html'))
         .pipe(plugins.replace(/<script *src="http:\/\/localhost:\d+\/livereload\.js\?snipver=\d+"><\/script>(\s+)?/g, ''))
         .pipe(plugins.replace(/<\/body>/,
             '<script src="http://localhost:35729/livereload.js?snipver=1"></script>\n</body>'))
@@ -53,7 +44,10 @@ gulp.task('injectLRScript', function() {
 // Smart compile: if filename start with _, when save it will compile the whole project.
 // if filename is all text without _, when save it will only compile changed file
 gulp.task('sass', function() {
-    var allSrc = './static/styles/sass/{,**/}*.{scss,sass}',
+    // @TODO
+    // global pattern should be with two stars, but currently it is generated twice for the base.sass file
+    //  './static/styles/sass/{,**/}*.{scss,sass}',
+    var allSrc = './static/styles/sass/{,*/}*.{scss,sass}',
         compileFiles = ( compileAllSrc ) ? allSrc : ( sassFilePath ) ? sassFilePath : allSrc,
         nestedFolder = void 0;
 
@@ -75,7 +69,7 @@ gulp.task('sass', function() {
             }
         }
     }
-    var destPath = './static/styles/' + ( ( nestedFolder ) ? nestedFolder : '' );
+    var destPath = './static/styles' + ( ( nestedFolder ) ? nestedFolder : '' );
 
     return gulp.src( compileFiles )
         .pipe(plugins.rubySass({
