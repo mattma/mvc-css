@@ -1,4 +1,4 @@
-// Font Mixin
+// 1. Font Mixin
 //* @mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: em )
 //* @mixin fweight($font-weight: $DEFAULT-FONT-WEIGHT)
 //* @mixin ffamily($font-families...)
@@ -10,7 +10,21 @@
 //* @mixin talign($text-align: $center)
 //* @mixin valign($vertical-align)
 //* @mixin ttransform($transform: $capitalize)
-
+//
+// 2. Color Mixin
+//* @mixin color( $text-color: 102 102 102 )
+//
+// 3. Background Mixin
+//* @mixin background($background-settings...)    OR  @mixin b
+//* @mixin bposition( $bg-pos-x: 0, $bg-pos-y: 0, $defaultUnit: px )
+//* @mixin brepeat( $background-repeat )
+//* @mixin bcolor( $bg-color: 102 102 102 )
+//* @mixin bimage($bg-image-path)
+//
+// 4. Layout Mixin
+//
+// 1. Font Mixin
+//
 //@param $font-size: take measurement of em, px, % or plain number.
 //Default Unit: em
 @mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: em )
@@ -60,3 +74,40 @@
 //@param $transform: capitalize, uppercase, lowercase, none
 @mixin ttransform($transform: $capitalize)
 	+prop(text-transform, $transform, $TEXT-TRANSFORM-VALUE-LIST)
+
+// 2. Color Mixin
+
+@mixin color( $text-color: 102 102 102 )
+	color: color-format-helper($text-color)
+
+//3. Background Mixin
+
+//@param $background-settings: this is a placeholder content to take arguments
+//Usage:  +background(url("main/test.png") no-repeat 0 20px)
+@mixin background($background-settings...)
+	background: $background-settings
+
+//Alias to @mixin background
+@mixin b($background-settings...)
+	@include background($background-settings)
+
+// @return an background position working with image spirit
+// @param $height, Default: auto. Take measurement of em, px, % or plain number.
+@mixin bposition( $bg-pos-x: 0, $bg-pos-y: 0, $defaultUnit: px )
+	background-position: measurement($bg-pos-x, $defaultUnit) measurement($bg-pos-y, $defaultUnit)
+
+// @param $background-repeat: r (repeat), x (repeat-x), y (repeat-y), n (no-repeat)
+@mixin brepeat( $background-repeat )
+	+prop(background-repeat, $background-repeat, $BACKGROUND-REPEAT-VALUE-LIST)
+
+// Same functionality like @mixin color.
+// @param $bg-color  color value or "transparent"
+@mixin bcolor( $bg-color: 102 102 102 )
+	background-color: color-format-helper($bg-color)
+
+//@param $imgURL: take a path to the image file based on Relative Path setting in the settings.sass
+//Usage:  +bimage("main/test.png")
+@mixin bimage($imgURL)
+	background-image: relative-image-path($imgURL)
+
+// 4. Layout Mixin
