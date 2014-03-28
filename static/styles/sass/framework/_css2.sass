@@ -55,9 +55,6 @@
 //* @mixin hover
 //* @mixin child($eq: last)
 
-// 6. Other Mixin
-//* @mixin cursor($propertyName: pointer)
-
 // 1. Font Mixin
 //
 //@param $font-size: take measurement of em, px, % or plain number.
@@ -556,9 +553,3 @@
 	@if $eq == last or $eq == l
 		&:last-child
 			@content
-
-// 6. Other Mixin
-
-// @param $propertyName:  default help move pointer progress text wait inherit auto crosshair URL e-resize n-resize ne-resize nw-resize s-resize se-resize sw-resize w-resize
-@mixin cursor($propertyName: pointer)
-	+prop(cursor, $propertyName, $CURSOR-VALUE-LIST)
