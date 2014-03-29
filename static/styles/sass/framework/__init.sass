@@ -10,10 +10,15 @@ $DEFAULT-ABSOLUTE-IMAGE-PATH:	"../inc/assets/images/"
 // by default, using the vertical layout.  Values: diagonal, smart, horizontal
 //$main-layout: horizontal  
 
-
 // Global Values
-$defaultValue:   		default
-$general-border-color:   #dddddd
+$defaultValue:   						default
+$general-border-color:   				#dddddd
+$DEFAULT-MARGIN-VALUE: 			0
+$DEFAULT-PADDING-VALUE:			0
+$DEFAULT-BORDER-WIDTH: 			1px
+$DEFAULT-BORDER-STYLE: 			solid
+$DEFAULT-POSITION-TOP-VALUE:    	0
+$DEFAULT-POSITION-LEFT-VALUE:   	0
 
 //** Used in the property-value pair value assignment
 $top-value:   	 		t top
@@ -144,23 +149,6 @@ $tablet-portrait:			tablet-portrait tp
 $tablet-landscape:			tablet-landscape tl
 
 
-//**************************************************
-//* FRAMEWORK PROPERTY SUPPORT LIST
-//**************************************************
-
-
-// LAYOUT PROPERTY VALUES:
-$DEFAULT-BOX-MARGIN-BOTTOM: 	20px
-$DEFAULT-MARGIN-VALUE: 			0
-$DEFAULT-PADDING-VALUE:			0
-$DEFAULT-BORDER-WIDTH: 			1px
-$DEFAULT-BORDER-STYLE: 			solid
-$DEFAULT-POSITION-TOP-VALUE:    	0
-$DEFAULT-POSITION-LEFT-VALUE:   	0
-
-
-
-
 $OVERFLOW-VALUE-LIST: 		 	nth($visible-value, 1) nth($visible-value, 2) nth($hidden-value, 1) nth($hidden-value, 2) nth($scroll-value, 1) nth($scroll-value, 2) nth($auto-value, 1) nth($auto-value, 2)
 
 $FLOAT-VALUE-LIST: 				nth($left-value, 1) nth($left-value, 2) nth($right-value, 1) nth($right-value, 2) nth($none-value, 1) nth($none-value, 2)
@@ -176,43 +164,9 @@ $BACKGROUND-REPEAT-VALUE-LIST:  nth($repeat, 1) nth($repeat, 2) nth($repeat-x, 1
 
 $BORDER-STYLE-VALUE-LIST:  	nth($border-dotted, 1) nth($border-dotted, 2) nth($border-solid, 1) nth($border-solid, 2) nth($border-double, 1) nth($border-double, 2) nth($border-dashed, 1) nth($border-dashed, 2)
 
-
-//**************************************************
-//* Applicaton Settings
-//**************************************************
-
-// Variable to enable/disable the shorthand controller
-// $shorthand-min-enable: false
-
-// Border radius
-$default-border-radius: 5px
-
-// Default spirit image path
-$spirit-image-path:     "../img/icons.png"
-
-
-//**************************************************
-//* Fonts Settings
-//**************************************************
-
-
-// Default sans-serif fonts ( _fonts.sass )
-$DEFAULT-SANS-SERIF: arial, helvetica, Verdana, sans-serif
-
-// Default serif fonts ( _fonts.sass )
-$DEFAULT-SERIF: "Times New Roman", Times, Georgia, Serif
-
-// Default monospace fonts ( _fonts.sass )
-$DEFAULT-MONOSPACE: "Monaco", "Courier New", monospace
-
-
-//**************************************************
 //* Grid Setting
-//**************************************************
-
 // @param measure: px  => Generate a Px based layout
 // @param measure: percent  => Generate a Percent fluid layout
-//
 @mixin grid($grid, $measure: px)
 	@if $measure == px
 		@if $grid == 12
