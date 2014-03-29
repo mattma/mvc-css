@@ -146,9 +146,9 @@
 
 // @param $width, Default: auto. Take measurement of em, px, % or plain number.
 // @param $marginZeroAuto  Turn feature on: margin: 0 auto
-@mixin width($width: auto, $marginZeroAuto: $false, $defaultUnit: px)
+@mixin width($width: auto, $marginZeroAuto: false, $defaultUnit: px)
 	@if type-of($marginZeroAuto) == bool
-		@if $marginZeroAuto == $true
+		@if $marginZeroAuto == true
 			margin: 0 auto
 	@if $width == auto
 		width: auto
@@ -156,7 +156,7 @@
 		+measurement(width, $width, $defaultUnit)
 
 // Alias to the @mixin width()
-@mixin w($width: auto, $marginZeroAuto: $false, $defaultUnit: px)
+@mixin w($width: auto, $marginZeroAuto: false, $defaultUnit: px)
 	@include width($width, $marginZeroAuto, $defaultUnit)
 
 // @param $width, Default: null. Take measurement of em, px, % or plain number.
@@ -189,7 +189,7 @@
 	@include mheight($height, $direction, $defaultUnit)
 
 // @param Same like $width & $height
-@mixin box($width: auto, $height: auto, $marginZeroAuto: $false)
+@mixin box($width: auto, $height: auto, $marginZeroAuto: false)
 	+height($height)
 	+width($width, $marginZeroAuto)
 
