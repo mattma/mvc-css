@@ -5,10 +5,10 @@ $DEFAULT-ABSOLUTE-IMAGE-PATH:	"../inc/assets/images/"
 
 // COMPASS SPRITE OPTIONS
 // // http://thesassway.com/intermediate/spriting-with-sass-and-compass
-//$main-spacing: 10px 
+//$main-spacing: 10px
 //$main-position: 10px
 // by default, using the vertical layout.  Values: diagonal, smart, horizontal
-//$main-layout: horizontal  
+//$main-layout: horizontal
 
 // Global Values
 $defaultValue:   						default
@@ -21,46 +21,12 @@ $DEFAULT-POSITION-TOP-VALUE:    	0
 $DEFAULT-POSITION-LEFT-VALUE:   	0
 
 //** Used in the property-value pair value assignment
-$top-value:   	 		t top
-$bottom-value: 		b bottom
-$left-value:   			l left
-$right-value:  			r right
-
 $both-value:   			b both
 
 $none-value:	     		n none
 $block-value: 	     		b block
 $inline-block-value: 	ib inline-block
 $inline-value: 	     		i inline
-
-$visible-value:	      	v visible
-$hidden-value:	      	h hidden
-$scroll-value:	     		s scroll
-$auto-value:		 	a auto
-$collapse-value:     	c collapse
-
-$center-value:       		c center
-$middle-value:	     		m middle
-
-$justify-value: 		      j justify
-$baseline-value: 		bl baseline
-$text-top-value: 		tt text-top
-
-$capitalize-value: 		c capitalize
-$uppercase-value:  	u uppercase
-$lowercase-value: 		l lowercase
-
-// Background Repeat
-$repeat:				r repeat
-$repeat-x:				x repeat-x
-$repeat-y:				y repeat-y
-$repeat-none:			n no-repeat
-
-// Border Styles
-$border-dotted: 		dt dotted
-$border-solid: 			s solid
-$border-double: 		db double
-$border-dashed: 		dh dashed
 
 // Font Settings
 $DEFAULT-FONT-SIZE: 			1rem
@@ -69,18 +35,27 @@ $DEFAULT-TITLE-FONT-WEIGHT:	700
 $DEFAULT-TEXT-INDENT-VALUE:  -9999px
 $DEFAULT-FONT-STYLE:               italic
 
-$font-style-normal:     n normal
-$font-style-italic:         i italic
-$font-style-oblique:    o oblique
-$font-style-inherit:      in inherit
+$FONT-STYLE-VALUE-LIST: 		n normal i italic o oblique in inherit
 
-$FONT-STYLE-VALUE-LIST:   		nth($font-style-normal, 1) nth($font-style-normal, 2) nth($font-style-italic, 1) nth($font-style-italic, 2) nth($font-style-oblique, 1) nth($font-style-oblique, 2) nth($font-style-inherit, 1) nth($font-style-inherit, 2)
+$TEXT-ALIGN-VALUE-LIST: 		l left r right c center j justify
 
-$TEXT-ALIGN-VALUE-LIST: 		nth($left-value, 1) nth($left-value, 2) nth($right-value, 1) nth($right-value, 2) nth($center-value, 1) nth($center-value, 2) nth($justify-value, 1) nth($justify-value, 2)
+$VERTICAL-ALIGN-VALUE-LIST: 	t top m middle b bottom bl baseline tt text-top
 
-$VERTICAL-ALIGN-VALUE-LIST: 	nth($top-value, 1) nth($top-value, 2) nth($middle-value, 1) nth($middle-value, 2) nth($bottom-value, 1) nth($bottom-value, 2) nth($baseline-value, 1) nth($baseline-value, 2) nth($text-top-value, 1) nth($text-top-value, 2)
+$TEXT-TRANSFORM-VALUE-LIST: 	c capitalize u uppercase l lowercase nth($none-value, 1) nth($none-value, 2)
 
-$TEXT-TRANSFORM-VALUE-LIST: 	nth($capitalize-value, 1) nth($capitalize-value, 2) nth($uppercase-value, 1) nth($uppercase-value, 2) nth($lowercase-value, 1) nth($lowercase-value, 2) nth($none-value, 1) nth($none-value, 2)
+$OVERFLOW-VALUE-LIST: 		 	v visible h hidden s scroll a auto
+
+$FLOAT-VALUE-LIST: 				l left r right nth($none-value, 1) nth($none-value, 2)
+
+$CLEAR-VALUE-LIST: 				l left r right nth($both-value, 1) nth($both-value, 2) nth($none-value, 1) nth($none-value, 2)
+
+$DISPLAY-VALUE-LIST: 			nth($block-value, 1) nth($block-value, 2) nth($none-value, 1) nth($none-value, 2) nth($inline-value, 1) nth($inline-value, 2) nth($inline-block-value, 1) nth($inline-block-value, 2)
+
+$VISIBILITY-VALUE-LIST:         		v visible h hidden c collapse
+
+$BACKGROUND-REPEAT-VALUE-LIST:  r repeat x repeat-x y repeat-y n no-repeat
+
+$BORDER-STYLE-VALUE-LIST:  dt dotted s solid db double dh dashed
 
 //**************************************************
 //* Keyword Setting: Layout
@@ -143,22 +118,6 @@ $tablet:						tablet t
 $max-tablet:				max-tablet mt
 $tablet-portrait:			tablet-portrait tp
 $tablet-landscape:			tablet-landscape tl
-
-
-$OVERFLOW-VALUE-LIST: 		 	nth($visible-value, 1) nth($visible-value, 2) nth($hidden-value, 1) nth($hidden-value, 2) nth($scroll-value, 1) nth($scroll-value, 2) nth($auto-value, 1) nth($auto-value, 2)
-
-$FLOAT-VALUE-LIST: 				nth($left-value, 1) nth($left-value, 2) nth($right-value, 1) nth($right-value, 2) nth($none-value, 1) nth($none-value, 2)
-
-$CLEAR-VALUE-LIST: 				nth($left-value, 1) nth($left-value, 2) nth($right-value, 1) nth($right-value, 2) nth($both-value, 1) nth($both-value, 2) nth($none-value, 1) nth($none-value, 2)
-
-$DISPLAY-VALUE-LIST: 			nth($block-value, 1) nth($block-value, 2) nth($none-value, 1) nth($none-value, 2) nth($inline-value, 1) nth($inline-value, 2) nth($inline-block-value, 1) nth($inline-block-value, 2)
-
-$VISIBILITY-VALUE-LIST:         		nth($visible-value, 1) nth($visible-value, 2) nth($hidden-value, 1) nth($hidden-value, 2) nth($collapse-value, 1) nth($collapse-value, 2)
-
-
-$BACKGROUND-REPEAT-VALUE-LIST:  nth($repeat, 1) nth($repeat, 2) nth($repeat-x, 1) nth($repeat-x, 2) nth($repeat-y, 1) nth($repeat-y, 2) nth($repeat-none, 1) nth($repeat-none, 2)
-
-$BORDER-STYLE-VALUE-LIST:  	nth($border-dotted, 1) nth($border-dotted, 2) nth($border-solid, 1) nth($border-solid, 2) nth($border-double, 1) nth($border-double, 2) nth($border-dashed, 1) nth($border-dashed, 2)
 
 //* Grid Setting
 // @param measure: px  => Generate a Px based layout
