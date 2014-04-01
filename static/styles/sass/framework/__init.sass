@@ -93,39 +93,40 @@ $max-tablet:				max-tablet mt
 $tablet-portrait:			tablet-portrait tp
 $tablet-landscape:			tablet-landscape tl
 
-//* Grid Setting
-// @param measure: px  => Generate a Px based layout
-// @param measure: percent  => Generate a Percent fluid layout
-@mixin grid($grid, $measure: px)
-	@if $measure == px
-		@if $grid == 12
-			$grid_columns: 12
-			$grid_column_width: 60px
-			$gutter_column_width: 20px
-		@if $grid == 16
-			$grid_columns: 16
-			$grid_column_width: 40px
-			$gutter_column_width: 20px
-		@if $grid == 24
-			$grid_columns: 24
-			$grid_column_width: 30px
-			$gutter_column_width: 10px
-	@if $measure == percent
-		@if $grid == 12
-			$grid_columns: 12
-			$grid_column_width: 6.333%
-			$gutter_column_width: 2%
-		@if $grid == 16
-			$grid_columns: 16
-			$grid_column_width: 4.25%
-			$gutter_column_width: 2%
-		@if $grid == 24
-			$grid_columns: 24
-			$grid_column_width: 3.1665%
-			$gutter_column_width: 1%
+// //* Grid Setting
+// // @param measure: px  => Generate a Px based layout
+// // @param measure: percent  => Generate a Percent fluid layout
+// @mixin grid($grid, $measure: px)
+// 	@if $measure == px
+// 		@if $grid == 12
+// 			$grid_columns: 12
+// 			$grid_column_width: 60px
+// 			$gutter_column_width: 20px
+// 		@if $grid == 16
+// 			$grid_columns: 16
+// 			$grid_column_width: 40px
+// 			$gutter_column_width: 20px
+// 		@if $grid == 24
+// 			$grid_columns: 24
+// 			$grid_column_width: 30px
+// 			$gutter_column_width: 10px
+// 	@if $measure == percent
+// 		@if $grid == 12
+// 			$grid_columns: 12
+// 			$grid_column_width: 6.333%
+// 			$gutter_column_width: 2%
+// 		@if $grid == 16
+// 			$grid_columns: 16
+// 			$grid_column_width: 4.25%
+// 			$gutter_column_width: 2%
+// 		@if $grid == 24
+// 			$grid_columns: 24
+// 			$grid_column_width: 3.1665%
+// 			$gutter_column_width: 1%
 
 // Include modules into the framework
 @import "controller"
 @import "css2"
 @import "css3"
-@import "utils"
+//@import "utils"
+@import "grid"

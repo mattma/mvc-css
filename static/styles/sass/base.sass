@@ -12,8 +12,25 @@
 //  = Main Structure =
 //  ==================
 
-@import '../test/mainTest'
-
+//@import '../test/mainTest'
+#main
+	+mw(1280)
+	+margins(0, auto)
+.row
+	max-width: rem-calc(1440)
+	&.display
+		background: #eee
+		font-size: 11px
+		margin-bottom: 10px
+		line-height: 2rem
+		border: solid 1px #c6c6c6
+		margin-#{$default-float}: 0 !important
+		margin-#{$opposite-direction}: 0 !important
+		.columns
+			&:nth-child(2),
+			&.small-centered,
+			&.large-centered
+				background: darken(#eee, 5%)
 
 // $section-width: 80%
 // .body
