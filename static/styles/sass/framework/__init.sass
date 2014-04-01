@@ -20,14 +20,6 @@ $DEFAULT-BORDER-STYLE: 			solid
 $DEFAULT-POSITION-TOP-VALUE:    	0
 $DEFAULT-POSITION-LEFT-VALUE:   	0
 
-//** Used in the property-value pair value assignment
-$both-value:   			b both
-
-$none-value:	     		n none
-$block-value: 	     		b block
-$inline-block-value: 	ib inline-block
-$inline-value: 	     		i inline
-
 // Font Settings
 $DEFAULT-FONT-SIZE: 			1rem
 $DEFAULT-FONT-WEIGHT: 		300
@@ -41,15 +33,15 @@ $TEXT-ALIGN-VALUE-LIST: 		l left r right c center j justify
 
 $VERTICAL-ALIGN-VALUE-LIST: 	t top m middle b bottom bl baseline tt text-top
 
-$TEXT-TRANSFORM-VALUE-LIST: 	c capitalize u uppercase l lowercase nth($none-value, 1) nth($none-value, 2)
+$TEXT-TRANSFORM-VALUE-LIST: 	c capitalize u uppercase l lowercase n none
 
 $OVERFLOW-VALUE-LIST: 		 	v visible h hidden s scroll a auto
 
-$FLOAT-VALUE-LIST: 				l left r right nth($none-value, 1) nth($none-value, 2)
+$FLOAT-VALUE-LIST: 				l left r right n none
 
-$CLEAR-VALUE-LIST: 				l left r right nth($both-value, 1) nth($both-value, 2) nth($none-value, 1) nth($none-value, 2)
+$CLEAR-VALUE-LIST: 				l left r right b both n none
 
-$DISPLAY-VALUE-LIST: 			nth($block-value, 1) nth($block-value, 2) nth($none-value, 1) nth($none-value, 2) nth($inline-value, 1) nth($inline-value, 2) nth($inline-block-value, 1) nth($inline-block-value, 2)
+$DISPLAY-VALUE-LIST: 			b block i inline ib inline-block  n none
 
 $VISIBILITY-VALUE-LIST:         		v visible h hidden c collapse
 
