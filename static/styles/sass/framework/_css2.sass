@@ -9,7 +9,7 @@
 //* @mixin tindent($text-indent: $DEFAULT-TEXT-INDENT-VALUE, $defaultUnit: px )
 //* @mixin talign($text-align: $center)
 //* @mixin valign($vertical-align)
-//* @mixin ttransform($transform: $capitalize)
+//* @mixin ttransform($transform: capitalize)
 
 // 2. Color Mixin
 //* @mixin color( $text-color: 102 102 102 )
@@ -104,7 +104,7 @@
 	+prop(vertical-align, $vertical-align, $VERTICAL-ALIGN-VALUE-LIST)
 
 //@param $transform: capitalize, uppercase, lowercase, none
-@mixin ttransform($transform: $capitalize)
+@mixin ttransform($transform: capitalize)
 	+prop(text-transform, $transform, $TEXT-TRANSFORM-VALUE-LIST)
 
 // 2. Color Mixin
@@ -297,7 +297,7 @@
 // Usage: +border(top, none)
 @mixin border( $direction, $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
 
-	@if $border-color != $none
+	@if $border-color != none
 		@if $direction == nth($top, 1) or $direction == nth($top, 2)
 			border-top: measurement($border-width, $defaultUnit) $border-style color-format-helper($border-color)
 		@else if $direction == nth($right, 1) or $direction == nth($right, 2)
@@ -321,7 +321,7 @@
 // @param: $border-color could be color value or "none", do not support shortcut n
 // Usage: +borders(none)
 @mixin borders( $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
-	@if $border-color != $none
+	@if $border-color != none
 		//border: measurement($border-width, $defaultUnit) $border-style color-format-helper($border-color)
 		+bstyle($border-style)
 		+bdcolor($border-color)
@@ -334,7 +334,7 @@
 // @param: $border-color could be color value or "none"
 // Usage: +outline(none)
 @mixin outline( $outline-color: $general-border-color, $outline-width: $DEFAULT-BORDER-WIDTH, $outline-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
-	@if $outline-color != $none
+	@if $outline-color != none
 		outline: measurement($outline-width, $defaultUnit) $outline-style color-format-helper($outline-color)
 	@else
 		outline: none
