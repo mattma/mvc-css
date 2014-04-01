@@ -27,9 +27,9 @@
 //* @mixin mwidth($width, $direction: max, $defaultUnit: px)			    or  @mixin mw
 //* @mixin mheight($height: auto, $direction: max, $defaultUnit: px)  	    or  @mixin mh
 //* @mixin box($width: auto, $height: auto, $marginZeroAuto: false)
-//* @mixin margin($direction, $margin-value: $DEFAULT-MARGIN-VALUE, $defaultUnit: px)
+//* @mixin margin($direction, $margin-value: 0, $defaultUnit: px)
 //* @mixin margins($top, $right: $top, $bottom: $top, $left: $right, $defaultUnit: px)
-//* @mixin padding($direction, $padding-value: $DEFAULT-PADDING-VALUE, $defaultUnit: px)
+//* @mixin padding($direction, $padding-value: 0, $defaultUnit: px)
 //* @mixin paddings($top, $right: $top, $bottom: $top, $left: $right, $defaultUnit: px)
 //* @mixin border( $position, $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
 //* @mixin borders( $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
@@ -195,7 +195,7 @@
 
 // Single Margin Setup
 // Default: px value or auto. Take measurement of em, px, % or plain number.
-@mixin margin($direction, $margin-value: $DEFAULT-MARGIN-VALUE, $defaultUnit: px)
+@mixin margin($direction, $margin-value: 0, $defaultUnit: px)
 	@if type-of($margin-value) == number
 		@if $direction == nth($top, 1) or $direction == nth($top, 2)
 			+measurement(margin-top, $margin-value, $defaultUnit)
@@ -244,7 +244,7 @@
 
 // Single Padding Setup
 // Default: px value or auto. Take measurement of em, px, % or plain number.
-@mixin padding($direction, $padding-value: $DEFAULT-PADDING-VALUE, $defaultUnit: px)
+@mixin padding($direction, $padding-value: 0, $defaultUnit: px)
 	@if type-of($padding-value) == number
 		@if $direction == nth($top, 1) or $direction == nth($top, 2)
 			+measurement(padding-top, $padding-value, $defaultUnit)
