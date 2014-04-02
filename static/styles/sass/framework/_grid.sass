@@ -55,6 +55,8 @@ $opposite-direction: right
 
 // We use this to control whether or not CSS classes come through in the gem files.
 $include-html-classes: true
+$include-html-grid-classes: $include-html-classes
+$include-xl-html-block-grid-classes: false
 
 // Media Query Ranges
 //
@@ -227,55 +229,50 @@ $total-columns: 12
 	.columns.#{$size}-uncentered.opposite
 		float: $opposite-direction
 
-.row
-	+grid-row
-	&.collapse
-		> .column,
-		> .columns
-			+grid-column($collapse: true, $float: false)
-		.row
-			margin-left: 0
-			margin-right: 0
+@if $include-html-grid-classes
 	.row
-		+grid-row($behavior: nest)
+		+grid-row
 		&.collapse
-			+grid-row($behavior: nest-collapse)
+			> .column,
+			> .columns
+				+grid-column($collapse: true, $float: false)
+			.row
+				margin-left: 0
+				margin-right: 0
+		.row
+			+grid-row($behavior: nest)
+			&.collapse
+				+grid-row($behavior: nest-collapse)
 
-.column, .columns
-	+grid-column($columns: $total-columns)
+	.column, .columns
+		+grid-column($columns: $total-columns)
 
-@media #{$small-up}
-	+grid-html-classes($size: small)
-@media #{$medium-up}
-	+grid-html-classes($size: medium)
-	// Old push and pull classes
-	@for $i from 0 through $total-columns - 1
-		.push-#{$i}
-			+grid-column($push: $i, $collapse: null, $float: false)
-		.pull-#{$i}
-			+grid-column($pull: $i, $collapse: null, $float: false)
-@media #{$large-up}
-	+grid-html-classes($size: large)
-	@for $i from 0 through $total-columns - 1
-		.push-#{$i}
-			+grid-column($push: $i, $collapse: null, $float: false)
-		.pull-#{$i}
-			+grid-column($pull: $i, $collapse: null, $float: false)
-
-// @media #{$xlarge-up}
-// 	+grid-html-classes($size: xlarge)
-// @media #{$xxlarge-up}
-// 	+grid-html-classes($size: xxlarge)
-
-
-
+	@media #{$small-up}
+		+grid-html-classes($size: small)
+	@media #{$medium-up}
+		+grid-html-classes($size: medium)
+		// Old push and pull classes
+		@for $i from 0 through $total-columns - 1
+			.push-#{$i}
+				+grid-column($push: $i, $collapse: null, $float: false)
+			.pull-#{$i}
+				+grid-column($pull: $i, $collapse: null, $float: false)
+	@media #{$large-up}
+		+grid-html-classes($size: large)
+		@for $i from 0 through $total-columns - 1
+			.push-#{$i}
+				+grid-column($push: $i, $collapse: null, $float: false)
+			.pull-#{$i}
+				+grid-column($pull: $i, $collapse: null, $float: false)
+	@if $include-xl-html-block-grid-classes
+		@media #{$xlarge-up}
+			+grid-html-classes($size: xlarge)
+		@media #{$xxlarge-up}
+			+grid-html-classes($size: xxlarge)
 
 //
 // Block Grid Variables
 //
-$include-html-grid-classes: $include-html-classes
-$include-xl-html-block-grid-classes: false
-
 // We use this to control the maximum number of block grid elements per row
 $block-grid-elements: 12
 $block-grid-default-spacing: rem-calc(20)
@@ -288,16 +285,12 @@ $align-block-grid-to-grid: false
 // Enables media queries for block-grid classes. Set to false if writing semantic HTML.
 $block-grid-media-queries: true
 
-//
-// Block Grid Mixins
-//
-
 // Create a custom block grid
 //
 // $per-row - # of items to display per row. Default: false.
 // $spacing - # of ems to use as padding on each block item. Default: rem-calc(20).
 // $base-style - Apply a base style to block grid. Default: true.
-
+//
 =block-grid($per-row: false, $spacing: $block-grid-default-spacing, $include-spacing: false, $base-style: true)
 	@if $base-style
 		display: block
