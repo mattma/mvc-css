@@ -9,19 +9,26 @@
 // In order to work around browsers' different rounding behaviors, Foundation will float the last column in a row to the right so the edge aligns. If your row doesn't have a count that adds up to 12 columns, you can tag the last column with a class of *end* in order to override that behavior.
 // Center your columns by adding a class of small-centered to your column. Large will inherit small centering by default, but you can also center solely on large by applying a large-centered class. To uncenter on large screens use large-uncentered.
 
+%setBoxSizing
+	&
+		> *,
+		> *:before,
+		> *:after
+			box-sizing: border-box
+
 // It strips the unit of measure and returns it
 @function strip-unit($num)
 	@return $num / ($num * 0 + 1)
 
 // CONVERT TO REM
-@function convert-to-rem($value, $base-value: 10px)
+@function convert-to-rem($value, $base-value: 16px)
 	$value: strip-unit($value) / strip-unit($base-value) * 1rem
 	@if $value == 0rem
 		$value: 0
 	// Turn 0rem into 0
 	@return $value
 
-@function rem-calc($values, $base-value: 10px)
+@function rem-calc($values, $base-value: 16px)
 	$max: length($values)
 	@if $max == 1
 		@return convert-to-rem(nth($values, 1), $base-value)
@@ -148,7 +155,7 @@ $total-columns: 12
 // $collapse - Get rid of gutter padding on column? Default: true.
 // $float - Should this float? Default: true. Options: true, false, left, right.
 
-=grid-column($columns: false, $last-column: false, $center: false, $offset: false, $push: false, $pull: false, $collapse: true, $float: true, $position: false)
+=grid-column($columns: false, $last-column: false, $center: false, $offset: false, $push: false, $pull: false, $collapse: false, $float: true, $position: false)
 	// If positioned for default .column, include relative position
 	// push and pull require position set
 	@if $position or $push or $pull
@@ -232,6 +239,7 @@ $total-columns: 12
 @if $include-html-grid-classes
 	.row
 		+grid-row
+		@extend %setBoxSizing
 		&.collapse
 			> .column,
 			> .columns
@@ -291,7 +299,7 @@ $block-grid-media-queries: true
 // $spacing - # of ems to use as padding on each block item. Default: rem-calc(20).
 // $base-style - Apply a base style to block grid. Default: true.
 //
-=block-grid($per-row: false, $spacing: $block-grid-default-spacing, $include-spacing: false, $base-style: true)
+=block-grid($per-row: false, $spacing: $block-grid-default-spacing, $include-spacing: true, $base-style: true)
 	@if $base-style
 		display: block
 		padding: 0
@@ -340,6 +348,7 @@ $block-grid-media-queries: true
 @if $include-html-grid-classes
 	[class*="block-grid-"]
 		+block-grid
+		@extend %setBoxSizing
 	@if $block-grid-media-queries
 		@media #{$small-up}
 			+block-grid-html-classes($size: small, $include_spacing: false)
