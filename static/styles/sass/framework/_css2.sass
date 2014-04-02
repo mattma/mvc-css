@@ -426,7 +426,7 @@
 //					bottom or b,  set bottom & left value
 //					both or anything other than r or b,  set bottom & right value
 @mixin position($position, $_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $defaultValue, $defaultUnit: px)
-	@if $position == nth($absolute, 1) or $position == nth($absolute, 2)
+	@if $position == nth($absolute-value, 1) or $position == nth($absolute-value, 2)
 		position: absolute
 		@if $switch == $defaultValue
 			top: measurement($_top, $defaultUnit)
@@ -441,7 +441,7 @@
 			@else
 				bottom: measurement($_top, $defaultUnit)
 				right: measurement($_left, $defaultUnit)
-	@else if $position == nth($relative, 1) or $position == nth($relative, 2)
+	@else if $position == nth($relative-value, 1) or $position == nth($relative-value, 2)
 		position: relative
 		@if $_top != 0
 			@if $switch == default
@@ -457,7 +457,7 @@
 				@else
 					bottom: measurement($_top, $defaultUnit)
 					right: measurement($_left, $defaultUnit)
-	@else if $position == nth($fixed, 1) or $position == nth($fixed, 2)
+	@else if $position == nth($fixed-value, 1) or $position == nth($fixed-value, 2)
 		position: fixed
 		@if $_top != 0
 			@if $switch == default
@@ -473,7 +473,7 @@
 				@else
 					bottom: measurement($_top, $defaultUnit)
 					right: measurement($_left, $defaultUnit)
-	@else if $position == nth($static, 1) or $position == nth($static, 2)
+	@else if $position == nth($static-value, 1) or $position == nth($static-value, 2)
 		position: static
 
 //@param $z-index,  take a number   default: null
