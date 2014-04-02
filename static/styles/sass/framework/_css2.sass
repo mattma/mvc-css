@@ -7,7 +7,7 @@
 //* @mixin lheight($line-height, $defaultUnit: px)
 //* @mixin lspacing($letter-spacing, $defaultUnit: px )
 //* @mixin tindent($text-indent: $DEFAULT-TEXT-INDENT-VALUE, $defaultUnit: px )
-//* @mixin talign($text-align: $center)
+//* @mixin talign($text-align: center)
 //* @mixin valign($vertical-align)
 //* @mixin ttransform($transform: capitalize)
 
@@ -96,7 +96,7 @@
 	+measurement(text-indent, $text-indent, $defaultUnit)
 
 //@param $text-align: left, right, center, justify
-@mixin talign($text-align: $center)
+@mixin talign($text-align: center)
 	+prop(text-align, $text-align, $TEXT-ALIGN-VALUE-LIST)
 
 //@param $vertical-align: top, middle, bottom, baseline, text-top
