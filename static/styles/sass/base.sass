@@ -17,7 +17,6 @@
 	+mw(1280)
 	+margins(0, auto)
 .row
-	max-width: rem-calc(1440)
 	&.display
 		background: #eee
 		font-size: 11px
@@ -31,6 +30,13 @@
 			&.small-centered,
 			&.large-centered
 				background: darken(#eee, 5%)
+
+#block-grid
+	+width( 60% )
+	li
+		+h(100)
+		+bcolor(204 204 204)
+		+margin(b, 20)
 
 // $section-width: 80%
 // .body
