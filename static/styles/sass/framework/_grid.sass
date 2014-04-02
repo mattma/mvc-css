@@ -1,3 +1,6 @@
+// Based on Foundation v5.2.1
+// https://github.com/zurb/foundation
+//
 // Code for small screens first, and larger devices will inherit those styles. Customize for larger screens as necessary.
 // Small grids expand to large screens easier than large grids cram into small screens.
 // Nest the grids indefinitely, though at a certain point it will get absurd.
@@ -52,8 +55,6 @@ $opposite-direction: right
 
 // We use this to control whether or not CSS classes come through in the gem files.
 $include-html-classes: true
-$include-print-styles: true
-$include-html-global-classes: $include-html-classes
 
 // Media Query Ranges
 //
@@ -99,21 +100,13 @@ $row-width: rem-calc(1000)
 $column-gutter: rem-calc(30)
 $total-columns: 12
 
-//
-// Grid Functions
-//
-
-// @FUNCTION
+// Grid Functions: @FUNCTION
 // $colNumber - Found in settings file
 // $totalColumns - Found in settings file
 @function grid-calc($colNumber, $totalColumns)
 	@return percentage($colNumber / $totalColumns)
 
-//
-// @mixins
-//
-
-// For creating container, nested, and collapsed rows.
+// @mixins For creating container, nested, and collapsed rows.
 // $behavior - Any special behavior for this row? Default: false. Options: nest, collapse, nest-collapse, false.
 =grid-row($behavior: false)
 	// use @include grid-row(nest); to include a nested row
@@ -195,7 +188,6 @@ $total-columns: 12
 		margin-#{$default-float}: grid-calc($offset, $total-columns) !important
 
 // Create presentational classes for grid
-//
 // $size - Name of class to use, i.e. "large" will generate .large-1, .large-2, etc.
 =grid-html-classes($size)
 	@for $i from 0 through $total-columns - 1
