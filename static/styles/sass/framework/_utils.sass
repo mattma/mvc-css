@@ -390,16 +390,20 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 
 
 @mixin push($offset: 1, $marginOrPadding: margin, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width)
-	@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
+	//@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
+	@if $marginOrPadding == margin
 		margin-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap))
-	@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
+	//@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
+	@if $marginOrPadding == padding
 		padding-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap)) - $gap / 2
 
 
 @mixin pull($offset: 1, $marginOrPadding: margin, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width)
-	@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
+	//@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
+	@if $marginOrPadding == margin
 		margin-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap))
-	@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
+	//@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
+	@if $marginOrPadding == padding
 		padding-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap)) - $gap / 2
 
 
