@@ -5,8 +5,7 @@
 // by default, using the vertical layout.  Values: diagonal, smart, horizontal
 //$main-layout: horizontal
 
-// Global Values
-
+//* Global Values
 $defaultValue:   						default
 $general-border-color:   				#dddddd
 $DEFAULT-BORDER-WIDTH: 			1px
@@ -14,16 +13,17 @@ $DEFAULT-BORDER-STYLE: 			solid
 $DEFAULT-POSITION-TOP-VALUE:    	0
 $DEFAULT-POSITION-LEFT-VALUE:   	0
 
-// Font Settings
+//* Font Settings
 $DEFAULT-FONT-SIZE: 			1rem
 $DEFAULT-FONT-WEIGHT: 		300
 $DEFAULT-TEXT-INDENT-VALUE:  -9999px
 $DEFAULT-FONT-STYLE:               italic
 
-// Image Path Setting ( Used in  framework/_controller.sass )
+//* Image Path Setting ( Used in  framework/_controller.sass )
 $DEFAULT-RELATIVE-IMAGE-PATH:	"../images/"
 $DEFAULT-ABSOLUTE-IMAGE-PATH:	"../inc/assets/images/"
 
+//* Used in property value assignment, several other css2 setting
 $FONT-STYLE-VALUE-LIST: 		n normal i italic o oblique in inherit
 $TEXT-ALIGN-VALUE-LIST: 		l left r right c center j justify
 $VERTICAL-ALIGN-VALUE-LIST: 	t top m middle b bottom bl baseline tt text-top
@@ -48,9 +48,43 @@ $relative-value:	   				relative r
 $static-value:	         				static s
 $fixed-value:		   				fixed f
 
-// Used in 960 Grid System
+//* Used in 960 Grid System
 $margin-value: 					margin m
 $padding-value:    					padding p
+
+
+//* Media Query Ranges
+// Small screens: max-width 640px, mobile-only styles
+$small-range: 0em, 40em
+// Medium screens: min-width 641px and max-width 1024px
+$medium-range: 40.063em, 64em
+// Large screens: min-width 1025px and max-width 1440px
+$large-range: 64.063em, 90em
+// XLarge screens: min-width 1441px and max-width 1920px
+$xlarge-range: 90.063em, 120em
+// XXLarge screens: min-width 1921px
+$xxlarge-range: 120.063em, 99999999em
+
+$screen: "only screen"
+
+$landscape: "#{$screen} and (orientation: landscape)"
+$portrait: "#{$screen} and (orientation: portrait)"
+
+$small-up: $screen
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})"
+
+$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})"
+$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})"
+
+$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})"
+$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})"
+
+$xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})"
+$xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})"
+
+$xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})"
+$xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})"
+
 
 //* Grid Setting
 // @param measure: px  => Generate a Px based layout
@@ -83,7 +117,7 @@ $padding-value:    					padding p
 			$grid_column_width: 3.1665%
 			$gutter_column_width: 1%
 
-// Include modules into the framework
+//* Include modules into the framework
 @import "controller"
 @import "utils"
 @import "css2"
