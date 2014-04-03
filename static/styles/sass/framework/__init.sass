@@ -63,8 +63,11 @@ $default-float: left
 $opposite-direction: right
 
 // We use this to control whether or not CSS classes come through in the gem files.
-$include-html-classes: true
-$include-html-grid-classes: $include-html-classes
+// @change @variables
+$include-html-grid-classes: false
+// Enables media queries for block-grid classes. Set to false if writing semantic HTML.
+// @change @variables
+$block-grid-media-queries: false
 $include-xl-html-block-grid-classes: false
 
 //* 2. Grid: Block Grid Setting
@@ -73,9 +76,14 @@ $block-grid-elements: 12
 $block-grid-default-spacing: rem-calc(20)
 // apply the default spacing by using the value: $column-gutter. override the previous value
 $align-block-grid-to-grid: false
-// Enables media queries for block-grid classes. Set to false if writing semantic HTML.
-$block-grid-media-queries: true
 
+//* Visibility Setting (used in _utils.sass)
+// @change @variables
+$include-html-visibility-classes: false
+// @change @variables
+$include-table-visibility-classes: false
+// Visibility Breakpoints
+$visibility-breakpoint-sizes: small, medium, large, xlarge, xxlarge
 
 //* Grid: 960 Grid Setting (px or percentage)
 // @param measure: px  => Generate a Px based layout
@@ -107,12 +115,6 @@ $block-grid-media-queries: true
 			$grid_columns: 24
 			$grid_column_width: 3.1665%
 			$gutter_column_width: 1%
-
-//* Visibility Setting (used in _utils.sass)
-$include-html-visibility-classes: true
-$include-table-visibility-classes: true
-// Visibility Breakpoints
-$visibility-breakpoint-sizes: small, medium, large, xlarge, xxlarge
 
 //* Include controller module into the framework
 @import "controller"
