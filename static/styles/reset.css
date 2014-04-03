@@ -44,7 +44,7 @@ audio:not([controls]) { display: none; height: 0; }
 /* ===================== */
 
 html   { margin:0;padding:0;border:0; font-size:100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } /* Always force a scrollbar in non-IE */
-body   { *font-size:small; font-size: 10px; margin:0; padding:0; background:rgb(255,255,255); -webkit-font-smoothing: antialiased;}
+body   { *font-size:small; font-size: 62.5%; margin:0; padding:0; background:rgb(255,255,255); -webkit-font-smoothing: antialiased;}
 body, button, input, select, textarea { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color:rgb(34,34,34); }
 html, body  { height: 100%; }
 /*Opera Fix for Footer Position Stick */
