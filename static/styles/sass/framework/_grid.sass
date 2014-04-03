@@ -9,22 +9,6 @@
 // In order to work around browsers' different rounding behaviors, Foundation will float the last column in a row to the right so the edge aligns. If your row doesn't have a count that adds up to 12 columns, you can tag the last column with a class of *end* in order to override that behavior.
 // Center your columns by adding a class of small-centered to your column. Large will inherit small centering by default, but you can also center solely on large by applying a large-centered class. To uncenter on large screens use large-uncentered.
 
-%setBoxSizing
-	&
-		> *,
-		> *:before,
-		> *:after
-			box-sizing: border-box
-
-// We use this to do clear floats
-=clearfix
-	*zoom: 1
-	&:before, &:after
-		content: " "
-		display: table
-	&:after
-		clear: both
-
 // We use these to control text direction settings
 $default-float: left
 $opposite-direction: right
