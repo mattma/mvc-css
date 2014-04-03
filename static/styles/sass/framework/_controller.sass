@@ -38,7 +38,9 @@
 // $unit: px, em, %.   #If user do not provide the measure, use the third option to add measurement for the user
 @mixin measurement($propertyName, $value, $unit)
 	@if unitless($value) == false
-		@if unit($value) == "em"
+		@if unit($value) == "rem"
+			#{$propertyName}: $value
+		@else if unit($value) == "em"
 			#{$propertyName}: $value
 		@else if unit($value) == "px"
 			#{$propertyName}: $value
@@ -51,7 +53,9 @@
 // Instead of returning a property/value pair, just return the value
 @function measurement($value, $unit)
 	@if unitless($value) == false
-		@if unit($value) == "em"
+		@if unit($value) == "rem"
+			@return $value
+		@else if unit($value) == "em"
 			@return $value
 		@else if unit($value) == "px"
 			@return $value
