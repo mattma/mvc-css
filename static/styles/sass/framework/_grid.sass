@@ -1,28 +1,8 @@
 // Based on Foundation v5.2.1
 // https://github.com/zurb/foundation
-//
-// Code for small screens first, and larger devices will inherit those styles. Customize for larger screens as necessary.
-// Small grids expand to large screens easier than large grids cram into small screens.
-// Nest the grids indefinitely, though at a certain point it will get absurd.
-//
-// Move blocks up to 11 columns to the right by using classes like .large-offset-1 and .small-offset-3
-// In order to work around browsers' different rounding behaviors, Foundation will float the last column in a row to the right so the edge aligns. If your row doesn't have a count that adds up to 12 columns, you can tag the last column with a class of *end* in order to override that behavior.
-// Center your columns by adding a class of small-centered to your column. Large will inherit small centering by default, but you can also center solely on large by applying a large-centered class. To uncenter on large screens use large-uncentered.
+// docs: http://foundation.zurb.com/docs/components/grid.html
 
-// We use these to control text direction settings
-$default-float: left
-$opposite-direction: right
-
-// We use this to control whether or not CSS classes come through in the gem files.
-$include-html-classes: true
-$include-html-grid-classes: $include-html-classes
-$include-xl-html-block-grid-classes: false
-//
-// @variables
-//
-$row-width: rem-calc(1000)
-$column-gutter: rem-calc(30)
-$total-columns: 12
+//* 1. Grid: Responsive Grid
 
 // Grid Functions: @FUNCTION
 // $colNumber - Found in settings file
@@ -193,20 +173,10 @@ $total-columns: 12
 		@media #{$xxlarge-up}
 			+grid-html-classes($size: xxlarge)
 
-//
-// Block Grid Variables
-//
-// We use this to control the maximum number of block grid elements per row
-$block-grid-elements: 12
-$block-grid-default-spacing: rem-calc(20)
-
-$align-block-grid-to-grid: false
+//* 2. Grid: Block Grid
 
 @if $align-block-grid-to-grid
 	$block-grid-default-spacing: $column-gutter
-
-// Enables media queries for block-grid classes. Set to false if writing semantic HTML.
-$block-grid-media-queries: true
 
 // Create a custom block grid
 //
