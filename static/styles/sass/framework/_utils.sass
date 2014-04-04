@@ -243,40 +243,6 @@
 	.touch th.show-for-touch
 		display: table-cell !important
 
-// ====== Advance Grid system:  Selector could be any block element ======
-// Styling children CSS3. target the first element, then sibling selector. Make equal width.
-@mixin blockEqualWidth($selector: li)
-	#{$selector}
-		float: left
-		margin: 0
-		padding: 0
-	#{$selector}:first-child:nth-last-child(1)
-		width: 100%
-
-	#{$selector}:first-child:nth-last-child(2),
-	#{$selector}:first-child:nth-last-child(2) ~ #{$selector}
-		width: 50%
-
-	#{$selector}:first-child:nth-last-child(3),
-	#{$selector}:first-child:nth-last-child(3) ~ #{$selector}
-		width: 33.3333%
-
-	#{$selector}:first-child:nth-last-child(4),
-	#{$selector}:first-child:nth-last-child(4) ~ #{$selector}
-		width: 25%
-
-	#{$selector}:first-child:nth-last-child(5),
-	#{$selector}:first-child:nth-last-child(5) ~ #{$selector}
-		width: 20%
-
-	#{$selector}:first-child:nth-last-child(6),
-	#{$selector}:first-child:nth-last-child(6) ~ #{$selector}
-		width: 16.6666%
-
-	#{$selector}:first-child:nth-last-child(7),
-	#{$selector}:first-child:nth-last-child(7) ~ #{$selector}
-		width: 14.2857%
-
 
 // ====== Advance Grid system:  Selector could be any block element ======
 // Same as above, but with margin applied; Margin value would be Pixel based with px

@@ -1,5 +1,6 @@
 //* 1. Grid: Fully Customized Fixed Grid
-//* 2. Grid: Block Equal Width With Margin
+//* 2. Grid: Block Equal Width
+//* 3. Grid: Block Equal Width With Margin
 //* 1. Grid: Responsive Grid
 //* 2. Grid: Block Grid
 
@@ -63,9 +64,29 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 @mixin table-col($span: 1, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: 0)
 	width: $total-width*((($gap+ $col-width)*$span) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap))
 
+// ======================================================
+// = 2. Grid: Block Equal Width
+// Selector could be any block element
+// Styling children CSS3. target the first element, then sibling selector. Make equal width.
+// ======================================================
+@mixin blockEqualWidth($selector: li)
+	#{$selector}
+		float: left
+		margin: 0
+		padding: 0
+
+	@for $i from 1 through 8
+		@if $i == 1
+			#{$selector}:first-child:nth-last-child( #{$i} )
+				width: 100%
+		@else
+			#{$selector}:first-child:nth-last-child( #{$i} ),
+			#{$selector}:first-child:nth-last-child( #{$i} ) ~ #{$selector}
+				width: 100% / $i
+
 
 // ======================================================
-// = 2. Grid: Block Equal Width With Margin
+// = 3. Grid: Block Equal Width With Margin
 // Selector could be any block element, Only support PX
 // Same as above, but with margin applied; Margin value would be Pixel based with px
 // ======================================================
