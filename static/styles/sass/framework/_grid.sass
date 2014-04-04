@@ -13,6 +13,7 @@
 //* 3. Grid: Block Equal Width With Margin (px)
 //* 4. Grid: Block Equal Width With Margin (%)
 //* 5. Grid: Multiple Row Block with equal Percent width grids
+//* 6. Grid: Multiple Row Block with equal width grids
 //* 1. Grid: Responsive Grid
 //* 2. Grid: Block Grid
 
@@ -246,6 +247,39 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 						&:nth-child(#{$n}n)
 							margin-right: 0
 
+
+// ======================================================
+// = 6. Grid: Multiple Row Block with equal width grids
+// Support 2 through 8  in one Row, suited for repeating blocks of content
+// For IE7/8 compatibility block-grid items need to be the same height.
+// Usage: <div class="block-grid"><ul><li>Three-up element</li> <li>Three-up element</li> <li>Three-up element</li> </ul> </div>
+// Note: .block-grid // Need to apply in the div level, because the $parent is ul element
+//			+multiRowBlockEqualWidth(3,60)
+// ======================================================
+@mixin multiRowBlockEqualWidth($grid: 2, $height: auto, $gutter: false, $selector: li, $parent: ul)
+	#{$parent}
+		display: block
+		overflow: hidden
+
+		#{$selector}
+			display: block
+			+height($height)
+			float: left
+
+		$_end_val: 8
+		@for $i from 2 through $_end_val
+			@if $grid == $i
+				$_gutter_val: percentage($_end_val / $i / 100 )
+				@if $gutter == true
+					#{$selector}
+						width: 100% / $i
+				@if $gutter == false
+					margin-left: -$_gutter_val
+					#{$selector}
+						margin-left: $_gutter_val
+						width: (100% / $i) - $_gutter_val
+						//&:nth-child(2n+1)
+							//clear: left
 
 // ======================================================
 // = 1. Grid: Responsive Grid
