@@ -1,11 +1,11 @@
-//* 1. Grid: 960 Grid
+//* 1. Grid: Fully Customized Fixed Grid
 //* 1. Grid: Responsive Grid
 //* 2. Grid: Block Grid
 
 // ======================================================
-// = 1. Grid: 960 Grid
+// = 1. Grid: Fully Customized Fixed Grid
 // Custom Grid System: Fixed Width
-// Full Width: 960px  ( Pixel || Percentage ) Support
+// Based on Full Width: 960px  ( Pixel || Percentage ) Support
 // ======================================================
 
 // DO NOT MODIFIED THE VALUE BELOW, SETUP DEFAULT VALUE
@@ -13,20 +13,19 @@ $grid_columns: 0
 $grid_column_width: 0
 $gutter_column_width: 0
 
-// Setup the grid variable based on setting in _init.sass
-= setup960GridVariable
-	$measure-960-grid: (12, 60px, 20px, 6.333%, 2%), (16, 40px, 20px, 4.25%, 2%), (24, 30px, 10px, 3.1665%, 1%)
-	@each $col-960, $col-width-960-px, $gutter-width-px, $col-width-960-percent, $gutter-width-percent  in $measure-960-grid
-		@if $grid-960-columns == $col-960
-			$grid_columns: $col-960
-			@if $grid-960-measurement == px
-				$grid_column_width: $col-width-960-px
+= setupFixedGridVariable
+	$flex_grid_measurement: (12, 60px, 20px, 6.333%, 2%), (16, 40px, 20px, 4.25%, 2%), (24, 30px, 10px, 3.1665%, 1%)
+	@each $cols, $col-width-px, $gutter-width-px, $col-width-percent, $gutter-width-percent  in $flex_grid_measurement
+		@if $flex_grid_columns == $cols
+			$grid_columns: $cols
+			@if $flex_grid_measurement == px
+				$grid_column_width: $col-width-px
 				$gutter_column_width: $gutter-width-px
 			@else
-				$grid_column_width: $col-width-960-percent
+				$grid_column_width: $col-width-percent
 				$gutter_column_width: $gutter-width-percent
 
-+setup960GridVariable
++setupFixedGridVariable
 
 // Utility function — you should never need to modify this
 @function gridsystem-width($cols: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width )
