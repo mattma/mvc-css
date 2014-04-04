@@ -1,3 +1,4 @@
+//* 1. Grid: 960 Grid
 //* 1. Grid: Responsive Grid
 //* 2. Grid: Block Grid
 
@@ -7,21 +8,25 @@
 // Full Width: 960px  ( Pixel || Percentage ) Support
 // ======================================================
 
-// DO NOT MODIFIED THE VALUE BEFORE
-// Col: 12; Col-Width: 60px; Gutter: 20px;   Offset: 80px/col; Content-Width: 940px;
-// Col: 16; Col-Width: 40px; Gutter: 20px;   Offset: 60px/col; Content-Width: 940px;
-// Col: 24; Col-Width: 30px; Gutter: 10px;   Offset: 40px/col; Content-Width: 950px;
+// DO NOT MODIFIED THE VALUE BELOW, SETUP DEFAULT VALUE
 $grid_columns: 0
 $grid_column_width: 0
 $gutter_column_width: 0
 
-// @mixin grid($grid, $measure: px)
-// @param $grid: 12, 16, 24 => grid column number
-// @param measure: px, percent  => Generate a Px or % based layout
-// Generate a Px based layout
-+grid(24, px)
-// Generate a Percent fluid layout
-//+grid(24, percent)
+// Setup the grid variable based on setting in _init.sass
+= setup960GridVariable
+	$measure-960-grid: (12, 60px, 20px, 6.333%, 2%), (16, 40px, 20px, 4.25%, 2%), (24, 30px, 10px, 3.1665%, 1%)
+	@each $col-960, $col-width-960-px, $gutter-width-px, $col-width-960-percent, $gutter-width-percent  in $measure-960-grid
+		@if $grid-960-columns == $col-960
+			$grid_columns: $col-960
+			@if $grid-960-measurement == px
+				$grid_column_width: $col-width-960-px
+				$gutter_column_width: $gutter-width-px
+			@else
+				$grid_column_width: $col-width-960-percent
+				$gutter_column_width: $gutter-width-percent
+
++setup960GridVariable
 
 // Utility function — you should never need to modify this
 @function gridsystem-width($cols: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width )
@@ -43,20 +48,16 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 
 
 @mixin push($offset: 1, $marginOrPadding: margin, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width)
-	@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
-	//@if $marginOrPadding == margin
+	@if $marginOrPadding == margin or $marginOrPadding == m
 		margin-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap))
-	@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
-	//@if $marginOrPadding == padding
+	@if $marginOrPadding == padding or $marginOrPadding == p
 		padding-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap)) - $gap / 2
 
 
 @mixin pull($offset: 1, $marginOrPadding: margin, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width)
-	@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
-	//@if $marginOrPadding == margin
+	@if $marginOrPadding == margin or $marginOrPadding == m
 		margin-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap))
-	@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
-	//@if $marginOrPadding == padding
+	@if $marginOrPadding == padding or $marginOrPadding == p
 		padding-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap)) - $gap / 2
 
 

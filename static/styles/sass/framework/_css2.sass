@@ -55,6 +55,26 @@
 //* @mixin hover
 //* @mixin child($eq: last)
 
+//* Setup the default variable
+//* Used in property value assignment, several other css2 setting
+$FONT-STYLE-VALUE-LIST: 		n normal i italic o oblique in inherit
+$TEXT-ALIGN-VALUE-LIST: 		l left r right c center j justify
+$VERTICAL-ALIGN-VALUE-LIST: 	t top m middle b bottom bl baseline tt text-top
+$TEXT-TRANSFORM-VALUE-LIST: 	c capitalize u uppercase l lowercase n none
+$OVERFLOW-VALUE-LIST: 		 	v visible h hidden s scroll a auto
+$FLOAT-VALUE-LIST: 				l left r right n none
+$CLEAR-VALUE-LIST: 				l left r right b both n none
+$DISPLAY-VALUE-LIST: 			b block i inline ib inline-block  n none
+$VISIBILITY-VALUE-LIST:         		v visible h hidden c collapse
+$BACKGROUND-REPEAT-VALUE-LIST:  r repeat x repeat-x y repeat-y n no-repeat
+$BORDER-STYLE-VALUE-LIST:  dt dotted s solid db double dh dashed
+
+//* Used in offset, several other css2 setting
+$top:             						top, t
+$bottom:       						bottom, b
+$left:             						left, l
+$right:           						right, r
+
 // 1. Font Mixin
 //
 //@param $font-size: take measurement of em, px, % or plain number.
