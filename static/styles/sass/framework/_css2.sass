@@ -531,25 +531,15 @@
 
 // @param $eq number, first or f or 1, last or l   default: last
 // Usage: +child(2)
-@mixin child($eq: last)
-	@if $eq == 1 or $eq == first or $eq == f
+@mixin child($eq)
+	@if $eq == first or $eq == f or $eq == 1
 		&:first-child
 			@content
-	@if $eq == 2
-		&:nth-child(2)
-			@content
-	@if $eq == 3
-		&:nth-child(3)
-			@content
-	@if $eq == 4
-		&:nth-child(4)
-			@content
-	@if $eq == 5
-		&:nth-child(5)
-			@content
-	@if $eq == 6
-		&:nth-child(6)
-			@content
-	@if $eq == last or $eq == l
+	@else if $eq == last or $eq == l
 		&:last-child
 			@content
+	@else
+		@for $i from 10 through 1
+			@if $eq == $i
+				&:nth-child(#{$i})
+					@content
