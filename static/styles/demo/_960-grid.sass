@@ -1,0 +1,73 @@
+$section-width: 80%
+body
+	+position(r)
+	&>nav
+		+box(100% - $section-width, 100%)
+		+position(f, 0,0)
+		+bcolor(#F5F5FF)
+		box-shadow: rgba(51,51,51,0.2) 1px 1px 1px
+		&>ul
+			+overflow(scroll, y)
+			+height(1140)
+	&>section
+		+box($section-width, 100%)
+		+padding(l, 100% - $section-width)
+		&>div
+			+padding(t, 40)
+
+#grid960
+	p
+		+column(3)
+
+#grid960push
+	p
+		+column(2)
+
+		+child(l)
+			+push(4)
+
+#grid960pull
+	p
+		+column(2)
+
+		+child(1)
+			+pull(8, padding)
+
+h3
+	+color(51 51 51)
+	+margin(b, 15)
+	+fsize(2.4)
+
+.spacing
+	+margins(30, 0)
+	+clearfix
+
+// Background Color for all the grid system
+.grid-system
+	+margin(t, 80)
+	+child(1)
+		+margin(t, 0)
+	.spacing
+		p, li
+			+bcolor(lightgray)
+			+height(160)
+			+child(1)
+				background: rgb(233,204,204)
+			+child(2)
+				background: rgb(255,0,0)
+			+child(3)
+				background: green
+			+child(4)
+				background: black
+			+child(5)
+				background: yellow
+			+child(6)
+				background: maroon
+			+child(7)
+				background: blue
+			+child(8)
+				background: rgb(196,204,204)
+			+child(9)
+				background: red
+			+child(l)
+				background: rgb(20,151,151)
