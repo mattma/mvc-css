@@ -2,6 +2,69 @@
 //* 2. Grid: Block Grid
 
 // ======================================================
+// = 1. Grid: 960 Grid
+// Custom Grid System: Fixed Width
+// Full Width: 960px  ( Pixel || Percentage ) Support
+// ======================================================
+
+// DO NOT MODIFIED THE VALUE BEFORE
+// Col: 12; Col-Width: 60px; Gutter: 20px;   Offset: 80px/col; Content-Width: 940px;
+// Col: 16; Col-Width: 40px; Gutter: 20px;   Offset: 60px/col; Content-Width: 940px;
+// Col: 24; Col-Width: 30px; Gutter: 10px;   Offset: 40px/col; Content-Width: 950px;
+$grid_columns: 0
+$grid_column_width: 0
+$gutter_column_width: 0
+
+// @mixin grid($grid, $measure: px)
+// @param $grid: 12, 16, 24 => grid column number
+// @param measure: px, percent  => Generate a Px or % based layout
+// Generate a Px based layout
++grid(24, px)
+// Generate a Percent fluid layout
+//+grid(24, percent)
+
+// Utility function — you should never need to modify this
+@function gridsystem-width($cols: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width )
+	@return ($col-width * $cols) + ($gap * $cols)
+
+$total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column_width)
+
+@mixin column($col, $alpha: false, $omega: false, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width, $side: left)
+	display: inline
+	float: $side
+	width: $total-width*(((( $gap + $col-width )*$col) - $gap ) / gridsystem-width($grid_columns, $col-width, $gap))
+	margin: 0 $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap))
+	@if $alpha == true // first columns
+		margin-left: 0
+	@if $omega == true // last columns
+		margin-right: 0
+	// *width: $total-width*(((( $gap + $col-width )*$col)- $gap ) / gridsystem-width($grid_columns, $col-width, $gap))-$correction
+	// *margin: 0 $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap))-$correction
+
+
+@mixin push($offset: 1, $marginOrPadding: margin, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width)
+	@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
+	//@if $marginOrPadding == margin
+		margin-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap))
+	@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
+	//@if $marginOrPadding == padding
+		padding-left: $total-width*((( $gap + $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(( $gap *.5)/gridsystem-width($grid_columns, $col-width, $gap)) - $gap / 2
+
+
+@mixin pull($offset: 1, $marginOrPadding: margin, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: $gutter_column_width)
+	@if $marginOrPadding == nth($margin-value, 1) or $marginOrPadding == nth($margin-value, 2)
+	//@if $marginOrPadding == margin
+		margin-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap))
+	@if $marginOrPadding == nth($padding-value, 1) or $marginOrPadding == nth($padding-value, 2)
+	//@if $marginOrPadding == padding
+		padding-right: $total-width*((($gap+ $col-width)*$offset) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap)) - $gap / 2
+
+
+@mixin table-col($span: 1, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: 0)
+	width: $total-width*((($gap+ $col-width)*$span) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap))
+
+
+// ======================================================
 // = 1. Grid: Responsive Grid
 // Based on Foundation v5.2.1
 // https://github.com/zurb/foundation
