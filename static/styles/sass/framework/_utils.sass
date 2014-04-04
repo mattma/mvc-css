@@ -244,62 +244,6 @@
 		display: table-cell !important
 
 
-// ====== Advance Grid system:  Selector could be any block element ======
-// Same as above, but with margin applied; Margin value would be Pixel based with px
-// Only Support %
-@mixin blockEqualPercent($margin: 1%, $alpha: false, $omega: false, $totalWidth: 100%, $height: 160, $selector: li, $defaultUnit: "%")
-	$grid-unit: 2 3 4 5 6 7 8 9 10
-
-	#{$selector}
-		float: left
-		position: relative
-		padding: 0
-		+height($height, px)
-
-		@if $alpha == false
-			&:first-child
-				+margin(left, $margin, $defaultUnit)
-		@else
-			&:first-child
-				margin-left: 0 !important
-
-		@if $omega == false
-			&:last-child
-				+margin(right, $margin, $defaultUnit)
-		@else
-			&:last-child
-				margin-right: 0 !important
-
-	#{$selector}:first-child:nth-last-child(1)
-		margin: 0
-		@if $alpha != $omega
-			+width( $totalWidth - $margin )
-			@if $alpha == true
-				&:first-child
-					+margin(left, $margin, $defaultUnit)
-			@if $omega == true
-				&:last-child
-					+margin(right, $margin, $defaultUnit)
-		@else if $alpha == false and $omega == false
-			+width( $totalWidth - ( $margin*2) )
-			+margin(left, $margin, $defaultUnit)
-			+margin(right, $margin, $defaultUnit)
-		@else if $alpha == true and $omega == true
-			+width( $totalWidth )
-
-	@each $n in $grid-unit
-		#{$selector}:first-child:nth-last-child(#{$n}),
-		#{$selector}:first-child:nth-last-child(#{$n}) ~ #{$selector}
-			@if $alpha != $omega
-				+width(  ( ($totalWidth - ($margin * ($n * 2 - 1 ) )) / $n ) )
-			@else if $alpha == false and $omega == false
-				+width(  ( ($totalWidth - ($margin * ($n * 2 ) )) / $n ) )
-			@else if $alpha == true and $omega == true
-				+width(  ( ($totalWidth - ($margin * ($n * 2 - 2 ) )) / $n ) )
-			+margin(left, $margin, $defaultUnit)
-			+margin(right, $margin, $defaultUnit)
-
-
 //--------------------------------------------------------------------------------------
 // Multiple Row Block with equal Percent width grids
 // Support $grid-unit number in one Row, suited for repeating blocks of content
