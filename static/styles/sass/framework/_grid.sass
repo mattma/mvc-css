@@ -29,7 +29,7 @@ $grid_column_width: 0
 $gutter_column_width: 0
 
 = setupFixedGridVariable
-	@each $cols, $col-width-px, $gutter-width-px, $col-width-percent, $gutter-width-percent  in $flex_grid_measurement
+	@each $cols, $col-width-px, $gutter-width-px, $col-width-percent, $gutter-width-percent  in $flex_grid_measure_map
 		@if $flex_grid_columns == $cols
 			$grid_columns: $cols
 			@if $flex_grid_measurement == px

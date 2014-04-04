@@ -33,7 +33,12 @@ $flex_grid_columns: 					24
 $flex_grid_measurement: 				percent
 // @param  Column_Number, Column_Width_in_PX, Gutter_Width_in_PX, Column_Width_in_Percentage, Gutter_Width_in_Percentage
 // add another set of arguments in brackets to create your own custom flex grid
-$flex_grid_measurement: 				(12, 60px, 20px, 6.333%, 2%), (16, 40px, 20px, 4.25%, 2%), (24, 30px, 10px, 3.1665%, 1%)
+//
+// Percentage Calculation:
+// @param Column_Width_in_Percentage: Column_Width_in_PX / Total_Page_Width. Ex: 24 col 960GS, 30/950
+// @param Gutter_Width_in_Percentage:    Gutter_Width_in_PX / Total_Page_Width. Ex: 24 col 960GS, 10/950
+// Ex: Built your own based on max-width: 1140px; would be  ( 24, 42px, 5px, 3.71%, 0.44% )
+$flex_grid_measure_map: 				(12, 60px, 20px, 6.333%, 2%), (16, 40px, 20px, 4.25%, 2%), (24, 30px, 10px, 3.1665%, 1%)
 
 //* 1. Grid: Responsive Grid Setting
 //* @variables
