@@ -204,6 +204,38 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 			+margin(left, $margin, $defaultUnit)
 			+margin(right, $margin, $defaultUnit)
 
+
+// ======================================================
+// = 5. Grid: Multiple Row Block with equal Percent width grids
+// Support $grid-unit number in one Row, suited for repeating blocks of content
+// Usage: <div class="block-grid"><ul><li>Three-up element</li> <li>Three-up element</li> <li>Three-up element</li> </ul> </div>
+// Note: .block-grid // Need to apply in the div level, because the $parent is ul element
+//			+multiRowPercent($grid: Number)
+// ======================================================
+@mixin multiRowPercent($grid: 2, $margin: 1%, $margin-bottom: $margin, $totalWidth: 100%, $height: 40, $selector: li, $parent: ul, $defaultUnit: "%")
+
+	#{$parent}
+		display: block
+		overflow: hidden
+
+		#{$selector}
+			display: block
+			+height($height)
+			float: left
+
+			@for $n from 1 through 10
+				@if $grid == $n
+					@if $margin == 0
+						width: $totalWidth / $n
+					@else
+						$width: ( $totalWidth - ( $margin * ( $n - 1 ) ) ) / $n
+						width: $width
+						+margin(right, $margin, $defaultUnit)
+						+margin(bottom, $margin-bottom, $defaultUnit)
+						&:nth-child(#{$n}n)
+							margin-right: 0
+
+
 // ======================================================
 // = 1. Grid: Responsive Grid
 // Based on Foundation v5.2.1

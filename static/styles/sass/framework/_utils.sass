@@ -245,39 +245,6 @@
 
 
 //--------------------------------------------------------------------------------------
-// Multiple Row Block with equal Percent width grids
-// Support $grid-unit number in one Row, suited for repeating blocks of content
-// Usage: <div class="block-grid"><ul><li>Three-up element</li> <li>Three-up element</li> <li>Three-up element</li> </ul> </div>
-// Note: .block-grid // Need to apply in the div level, because the $parent is ul element
-//			+multiRowPercent($grid: Number)
-//--------------------------------------------------------------------------------------
-@mixin multiRowPercent($grid: 2, $margin: 1%, $margin-bottom: $margin, $totalWidth: 100%, $height: 40, $selector: li, $parent: ul, $defaultUnit: "%")
-	$grid-unit: 1 2 3 4 5 6 7 8 9 10
-
-	#{$parent}
-		display: block
-		overflow: hidden
-
-		#{$selector}
-			display: block
-			+height($height)
-			float: left
-
-		@each $n in $grid-unit
-			@if $grid == $n
-				#{$selector}
-					@if $margin == 0
-						width: $totalWidth / $n
-					@else
-						$width: ( $totalWidth - ( $margin * ( $n - 1 ) ) ) / $n
-						width: $width
-						+margin(right, $margin, $defaultUnit)
-						+margin(bottom, $margin-bottom, $defaultUnit)
-						&:nth-child(#{$n}n)
-							margin-right: 0
-
-
-//--------------------------------------------------------------------------------------
 // Multiple Row Block with equal width grids
 // Support 2, 3, 4, 5, 6 in one Row, suited for repeating blocks of content
 // For IE7/8 compatibility block-grid items need to be the same height.
