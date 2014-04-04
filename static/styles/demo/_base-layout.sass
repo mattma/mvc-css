@@ -1,3 +1,4 @@
+// used for flex-grid and other grid basic layout styles
 $section-width: 80%
 body
 	+position(r)
@@ -15,23 +16,6 @@ body
 		&>div
 			+padding(t, 40)
 
-#grid960
-	p
-		+column(3)
-
-#grid960push
-	p
-		+column(2)
-
-		+child(2)
-			+push(4)
-
-#grid960pull
-	p
-		+column(2)
-
-		+child(4)
-			+pull(8, padding)
 
 h3
 	+color(51 51 51)
