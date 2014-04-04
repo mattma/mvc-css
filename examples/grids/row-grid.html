@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../static/styles/reset.css">
+	<link rel="stylesheet" href="../../static/styles/base.css">
+</head>
+<body>
+	<section>
+		<div class='container'>
+			<article class="grid-system">
+				<h3>1.3 Grid System - Block Equal Width</h3>
+				<div class="doc">
+					<p class="content">
+						1. Advance Grid system: Selector could be any block element.  <br>
+						2. Styling children CSS3. target the first element, then sibling selector. Make equal width. <br>
+						3. It is up to 7 child elements.  <br>
+						4. Modify the HTML markup without touching the CSS at all.
+					</p>
+					<p id="blockEqualWidthSnap">
+						<code>
+							@mixin blockEqualWidth($selector: li)
+						</code>
+					</p>
+				</div>
+				<div id="blockEqualWidth" class="spacing">
+					<ul>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+					</ul>
+				</div>
+			</article>
+
+			<article class="grid-system">
+				<h3>1.4 Grid System - Block Equal Width With Margin</h3>
+				<div class="doc">
+					<p class="content">
+						1. Advance Grid system: Selector could be any block element.  <br>
+						2. Styling children CSS3. target the first element, then sibling selector. Make equal width. <br>
+						3. It is up to 7 child elements.  <br>
+						4. Same as above, but with margin applied with custom separator <br>
+						5. Modify the HTML markup without touching the CSS at all. <br>
+						6. Using custom paramters to change the style behavior <br>
+					</p>
+					<p id="blockEqualWidthWithMarginSnap">
+						<code>
+							@mixin blockEqualWidthWithMargin($margin: 5px, $alpha: false, $omega: false, $totalWidth: 960, $height: 160, $selector: li, $dividerWidth: 0, $dividerColor: rgb(255,0,0), $defaultUnit: px)
+						</code>
+					</p>
+				</div>
+				<div id="blockEqualWidthWithMargin" class="spacing">
+					<ul>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+					</ul>
+				</div>
+			</article>
+
+			<article class="grid-system">
+				<h3>1.5 Grid System - Block Equal Width (%) With Margin</h3>
+
+				<div class="doc">
+					<p class="content">
+						1. Advance Grid system: Selector could be any block element.  <br>
+						2. Styling children CSS3. target the first element, then sibling selector. Make equal width. <br>
+						3. It is up to 9 child elements. (easy edit for more)  <br>
+						4. Modify the HTML markup without touching the CSS at all. <br>
+						5. Using custom paramters to change the style behavior <br>
+					</p>
+					<p id="blockEqualWidthPercentSnap">
+						<code>
+							@mixin blockEqualPercent($margin: 1%, $alpha: false, $omega: false, $totalWidth: 100%, $height: 160, $selector: li, $defaultUnit: "%")
+						</code>
+					</p>
+				</div>
+
+				<div id="blockEqualTest" class="spacing">
+					<ul>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+						<li>hello</li>
+					</ul>
+				</div>
+			</article>
+
+			<article class="grid-system">
+				<h3>1.6 Grid System - Multiple Row Block Equal Width</h3>
+				<div class="doc">
+					<p class="content">
+						1. Multiple Row Block with equal width grids <br>
+						2. Support 2, 3, 4, 5, 6 in one Row, suited for repeating blocks of content <br>
+						3. For IE7/8 compatibility block-grid items need to be the same height. <br>
+						4. TODO: Built custom $gutter value. Idea:  +multiRowBlockEqualWidth($grid: 2, $height: auto, $gutter: false, $gutter-value: default, $selector: li, $parent: ul)   when $gutter-value is actually value, use math to dynamically reset the width
+					</p>
+					<p id="multiRowBlockEqualWidthSnap">
+						<code>
+							@mixin multiRowBlockEqualWidth($grid: 2, $height: auto, $gutter: false, $selector: li, $parent: ul)
+						</code>
+					</p>
+				</div>
+				<div id="multiRowBlockEqualWidth" class="spacing">
+					<ul>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+					</ul>
+				</div>
+			</article>
+
+			<article class="grid-system">
+				<h3>1.7 Grid System - Multiple Row Flexible Percent Width</h3>
+				<div class="doc">
+					<p class="content">
+						1. Multiple Row Block with equal width percentage grids <br>
+						2. Support 1 to 10 in one Row, suited for repeating blocks of content, easy updating <br>
+						3. For IE7/8 compatibility block-grid items need to be the same height. <br>
+					</p>
+					<p id="multiRowBlockPercentWithSnap">
+						<code>
+							@mixin multiRowPercent($grid: 2, $margin: 1%, $margin-bottom: $margin, $totalWidth: 100%, $height: 40, $selector: li, $parent: ul, $defaultUnit: "%")
+						</code>
+					</p>
+				</div>
+				<div id="multiRowBlockPercent" class="spacing">
+					<ul>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+						<li>Three-up element</li>
+					</ul>
+				</div>
+			</article>
+
+		</div>
+	</section>
+</body>
+</html>
