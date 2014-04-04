@@ -1,7 +1,8 @@
 //* 1. Universal Toolbox
 //* @mixin ellipsis
 //* @mixin _clearfix  // bulletproof one
-//* =clearfix  	// used for resposive grid system
+//* @mixin clearfix  	// used for resposive grid system
+//* @mixin triangle($triangle-size, $triangle-color, $triangle-direction)
 
 //* 2. Placeholder
 //* %setBoxSizing  // used for resposive grid system
@@ -40,6 +41,29 @@
 		display: table
 	&:after
 		clear: both
+
+// We use this to create isosceles triangles
+// $triangle-size - Used to set border-size. No default, set a px or em size.
+// $triangle-color - Used to set border-color which makes up triangle. No default
+// $triangle-direction - Used to determine which direction triangle points. Options: top, bottom, left, right
+=triangle($triangle-size, $triangle-color, $triangle-direction)
+	content: ""
+	display: block
+	width: 0
+	height: 0
+	border: inset $triangle-size
+	@if $triangle-direction == top or $triangle-direction == t
+		border-color: $triangle-color transparent transparent transparent
+		border-top-style: solid
+	@if $triangle-direction == bottom or $triangle-direction == b
+		border-color: transparent transparent $triangle-color transparent
+		border-bottom-style: solid
+	@if $triangle-direction == left  or $triangle-direction == l
+		border-color: transparent transparent transparent $triangle-color
+		border-left-style: solid
+	@if $triangle-direction == right or $triangle-direction == r
+		border-color: transparent $triangle-color transparent transparent
+		border-right-style: solid
 
 //* 2. Placeholder
 
