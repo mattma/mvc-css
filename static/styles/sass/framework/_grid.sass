@@ -1,4 +1,5 @@
 //* 1. Grid: Fully Customized Fixed Grid
+//* 2. Grid: Block Equal Width With Margin
 //* 1. Grid: Responsive Grid
 //* 2. Grid: Block Grid
 
@@ -14,7 +15,6 @@ $grid_column_width: 0
 $gutter_column_width: 0
 
 = setupFixedGridVariable
-	$flex_grid_measurement: (12, 60px, 20px, 6.333%, 2%), (16, 40px, 20px, 4.25%, 2%), (24, 30px, 10px, 3.1665%, 1%)
 	@each $cols, $col-width-px, $gutter-width-px, $col-width-percent, $gutter-width-percent  in $flex_grid_measurement
 		@if $flex_grid_columns == $cols
 			$grid_columns: $cols
@@ -63,6 +63,68 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 @mixin table-col($span: 1, $grid_columns: $grid_columns, $col-width: $grid_column_width, $gap: 0)
 	width: $total-width*((($gap+ $col-width)*$span) / gridsystem-width($grid_columns, $col-width, $gap)) + $total-width*(($gap*.5)/gridsystem-width($grid_columns, $col-width, $gap))
 
+
+// ======================================================
+// = 2. Grid: Block Equal Width With Margin
+// Selector could be any block element, Only support PX
+// Same as above, but with margin applied; Margin value would be Pixel based with px
+// ======================================================
+@mixin blockEqualWidthWithMargin($margin: 5px, $alpha: false, $omega: false, $totalWidth: 960, $height: 160, $selector: li, $dividerWidth: 0, $dividerColor: rgb(255,0,0), $defaultUnit: px)
+	#{$selector}
+		float: left
+		position: relative
+		padding: 0
+		+height($height, $defaultUnit)
+		&:after
+			content: ""
+			+box($dividerWidth, $height * 0.8)
+			+bcolor($dividerColor)
+			+position(absolute, ($height * 0.2) / 2, -$margin, right)
+		&:last-child:after
+			display: none
+
+		@if $alpha == false
+			&:first-child
+				+margin(left, $margin, $defaultUnit)
+		@else
+			&:first-child
+				margin-left: 0 !important
+
+		@if $omega == false
+			&:last-child
+				+margin(right, $margin, $defaultUnit)
+		@else
+			&:last-child
+				margin-right: 0 !important
+
+		&:first-child:nth-last-child(1)
+			margin: 0
+			@if $alpha != $omega
+				+width( $totalWidth - $margin )
+				@if $alpha == true
+					&:first-child
+						+margin(left, $margin, $defaultUnit)
+				@if $omega == true
+					&:last-child
+						+margin(right, $margin, $defaultUnit)
+			@else if $alpha == false and $omega == false
+				+width( $totalWidth - ( $margin*2) )
+				+margin(left, $margin, $defaultUnit)
+				+margin(right, $margin, $defaultUnit)
+			@else if $alpha == true and $omega == true
+				+width( $totalWidth )
+
+	@for $i from 2 through 8
+		#{$selector}:first-child:nth-last-child( #{$i} ),
+		#{$selector}:first-child:nth-last-child( #{$i} ) ~ #{$selector}
+			@if $alpha != $omega
+				+width( ( ($totalWidth - ($margin * ($i * 2 - 1) )) / $i ) )
+			@else if $alpha == false and $omega == false
+				+width( ( ($totalWidth - ($margin * ($i * 2) )) / $i ) )
+			@else if $alpha == true and $omega == true
+				+width( ( ($totalWidth - ($margin * ($i * 2 - 2) )) / $i ) )
+			+margin(left, $margin, $defaultUnit)
+			+margin(right, $margin, $defaultUnit)
 
 // ======================================================
 // = 1. Grid: Responsive Grid
