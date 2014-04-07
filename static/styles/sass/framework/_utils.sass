@@ -121,7 +121,7 @@
 				display: inherit !important
 			#{$visibility-none-list}
 				display: none !important
-			@if $include-table-visibility-classes != false
+			@if $include-table-visibility-classes != false and $RWD-grid-global-show
 				#{$visibility-table-list}
 					display: table
 				#{$visibility-table-header-group-list}
@@ -133,7 +133,7 @@
 				#{$visibility-table-cell-list}
 					display: table-cell !important
 
-@if $include-html-visibility-classes != false
+@if $include-html-visibility-classes != false and $RWD-grid-global-show
 	+visibility-loop
 	// Orientation targeting
 	.show-for-landscape,

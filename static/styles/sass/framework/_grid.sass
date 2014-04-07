@@ -415,7 +415,7 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 	.columns.#{$size}-uncentered.opposite
 		float: $opposite-direction
 
-@if $include-html-grid-classes
+@if $include-html-grid-classes and $RWD-grid-global-show
 	.row
 		+grid-row
 		@extend %setBoxSizing
@@ -451,7 +451,7 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 				+grid-column($push: $i, $collapse: null, $float: false)
 			.pull-#{$i}
 				+grid-column($pull: $i, $collapse: null, $float: false)
-	@if $include-xl-html-block-grid-classes
+	@if $include-xl-html-block-grid-classes and $RWD-grid-global-show
 		@media #{$xlarge-up}
 			+grid-html-classes($size: xlarge)
 		@media #{$xxlarge-up}
@@ -519,18 +519,18 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 		.#{$size}-block-grid-#{$i}
 			+block-grid($i, $block-grid-default-spacing, $include-spacing, false)
 
-@if $include-html-grid-classes
+@if $include-html-grid-classes and $RWD-grid-global-show
 	[class*="block-grid-"]
 		+block-grid
 		@extend %setBoxSizing
-	@if $block-grid-media-queries
+	@if $block-grid-media-queries and $RWD-grid-global-show
 		@media #{$small-up}
 			+block-grid-html-classes($size: small, $include_spacing: false)
 		@media #{$medium-up}
 			+block-grid-html-classes($size: medium, $include_spacing: false)
 		@media #{$large-up}
 			+block-grid-html-classes($size: large, $include_spacing: false)
-		@if $include-xl-html-block-grid-classes
+		@if $include-xl-html-block-grid-classes and $RWD-grid-global-show
 			@media #{$xlarge-up}
 				+block-grid-html-classes($size: xlarge, $include_spacing: false)
 			@media #{$xxlarge-up}

@@ -1,9 +1,9 @@
 @charset "UTF-8"
 // =================== Framework Info ===================
-/* MVCCSS Framework Version 0.2.0 */
-/* Made with love by [Matt Ma]( matt@mattmadesign.com ) */
-// http://www.mattmadesign.com */
-// Copyright©2014 Matt Ma Design */
+// MVCCSS Framework Version 0.2.0
+// Made with love by [Matt Ma]( matt@mattmadesign.com )
+// http://www.mattmadesign.com
+// Copyright©2014 Matt Ma Design
 // ============================= ===================
 
 //* Global Values
@@ -52,13 +52,19 @@ $total-columns: 						12
 $default-float: 							left
 $opposite-direction: 					right
 
+// In conjuntion with other variable to show up RWD
+// html grid, media queries, xl block grid, block grid, visibilities
+// !!!IMPORTANT: Master Variable which need to set to show up the class
+// @change @variables
+$RWD-grid-global-show:  				false
+
 // We use this to control whether or not CSS classes come through in the gem files.
 // @change @variables
-$include-html-grid-classes: 			false
+$include-html-grid-classes: 			true
 // Enables media queries for block-grid classes. Set to false if writing semantic HTML.
 // @change @variables
-$block-grid-media-queries: 			false
-$include-xl-html-block-grid-classes: false
+$block-grid-media-queries: 			true
+$include-xl-html-block-grid-classes: true
 
 //* 2. Grid: Block Grid Setting
 // We use this to control the maximum number of block grid elements per row
@@ -69,9 +75,9 @@ $align-block-grid-to-grid: 			false
 
 //* Visibility Setting (used in _utils.sass)
 // @change @variables
-$include-html-visibility-classes: 		false
+$include-html-visibility-classes: 		true
 // @change @variables
-$include-table-visibility-classes: 		false
+$include-table-visibility-classes: 		true
 // Visibility Breakpoints
 $visibility-breakpoint-sizes: 			small, medium, large, xlarge, xxlarge
 
