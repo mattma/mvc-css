@@ -41,6 +41,20 @@ gulp.task('injectLRScript', function() {
         .pipe(gulp.dest(path.join(__dirname, appName)));
 });
 
+gulp.task('build', function() {
+	var srcFIles = [
+		'./__init.sass',
+		'./_controller.sass',
+		'./_css2.sass',
+		'./_grid.sass',
+		'./_utils.sass'
+	];
+	// the base option sets the relative root for the set of files,
+	// preserving the folder structure
+	return gulp.src(srcFIles, { base: './static/styles/sass/framework/' } )	
+				.pipe(gulp.dest('./build'));	
+});
+
 // Smart compile: if filename start with _, when save it will compile the whole project.
 // if filename is all text without _, when save it will only compile changed file
 gulp.task('sass', function() {
