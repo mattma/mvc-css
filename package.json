@@ -21,7 +21,8 @@
     "gulp-notify": "~1.0.0-beta",
     "gulp-autoprefixer": "0.0.6",
     "gulp-changed": "~0.2.1",
-    "gulp-imagemin": "~0.1.5"
+    "gulp-imagemin": "~0.1.5",
+    "gulp-clean": "^0.2.4"
   },
   "engines": {
     "node": ">= 0.10.0"

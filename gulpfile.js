@@ -41,7 +41,12 @@ gulp.task('injectLRScript', function() {
         .pipe(gulp.dest(path.join(__dirname, appName)));
 });
 
-gulp.task('build', function() {
+gulp.task('clean',function() {
+    	return gulp.src('build', {read: false})
+      	.pipe(plugins.clean());
+});
+
+gulp.task('build', ['clean'], function(cb) {
 	var srcFIles = [
 		'./__init.sass',
 		'./_controller.sass',
@@ -51,8 +56,13 @@ gulp.task('build', function() {
 	];
 	// the base option sets the relative root for the set of files,
 	// preserving the folder structure
-	return gulp.src(srcFIles, { base: './static/styles/sass/framework/' } )	
-				.pipe(gulp.dest('./build'));	
+	gulp.src(srcFIles, { cwd: 'static/styles/sass/framework/**' } )
+		.pipe(gulp.dest( path.join(__dirname, 'build/framework') ));
+
+	gulp.src( './static/styles/reset.css' )
+		.pipe(gulp.dest( path.join(__dirname, 'build') ));
+
+	cb();
 });
 
 // Smart compile: if filename start with _, when save it will compile the whole project.
