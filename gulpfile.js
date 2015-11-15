@@ -30,6 +30,7 @@ var AutoPrefixerConfig = [
 var path = require('path');
 var server = require('tiny-lr')();
 var sassRootPath = 'static/styles/sass/';
+var dist = 'framework';
 
 // task: stripLRScript
 // @describe    Strip out the LiveReload Script tag in HTML
@@ -50,7 +51,7 @@ gulp.task('injectLRScript', function() {
 });
 
 // @describe Remove the 'dist/' folder, start from a clean slate
-gulp.task('clean', del.bind(null, ['dist'], {force: true}));
+gulp.task('clean', del.bind(null, [dist], {force: true}));
 
 // Dependency Task
 // Only run in the build process
@@ -78,11 +79,11 @@ gulp.task('release', ['clean'], function(cb) {
 	// the base option sets the relative root for the set of files,
 	// preserving the folder structure
 	gulp.src(srcFIles, { cwd: 'static/styles/sass/framework/**' } )
-		.pipe(gulp.dest( path.join(__dirname, 'dist/framework') ));
+		.pipe(gulp.dest( path.join(__dirname, dist, 'sass') ));
 
 	gulp.src(['./static/styles/reset.css'])
 		.pipe( $.concat('reset.css') )
-		.pipe(gulp.dest( path.join(__dirname, 'dist') ));
+		.pipe(gulp.dest( path.join(__dirname, dist)));
 
 	cb();
 });

@@ -1,0 +1,234 @@
+//****************************************************************
+//* Table of Content  [CONTROLLER]
+//*
+//* @mixin measurement($propertyName, $value, $unit)
+//* @function measurement($value, $unit)
+//* @mixin prop($propertyName, $value, $value-support-list)
+//* @function relative-image-path($path)
+//* @function absolute-image-path($path)
+//* @function color-format-helper( $list )
+//* @function trans-color-helper( $list, $amount )
+//* @function param-helper( $list, $unit: px )
+//* @mixin animate($name: fadeIn, $duration: 1s, $delay: .2s, $function: ease, $mode: both)
+//* @function sum-list($list)
+//* @function column-count($grid_columns)
+//* @function gutter-context($gutter, $context)
+//* @function repeat($count, $repeat)
+//* @function reverse($list)
+//* @mixin t($target, $context)
+//* @function t($target, $context)
+//* @function strip-unit($num)
+//* @function convert-to-rem($value, $base-value: 16px)
+//* @function rem-calc($values, $base-value: 16px)
+//* @function lower-bound($range)
+//* @function upper-bound($range)
+//*
+//****************************************************************
+
+
+//**************************************************
+//* FRAMEWORK UTILITY FUNCTION
+//**************************************************
+
+
+// Dealing with Measure Evaluation: px, percent, em
+// When user provide the measurement, it will being evaluate and output its value
+// $propertyName: String.  #the name of the property and no quotation needed.  ex: font-size
+// $value: String.     #value of the property value pair. It should be an variable which entered by user
+// $unit: px, em, %.   #If user do not provide the measure, use the third option to add measurement for the user
+@mixin measurement($propertyName, $value, $unit)
+	@if unitless($value) == false
+		@if unit($value) == "rem"
+			#{$propertyName}: $value
+		@else if unit($value) == "em"
+			#{$propertyName}: $value
+		@else if unit($value) == "px"
+			#{$propertyName}: $value
+		@else if unit($value) == "%"
+			#{$propertyName}: $value
+	@else
+		#{$propertyName}: $value + $unit
+
+// Dealing with Measure Evaluation: px, percent, em
+// Instead of returning a property/value pair, just return the value
+@function measurement($value, $unit)
+	@if unitless($value) == false
+		@if unit($value) == "rem"
+			@return $value
+		@else if unit($value) == "em"
+			@return $value
+		@else if unit($value) == "px"
+			@return $value
+		@else if unit($value) == "%"
+			@return $value
+	@else
+		@return $value + $unit
+
+
+// Dealing with assigning the variable
+// $propertyName: String.  #the name of the property and no quotation needed.  ex: font-size
+// $value: String.     #value of the property value pair. It should be an variable which entered by user
+// $value-support-list: Array. #Array with no comma in between. Supporting value by specific property
+//*****
+//** This is used for switching between shorthand setting (_min.sass model file) and full word setting. (regular model file)
+//** The logic here is based on the position of the array in the model, if the position is odd number,
+//** This is the shorthand way, show the full property value using the index of even number
+//** When shorthand model construct property list, it has to follow this way
+//*****
+@mixin prop($propertyName, $value, $value-support-list)
+	@each $support-value in $value-support-list
+		@if $value == $support-value
+			$num: index($value-support-list, $value)
+			@if $num % 2 == 1
+				#{$propertyName}: nth( $value-support-list, $num+1 )
+			@else
+				#{$propertyName}: nth( $value-support-list, $num )
+
+
+// Return an image path relative to the CSS folder structure
+@function relative-image-path($path)
+	@return url("#{$DEFAULT-RELATIVE-IMAGE-PATH}#{$path}")
+
+
+// Return an image path absolute to the project folder structure
+@function absolute-image-path($path)
+	@return url("#{$DEFAULT-ABSOLUTE-IMAGE-PATH}#{$path}")
+
+
+// Help to create RGB color by passing in an array
+// Fallback to any color value or color keyword
+@function color-format-helper( $list )
+	@if length($list) == 3
+		$r: nth($list, 1)
+		$g: nth($list, 2)
+		$b: nth($list, 3)
+		@return rgb($r,$g,$b)
+
+	@if length($list) == 4
+		$r: nth($list, 1)
+		$g: nth($list, 2)
+		$b: nth($list, 3)
+		$a: nth($list, 4)
+		@return rgba($r,$g,$b,$a)
+
+	@else if length($list) == 1
+		@if type-of $list == color
+			@return $list
+
+
+// an array RGB number, any color value or color keyword
+// opacity amount between 0 to 1
+@function trans-color-helper( $list, $amount )
+	@return rgba(color-format-helper($list), $amount)
+
+
+// Special function to clean up an array of value
+// specially design for working with padding or margin property by passing the value as parameters
+@function param-helper( $list, $unit: px )
+	@if length($list) == 1
+		@return measurement( $list, $unit )
+	@else if length($list) == 2
+		@return measurement( nth($list, 1), $unit ) measurement( nth($list, 2), $unit )
+	@else if length($list) == 3
+		@return measurement( nth($list, 1), $unit ) measurement( nth($list, 2), $unit )  measurement( nth($list, 3), $unit )  measurement( nth($list, 2), $unit )
+	@else if length($list) == 4
+		@return measurement( nth($list, 1), $unit ) measurement( nth($list, 2), $unit )  measurement( nth($list, 3), $unit )  measurement( nth($list, 4), $unit )
+
+
+// Special @mixin for the CSS3 Animation, work with _animate.sass file
+// work with special easing function
+@mixin animate($name: fadeIn, $duration: 1s, $delay: .2s, $function: ease, $mode: both)
+	+experimental(animation, $name $duration $delay $function $mode)
+
+
+// New Functions Goes here
+
+// Calculate the total sum of a list (context)
+@function sum-list($list)
+	$sum: 0 // zero out the initial sum
+	// loop through each value in the list adding it to $list-sum
+	@for $i from 1 through length($list)
+		$sum: $sum + nth(nth($list, $i), 1)
+
+	@return nth($sum, 1)
+
+
+// Find column count
+@function column-count($grid_columns)
+	@if type-of($grid_columns) == number
+		@return $grid_columns
+	@if type-of($grid_columns) == list
+		@return length($grid_columns)
+
+
+// Context of gutters
+@function gutter-context($gutter, $context)
+	@return $gutter * 100% / $context
+
+
+@function repeat($count, $repeat)
+	$list: $repeat
+	@for $i from 2 through $count
+		$list: join($repeat, $list)
+	@return $list
+
+
+// Reverses direction of a list
+@function reverse($list)
+	$length: length($list)
+	$return: ()
+	@for $i from 0 to $length
+		$return: append($return, nth($list, $length - $i), comma)
+	@return $return
+
+
+// Return the total value of the Two value
+@function total-value($first-value, $second-value)
+	@return $first-value + $second-value
+
+
+// Return the responsive percentage value with width. As long as it is the same measurement, it works.
+@mixin t($target, $context)
+	@if unit($target) == unit($context)
+		$result: ($target / $context) * 100%
+		+width($result)
+
+
+// Return the responsive percentage value as a function. As long as it is the same measurement, it works.
+@function t($target, $context)
+	@if unit($target) == unit($context)
+		$result: ($target / $context) * 100%
+		@return $result
+
+// Took from Foundation 5 framework.
+//
+// It strips the unit of measure and returns it
+@function strip-unit($num)
+	@return $num / ($num * 0 + 1)
+
+// CONVERT TO REM
+@function convert-to-rem($value, $base-value: 16px)
+	$value: strip-unit($value) / strip-unit($base-value) * 1rem
+	@if $value == 0rem
+		$value: 0
+	// Turn 0rem into 0
+	@return $value
+
+@function rem-calc($values, $base-value: 16px)
+	$max: length($values)
+	@if $max == 1
+		@return convert-to-rem(nth($values, 1), $base-value)
+	$remValues: ()
+	@for $i from 1 through $max
+		$remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value))
+	@return $remValues
+
+@function lower-bound($range)
+	@if length($range) <= 0
+		@return 0
+	@return nth($range, 1)
+
+@function upper-bound($range)
+	@if length($range) < 2
+		@return 999999999999
+	@return nth($range, 2)

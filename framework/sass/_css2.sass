@@ -1,0 +1,566 @@
+// 1. Font Mixin
+//* @mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: rem )
+//* @mixin fweight($font-weight: $DEFAULT-FONT-WEIGHT)
+//* @mixin ffamily($font-families...)
+//* @mixin fstyle($font-style: $DEFAULT-FONT-STYLE)
+//* @mixin font($font-settings...)     or  @mixin f
+//* @mixin lheight($line-height, $defaultUnit: px)
+//* @mixin lspacing($letter-spacing, $defaultUnit: px )
+//* @mixin tindent($text-indent: $DEFAULT-TEXT-INDENT-VALUE, $defaultUnit: px )
+//* @mixin talign($text-align: center)
+//* @mixin valign($vertical-align)
+//* @mixin ttransform($transform: capitalize)
+
+// 2. Color Mixin
+//* @mixin color( $text-color: 102 102 102 )
+
+// 3. Background Mixin
+//* @mixin background($background-settings...)    OR  @mixin b
+//* @mixin bposition( $bg-pos-x: 0, $bg-pos-y: 0, $defaultUnit: px )
+//* @mixin brepeat( $background-repeat )
+//* @mixin bcolor( $bg-color: 102 102 102 )
+//* @mixin bimage($bg-image-path)
+
+// 4. Layout Mixin
+//* @mixin width($width: auto, $marginZeroAuto: false, $defaultUnit: px)   or  @mixin w
+//* @mixin height($height: auto, $defaultUnit: px)   						    or  @mixin h
+//* @mixin mwidth($width, $direction: max, $defaultUnit: px)			    or  @mixin mw
+//* @mixin mheight($height: auto, $direction: max, $defaultUnit: px)  	    or  @mixin mh
+//* @mixin box($width: auto, $height: auto, $marginZeroAuto: false)
+//* @mixin margin($direction, $margin-value: 0, $defaultUnit: px)
+//* @mixin margins($top, $right: $top, $bottom: $top, $left: $right, $defaultUnit: px)
+//* @mixin padding($direction, $padding-value: 0, $defaultUnit: px)
+//* @mixin paddings($top, $right: $top, $bottom: $top, $left: $right, $defaultUnit: px)
+//* @mixin border( $position, $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
+//* @mixin borders( $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
+//* @mixin outline( $outline-color: $general-border-color, $outline-width: $DEFAULT-BORDER-WIDTH, $outline-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
+//* @mixin bstyle($position, $border-style: null)
+//* @mixin bdcolor($position, $border-color: null)
+//* @mixin bwidth($position, $border-width: null, $defaultUnit: px)
+//* @mixin overflow($propertyName, $overflow-side: null)
+//* @mixin float($propertyName)
+//* @mixin clear($propertyName)
+//* @mixin display($propertyName)
+//* @mixin visibility($propertyName)
+//* @mixin position($position, $_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $defaultValue, $defaultUnit: px)
+//* @mixin zindex($z-index)
+//* @mixin top($position-top-value, $defaultUnit: px)
+//* @mixin right($position-right-value, $defaultUnit: px)
+//* @mixin bottom($position-bottom-value, $defaultUnit: px)
+//* @mixin left($position-left-value, $defaultUnit: px)
+//* @mixin offset($_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $defaultValue, $defaultUnit: px)
+
+// 5. Pseudo Mixin
+//* @mixin content($content-text: "")
+//* @mixin hover
+//* @mixin child($eq: last)
+
+//* Setup the default variable
+//* Used in property value assignment, several other css2 setting
+$FONT-STYLE-VALUE-LIST: 		n normal i italic o oblique in inherit
+$TEXT-ALIGN-VALUE-LIST: 		l left r right c center j justify
+$VERTICAL-ALIGN-VALUE-LIST: 	t top m middle b bottom bl baseline tt text-top
+$TEXT-TRANSFORM-VALUE-LIST: 	c capitalize u uppercase l lowercase n none
+$OVERFLOW-VALUE-LIST: 		 	v visible h hidden s scroll a auto
+$FLOAT-VALUE-LIST: 				l left r right n none
+$CLEAR-VALUE-LIST: 				l left r right b both n none
+$DISPLAY-VALUE-LIST: 			b block i inline ib inline-block  n none
+$VISIBILITY-VALUE-LIST:         		v visible h hidden c collapse
+$BACKGROUND-REPEAT-VALUE-LIST:  r repeat x repeat-x y repeat-y n no-repeat
+$BORDER-STYLE-VALUE-LIST:  dt dotted s solid db double dh dashed
+
+//* Used in offset, several other css2 setting
+$top:             						top, t
+$bottom:       						bottom, b
+$left:             						left, l
+$right:           						right, r
+
+// 1. Font Mixin
+//
+//@param $font-size: take measurement of em, px, % or plain number.
+//Default Unit: rem
+@mixin fsize($font-size: $DEFAULT-FONT-SIZE, $defaultUnit: rem )
+	+measurement(font-size, $font-size, $defaultUnit)
+
+//@param $font-weight: 100, 200, 300, 400, 500, 600, 700   default: 300
+@mixin fweight($font-weight: $DEFAULT-FONT-WEIGHT)
+	font-weight: $font-weight
+
+//Usage: +ffamily( arial, "Helvetica", sans-serif)
+@mixin ffamily($font-families...)
+	font-family: $font-families
+
+//@param $font-style: normal, italic, oblique, inherit   default: italic
+@mixin fstyle($font-style: $DEFAULT-FONT-STYLE)
+	+prop(font-style, $font-style, $FONT-STYLE-VALUE-LIST)
+
+//@param $font-settings: this is a placeholder content to take arguments
+//Usage:  font(italic bold 12px/30px Georgia, serif)
+@mixin font($font-settings...)
+	font: $font-settings
+
+//Alias to @mixin font
+@mixin f($font-settings...)
+	@include font($font-settings)
+
+//@param $line-height: take measurement of em, px, % or plain number
+@mixin lheight($line-height, $defaultUnit: px)
+	+measurement(line-height, $line-height, $defaultUnit)
+
+//@param $letter-spacing: take measurement of em, px, % or plain number
+@mixin lspacing($letter-spacing, $defaultUnit: px )
+	+measurement(letter-spacing, $letter-spacing, $defaultUnit)
+
+//@param $text-indent: take measurement of em, px, % or plain number
+@mixin tindent($text-indent: $DEFAULT-TEXT-INDENT-VALUE, $defaultUnit: px )
+	+measurement(text-indent, $text-indent, $defaultUnit)
+
+//@param $text-align: left, right, center, justify
+@mixin talign($text-align: center)
+	+prop(text-align, $text-align, $TEXT-ALIGN-VALUE-LIST)
+
+//@param $vertical-align: top, middle, bottom, baseline, text-top
+@mixin valign($vertical-align)
+	+prop(vertical-align, $vertical-align, $VERTICAL-ALIGN-VALUE-LIST)
+
+//@param $transform: capitalize, uppercase, lowercase, none
+@mixin ttransform($transform: capitalize)
+	+prop(text-transform, $transform, $TEXT-TRANSFORM-VALUE-LIST)
+
+// 2. Color Mixin
+
+@mixin color( $text-color: 102 102 102 )
+	color: color-format-helper($text-color)
+
+//3. Background Mixin
+
+//@param $background-settings: this is a placeholder content to take arguments
+//Usage:  +background(url("main/test.png") no-repeat 0 20px)
+@mixin background($background-settings...)
+	background: $background-settings
+
+//Alias to @mixin background
+@mixin b($background-settings...)
+	@include background($background-settings)
+
+// @return an background position working with image spirit
+// @param $height, Default: auto. Take measurement of em, px, % or plain number.
+@mixin bposition( $bg-pos-x: 0, $bg-pos-y: 0, $defaultUnit: px )
+	background-position: measurement($bg-pos-x, $defaultUnit) measurement($bg-pos-y, $defaultUnit)
+
+// @param $background-repeat: r (repeat), x (repeat-x), y (repeat-y), n (no-repeat)
+@mixin brepeat( $background-repeat )
+	+prop(background-repeat, $background-repeat, $BACKGROUND-REPEAT-VALUE-LIST)
+
+// Same functionality like @mixin color.
+// @param $bg-color  color value or "transparent"
+@mixin bcolor( $bg-color: 102 102 102 )
+	background-color: color-format-helper($bg-color)
+
+//@param $imgURL: take a path to the image file based on Relative Path setting in the settings.sass
+//Usage:  +bimage("main/test.png")
+@mixin bimage($imgURL)
+	background-image: relative-image-path($imgURL)
+
+// 4. Layout Mixin
+
+// @param $width, Default: auto. Take measurement of em, px, % or plain number.
+// @param $marginZeroAuto  Turn feature on: margin: 0 auto
+@mixin width($width: auto, $marginZeroAuto: false, $defaultUnit: px)
+	@if type-of($marginZeroAuto) == bool
+		@if $marginZeroAuto == true
+			margin: 0 auto
+	@if $width == auto
+		width: auto
+	@else
+		+measurement(width, $width, $defaultUnit)
+
+// Alias to the @mixin width()
+@mixin w($width: auto, $marginZeroAuto: false, $defaultUnit: px)
+	@include width($width, $marginZeroAuto, $defaultUnit)
+
+// @param $width, Default: null. Take measurement of em, px, % or plain number.
+// @param $direction, Default: max.   take either "max" or "min"  for max-width or min-width
+@mixin mwidth($width, $direction: max, $defaultUnit: px)
+	+measurement( #{$direction}-width, $width, $defaultUnit )
+
+// Alias to the @mixin mwidth() to generate  "max-width"
+@mixin mw($width, $direction: max, $defaultUnit: px)
+	@include mwidth( $width, $direction, $defaultUnit )
+
+// @param $height, Default: auto. Take measurement of em, px, % or plain number.
+@mixin height($height: auto, $defaultUnit: px)
+	@if $height == auto
+		height: auto
+	@else
+		+measurement(height, $height, $defaultUnit)
+
+// Alias to the @mixin height()
+@mixin h($height: auto, $defaultUnit: px)
+	@include height($height, $defaultUnit)
+
+// @param $height, Default: null. Take measurement of em, px, % or plain number.
+// @param $direction, Default: max.   take either "max" or "min"  for max-width or min-width
+@mixin mheight($height: auto, $direction: max, $defaultUnit: px)
+	+measurement(#{$direction}-height, $height, $defaultUnit)
+
+// Alias to the @mixin mheight() to generate  "max-height"
+@mixin mh($height: auto, $direction: max, $defaultUnit: px)
+	@include mheight($height, $direction, $defaultUnit)
+
+// @param Same like $width & $height
+@mixin box($width: auto, $height: auto, $marginZeroAuto: false)
+	+height($height)
+	+width($width, $marginZeroAuto)
+
+// Single Margin Setup
+// Default: px value or auto. Take measurement of em, px, % or plain number.
+@mixin margin($direction, $margin-value: 0, $defaultUnit: px)
+	@if type-of($margin-value) == number
+		@if $direction == nth($top, 1) or $direction == nth($top, 2)
+			+measurement(margin-top, $margin-value, $defaultUnit)
+		@else if $direction == nth($right, 1) or $direction == nth($right, 2)
+			+measurement(margin-right, $margin-value, $defaultUnit)
+		@else if $direction == nth($bottom, 1) or $direction == nth($bottom, 2)
+			+measurement(margin-bottom, $margin-value, $defaultUnit)
+		@else if $direction == nth($left, 1) or $direction == nth($left, 2)
+			+measurement(margin-left, $margin-value, $defaultUnit)
+	@else
+		@if $direction == nth($top, 1) or $direction == nth($top, 2)
+			margin-top: auto
+		@else if $direction == nth($right, 1) or $direction == nth($right, 2)
+			margin-right: auto
+		@else if $direction == nth($bottom, 1) or $direction == nth($bottom, 2)
+			margin-bottom: auto
+		@else if $direction == nth($left, 1) or $direction == nth($left, 2)
+			margin-left: auto
+
+// Box Margins. Work just like regular margin value to set 4 side of the box
+// Default: px value or auto. Take measurement of em, px, % or plain number.
+// +margins  without any arguments, will output margin: 0
+@mixin margins($top: $defaultValue, $right: $top, $bottom: $top, $left: $right, $defaultUnit: px)
+	@if $top != $defaultValue
+		@if $left != false
+			@if $right != false
+				@if type-of($top) != number
+					margin: auto
+				@else
+					@if type-of($right) == number
+						margin: measurement($top, $defaultUnit) measurement($right, $defaultUnit) measurement($bottom, $defaultUnit) measurement($left, $defaultUnit)
+					@else
+						margin: measurement($top, $defaultUnit) auto measurement($bottom, $defaultUnit)
+			@else
+				@if type-of($right) == number
+					margin: measurement($top, $defaultUnit) measurement($top, $defaultUnit) measurement($top, $defaultUnit) measurement($top, $defaultUnit)
+				@else
+					margin: measurement($top, $defaultUnit) auto measurement($bottom, $defaultUnit)
+		@else
+			@if type-of($right) == number
+				margin: measurement($top, $defaultUnit) measurement($right, $defaultUnit) measurement($bottom, $defaultUnit) measurement($right, $defaultUnit)
+			@else
+				margin: measurement($top, $defaultUnit) auto measurement($bottom, $defaultUnit)
+	@else
+		margin: 0
+
+// Single Padding Setup
+// Default: px value or auto. Take measurement of em, px, % or plain number.
+@mixin padding($direction, $padding-value: 0, $defaultUnit: px)
+	@if type-of($padding-value) == number
+		@if $direction == nth($top, 1) or $direction == nth($top, 2)
+			+measurement(padding-top, $padding-value, $defaultUnit)
+		@else if $direction == nth($right, 1) or $direction == nth($right, 2)
+			+measurement(padding-right, $padding-value, $defaultUnit)
+		@else if $direction == nth($bottom, 1) or $direction == nth($bottom, 2)
+			+measurement(padding-bottom, $padding-value, $defaultUnit)
+		@else if $direction == nth($left, 1) or $direction == nth($left, 2)
+			+measurement(padding-left, $padding-value, $defaultUnit)
+	@else
+		@if $direction == nth($top, 1) or $direction == nth($top, 2)
+			padding-top: auto
+		@else if $direction == nth($right, 1) or $direction == nth($right, 2)
+			padding-right: auto
+		@else if $direction == nth($bottom, 1) or $direction == nth($bottom, 2)
+			padding-bottom: auto
+		@else if $direction == nth($left, 1) or $direction == nth($left, 2)
+			padding-left: auto
+
+// Box Paddings. Work just like regular padding value to set 4 side of the box
+// Default: px value or auto. Take measurement of em, px, % or plain number.
+// +paddings  without any arguments, will output padding: 0
+@mixin paddings($top: $defaultValue, $right: $top, $bottom: $top, $left: $right, $defaultUnit: px)
+	@if $top != $defaultValue
+		@if $left != false
+			@if $right != false
+				@if type-of($top) != number
+					padding: auto
+				@else
+					@if type-of($right) == number
+						padding: measurement($top, $defaultUnit) measurement($right, $defaultUnit) measurement($bottom, $defaultUnit) measurement($left, $defaultUnit)
+					@else
+						padding: measurement($top, $defaultUnit) auto measurement($bottom, $defaultUnit)
+			@else
+				@if type-of($right) == number
+					padding: measurement($top, $defaultUnit) measurement($top, $defaultUnit) measurement($top, $defaultUnit) measurement($top, $defaultUnit)
+				@else
+					padding: measurement($top, $defaultUnit) auto measurement($bottom, $defaultUnit)
+		@else
+			@if type-of($right) == number
+				padding: measurement($top, $defaultUnit) measurement($right, $defaultUnit) measurement($bottom, $defaultUnit) measurement($right, $defaultUnit)
+			@else
+				padding: measurement($top, $defaultUnit) auto measurement($bottom, $defaultUnit)
+	@else
+		padding: 0
+
+// Single Border setup
+// Default: px value. Take measurement of em, px, % or plain number.
+// @param: $border-color could be color value or "none", do not support shortcut n
+// Usage: +border(top, none)
+@mixin border( $direction, $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
+
+	@if $border-color != none
+		@if $direction == nth($top, 1) or $direction == nth($top, 2)
+			border-top: measurement($border-width, $defaultUnit) $border-style color-format-helper($border-color)
+		@else if $direction == nth($right, 1) or $direction == nth($right, 2)
+			border-right: measurement($border-width, $defaultUnit) $border-style color-format-helper($border-color)
+		@else if $direction == nth($bottom, 1) or $direction == nth($bottom, 2)
+			border-bottom: measurement($border-width, $defaultUnit) $border-style color-format-helper($border-color)
+		@else if $direction == nth($left, 1) or $direction == nth($left, 2)
+			border-left: measurement($border-width, $defaultUnit) $border-style color-format-helper($border-color)
+	@else
+		@if $direction == nth($top, 1) or $direction == nth($top, 2)
+			border-top: 0 none
+		@else if $direction == nth($right, 1) or $direction == nth($right, 2)
+			border-right: 0 none
+		@else if $direction == nth($bottom, 1) or $direction == nth($bottom, 2)
+			border-bottom: 0 none
+		@else if $direction == nth($left, 1) or $direction == nth($left, 2)
+			border-left: 0 none
+
+// Multiple border setup
+// Default: px value. Take measurement of em, px, % or plain number.
+// @param: $border-color could be color value or "none", do not support shortcut n
+// Usage: +borders(none)
+@mixin borders( $border-color: $general-border-color, $border-width: $DEFAULT-BORDER-WIDTH, $border-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
+	@if $border-color != none
+		//border: measurement($border-width, $defaultUnit) $border-style color-format-helper($border-color)
+		+bstyle($border-style)
+		+bdcolor($border-color)
+		+bwidth($border-width)
+	@else
+		border: 0 none
+
+// Outline Setup
+// Default: px value. Take measurement of em, px, % or plain number.
+// @param: $border-color could be color value or "none"
+// Usage: +outline(none)
+@mixin outline( $outline-color: $general-border-color, $outline-width: $DEFAULT-BORDER-WIDTH, $outline-style: $DEFAULT-BORDER-STYLE, $defaultUnit: px )
+	@if $outline-color != none
+		outline: measurement($outline-width, $defaultUnit) $outline-style color-format-helper($outline-color)
+	@else
+		outline: none
+
+// @param $direction:  top, bottom, right, left,  or  Ignore the value
+// @param $border-style:  dotted solid double dashed
+// Usage 1:  +bstyle(top, dotted)
+// Usage 2:  +bstyle(solid)
+@mixin bstyle($direction, $border-style: null)
+	@if $direction == nth($top, 1) or $direction == nth($top, 2)
+		+prop(border-top-style, $border-style, $BORDER-STYLE-VALUE-LIST)
+	@else if $direction == nth($right, 1) or $direction == nth($right, 2)
+		+prop(border-right-style, $border-style, $BORDER-STYLE-VALUE-LIST)
+	@else if $direction == nth($bottom, 1) or $direction == nth($bottom, 2)
+		+prop(border-bottom-style, $border-style, $BORDER-STYLE-VALUE-LIST)
+	@else if $direction == nth($left, 1) or $direction == nth($left, 2)
+		+prop(border-left-style, $border-style, $BORDER-STYLE-VALUE-LIST)
+	@else
+		+prop(border-style, $direction, $BORDER-STYLE-VALUE-LIST)
+
+// @param $direction:  top, bottom, right, left,  or  Ignore the value
+// @param $border-color:  any color value
+// Usage 1:  +bdcolor(b, 21 23 21)
+// Usage 2:  +bdcolor(red)
+@mixin bdcolor($direction, $border-color: null)
+	@if $direction == nth($top, 1) or $direction == nth($top, 2)
+		border-top-color: color-format-helper($border-color)
+	@else if $direction == nth($right, 1) or $direction == nth($right, 2)
+		border-right-color: color-format-helper($border-color)
+	@else if $direction == nth($bottom, 1) or $direction == nth($bottom, 2)
+		border-bottom-color: color-format-helper($border-color)
+	@else if $direction == nth($left, 1) or $direction == nth($left, 2)
+		border-left-color: color-format-helper($border-color)
+	@else
+		border-color: color-format-helper($direction)
+
+// @param $direction:  top, bottom, right, left,  or  Ignore the value
+// @param $border-width:  px, em, % value
+// Usage 1:  +bwidth(left, 3em)
+// Usage 2:  +bwidth(40%)
+@mixin bwidth($direction, $border-width: null, $defaultUnit: px)
+	@if $direction == nth($top, 1) or $direction == nth($top, 2)
+		+measurement(border-top-width, $border-width, $defaultUnit)
+	@else if $direction == nth($right, 1) or $direction == nth($right, 2)
+		+measurement(border-right-width, $border-width, $defaultUnit)
+	@else if $direction == nth($bottom, 1) or $direction == nth($bottom, 2)
+		+measurement(border-bottom-width, $border-width, $defaultUnit)
+	@else if $direction == nth($left, 1) or $direction == nth($left, 2)
+		+measurement(border-left-width, $border-width, $defaultUnit)
+	@else
+		+measurement(border-width, $direction, $defaultUnit)
+
+// Overflow Property
+// @param $propertyName: visible hidden scroll auto
+// @param $overflow-side: null, x, y  for generating e.g. overflow-x
+@mixin overflow($propertyName, $overflow-side: $defaultValue)
+	@if $overflow-side == $defaultValue
+		+prop(overflow, $propertyName, $OVERFLOW-VALUE-LIST)
+	@else
+		@if $overflow-side == x
+			+prop(overflow-x, $propertyName, $OVERFLOW-VALUE-LIST)
+		@else if $overflow-side == y
+			+prop(overflow-y, $propertyName, $OVERFLOW-VALUE-LIST)
+
+// Float Property
+// @param $propertyName: left right none
+@mixin float($propertyName)
+	+prop(float, $propertyName, $FLOAT-VALUE-LIST)
+
+// Clear Property
+// @param $propertyName: left right both none
+@mixin clear($propertyName)
+	+prop(clear, $propertyName, $CLEAR-VALUE-LIST)
+
+// Display Property
+// @param $propertyName: block none inline inline-block
+@mixin display($propertyName)
+	+prop(display, $propertyName, $DISPLAY-VALUE-LIST)
+
+// Visibility Property
+// @param $propertyName: visible hidden collapse(only for table elements)
+@mixin visibility($propertyName)
+	+prop(visibility, $propertyName, $VISIBILITY-VALUE-LIST)
+
+// Position
+// Default: px value. Take measurement of em, px, % or plain number.
+// @param  $switch: default. set top & left value
+//					right or r,   set top & right value
+//					bottom or b,  set bottom & left value
+//					both or anything other than r or b,  set bottom & right value
+@mixin position($position, $_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $defaultValue, $defaultUnit: px)
+	//@if $position == nth($absolute-value, 1) or $position == nth($absolute-value, 2)
+	@if $position == absolute or $position == a
+		position: absolute
+		@if $switch == $defaultValue
+			top: measurement($_top, $defaultUnit)
+			left: measurement($_left, $defaultUnit)
+		@else
+			@if $switch == nth($bottom, 1) or $switch == nth($bottom, 2)
+				bottom: measurement($_top, $defaultUnit)
+				left: measurement($_left, $defaultUnit)
+			@else if $switch == nth($right, 1) or $switch == nth($right, 2)
+				top: measurement($_top, $defaultUnit)
+				right: measurement($_left, $defaultUnit)
+			@else
+				bottom: measurement($_top, $defaultUnit)
+				right: measurement($_left, $defaultUnit)
+	@else if $position == relative or $position == r
+		position: relative
+		@if $_top != 0
+			@if $switch == default
+				top: measurement($_top, $defaultUnit)
+				left: measurement($_left, $defaultUnit)
+			@else if $switch != default
+				@if $switch == nth($bottom, 1) or $switch == nth($bottom, 2)
+					bottom: measurement($_top, $defaultUnit)
+					left: measurement($_left, $defaultUnit)
+				@else if $switch == nth($right, 1) or $switch == nth($right, 2)
+					top: measurement($_top, $defaultUnit)
+					right: measurement($_left, $defaultUnit)
+				@else
+					bottom: measurement($_top, $defaultUnit)
+					right: measurement($_left, $defaultUnit)
+	@else if $position == fixed or $position == f
+		position: fixed
+		@if $_top != 0
+			@if $switch == default
+				top: measurement($_top, $defaultUnit)
+				left: measurement($_left, $defaultUnit)
+			@else if $switch != default
+				@if $switch == nth($bottom, 1) or $switch == nth($bottom, 2)
+					bottom: measurement($_top, $defaultUnit)
+					left: measurement($_left, $defaultUnit)
+				@else if $switch == nth($right, 1) or $switch == nth($right, 2)
+					top: measurement($_top, $defaultUnit)
+					right: measurement($_left, $defaultUnit)
+				@else
+					bottom: measurement($_top, $defaultUnit)
+					right: measurement($_left, $defaultUnit)
+	@else if $position == static or $position == s
+		position: static
+
+//@param $z-index,  take a number   default: null
+@mixin zindex($z-index)
+	z-index: $z-index
+
+// @param $position-top-value. Take measurement of em, px, % or plain number.
+@mixin top($position-top-value, $defaultUnit: px)
+	+measurement(top, $position-top-value, $defaultUnit)
+
+// @param $position-right-value. Take measurement of em, px, % or plain number.
+@mixin right($position-right-value, $defaultUnit: px)
+	+measurement(right, $position-right-value, $defaultUnit)
+
+// @param $position-bottom-value. Take measurement of em, px, % or plain number.
+@mixin bottom($position-bottom-value, $defaultUnit: px)
+	+measurement(bottom, $position-bottom-value, $defaultUnit)
+
+// @param $position-left-value. Take measurement of em, px, % or plain number.
+@mixin left($position-left-value, $defaultUnit: px)
+	+measurement(left, $position-left-value, $defaultUnit)
+
+// Override the position value using top, bottom, right, left
+// @param $_top. Take measurement of em, px, % or plain number.
+// @param $_left. Take measurement of em, px, % or plain number.
+// @param  $switch: default. set top & left value
+//					right or r,   set top & right value
+//					bottom or b,  set bottom & left value
+//					both or anything other than r or b,  set bottom & right value
+@mixin offset($_top: $DEFAULT-POSITION-TOP-VALUE, $_left: $DEFAULT-POSITION-LEFT-VALUE, $switch: $defaultValue, $defaultUnit: px)
+	@if $switch == $defaultValue
+		top: measurement($_top, $defaultUnit)
+		left: measurement($_left, $defaultUnit)
+	@else
+		@if $switch == nth($bottom, 1) or $switch == nth($bottom, 2)
+			bottom: measurement($_top, $defaultUnit)
+			left: measurement($_left, $defaultUnit)
+		@else if $switch == nth($right, 1) or $switch == nth($right, 2)
+			top: measurement($_top, $defaultUnit)
+			right: measurement($_left, $defaultUnit)
+		@else
+			bottom: measurement($_top, $defaultUnit)
+			right: measurement($_left, $defaultUnit)
+
+// 5. Pseudo Mixin
+
+// Arguments could be either quoted or non-quoted
+// Usage: +content(">")
+@mixin content($content-text: "")
+	content: quote($content-text)
+
+@mixin hover
+	&:hover
+		@content
+
+// @param $eq number, first or f or 1, last or l   default: last
+// Usage: +child(2)
+@mixin child($eq)
+	@if $eq == first or $eq == f or $eq == 1
+		&:first-child
+			@content
+	@else if $eq == last or $eq == l
+		&:last-child
+			@content
+	@else
+		@for $i from 10 through 1
+			@if $eq == $i
+				&:nth-child(#{$i})
+					@content
