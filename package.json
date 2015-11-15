@@ -10,20 +10,19 @@
   "repository": "git@bitbucket.org:mattma/mvccss.git",
   "main": "gulpfile.js",
   "devDependencies": {
-    "gulp-replace": "~0.2.0",
-    "gulp-ruby-sass": "~0.4.0",
-    "gulp-util": "~2.2.14",
-    "gulp-load-plugins": "~0.4.0",
-    "gulp": "^3.6.0",
-    "gulp-jshint": "~1.4.2",
-    "gulp-rename": "~1.1.0",
-    "tiny-lr": "0.0.5",
-    "gulp-notify": "~1.0.0-beta",
-    "gulp-autoprefixer": "0.0.6",
+    "del": "^2.1.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-changed": "~0.2.1",
-    "gulp-imagemin": "~0.1.5",
-    "gulp-clean": "^0.2.4",
-    "gulp-concat": "^2.2.0"
+    "gulp-concat": "^2.6.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-rename": "~1.1.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-ruby-sass": "^2.0.5",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
+    "tiny-lr": "^0.2.1"
   },
   "engines": {
     "node": ">= 0.10.0"
