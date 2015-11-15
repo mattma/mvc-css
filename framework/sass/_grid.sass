@@ -1,3 +1,5 @@
+@charset "UTF-8"
+
 //* 2. Grid Mixin
 //* @mixin blockEqualWidth  		   line: 23   =Equal Width block elements up to 6 in a row
 //* @mixin blockEqualWidthWithMargin   line: 35   =Equal Width block elements up to 6 in a row with margin
@@ -28,7 +30,7 @@ $grid_columns: 0
 $grid_column_width: 0
 $gutter_column_width: 0
 
-= setupFixedGridVariable
+@mixin setupFixedGridVariable
 	@each $cols, $col-width-px, $gutter-width-px, $col-width-percent, $gutter-width-percent  in $flex_grid_measure_map
 		@if $flex_grid_columns == $cols
 			$grid_columns: $cols
@@ -296,7 +298,7 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 
 // @mixins For creating container, nested, and collapsed rows.
 // $behavior - Any special behavior for this row? Default: false. Options: nest, collapse, nest-collapse, false.
-=grid-row($behavior: false)
+@mixin grid-row($behavior: false)
 	// use @include grid-row(nest); to include a nested row
 	@if $behavior == nest
 		width: auto
@@ -334,7 +336,7 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 // $collapse - Get rid of gutter padding on column? Default: false.
 // $float - Should this float? Default: true. Options: true, false, left, right.
 
-=grid-column($columns: false, $last-column: false, $center: false, $offset: false, $push: false, $pull: false, $collapse: false, $float: true, $position: false)
+@mixin grid-column($columns: false, $last-column: false, $center: false, $offset: false, $push: false, $pull: false, $collapse: false, $float: true, $position: false)
 	// If positioned for default .column, include relative position
 	// push and pull require position set
 	@if $position or $push or $pull
@@ -377,7 +379,7 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 
 // Create presentational classes for grid
 // $size - Name of class to use, i.e. "large" will generate .large-1, .large-2, etc.
-=grid-html-classes($size)
+@mixin grid-html-classes($size)
 	@for $i from 0 through $total-columns - 1
 		.#{$size}-push-#{$i}
 			+grid-column($push: $i, $collapse: null, $float: false)
@@ -473,7 +475,7 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 // $spacing - # of ems to use as padding on each block item. Default: rem-calc(20).
 // $base-style - Apply a base style to block grid. Default: true.
 //
-=block-grid($per-row: false, $spacing: $block-grid-default-spacing, $include-spacing: true, $base-style: true)
+@mixin block-grid($per-row: false, $spacing: $block-grid-default-spacing, $include-spacing: true, $base-style: true)
 	@if $base-style
 		display: block
 		padding: 0
@@ -501,7 +503,7 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 			@if $align-block-grid-to-grid
 				+block-grid-aligned($per-row, $spacing)
 
-=block-grid-aligned($per-row, $spacing)
+@mixin block-grid-aligned($per-row, $spacing)
 	@for $i from 1 through $block-grid-elements
 		@if $per-row >= $i
 			$grid-column: "+" + $i
@@ -514,7 +516,7 @@ $total-width: gridsystem-width($grid_columns, $grid_column_width, $gutter_column
 // Generate presentational markup for block grid.
 //
 // $size - Name of class to use, i.e. "large" will generate .large-block-grid-1, .large-block-grid-2, etc.
-=block-grid-html-classes($size, $include-spacing)
+@mixin block-grid-html-classes($size, $include-spacing)
 	@for $i from 1 through $block-grid-elements
 		.#{$size}-block-grid-#{$i}
 			+block-grid($i, $block-grid-default-spacing, $include-spacing, false)
