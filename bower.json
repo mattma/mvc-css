@@ -1,0 +1,29 @@
+{
+  "name": "mvccss",
+  "description": "mvc css framework for sass extension",
+  "main": "gulpfile.js",
+  "version": "0.3.0",
+  "authors": [
+    "Matt Ma <matt@mattmadesign.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "mvc",
+    "framework"
+  ],
+  "homepage": "https://github.com/mattma/mvc-css",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "examples",
+    "static",
+    "*.rb",
+    "*.html",
+    "*.json",
+    "*.md",
+    "*.js"
+  ]
+}
