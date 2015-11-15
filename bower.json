@@ -16,14 +16,14 @@
   "homepage": "https://github.com/mattma/mvc-css",
   "moduleType": [],
   "ignore": [
-    "**/.*",
-    "node_modules",
     "examples",
+    "node_modules",
     "static",
     "*.rb",
     "*.html",
     "*.json",
     "*.md",
-    "*.js"
+    "gulpfile.js",
+    ".*"
   ]
 }
