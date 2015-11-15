@@ -2,7 +2,7 @@
 /*  --------------------------------------------
 * @package Matt Ma Design
 * @author Matt Ma. ( matt@mattmadesign.com )
-* @copyright Copyright©2014 Matt Ma Design
+* @copyright Copyright©2015 Matt Ma Design
 * @site http://www.mattmadesign.com
     --------------------------------------------  */
 
@@ -64,12 +64,12 @@ body:before { content:""; float:left; height:100%; margin-top:-32767px; width:0;
 /* =================== */
 
 /* Best Ratio: Heading font size / Body copy font size = 1.96 */
-h1     { font-size:2.6rem;}
-h2     { font-size:2.4rem;}
-h3     { font-size:2.1rem;}
-h4     { font-size:1.9rem;}
-h5     { font-size:1.7rem;}
-h6     { font-size:1.5rem;}
+h1     { font-size:2.6em;}
+h2     { font-size:2.4em;}
+h3     { font-size:2.1em;}
+h4     { font-size:1.9em;}
+h5     { font-size:1.7em;}
+h6     { font-size:1.5em;}
 h1, h2 { font-weight:700; line-height:1; color:rgb(35, 35, 35); text-rendering: optimizelegibility;}
 h3, h4, h5, h6 { font-weight:300; line-height:1; color:rgb(102,102,102); text-rendering: optimizelegibility; }
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
@@ -95,6 +95,7 @@ ol li, ul li{list-style:none;}
   ul        { list-style: disc; }*/
 
 
+
 /* ================= */
 /* = LINK ELEMENTS = */
 /* ================= */
@@ -102,7 +103,7 @@ ol li, ul li{list-style:none;}
 a { background: transparent; }
 a, a:active { text-decoration: none; display: block; }
 a:active, a:hover { outline: 0; }
-a:hover     { text-decoration: none; -webkit-transition: color 0.5s linear; -moz-transition-property: color; -moz-transition-duration: 0.5s; -moz-transition-timing: linear; -o-transition-property: color; -o-transition-duration: 0.5s; -o-transition-timing: linear; }
+a:hover     { text-decoration: none; }
 
 
 /* ====================== */
@@ -124,15 +125,15 @@ p
 ,fieldset
 ,th, td
 ,li, li a
-,dt, dd   { line-height:1.7rem; font-size:1.4rem; color:rgb(102,102,102); font-weight:300; } /* ==CHANGE FOR PROJECT NEED== */
+,dt, dd   { line-height:1.7em; font-size:1.4em; color:rgb(102,102,102); font-weight:300; } /* ==CHANGE FOR PROJECT NEED== */
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
 p a, p span, p label, p input,
-ul li, ol li, li a, li p {font-size: 1rem;}
+ul li, ol li, li a, li p {font-size: 1em;}
 
 pre       { display: block; white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 15px; overflow: auto; }
 code      { color: rgb(11,140,143); padding: 2px 4px; background-color: #f7f7f9; border: 1px solid #e1e1e8; }
-pre, code, tt, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1rem; line-height:1.5rem;border-radius: 3px; }
+pre, code, tt, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; line-height:1.5em;border-radius: 3px; }
 address   { font-style:italic; display: block; }
 blockquote{ margin: 0 0 20px; padding: 0 0 0 15px; border-left: 5px solid #eeeeee; color:rgb(102,102,102); font-style:italic;}
 q:before, q:after { content: '';  content: none; }
@@ -149,16 +150,20 @@ td, th { padding: 0; }
 /* = FORM ELEMENTS = */
 /* ================= */
 
-::-webkit-input-placeholder { color: #999999; }
+input::-webkit-input-placeholder, input::-moz-placeholder, input:-ms-input-placeholder {
+  color: red;
+}
+
+
 form      { margin: 0; }
 fieldset  { border: 0; margin: 0; padding: 0; }
-legend    { display: block; font-weight:700; font-size:1.4rem; border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+legend    { display: block; font-weight:700; font-size:1.4em; border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
 optgroup { font-weight: bold; }
 
 select
 ,input
 ,textarea
-,button   { font-size: 100%; margin: 0; vertical-align: middle; *vertical-align: middle; display: block; min-height: 20px; padding: 3px 0 3px 5px; margin-bottom: 10px; border: 1px solid #cccccc; border-radius: 3px; }
+,button   { font-size: 100%; margin: 0; vertical-align: middle; *vertical-align: middle; display: block; min-height: 20px; padding: 3px 0 3px 5px; margin-bottom: 10px; border: 1px solid #cccccc; }
 
 button, select { text-transform: none; }
 
@@ -167,7 +172,7 @@ textarea  { overflow: auto; vertical-align: top; resize: none; } /* IE-remove-te
 
 input, button     { width: auto; line-height: normal; *overflow: visible; } /* Make buttons play nice in IE: */
 table input, table { *overflow: auto; }
-button { overflow: visible; }
+button { overflow: visible; background: transparent; border: none; outline: none; box-shadow: none; padding: 0; }
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 button, html input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
 
@@ -188,10 +193,10 @@ input[type="radio"]    { vertical-align: text-bottom; }
 input[type="checkbox"] { vertical-align: bottom; }
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *height: 13px;  *width: 13px; }
 
-input[type="file"]:focus
+/*input[type="file"]:focus
 ,input[type="radio"]:focus
 ,input[type="checkbox"]:focus
-,select:focus { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; outline: thin dotted #333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
+,select:focus { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; outline: thin dotted #333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }*/
 
 input[type="file"], input[type="image"] { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 select, input[type="file"] { *margin-top: 4px; /* IE7, Select element cannot be changed by height, only font-size. For IE7, add top margin to align select with labels */ }
@@ -214,26 +219,26 @@ input[disabled]
 
 button[disabled] { cursor: not-allowed; }
 
-input
+/*input
 ,textarea {
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-	-ms-transition: border linear 0.2s, box-shadow linear 0.2s;
-	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
-	transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
 }
 input:focus
 ,textarea:focus {
-	border-color: rgba(82, 168, 236, 0.8);
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-	outline: 0;
-	outline: thin dotted \9; /* IE6-9 */
-}
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0;
+  outline: thin dotted \9;
+}*/
 
 /* Colors for form validity */
 input:valid, textarea:valid   {  }

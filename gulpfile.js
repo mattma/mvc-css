@@ -49,8 +49,8 @@ gulp.task('injectLRScript', function() {
 		.pipe(gulp.dest(path.join(__dirname, appName)));
 });
 
-// @describe Remove the 'build/' folder, start from a clean slate
-gulp.task('clean', del.bind(null, ['build'], {force: true}));
+// @describe Remove the 'dist/' folder, start from a clean slate
+gulp.task('clean', del.bind(null, ['dist'], {force: true}));
 
 // Dependency Task
 // Only run in the build process
@@ -67,7 +67,7 @@ gulp.task('RWD_grid_builder', function() {
 		.pipe(gulp.dest(path.join(__dirname, 'static/styles/build/')));
 });
 
-gulp.task('build', ['RWD_grid_builder', 'clean'], function(cb) {
+gulp.task('release', ['clean'], function(cb) {
 	var srcFIles = [
 		'./__init.sass',
 		'./_controller.sass',
@@ -78,11 +78,11 @@ gulp.task('build', ['RWD_grid_builder', 'clean'], function(cb) {
 	// the base option sets the relative root for the set of files,
 	// preserving the folder structure
 	gulp.src(srcFIles, { cwd: 'static/styles/sass/framework/**' } )
-		.pipe(gulp.dest( path.join(__dirname, 'build/framework') ));
+		.pipe(gulp.dest( path.join(__dirname, 'dist/framework') ));
 
-	gulp.src(['./static/styles/reset.css', './static/styles/build/*.css' ])
+	gulp.src(['./static/styles/reset.css'])
 		.pipe( $.concat('reset.css') )
-		.pipe(gulp.dest( path.join(__dirname, 'build') ));
+		.pipe(gulp.dest( path.join(__dirname, 'dist') ));
 
 	cb();
 });
