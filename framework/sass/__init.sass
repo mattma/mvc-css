@@ -109,9 +109,6 @@ $visibility-breakpoint-sizes: small, medium, large, xlarge, xxlarge
 //$main-layout: horizontal
 
 
-//* Include controller module into the framework
-@import "controller"
-
 // Media Query (1)
 //
 /// A list of named breakpoints. You can use these with the `breakpoint()` mixin to quickly create media queries.
@@ -160,7 +157,9 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 //* Visibility Setting (used in _utils.sass)
 $visibility-breakpoint-queries: unquote($small-up), unquote($medium-up), unquote($large-up), unquote($xlarge-up), unquote($xxlarge-up)
 
-//* Include modules into the framework
+@import "reset"
+
+@import "controller"
 @import "utils"
 @import "css2"
 @import "grid"

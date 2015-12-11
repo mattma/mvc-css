@@ -73,10 +73,6 @@ gulp.task('release', ['clean'], function(cb) {
 	gulp.src(["*.sass"], { cwd: 'src/framework/**' } )
 		.pipe(gulp.dest( path.join(__dirname, dist, 'sass') ));
 
-	gulp.src(['./src/reset.css'])
-		.pipe( $.concat('reset.css') )
-		.pipe(gulp.dest( path.join(__dirname, dist) ));
-
 	cb();
 });
 
