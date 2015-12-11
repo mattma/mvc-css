@@ -71,7 +71,7 @@ gulp.task('release', ['clean'], function(cb) {
 	// the base option sets the relative root for the set of files,
 	// preserving the folder structure
 	gulp.src(["*.sass"], { cwd: 'src/framework/**' } )
-		.pipe(gulp.dest( path.join(__dirname, dist, 'sass') ));
+		.pipe(gulp.dest( path.join(__dirname, dist) ));
 
 	cb();
 });

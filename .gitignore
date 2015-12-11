@@ -13,8 +13,6 @@
 *.vi
 *.css
 *.css.map
-!static/styles/reset.css
-!framework/reset.css
 
 # OS or Editor folders
 .DS_Store
