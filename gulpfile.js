@@ -29,7 +29,7 @@ var AutoPrefixerConfig = [
 ];
 var path = require('path');
 var server = require('tiny-lr')();
-var sassRootPath = 'src/framework/';
+var sassRootPath = 'static/styles/sass/';
 var dist = 'framework';
 
 // task: stripLRScript
@@ -53,8 +53,7 @@ gulp.task('injectLRScript', function() {
 // @describe Remove the 'dist/' folder, start from a clean slate
 gulp.task('clean', del.bind(null, [dist], {force: true}));
 
-// Dependency Task
-// Only run in the build process
+// Dependency Task: Only run in the build process
 // Based on the settings in framework/__init.sass, to output the RWD grid css
 gulp.task('RWD_grid_builder', function() {
 	return gulp.src( './static/styles/build/*.sass' )
@@ -69,17 +68,9 @@ gulp.task('RWD_grid_builder', function() {
 });
 
 gulp.task('release', ['clean'], function(cb) {
-	var srcFIles = [
-		'./__init.sass',
-		'./_controller.sass',
-		'./_css2.sass',
-		'./_grid.sass',
-    './_utils.sass',
-		'./components/**/*.sass'
-	];
 	// the base option sets the relative root for the set of files,
 	// preserving the folder structure
-	gulp.src(srcFIles, { cwd: 'src/framework/**' } )
+	gulp.src(["*.sass"], { cwd: 'src/framework/**' } )
 		.pipe(gulp.dest( path.join(__dirname, dist, 'sass') ));
 
 	gulp.src(['./src/reset.css'])
