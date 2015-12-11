@@ -19,6 +19,7 @@
     "examples",
     "node_modules",
     "static",
+    "src",
     "*.rb",
     "*.html",
     "*.json",

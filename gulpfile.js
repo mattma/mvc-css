@@ -29,7 +29,7 @@ var AutoPrefixerConfig = [
 ];
 var path = require('path');
 var server = require('tiny-lr')();
-var sassRootPath = 'static/styles/sass/';
+var sassRootPath = 'src/framework/';
 var dist = 'framework';
 
 // task: stripLRScript
@@ -79,12 +79,12 @@ gulp.task('release', ['clean'], function(cb) {
 	];
 	// the base option sets the relative root for the set of files,
 	// preserving the folder structure
-	gulp.src(srcFIles, { cwd: 'static/styles/sass/framework/**' } )
+	gulp.src(srcFIles, { cwd: 'src/framework/**' } )
 		.pipe(gulp.dest( path.join(__dirname, dist, 'sass') ));
 
-	gulp.src(['./static/styles/reset.css'])
+	gulp.src(['./src/reset.css'])
 		.pipe( $.concat('reset.css') )
-		.pipe(gulp.dest( path.join(__dirname, dist)));
+		.pipe(gulp.dest( path.join(__dirname, dist) ));
 
 	cb();
 });
