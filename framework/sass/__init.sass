@@ -40,6 +40,9 @@ $green: #9FBB58
 $white: rgb(255,255,255)
 $black: rgb(0,0,0)
 
+//* Fonts
+$helvetica: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif
+
 //* 1. Grid: Fully Customized Fixed Grid ( Flex Grid )
 // Col: 12; Col-Width: 60px; Gutter: 20px;   Offset: 80px/col; Content-Width: 940px; Based on 960 Grid;
 // Col: 16; Col-Width: 40px; Gutter: 20px;   Offset: 60px/col; Content-Width: 940px; Based on 960 Grid;
@@ -109,6 +112,18 @@ $visibility-breakpoint-sizes: small, medium, large, xlarge, xxlarge
 //* Include controller module into the framework
 @import "controller"
 
+// Media Query (1)
+//
+/// A list of named breakpoints. You can use these with the `breakpoint()` mixin to quickly create media queries.
+// @type Map
+$breakpoints: (xs: 320px, s: 480px, m: 768px, l: 1024px, xl: 1364px) !default
+
+//Each value in this list must also be in the `$breakpoints` map.
+// @type List
+$breakpoint-classes: (xs s m l xl) !default
+
+// Media Query (2)
+//
 // Media Query must include after controller, it needs several functions from controllers
 //* Media Query Ranges
 // Small screens: max-width 640px, mobile-only styles
@@ -149,3 +164,5 @@ $visibility-breakpoint-queries: unquote($small-up), unquote($medium-up), unquote
 @import "utils"
 @import "css2"
 @import "grid"
+
+@import "components/_init"

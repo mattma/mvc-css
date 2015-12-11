@@ -1,0 +1,110 @@
+// Foundation for Sites by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+// https://github.com/zurb/foundation-sites/blob/bb109636b8afd6d109c76d9a2de6d5c698c5252a/docs/pages/visibility.md
+
+// Visibility classes let you show or hide elements based on screen size or device orientation. You can also use visibility classes to control which elements users see depending on their browsing environment.
+
+/**
+ * Avaiable Classes
+ *  1. Show by screen size (.show-for-{$size})
+ *    <p class="show-for-m">You are on a medium screen or larger.</p>
+ *    These classes automatically hide the element on screen sizes below what's specified in the class. So .show-for-medium will hide the element on small, and show it on medium and larger.
+ *
+ *  2. Only Show by Screen Size (.show-for-{$size}-only)
+ *    <p class="show-for-m-only">You are on a medium screen.</p>
+ *
+ *  3. Hide by Screen Size (.hide-for-m)
+ *    <p class="hide-for-m">You are not on a medium screen or larger.</p>
+ *
+ *  4. Only Hide by Screen Size (.hide-for-m-only)
+ *    <p class="hide-for-m-only">You are definitely not on a medium screen.</p>
+ *
+ *  5. Orientation Detection (.show-for-landscape && .show-for-portrait)
+ *  whether or not an element is visible in different orientations. This will change on mobile devices when you rotate the device. On desktop, the orientation is almost always reported as landscape.
+ *
+ *  6. Show for Screen Readers Only
+ */
+
+/// Hide an element by default, only displaying it above a certain screen size.
+/// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+@mixin show-for($size)
+  $size: map-get($breakpoints, $size)
+  $size: -zf-bp-to-em($size) - 1 / 16
+  +breakpoint($size down)
+    display: none !important
+
+/// Hide an element by default, only displaying it within a certain breakpoint.
+/// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+@mixin show-for-only($size)
+  $lower-bound-size: map-get($breakpoints, $size)
+  $upper-bound-size: -zf-map-next($breakpoints, $size)
+  // more often than not this will be correct, just one time round the loop it won't so set in scope here
+  $lower-bound: -zf-bp-to-em($lower-bound-size) - 1 / 16
+  // test actual lower-bound-size, if 0 set it to 0em
+  @if $lower-bound-size == 0
+    $lower-bound: -zf-bp-to-em($lower-bound-size)
+  @if $upper-bound-size == null
+    @media screen and (max-width: $lower-bound)
+      display: none !important
+  @else
+    $upper-bound: -zf-bp-to-em($upper-bound-size)
+    @media screen and (max-width: $lower-bound), screen and (min-width: $upper-bound)
+      display: none !important
+
+/// Show an element by default, and hide it above a certain screen size.
+/// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+@mixin hide-for($size)
+  +breakpoint($size)
+    display: none !important
+
+/// Show an element by default, and hide it above a certain screen size.
+/// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+@mixin hide-for-only($size)
+  +breakpoint($size only)
+    display: none !important
+
+@mixin foundation-visibility-classes
+  // Basic hiding classes
+  .hide
+    display: none !important
+  .invisible
+    visibility: hidden
+  // Responsive visibility classes
+  @each $size in $breakpoint-classes
+    @if $size != small
+      .hide-for-#{$size}
+        +hide-for($size)
+      .show-for-#{$size}
+        +show-for($size)
+    .hide-for-#{$size}-only
+      +hide-for-only($size)
+    .show-for-#{$size}-only
+      +show-for-only($size)
+  // Screen reader visibility classes
+  // Need a "hide-for-sr" class? Add aria-hidden='true' to the element
+  .show-for-sr,
+  .show-on-focus
+    +element-invisible
+  // Only display the element when it's focused
+  .show-on-focus
+    &:active,
+    &:focus
+      +element-invisible-off
+  // Landscape and portrait visibility
+  .show-for-landscape,
+  .hide-for-portrait
+    display: block !important
+    +breakpoint(landscape)
+      display: block !important
+
+    +breakpoint(portrait)
+      display: none !important
+  .hide-for-landscape,
+  .show-for-portrait
+    display: none !important
+    +breakpoint(landscape)
+      display: none !important
+
+    +breakpoint(portrait)
+      display: block !important

@@ -74,7 +74,8 @@ gulp.task('release', ['clean'], function(cb) {
 		'./_controller.sass',
 		'./_css2.sass',
 		'./_grid.sass',
-		'./_utils.sass'
+    './_utils.sass',
+		'./components/**/*.sass'
 	];
 	// the base option sets the relative root for the set of files,
 	// preserving the folder structure

@@ -9,6 +9,10 @@
 
 //* 3. Utility Functions
 //* Visibility in breakpoints
+//* @mixin element-invisible
+//* @mixin element-invisible-off
+//* @function -zf-bp-to-em($value)
+
 
 //* 1. Universal Toolbox
 //
@@ -34,7 +38,7 @@
 		+clear(both)
 
 // We use this to do clear floats
-=clearfix
+@mixin clearfix
 	*zoom: 1
 	&:before, &:after
 		content: " "
@@ -46,7 +50,7 @@
 // $triangle-size - Used to set border-size. No default, set a px or em size.
 // $triangle-color - Used to set border-color which makes up triangle. No default
 // $triangle-direction - Used to determine which direction triangle points. Options: top, bottom, left, right
-=triangle($triangle-size, $triangle-color, $triangle-direction)
+@mixin triangle($triangle-size, $triangle-color, $triangle-direction)
 	content: ""
 	display: block
 	width: 0
@@ -78,7 +82,7 @@
 
 //* Visibility in breakpoints
 //* strip out of Foundation 5.2.1
-=visibility-loop
+@mixin visibility-loop
 	@each $current-visibility-breakpoint in $visibility-breakpoint-sizes
 		$visibility-inherit-list: ()
 		$visibility-none-list: ()
@@ -256,3 +260,27 @@
 		display: table-cell !important
 	.touch th.show-for-touch
 		display: table-cell !important
+
+
+/// Makes an element visually hidden, but still accessible to keyboards and assistive devices.
+/// @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility Hiding Content for Accessibility
+@mixin element-invisible
+  position: absolute !important
+  +box(1, 1)
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+
+/// Reverses the CSS output created by the `element-invisible()` mixin.
+@mixin element-invisible-off
+  position: static !important
+  +box()
+  overflow: visible
+  clip: auto
+
+// Converts a unitless, pixel, or rem value to em, for use in breakpoints.
+@function -zf-bp-to-em($value)
+  // Pixel and unitless values are converted to rems
+  @if unit($value) == "px" or unitless($value)
+    $value: rem-calc($value)
+  // Then the value is converted to ems
+  @return strip-unit($value) * 1em
