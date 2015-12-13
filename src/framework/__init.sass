@@ -113,11 +113,15 @@ $visibility-breakpoint-sizes: small, medium, large, xlarge, xxlarge
 //
 /// A list of named breakpoints. You can use these with the `breakpoint()` mixin to quickly create media queries.
 // @type Map
-$breakpoints: (xs: 320px, s: 480px, m: 768px, l: 1024px, xl: 1364px) !default
+$breakpoints: (xs: 320px, s: 480px, m: 768px, l: 1024px, xl: 1364px, xxl: 1776px) !default
 
 //Each value in this list must also be in the `$breakpoints` map.
 // @type List
-$breakpoint-classes: (xs s m l xl) !default
+$breakpoint-classes: (xs s m l xl xxl) !default
+
+@import "reset"
+
+@import "controller"
 
 // Media Query (2)
 //
@@ -157,9 +161,6 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 //* Visibility Setting (used in _utils.sass)
 $visibility-breakpoint-queries: unquote($small-up), unquote($medium-up), unquote($large-up), unquote($xlarge-up), unquote($xxlarge-up)
 
-@import "reset"
-
-@import "controller"
 @import "utils"
 @import "css2"
 @import "grid"
