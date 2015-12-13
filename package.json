@@ -5,7 +5,7 @@
     "name": "Matt Ma",
     "email": "matt@mattmadesign.com"
   },
-  "version": "0.5.0",
+  "version": "0.5.1",
   "repository": "https://github.com/mattma/mvc-css.git",
   "devDependencies": {
     "del": "^2.1.0",
